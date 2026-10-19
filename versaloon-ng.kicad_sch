@@ -11199,6 +11199,20 @@
 		)
 		(uuid "efa67f64-e717-4551-9464-d35d96b92333")
 	)
+	(wire
+		(pts
+			(xy 151.13 116.84)
+			(xy 148.59 116.84)
+		)
+		(uuid "0c35c45c-681d-496f-b39c-7d5e151ed1b5")
+	)
+	(wire
+		(pts
+			(xy 151.13 119.38)
+			(xy 148.59 119.38)
+		)
+		(uuid "b08326b3-0cf0-4f95-ab00-882e63b6ed4e")
+	)
 	(label "SRST"
 		(at 148.59 124.46 180)
 		(effects
@@ -12050,6 +12064,28 @@
 				)
 			)
 		)
+	)
+	(global_label "DBG_TX"
+		(shape input)
+		(at 148.59 116.84 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "60f610d1-7051-4a8a-842c-17bd5fab1789")
+	)
+	(global_label "DBG_RX"
+		(shape input)
+		(at 148.59 119.38 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7694232e-5e95-47ab-acde-0cfb9c6e9672")
 	)
 	(sheet
 		(at 250.19 60.96)
