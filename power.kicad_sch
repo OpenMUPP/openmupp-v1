@@ -1844,14 +1844,6 @@
 			(embedded_fonts no)
 		)
 		(symbol "Transistor_FET:AO3401A"
-			(pin_names
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "Q"
 				(at 5.08 1.905 0)
 				(show_name no)
@@ -1932,6 +1924,15 @@
 					)
 				)
 			)
+			(embedded_fonts no)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
 			(symbol "AO3401A_0_1"
 				(polyline
 					(pts
@@ -2175,7 +2176,6 @@
 					)
 				)
 			)
-			(embedded_fonts no)
 		)
 		(symbol "otheruse_misc:LP5907"
 			(pin_names
@@ -2184,12 +2184,8 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "U"
 				(at 8.255 3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
 				(effects
 					(font
 						(size 0.8636 0.8636)
@@ -2199,8 +2195,6 @@
 			)
 			(property "Value" "LP5907"
 				(at 5.08 6.35 0)
-				(show_name no)
-				(do_not_autoplace no)
 				(effects
 					(font
 						(size 0.8382 0.8382)
@@ -2210,8 +2204,6 @@
 			)
 			(property "Footprint" ""
 				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.524 1.524)
@@ -2220,8 +2212,6 @@
 			)
 			(property "Datasheet" ""
 				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.524 1.524)
@@ -2230,49 +2220,41 @@
 			)
 			(property "Description" "Low dropout voltage regulator"
 				(at 14.605 12.065 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 0.8636 0.8636)
 					)
 					(justify left bottom)
+					(hide yes)
 				)
 			)
 			(property "copyright" "2018 Armin van der Togt"
 				(at 14.605 18.415 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 0.8636 0.8636)
 					)
 					(justify left bottom)
+					(hide yes)
 				)
 			)
 			(property "author" "Armin van der Togt"
 				(at 14.605 17.145 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 0.8636 0.8636)
 					)
 					(justify left bottom)
+					(hide yes)
 				)
 			)
 			(property "ki_fp_filters" "SOT23_5L"
 				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(hide yes)
 				)
 			)
 			(symbol "LP5907_0_1"
@@ -2380,7 +2362,6 @@
 					)
 				)
 			)
-			(embedded_fonts no)
 		)
 		(symbol "power:+3.3V"
 			(power global)
@@ -3139,7 +3120,7 @@
 				)
 			)
 			(property "Value" "TPS2553"
-				(at 0 -5.0800 0)
+				(at 0 -11.4300 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -3183,8 +3164,8 @@
 			)
 			(symbol "TPS2553_0_1"
 				(rectangle
-					(start -5.0800 -2.5400)
-					(end 5.0800 5.0800)
+					(start -5.08 5.08)
+					(end 5.08 -8.89)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -3284,7 +3265,7 @@
 					)
 				)
 				(pin power_in line
-					(at 0 -5.08 90)
+					(at 0 -11.43 90)
 					(length 2.54)
 					(name "GND"
 						(effects
@@ -6521,7 +6502,7 @@
 		(dnp no)
 		(uuid "6de8da73-98cb-40b0-9647-2ff7582f3492")
 		(property "Reference" "U7"
-			(at 101.6 152.4 0)
+			(at 96.52 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6529,7 +6510,7 @@
 			)
 		)
 		(property "Value" "TPS2553"
-			(at 101.6 165.1 0)
+			(at 106.68 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6563,15 +6544,6 @@
 				)
 			)
 		)
-		(instances
-			(project "versaloon-ng"
-				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/95d73bc5-4b34-43f9-b9ee-1cf6c443cf61"
-					(reference "U7")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "LCSC" "C111738"
 			(at 101.6 160.02 0)
 			(hide yes)
@@ -6580,7 +6552,16 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "versaloon-ng"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/95d73bc5-4b34-43f9-b9ee-1cf6c443cf61"
+					(reference "U7")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 88.9 149.86 0)
@@ -6634,15 +6615,6 @@
 				)
 			)
 		)
-		(instances
-			(project "versaloon-ng"
-				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/95d73bc5-4b34-43f9-b9ee-1cf6c443cf61"
-					(reference "C15")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "LCSC" "C15849"
 			(at 88.9 149.86 0)
 			(hide yes)
@@ -6651,7 +6623,16 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "versaloon-ng"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/95d73bc5-4b34-43f9-b9ee-1cf6c443cf61"
+					(reference "C15")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 121.92 161.29 0)
@@ -6705,15 +6686,6 @@
 				)
 			)
 		)
-		(instances
-			(project "versaloon-ng"
-				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/95d73bc5-4b34-43f9-b9ee-1cf6c443cf61"
-					(reference "C42")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "LCSC" "C15850"
 			(at 121.92 161.29 0)
 			(hide yes)
@@ -6722,7 +6694,16 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "versaloon-ng"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/95d73bc5-4b34-43f9-b9ee-1cf6c443cf61"
+					(reference "C42")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 91.44 165.1 0)
@@ -6774,15 +6755,6 @@
 				)
 			)
 		)
-		(instances
-			(project "versaloon-ng"
-				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/95d73bc5-4b34-43f9-b9ee-1cf6c443cf61"
-					(reference "R53")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "LCSC" "C25803"
 			(at 91.44 165.1 0)
 			(hide yes)
@@ -6791,7 +6763,16 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "versaloon-ng"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/95d73bc5-4b34-43f9-b9ee-1cf6c443cf61"
+					(reference "R53")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 111.76 163.83 0)
@@ -6843,15 +6824,6 @@
 				)
 			)
 		)
-		(instances
-			(project "versaloon-ng"
-				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/95d73bc5-4b34-43f9-b9ee-1cf6c443cf61"
-					(reference "R54")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "LCSC" "C23196"
 			(at 111.76 163.83 0)
 			(hide yes)
@@ -6860,7 +6832,16 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "versaloon-ng"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/95d73bc5-4b34-43f9-b9ee-1cf6c443cf61"
+					(reference "R54")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "power:+3.3V")
 		(at 91.44 146.05 0)
@@ -7168,14 +7149,14 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 101.6 165.1 0)
+		(at 101.6 171.45 0)
 		(unit 1)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5a3994b2-8465-43bb-88a6-6fe6d8c553dd")
+		(uuid "6097dd32-6384-4128-92c7-75f28de6de9f")
 		(property "Reference" "#PWR021"
-			(at 101.6 171.45 0)
+			(at 101.6 177.8 0)
 			(hide yes)
 			(effects
 				(font
@@ -7184,7 +7165,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 101.6 168.91 0)
+			(at 101.6 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7192,7 +7173,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 101.6 165.1 0)
+			(at 101.6 171.45 0)
 			(hide yes)
 			(effects
 				(font
@@ -7201,7 +7182,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 101.6 165.1 0)
+			(at 101.6 171.45 0)
 			(hide yes)
 			(effects
 				(font
@@ -7210,7 +7191,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 101.6 165.1 0)
+			(at 101.6 171.45 0)
 			(hide yes)
 			(effects
 				(font

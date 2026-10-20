@@ -3,6 +3,7 @@
   (generator "konnect")
   (generator_version "10.0")
 
+
   (symbol "TPS2553"
     (pin_names
       (offset 1.016))
@@ -12,12 +13,12 @@
     (in_pos_files yes)
     (duplicate_pin_numbers_are_jumpers no)
     (property "Reference" "U" (at 0 7.6200 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))
-    (property "Value" "TPS2553" (at 0 -5.0800 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))
+    (property "Value" "TPS2553" (at 0 -11.4300 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))
     (property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
     (property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps2553.pdf" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
     (property "Description" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27))))
     (symbol "TPS2553_0_1"
-      (rectangle (start -5.0800 -2.5400) (end 5.0800 5.0800)
+      (rectangle (start -5.08 5.08) (end 5.08 -8.89)
         (stroke (width 0.254) (type default))
         (fill (type background))
       )
@@ -46,7 +47,7 @@
       (name "~{FAULT}" (effects (font (size 1.27 1.27))))
       (number "4" (effects (font (size 1.27 1.27))))
     )
-    (pin power_in line (at 0 -5.08 90)
+    (pin power_in line (at 0 -11.43 90)
       (length 2.54)
       (name "GND" (effects (font (size 1.27 1.27))))
       (number "2" (effects (font (size 1.27 1.27))))
