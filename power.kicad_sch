@@ -7098,7 +7098,7 @@
 				)
 			)
 		)
-		(property "Footprint" "inductors:INDUCTOR_SRR5028"
+		(property "Footprint" "versaloon-ng:L_FNR5040S"
 			(at 109.22 91.44 0)
 			(hide yes)
 			(show_name no)
