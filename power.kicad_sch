@@ -3719,8 +3719,8 @@
 			)
 		)
 	)
-	(global_label "VTPWR"
-		(shape output)
+	(global_label "VTREF"
+		(shape bidirectional)
 		(at 129.54 157.48 0)
 		(effects
 			(font
@@ -3728,7 +3728,7 @@
 			)
 			(justify left)
 		)
-		(uuid "2171fc5a-a710-444f-9978-d3b394392b0b")
+		(uuid "d9735ab7-9932-46b6-9eae-1289a12a8187")
 	)
 	(hierarchical_label "VPP_EN"
 		(shape input)
@@ -6650,7 +6650,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uF"
+		(property "Value" "1uF"
 			(at 122.555 163.83 0)
 			(effects
 				(font
@@ -6659,7 +6659,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "capacitors:C_0805"
+		(property "Footprint" "capacitors:C_0603"
 			(at 121.92 161.29 0)
 			(hide yes)
 			(effects
@@ -6686,7 +6686,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C15850"
+		(property "LCSC" "C15849"
 			(at 121.92 161.29 0)
 			(hide yes)
 			(effects
