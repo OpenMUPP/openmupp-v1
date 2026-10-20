@@ -1,17 +1,16 @@
 # Versaloon-NG probe board
 
 Versaloon-NG is a multi-protocol programming and debug probe.
-It is the successor of the Versaloon Mini.
 The design is open hardware.
 The board name is `VersaloonNG-v1`.
 The KiCad 10 project is in this repository.
 
-**Status:** the schematic is in progress. The PCB layout has not started (`versaloon-ng.kicad_pcb` is empty). No board exists yet.
+**Disclaimer:** this project is in no way related to or associated with the original Versaloon project or its author. This board is an independent hardware design.
 
 ## What the board does
 
-- It runs **USB CDC, CMSIS-DAP v2 and EDBG (AVR) at the same time** in one firmware image. The Versaloon Mini cannot do this. Its USB packet memory is too small.
-- It transfers data **faster than the Mini**. The core runs at 250 MHz.
+- It runs **USB CDC, CMSIS-DAP v2 and EDBG (AVR) at the same time** in one firmware image.
+- It transfers data **faster than the original Versaloon Mini**. The core runs at 250 MHz.
 - It connects to targets from **1.2 V to 5 V** through level shifters. A 1.2 V target is limited to about 5 MHz.
 - It supplies the target with up to about 520 mA.
 - It makes **12 V (VPP)** for high-voltage programming of AVR and PIC parts.
