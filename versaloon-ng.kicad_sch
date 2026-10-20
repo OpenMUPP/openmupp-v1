@@ -11362,6 +11362,28 @@
 		)
 		(uuid "3e3cd7be-d10c-4b49-9285-f974080d3fee")
 	)
+	(wire
+		(pts
+			(xy 125.73 63.5)
+			(xy 131.445 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d96c0a0-87d5-445c-ad68-b09aaa2a57d2")
+	)
+	(wire
+		(pts
+			(xy 125.73 87.63)
+			(xy 131.445 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d9f13c5-890b-437d-b4ee-a4cf8380acf4")
+	)
 	(label "TARGET_PWR_EN"
 		(at 247.65 142.24 180)
 		(effects
@@ -12592,23 +12614,23 @@
 	)
 (wire
 		(pts
-			(xy 125.73 63.5) (xy 131.445 63.5)
+			(xy 44.45 149.86) (xy 48.895 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1d96c0a0-87d5-445c-ad68-b09aaa2a57d2")
+		(uuid "12d1eee3-d49d-4dc2-a95d-6197fbff292f")
 	)
 (wire
 		(pts
-			(xy 125.73 87.63) (xy 131.445 87.63)
+			(xy 48.895 149.86) (xy 48.895 149.225)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3d9f13c5-890b-437d-b4ee-a4cf8380acf4")
+		(uuid "5bde4f50-2464-4de8-a7c9-a037706be3c2")
 	)
 	(symbol
 		(lib_id "custom_power:GND")
@@ -14558,8 +14580,8 @@
 		)
 	)
 	(symbol
-		(lib_id "custom_power:V3")
-		(at 46.99 130.81 0)
+		(lib_id "power:+3.3V")
+		(at 46.99 134.62 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14567,7 +14589,7 @@
 		(dnp no)
 		(uuid "299dd9c0-8c07-4ad5-bbd2-765f8efc9004")
 		(property "Reference" "#P04"
-			(at 46.99 130.81 0)
+			(at 46.99 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14577,8 +14599,8 @@
 				)
 			)
 		)
-		(property "Value" "V3"
-			(at 46.99 132.715 0)
+		(property "Value" "+3.3V"
+			(at 46.99 136.525 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14588,7 +14610,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 46.99 130.81 0)
+			(at 46.99 134.62 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14598,7 +14620,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 46.99 130.81 0)
+			(at 46.99 134.62 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14608,7 +14630,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 46.99 130.81 0)
+			(at 46.99 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15672,8 +15694,8 @@
 		)
 	)
 	(symbol
-		(lib_id "custom_power:V3")
-		(at 44.45 145.415 0)
+		(lib_id "power:+3.3V")
+		(at 44.45 149.86 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15681,7 +15703,7 @@
 		(dnp no)
 		(uuid "6a5d93fd-9962-4b29-990f-fe5a7bb62c42")
 		(property "Reference" "#P02"
-			(at 44.45 145.415 0)
+			(at 44.45 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15691,8 +15713,8 @@
 				)
 			)
 		)
-		(property "Value" "V3"
-			(at 44.45 147.32 0)
+		(property "Value" "+3.3V"
+			(at 44.45 151.765 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15702,7 +15724,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 44.45 145.415 0)
+			(at 44.45 149.86 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15712,7 +15734,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 44.45 145.415 0)
+			(at 44.45 149.86 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15722,7 +15744,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 44.45 145.415 0)
+			(at 44.45 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
