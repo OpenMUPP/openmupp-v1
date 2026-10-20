@@ -9848,6 +9848,175 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:Polyfuse"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "F"
+				(at -2.54 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Polyfuse"
+				(at 2.54 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 1.27 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resettable fuse, polymeric positive temperature coefficient"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "resettable fuse PTC PPTC polyfuse polyswitch"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "*polyfuse* *PTC*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Polyfuse_0_1"
+				(polyline
+					(pts
+						(xy -1.524 2.54)
+						(xy -1.524 1.524)
+						(xy 1.524 -1.524)
+						(xy 1.524 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -0.762 2.54)
+					(end 0.762 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54)
+						(xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Polyfuse_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(junction
 		(at 143.51 32.385)
@@ -10004,6 +10173,11 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e41bff50-ed0e-4ba9-8ad3-0173b389e0a6")
+	)
+	(junction
+		(at 49.53 56.515)
+		(diameter 0)
+		(uuid "63de4460-5c44-4612-b3d4-24389088d1c8")
 	)
 	(wire
 		(pts
@@ -11181,17 +11355,6 @@
 			(type default)
 		)
 		(uuid "f58aae60-4e84-4145-8b75-01e16b6bb14c")
-	)
-	(wire
-		(pts
-			(xy 48.895 56.515)
-			(xy 48.895 64.135)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f9811ec8-e468-4a96-af74-4f80d79a831b")
 	)
 	(wire
 		(pts
@@ -12457,6 +12620,46 @@
 				)
 			)
 		)
+	)
+(wire
+		(pts
+			(xy 49.53 57.15) (xy 50.165 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac3a83d0-2c5f-444d-bae9-8a024e143364")
+	)
+(wire
+		(pts
+			(xy 50.165 57.15) (xy 50.165 56.515)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "82b95186-15f5-45e8-baee-cd5661473951")
+	)
+(wire
+		(pts
+			(xy 49.53 64.77) (xy 48.895 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83abb919-b070-416a-8b64-d444f372f275")
+	)
+(wire
+		(pts
+			(xy 48.895 64.77) (xy 48.895 64.135)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c3380bc-1abd-4f12-ad22-ad3c0faf7100")
 	)
 	(symbol
 		(lib_id "import-diodes:mbr120vlsft")
@@ -18184,6 +18387,75 @@
 			)
 		)
 	)
+	(symbol
+		(lib_id "Device:Polyfuse")
+		(at 49.53 60.96 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e3daf1ef-3951-4b3d-84c3-0870ce2e6804")
+		(property "Reference" "F1"
+			(at 46.99 60.96 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "750mA"
+			(at 52.07 60.96 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Fuse:Fuse_1206_3216Metric"
+			(at 49.53 60.96 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 60.96 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resettable fuse, 750mA hold, 1.5A trip, 16V, 1206"
+			(at 49.53 60.96 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "versaloon-ng"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
+					(reference "F1")
+					(unit 1)
+				)
+			)
+		)
+	
+		(property "LCSC" "C269118"
+			(at 49.53 60.96 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(embedded_fonts no)
 	(sheet_instances
 		(path "/"
