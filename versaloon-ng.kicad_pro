@@ -436,6 +436,14 @@
     [
       "26052ec4-b7f0-4f53-b73f-c5fe34396dff",
       "Root"
+    ],
+    [
+      "f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5",
+      "Target interface"
+    ],
+    [
+      "95d73bc5-4b34-43f9-b9ee-1cf6c443cf61",
+      "Power"
     ]
   ],
   "text_variables": {},
