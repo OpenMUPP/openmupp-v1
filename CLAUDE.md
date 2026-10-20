@@ -14,8 +14,8 @@ The design plan is `/home/armin/Nextcloud/dev-plans/vsl-new-board/vsl-new-board-
 
 | File | Content |
 |---|---|
-| `versaloon-ng.kicad_sch` | Root sheet: STM32H523 (U1), USB-C (J11), VBUS fuse (F1), sheet instances |
-| `target_interface.kicad_sch` | Level shifters, ESD, target connector J3 |
+| `versaloon-ng.kicad_sch` | Root sheet: STM32H523 (U1), USB-C (J11), VBUS fuse (F1), probe debug headers J2 (STDC14) and J4 (5-pin SWD), sheet instances |
+| `target_interface.kicad_sch` | Level shifters, ESD, target connector J3 (2 × 10, 2.54 mm) |
 | `power.kicad_sch` | 3.3 V LDO, 12 V boost, VPP switch, target power switch |
 | `versaloon-ng.kicad_sym` | Project symbols (TPS2553) |
 
@@ -25,6 +25,8 @@ Power sheet interface: inputs `VPP_EN` (PC14), `VPP_ON` (PC15), `TARGET_PWR_EN` 
 
 - 12 V for AVR/PIC high-voltage programming: MT3608 boost. The boost passes its input through when off, so a P-FET switch gates VPP. Both `VPP_EN` and `VPP_ON` must be high.
 - Target power: TPS2553 on the 3.3 V rail, about 520 mA limit (ILIM 51 kΩ). Its output joins `VTREF`. EN high supplies the target. EN low senses the target voltage, because the part blocks reverse current.
+- J3 is the only target connector. Passive adapters map it to each target pinout. J2 and J4 only debug the probe MCU, not the target.
+- Target supply is on `VTREF` (J3 pin 1), because the TPS2553 output is `VTREF`. J3 pin 2 (`VTPWR`) is reserved and has a no-connect flag.
 - USB VBUS has a 750 mA polyfuse (F1). Expect `+5V` near 4.4 V at full load.
 - Use BSS138 (LCSC C112239) for small N-FETs.
 
@@ -37,5 +39,5 @@ Power sheet interface: inputs `VPP_EN` (PC14), `VPP_ON` (PC15), `TARGET_PWR_EN` 
 
 ## Open items
 
-- Aux header `VTpwr` pin and connector wiring of `VTREF`.
-- Full ERC. Known errors: unconnected MCU and connector pins, and no `PWR_FLAG` on the power sheet.
+- TCK link PB13 to PA5 for the JTAG fast path (plan, open question 11). PA5 is unconnected now.
+- Full ERC. Known errors: unconnected pins (U1 PA1 and PA5, J2 pins 1, 2 and 9, J11 SBU1 and SBU2), and no `PWR_FLAG` on the power sheet.
