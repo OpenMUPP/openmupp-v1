@@ -39,5 +39,5 @@ Power sheet interface: inputs `VPP_EN` (PC14), `VPP_ON` (PC15), `TARGET_PWR_EN` 
 
 ## Open items
 
-- TCK link PB13 to PA5 for the JTAG fast path (plan, open question 11). PA5 is unconnected now.
-- Full ERC. Known errors: unconnected pins (U1 PA1 and PA5, J2 pins 1, 2 and 9, J11 SBU1 and SBU2), and no `PWR_FLAG` on the power sheet.
+- TCK link PB13 to PA5: R55 (0 Ω, DNP) is on the root sheet. Fit it only if the JTAG fast path needs it (plan, open question 11).
+- Full ERC. One known error: the `V3` power symbol (#P02, J2 pin 3) is a separate net, not `+3.3V`. Many `endpoint_off_grid` and library warnings remain.
