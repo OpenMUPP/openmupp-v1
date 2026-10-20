@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+
+  (lib (name "versaloon-ng") (type "KiCad") (uri "${KIPRJMOD}/versaloon-ng.kicad_sym") (options "") (descr "")))
