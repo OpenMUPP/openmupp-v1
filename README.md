@@ -206,7 +206,7 @@ The layout is not done. When it is ready, order from JLCPCB with assembly. The B
 ## Open items
 
 - **TCK link (PB13 to PA5).** The schematic has a 0 Ω resistor (R55, not fitted) between PA5 and the `TCK` net. Fit it only if the SPI fast path must shift TMS. PA5 is not 5 V tolerant, so it must stay on the MCU side.
-- **Full ERC.** Known errors: unconnected pins (U1 PA1, J2 pins 1, 2 and 9, J11 SBU1 and SBU2) and no `PWR_FLAG` on the power sheet.
+- **Full ERC.** One known error: the `V3` power symbols on J2 pin 3 and one more pin form a net that is not `+3.3V`. The ERC also shows many off-grid endpoint and library warnings.
 - **J3 footprint.** Check the shroud and key of the 2 × 10 header against the datasheet before layout.
 - **Not yet measured.** The delay of the translators at 1.8 V, 3.3 V and 5 V, and the SPI slave output delay of the H5 at fast-path clocks.
 
