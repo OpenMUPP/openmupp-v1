@@ -6168,7 +6168,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C4363995"
+			(at 40.005 73.66 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:R")
 		(at 203.835 106.045 90)
@@ -7017,6 +7026,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C112239"
+			(at 268.605 60.325 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "02fb2c3a-876e-4d67-ac41-ac54f76b8830")
 		)
@@ -7034,16 +7054,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C112239"
-			(at 268.605 60.325 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "power:GND")
 		(at 292.1 224.79 0)
@@ -9837,7 +9848,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C4364198"
+			(at 98.425 82.55 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 292.1 220.98 0)
@@ -10318,7 +10338,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C4364198"
+			(at 98.425 151.13 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 307.34 247.65 0)
@@ -11453,7 +11482,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C4364198"
+			(at 98.425 116.84 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:R")
 		(at 316.865 27.305 0)
@@ -13395,7 +13433,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C5217891"
+			(at 98.425 48.26 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 276.86 243.84 0)
