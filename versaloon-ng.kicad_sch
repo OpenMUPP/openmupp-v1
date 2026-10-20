@@ -11232,6 +11232,20 @@
 		)
 		(uuid "d7e5c1b6-8031-40c6-b849-c0af036ef5e9")
 	)
+	(wire
+		(pts
+			(xy 250.19 142.24)
+			(xy 247.65 142.24)
+		)
+		(uuid "cc24b78f-63dc-45b9-a089-7afece747ba9")
+	)
+	(wire
+		(pts
+			(xy 151.13 121.92)
+			(xy 148.59 121.92)
+		)
+		(uuid "136e1114-92d5-432a-b663-dc28f8c9ea39")
+	)
 	(label "SRST"
 		(at 148.59 124.46 180)
 		(effects
@@ -11691,6 +11705,26 @@
 			(justify right bottom)
 		)
 		(uuid "14138bcb-b320-4140-9f3b-d2681727d9a6")
+	)
+	(label "TARGET_PWR_EN"
+		(at 247.65 142.24 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "03809f92-c4d3-4683-b757-5bf64c9cf1a4")
+	)
+	(label "TARGET_PWR_EN"
+		(at 148.59 121.92 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e1b93bd9-fd2c-46d4-b26a-2dfc51dd81d4")
 	)
 	(global_label "SWDIO"
 		(shape bidirectional)
@@ -12225,6 +12259,10 @@
 				(justify left)
 			)
 			(uuid "cec9dec7-3972-4d63-a4f4-dad8e3a2e016")
+		)
+		(pin "TARGET_PWR_EN" input
+			(at 250.19 142.24 180)
+			(uuid "bfd70c00-0576-4275-b4b2-9b5dc8fb9796")
 		)
 		(instances
 			(project "versaloon-ng"
