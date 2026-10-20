@@ -7942,259 +7942,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "import-diodes:mbr120vlsft"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "D"
-				(at 1.905 3.175 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 0.8636 0.8636)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Value" "import-diodes_mbr120vlsft"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 0.8382 0.8382)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Description" "20V 1A Very Low Forward Voltage Schottky Diode"
-				(at 2.54 8.255 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 0.8636 0.8636)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "use-license" "unlimited"
-				(at 2.54 12.3698 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 0.8636 0.8636)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "author" "Armin van der Togt"
-				(at 2.54 9.525 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 0.8636 0.8636)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "dist-license" "GPL"
-				(at 2.54 11.0998 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 0.8636 0.8636)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "ki_fp_filters" "SOD_123"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "mbr120vlsft_0_1"
-				(polyline
-					(pts
-						(xy 1.905 2.54) (xy 1.905 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.905 2.54) (xy 3.81 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.905 1.27) (xy 1.27 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 3.7846 0)
-					(mid 3.4798 -0.3035)
-					(end 3.175 0)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 2.54) (xy 3.81 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 1.27) (xy 1.905 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 3.81 2.54)
-					(mid 4.1148 2.8434)
-					(end 4.4196 2.54)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.445 1.27) (xy 3.81 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "mbr120vlsft_1_1"
-				(pin passive line
-					(at 0 1.27 0)
-					(length 1.27)
-					(name "anode"
-						(effects
-							(font
-								(size 0.8636 0.8636)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 0.6858 0.6858)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.715 1.27 180)
-					(length 1.27)
-					(name "cathode"
-						(effects
-							(font
-								(size 0.8636 0.8636)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 0.6858 0.6858)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "import-gschem-td-waterhoogtemeter:capacitor-1"
 			(pin_numbers
 				(hide yes)
@@ -9702,12 +9449,6 @@
 		(uuid "303cef1d-14ed-4ced-bfb4-a9f7161cb4d3")
 	)
 	(junction
-		(at 53.34 55.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "543916bb-15d0-40ac-9f20-6ff1c4376695")
-	)
-	(junction
 		(at 48.895 79.375)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9918,6 +9659,16 @@
 			(type default)
 		)
 		(uuid "0e22deed-6156-43ce-84f4-33cb01a44918")
+	)
+	(wire
+		(pts
+			(xy 201.93 86.36) (xy 217.17 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f0a9763-78ea-40fa-8d41-364725b5e7ec")
 	)
 	(wire
 		(pts
@@ -10311,16 +10062,6 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 55.88) (xy 60.96 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "65cd6d32-4c5b-455f-ad95-f91c69b3dbcd")
-	)
-	(wire
-		(pts
 			(xy 48.895 64.135) (xy 53.34 64.135)
 		)
 		(stroke
@@ -10701,6 +10442,16 @@
 	)
 	(wire
 		(pts
+			(xy 224.79 86.36) (xy 227.33 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab1236be-04d8-47d6-996f-f624d243c6c1")
+	)
+	(wire
+		(pts
 			(xy 143.51 32.385) (xy 150.495 32.385)
 		)
 		(stroke
@@ -10728,16 +10479,6 @@
 			(type default)
 		)
 		(uuid "b08326b3-0cf0-4f95-ab00-882e63b6ed4e")
-	)
-	(wire
-		(pts
-			(xy 52.705 55.88) (xy 53.975 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b139f91b-e203-4e95-b718-7fc44a39a0e6")
 	)
 	(wire
 		(pts
@@ -10928,6 +10669,16 @@
 			(type default)
 		)
 		(uuid "f37d059d-c1e5-481c-ac79-97ab3ea423e8")
+	)
+	(wire
+		(pts
+			(xy 53.34 55.88) (xy 60.96 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f57415d2-a842-40dd-a5a2-dfe85eacfd8c")
 	)
 	(wire
 		(pts
@@ -11278,6 +11029,16 @@
 			(justify right bottom)
 		)
 		(uuid "a5dfc96a-a9de-4e32-9f54-d1fae0e789f3")
+	)
+	(label "TCK"
+		(at 227.33 86.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a77c0940-a4f7-45c6-98c5-77cecb551509")
 	)
 	(label "TMS_SWDIO"
 		(at 204.47 88.9 0)
@@ -11921,234 +11682,6 @@
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "import-diodes:mbr120vlsft")
-		(at 53.975 54.61 0)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "01e49b25-0b0d-4fff-b1d9-b72895d4e43c")
-		(property "Reference" "D7"
-			(at 57.785 52.07 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8636 0.8636)
-				)
-			)
-		)
-		(property "Value" "SL14"
-			(at 55.88 53.34 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8382 0.8382)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SMA"
-			(at 56.8198 52.2732 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 53.975 54.61 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 53.975 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "use-license" "unlimited"
-			(at 56.515 66.9798 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8636 0.8636)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "author" "Armin van der Togt"
-			(at 56.515 64.135 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8636 0.8636)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "dist-license" "GPL"
-			(at 56.515 65.7098 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 0.8636 0.8636)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Manufacturer" ""
-			(at 53.975 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 3.429 3.429)
-				)
-				(justify left)
-			)
-		)
-		(property "ManufacturerNo" ""
-			(at 53.975 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 3.429 3.429)
-				)
-				(justify left)
-			)
-		)
-		(property "Availability" ""
-			(at 53.975 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 53.975 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description_1" ""
-			(at 53.975 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Package" ""
-			(at 53.975 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" ""
-			(at 53.975 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Purchase-URL" ""
-			(at 53.975 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
-			(at 53.975 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" " C698818"
-			(at 53.975 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a3f4ae84-fb0d-42b7-bfaa-67dfe470dc22")
-		)
-		(pin "2"
-			(uuid "8a474d49-b2af-4f52-ba7f-d5cf108859bd")
-		)
-		(instances
-			(project "versaloon-ng"
-				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "D7")
-					(unit 1)
 				)
 			)
 		)
@@ -14176,85 +13709,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:VBUS")
-		(at 52.705 55.88 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2c728d26-93d4-4e1b-9cb0-506ec8e0f749")
-		(property "Reference" "#PWR032"
-			(at 52.705 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VBUS"
-			(at 52.705 51.7469 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 52.705 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 52.705 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 52.705 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "cf7306ac-97bc-4d3c-b1ef-0331cb46ccab")
-		)
-		(instances
-			(project "versaloon-ng"
-				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR032")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:Crystal")
 		(at 102.87 28.575 0)
 		(unit 1)
@@ -14328,6 +13782,96 @@
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "Y1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 220.98 86.36 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp yes)
+		(uuid "4a848270-bd0b-4160-af04-1ef739d86a19")
+		(property "Reference" "R55"
+			(at 220.98 84.455 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0R"
+			(at 220.98 86.36 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "resistors:R_0603"
+			(at 220.98 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 220.98 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 220.98 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C21189"
+			(at 220.98 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7852975e-dd48-4896-9901-e9b37b9d0d49")
+		)
+		(pin "2"
+			(uuid "90b3d876-507c-4771-a94c-81f8a298e3b0")
+		)
+		(instances
+			(project "versaloon-ng"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
+					(reference "R55")
 					(unit 1)
 				)
 			)
