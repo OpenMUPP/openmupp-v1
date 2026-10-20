@@ -4273,6 +4273,10 @@
 		(uuid "ddaae42e-8bd5-4bbd-ad9a-31bbfe61c263")
 	)
 	(no_connect
+		(at 344.805 108.585)
+		(uuid "5f48b491-895e-471b-bdfe-c1cac4c0fe08")
+	)
+	(no_connect
 		(at 50.165 81.28)
 		(uuid "7d8e8ae5-369f-4ecf-8f5e-f30af304bfa6")
 	)
@@ -4536,16 +4540,6 @@
 	)
 	(wire
 		(pts
-			(xy 344.805 108.585) (xy 347.345 108.585)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6377507f-31a5-451a-b71c-a9800c06229f")
-	)
-	(wire
-		(pts
 			(xy 302.26 180.34) (xy 299.72 180.34)
 		)
 		(stroke
@@ -4785,7 +4779,7 @@
 		(uuid "001b9a42-f778-497c-b31e-707fe9222143")
 	)
 	(label "xRTCK"
-		(at 200.025 99.695 180)
+		(at 192.405 100.33 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4805,7 +4799,7 @@
 		(uuid "0907002a-7190-4087-9ea2-7e4560a1062c")
 	)
 	(label "xTX"
-		(at 200.025 106.045 180)
+		(at 192.405 106.68 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4815,7 +4809,7 @@
 		(uuid "0c2be4ac-e93b-45f1-913a-5f36cd2c9a77")
 	)
 	(label "xAUX1"
-		(at 200.025 118.745 180)
+		(at 192.405 119.38 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4825,7 +4819,7 @@
 		(uuid "126ec8a2-cc81-489e-a0d9-78fdb18a2369")
 	)
 	(label "xAUX2"
-		(at 200.025 93.345 180)
+		(at 192.405 93.98 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4865,7 +4859,7 @@
 		(uuid "28ba640d-ca03-4ad6-a32e-8bbc0c6b5eb9")
 	)
 	(label "xRX"
-		(at 200.025 86.995 180)
+		(at 192.405 87.63 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4905,7 +4899,7 @@
 		(uuid "3e38c104-6b71-4d8a-bd27-8b480dc40cd7")
 	)
 	(label "xRST"
-		(at 200.025 80.645 180)
+		(at 192.405 81.28 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4945,7 +4939,7 @@
 		(uuid "51839dfb-9fc3-4b3b-99da-49dcc21dfdaf")
 	)
 	(label "xTDI"
-		(at 200.025 74.295 180)
+		(at 192.405 74.93 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4975,7 +4969,7 @@
 		(uuid "7e54b852-4b49-401e-82cc-f7111efbfb5b")
 	)
 	(label "xTDO"
-		(at 200.025 67.945 180)
+		(at 192.405 68.58 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4995,7 +4989,7 @@
 		(uuid "93692801-57c3-4624-935f-ca1533e2b058")
 	)
 	(label "xTRST"
-		(at 200.025 112.395 180)
+		(at 192.405 113.03 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5005,7 +4999,7 @@
 		(uuid "93f9cae8-3a8d-463a-9513-964e6e86291e")
 	)
 	(label "xTCK"
-		(at 200.025 61.595 180)
+		(at 192.405 62.23 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5045,7 +5039,7 @@
 		(uuid "b6fa64ea-823f-4cee-987f-f7377dff76d8")
 	)
 	(label "xTMS"
-		(at 200.025 55.245 180)
+		(at 192.405 55.88 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5222,7 +5216,7 @@
 	)
 	(global_label "T_UART_TX"
 		(shape output)
-		(at 207.645 106.045 0)
+		(at 200.025 106.68 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5231,7 +5225,7 @@
 		)
 		(uuid "0efbb48d-1eab-46b9-80ea-09604bb86ea0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.645 106.045 0)
+			(at 200.025 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5266,7 +5260,7 @@
 	)
 	(global_label "T_RTCK"
 		(shape input)
-		(at 207.645 99.695 0)
+		(at 200.025 100.33 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5275,7 +5269,7 @@
 		)
 		(uuid "139408c1-dba5-43b3-b857-9cb39234e703")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.645 99.695 0)
+			(at 200.025 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5288,7 +5282,7 @@
 	)
 	(global_label "T_TMS_SWDIO"
 		(shape bidirectional)
-		(at 207.645 55.245 0)
+		(at 200.025 55.88 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5297,7 +5291,7 @@
 		)
 		(uuid "26110988-6715-4528-b26d-4a090fa270ad")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.645 55.245 0)
+			(at 200.025 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5442,7 +5436,7 @@
 	)
 	(global_label "T_AUX1"
 		(shape output)
-		(at 207.645 118.745 0)
+		(at 200.025 119.38 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5451,7 +5445,7 @@
 		)
 		(uuid "9343e70e-d405-4ed3-b63c-0033b36883b1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.645 118.745 0)
+			(at 200.025 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5464,7 +5458,7 @@
 	)
 	(global_label "T_TDI"
 		(shape output)
-		(at 207.645 74.295 0)
+		(at 200.025 74.93 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5473,7 +5467,7 @@
 		)
 		(uuid "9a99b5fa-0093-4d75-b50d-d15e36448903")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.645 74.295 0)
+			(at 200.025 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5486,7 +5480,7 @@
 	)
 	(global_label "T_NRST"
 		(shape bidirectional)
-		(at 207.645 80.645 0)
+		(at 200.025 81.28 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5495,7 +5489,7 @@
 		)
 		(uuid "a5f8c8ac-4153-44cd-b6a0-b2cde53facac")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.645 80.645 0)
+			(at 200.025 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5574,7 +5568,7 @@
 	)
 	(global_label "T_TRST"
 		(shape output)
-		(at 207.645 112.395 0)
+		(at 200.025 113.03 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5583,7 +5577,7 @@
 		)
 		(uuid "bfec4d5c-3d18-4854-983e-d0b2c5ac3647")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.645 112.395 0)
+			(at 200.025 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5638,31 +5632,9 @@
 			)
 		)
 	)
-	(global_label "VTPWR"
-		(shape input)
-		(at 347.345 108.585 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "eec47c59-fbea-441c-b6a4-6653ed011c81")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 347.345 108.585 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "T_UART_RX"
 		(shape input)
-		(at 207.645 86.995 0)
+		(at 200.025 87.63 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5671,7 +5643,7 @@
 		)
 		(uuid "eeefbaf7-f35c-48f3-ae95-274b7ae052ee")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.645 86.995 0)
+			(at 200.025 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5684,7 +5656,7 @@
 	)
 	(global_label "T_TCK"
 		(shape output)
-		(at 207.645 61.595 0)
+		(at 200.025 62.23 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5693,7 +5665,7 @@
 		)
 		(uuid "efb41a4e-5d65-422c-b667-5263e9b49103")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.645 61.595 0)
+			(at 200.025 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5750,7 +5722,7 @@
 	)
 	(global_label "T_TDO"
 		(shape input)
-		(at 207.645 67.945 0)
+		(at 200.025 68.58 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5759,7 +5731,7 @@
 		)
 		(uuid "f5ba5cd3-31fa-49ef-b75e-f313f7433cc7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.645 67.945 0)
+			(at 200.025 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5772,7 +5744,7 @@
 	)
 	(global_label "T_AUX2"
 		(shape output)
-		(at 207.645 93.345 0)
+		(at 200.025 93.98 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5781,7 +5753,7 @@
 		)
 		(uuid "f9c47d70-380d-4a8f-af9c-d33e4a0cdf9a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.645 93.345 0)
+			(at 200.025 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6088,6 +6060,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C4363995"
+			(at 40.005 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "d3104fe6-71ff-435a-a502-0795dc032e6e")
 		)
@@ -6168,19 +6151,10 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C4363995"
-			(at 40.005 73.66 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:R")
-		(at 203.835 106.045 90)
+		(at 196.215 106.68 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6190,7 +6164,7 @@
 		(dnp no)
 		(uuid "09e30405-a83d-4235-99dc-45d2f84c0013")
 		(property "Reference" "R39"
-			(at 201.835 103.505 90)
+			(at 194.215 104.14 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6200,7 +6174,7 @@
 			)
 		)
 		(property "Value" "33R"
-			(at 205.835 103.505 90)
+			(at 198.215 104.14 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6210,7 +6184,7 @@
 			)
 		)
 		(property "Footprint" "resistors:R_0603"
-			(at 203.835 106.045 0)
+			(at 196.215 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6221,7 +6195,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 203.835 106.045 0)
+			(at 196.215 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6232,7 +6206,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 203.835 106.045 0)
+			(at 196.215 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6259,7 +6233,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 203.835 80.645 90)
+		(at 196.215 81.28 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6269,7 +6243,7 @@
 		(dnp no)
 		(uuid "0a32e47f-80db-4f48-a355-91b43b8eb390")
 		(property "Reference" "R35"
-			(at 201.835 78.105 90)
+			(at 194.215 78.74 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6279,7 +6253,7 @@
 			)
 		)
 		(property "Value" "33R"
-			(at 205.835 78.105 90)
+			(at 198.215 78.74 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6289,7 +6263,7 @@
 			)
 		)
 		(property "Footprint" "resistors:R_0603"
-			(at 203.835 80.645 0)
+			(at 196.215 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6300,7 +6274,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 203.835 80.645 0)
+			(at 196.215 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6311,7 +6285,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 203.835 80.645 0)
+			(at 196.215 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6415,7 +6389,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 203.835 93.345 90)
+		(at 196.215 93.98 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6425,7 +6399,7 @@
 		(dnp no)
 		(uuid "0a89e989-ff1d-4fe4-8290-6de8c5fabc0e")
 		(property "Reference" "R37"
-			(at 201.835 90.805 90)
+			(at 194.215 91.44 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6435,7 +6409,7 @@
 			)
 		)
 		(property "Value" "33R"
-			(at 205.835 90.805 90)
+			(at 198.215 91.44 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6445,7 +6419,7 @@
 			)
 		)
 		(property "Footprint" "resistors:R_0603"
-			(at 203.835 93.345 0)
+			(at 196.215 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6456,7 +6430,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 203.835 93.345 0)
+			(at 196.215 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6467,7 +6441,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 203.835 93.345 0)
+			(at 196.215 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6494,7 +6468,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 203.835 61.595 90)
+		(at 196.215 62.23 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6504,7 +6478,7 @@
 		(dnp no)
 		(uuid "0f5fe2dc-a177-40f0-b958-39b6688ad850")
 		(property "Reference" "R32"
-			(at 201.835 59.055 90)
+			(at 194.215 59.69 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6514,7 +6488,7 @@
 			)
 		)
 		(property "Value" "33R"
-			(at 205.835 59.055 90)
+			(at 198.215 59.69 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6524,7 +6498,7 @@
 			)
 		)
 		(property "Footprint" "resistors:R_0603"
-			(at 203.835 61.595 0)
+			(at 196.215 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6535,7 +6509,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 203.835 61.595 0)
+			(at 196.215 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6546,7 +6520,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 203.835 61.595 0)
+			(at 196.215 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6727,7 +6701,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 203.835 74.295 90)
+		(at 196.215 74.93 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6737,7 +6711,7 @@
 		(dnp no)
 		(uuid "151dbf6b-4781-4463-9d4b-3e0a1c10eb99")
 		(property "Reference" "R34"
-			(at 201.835 71.755 90)
+			(at 194.215 72.39 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6747,7 +6721,7 @@
 			)
 		)
 		(property "Value" "33R"
-			(at 205.835 71.755 90)
+			(at 198.215 72.39 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6757,7 +6731,7 @@
 			)
 		)
 		(property "Footprint" "resistors:R_0603"
-			(at 203.835 74.295 0)
+			(at 196.215 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6768,7 +6742,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 203.835 74.295 0)
+			(at 196.215 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6779,7 +6753,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 203.835 74.295 0)
+			(at 196.215 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6806,7 +6780,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 203.835 67.945 90)
+		(at 196.215 68.58 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6816,7 +6790,7 @@
 		(dnp no)
 		(uuid "17a7721e-3420-4cf9-9966-b0dcdfe67cc2")
 		(property "Reference" "R33"
-			(at 201.835 65.405 90)
+			(at 194.215 66.04 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6826,7 +6800,7 @@
 			)
 		)
 		(property "Value" "33R"
-			(at 205.835 65.405 90)
+			(at 198.215 66.04 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6836,7 +6810,7 @@
 			)
 		)
 		(property "Footprint" "resistors:R_0603"
-			(at 203.835 67.945 0)
+			(at 196.215 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6847,7 +6821,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 203.835 67.945 0)
+			(at 196.215 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6858,7 +6832,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 203.835 67.945 0)
+			(at 196.215 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7918,7 +7892,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 203.835 55.245 90)
+		(at 196.215 55.88 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7928,7 +7902,7 @@
 		(dnp no)
 		(uuid "36c9462b-2aec-4c41-b29f-db2066d814a3")
 		(property "Reference" "R31"
-			(at 201.835 52.705 90)
+			(at 194.215 53.34 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7938,7 +7912,7 @@
 			)
 		)
 		(property "Value" "33R"
-			(at 205.835 52.705 90)
+			(at 198.215 53.34 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7948,7 +7922,7 @@
 			)
 		)
 		(property "Footprint" "resistors:R_0603"
-			(at 203.835 55.245 0)
+			(at 196.215 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7959,7 +7933,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 203.835 55.245 0)
+			(at 196.215 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7970,7 +7944,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 203.835 55.245 0)
+			(at 196.215 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8696,7 +8670,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 203.835 86.995 90)
+		(at 196.215 87.63 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8706,7 +8680,7 @@
 		(dnp no)
 		(uuid "581d4553-b1a2-4013-9961-de790d73a404")
 		(property "Reference" "R36"
-			(at 201.835 84.455 90)
+			(at 194.215 85.09 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8716,7 +8690,7 @@
 			)
 		)
 		(property "Value" "33R"
-			(at 205.835 84.455 90)
+			(at 198.215 85.09 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8726,7 +8700,7 @@
 			)
 		)
 		(property "Footprint" "resistors:R_0603"
-			(at 203.835 86.995 0)
+			(at 196.215 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8737,7 +8711,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 203.835 86.995 0)
+			(at 196.215 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8748,7 +8722,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 203.835 86.995 0)
+			(at 196.215 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9137,7 +9111,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 203.835 118.745 90)
+		(at 196.215 119.38 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9147,7 +9121,7 @@
 		(dnp no)
 		(uuid "65fbf1a8-0c6f-43ef-90b0-0a4a8733c1ea")
 		(property "Reference" "R41"
-			(at 201.835 116.205 90)
+			(at 194.215 116.84 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9157,7 +9131,7 @@
 			)
 		)
 		(property "Value" "33R"
-			(at 205.835 116.205 90)
+			(at 198.215 116.84 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9167,7 +9141,7 @@
 			)
 		)
 		(property "Footprint" "resistors:R_0603"
-			(at 203.835 118.745 0)
+			(at 196.215 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9178,7 +9152,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 203.835 118.745 0)
+			(at 196.215 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9189,7 +9163,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 203.835 118.745 0)
+			(at 196.215 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9822,6 +9796,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C4364198"
+			(at 98.425 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "7162eab8-95a3-4b99-b6a2-0b3a124a4bfd")
 		)
@@ -9848,16 +9833,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C4364198"
-			(at 98.425 82.55 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 292.1 220.98 0)
@@ -10312,6 +10288,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C4364198"
+			(at 98.425 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "4"
 			(uuid "6b175f9b-4713-40a3-b278-1dd00c562864")
 		)
@@ -10338,16 +10325,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C4364198"
-			(at 98.425 151.13 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "power:GND")
 		(at 307.34 247.65 0)
@@ -11456,6 +11434,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C4364198"
+			(at 98.425 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "ef2d22c8-dca2-4576-9d98-17b7aa504abc")
 		)
@@ -11482,16 +11471,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C4364198"
-			(at 98.425 116.84 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 316.865 27.305 0)
@@ -11654,7 +11634,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 203.835 112.395 90)
+		(at 196.215 113.03 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11664,7 +11644,7 @@
 		(dnp no)
 		(uuid "b414a661-00d3-4764-bf10-e58f079e012e")
 		(property "Reference" "R40"
-			(at 201.835 109.855 90)
+			(at 194.215 110.49 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11674,7 +11654,7 @@
 			)
 		)
 		(property "Value" "33R"
-			(at 205.835 109.855 90)
+			(at 198.215 110.49 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11684,7 +11664,7 @@
 			)
 		)
 		(property "Footprint" "resistors:R_0603"
-			(at 203.835 112.395 0)
+			(at 196.215 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11695,7 +11675,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 203.835 112.395 0)
+			(at 196.215 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11706,7 +11686,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 203.835 112.395 0)
+			(at 196.215 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11964,7 +11944,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 203.835 99.695 90)
+		(at 196.215 100.33 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11974,7 +11954,7 @@
 		(dnp no)
 		(uuid "c217e55b-5c4f-4904-9eda-b4c829a8ce9a")
 		(property "Reference" "R38"
-			(at 201.835 97.155 90)
+			(at 194.215 97.79 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11984,7 +11964,7 @@
 			)
 		)
 		(property "Value" "33R"
-			(at 205.835 97.155 90)
+			(at 198.215 97.79 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11994,7 +11974,7 @@
 			)
 		)
 		(property "Footprint" "resistors:R_0603"
-			(at 203.835 99.695 0)
+			(at 196.215 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12005,7 +11985,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 203.835 99.695 0)
+			(at 196.215 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12016,7 +11996,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 203.835 99.695 0)
+			(at 196.215 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13401,6 +13381,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C5217891"
+			(at 98.425 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "2896e905-4980-4780-8adc-64b8aa2f6a12")
 		)
@@ -13433,16 +13424,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C5217891"
-			(at 98.425 48.26 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 276.86 243.84 0)
