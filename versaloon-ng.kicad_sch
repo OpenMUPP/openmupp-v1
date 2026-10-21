@@ -12293,7 +12293,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0c1d0baa-1eed-48f7-b07d-c1ced9044e78")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR029"
 			(at 180.34 195.58 0)
 			(hide yes)
 			(show_name no)
@@ -12353,7 +12353,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR028")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -12828,7 +12828,7 @@
 				)
 			)
 		)
-		(property "LCSC" " C165948"
+		(property "LCSC" "C165948"
 			(at 33.655 79.375 0)
 			(hide yes)
 			(show_name no)
@@ -13013,7 +13013,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "resistors:R_0603"
+		(property "Footprint" "resistors:R_0402"
 			(at 80.01 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -13060,7 +13060,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25092"
+			(at 80.01 81.28 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 102.87 34.29 0)
@@ -13072,7 +13081,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "15aa6bb2-fa58-4e64-8a08-5eb9d156102e")
-		(property "Reference" "#PWR030"
+		(property "Reference" "#PWR014"
 			(at 102.87 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -13132,7 +13141,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR030")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -13230,7 +13239,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1841a368-eb75-4918-a3af-d2d26b327dd9")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR017"
 			(at 116.84 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -13290,7 +13299,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR016")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -13327,7 +13336,7 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0603"
+		(property "Footprint" "resistors:R_0402"
 			(at 198.12 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -13374,7 +13383,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C11702"
+			(at 198.12 172.72 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 111.76 36.83 0)
@@ -13548,7 +13566,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1f408052-1353-4be2-bda8-c750fcc7c379")
-		(property "Reference" "#PWR023"
+		(property "Reference" "#PWR024"
 			(at 144.145 156.21 0)
 			(hide yes)
 			(show_name no)
@@ -13608,7 +13626,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR023")
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -13864,7 +13882,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "resistors:R_0603"
+		(property "Footprint" "resistors:R_0402"
 			(at 79.375 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -13911,7 +13929,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25092"
+			(at 79.375 83.82 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:Crystal_GND24")
 		(at 102.87 29.21 0)
@@ -14205,7 +14232,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "270e0c8b-7f21-4d6a-8318-17f73123d01b")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR023"
 			(at 136.525 153.67 0)
 			(hide yes)
 			(show_name no)
@@ -14265,7 +14292,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR022")
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -14282,7 +14309,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "278e60bd-1346-45cb-b02c-25f57f342c05")
-		(property "Reference" "#PWR026"
+		(property "Reference" "#PWR027"
 			(at 177.165 69.85 0)
 			(hide yes)
 			(show_name no)
@@ -14342,7 +14369,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR026")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -14434,7 +14461,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "41dabe3f-81b8-4eb9-bbe2-2ed9ae0b3d8b")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR012"
 			(at 78.74 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -14494,7 +14521,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR010")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -14531,7 +14558,7 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0603"
+		(property "Footprint" "resistors:R_0402"
 			(at 220.98 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14564,7 +14591,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C21189"
+		(property "LCSC" "C17168"
 			(at 220.98 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14601,7 +14628,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4bcc50a8-4ea6-495d-ab4a-8c7c6ae3f7de")
-		(property "Reference" "#PWR025"
+		(property "Reference" "#PWR026"
 			(at 160.655 38.735 0)
 			(hide yes)
 			(show_name no)
@@ -14661,7 +14688,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR025")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -14698,7 +14725,7 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0603"
+		(property "Footprint" "resistors:R_0402"
 			(at 131.445 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -14745,7 +14772,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25744"
+			(at 131.445 83.82 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "custom_power:GND")
 		(at 50.8 133.985 0)
@@ -15394,7 +15430,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6271a44d-5c57-49cf-88e6-6ecc0e135bc9")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR018"
 			(at 124.46 123.19 0)
 			(hide yes)
 			(show_name no)
@@ -15454,7 +15490,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR017")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -15546,7 +15582,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6d1413ba-eb16-4ef5-b4b4-c0332b3703d7")
-		(property "Reference" "#PWR024"
+		(property "Reference" "#PWR025"
 			(at 160.655 28.575 0)
 			(hide yes)
 			(show_name no)
@@ -15606,7 +15642,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR024")
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -15705,7 +15741,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8158877a-398d-4ec0-a68b-644cce1d0ce0")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR011"
 			(at 71.12 78.105 0)
 			(hide yes)
 			(show_name no)
@@ -15765,7 +15801,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR012")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -15782,7 +15818,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8283943f-eb20-40ae-8d8b-8a42e30efaff")
-		(property "Reference" "#PWR018"
+		(property "Reference" "#PWR019"
 			(at 125.73 61.595 0)
 			(hide yes)
 			(show_name no)
@@ -15842,7 +15878,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR018")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -15881,7 +15917,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "resistors:R_0603"
+		(property "Footprint" "resistors:R_0402"
 			(at 54.3052 74.422 0)
 			(hide yes)
 			(show_name no)
@@ -15925,7 +15961,7 @@
 				(justify left)
 			)
 		)
-		(property "LCSC" "C23186"
+		(property "LCSC" "C25905"
 			(at 132.08 251.46 0)
 			(hide yes)
 			(show_name no)
@@ -15937,7 +15973,7 @@
 				)
 			)
 		)
-		(property "ManufacturerNo" "RC0603FR-075K1L"
+		(property "ManufacturerNo" "0402WGF5101TCE"
 			(at 132.08 251.46 0)
 			(hide yes)
 			(show_name no)
@@ -16052,7 +16088,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "86b18fbd-76ff-4590-b008-75a5ed3b3a7c")
-		(property "Reference" "#PWR019"
+		(property "Reference" "#PWR020"
 			(at 125.73 85.725 0)
 			(hide yes)
 			(show_name no)
@@ -16112,7 +16148,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR019")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -16129,7 +16165,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "929a1069-1f3a-4277-9251-bb2321e3c506")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR010"
 			(at 70.485 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -16192,7 +16228,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR011")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -16229,7 +16265,7 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0603"
+		(property "Footprint" "resistors:R_0402"
 			(at 180.34 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -16276,7 +16312,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C11702"
+			(at 180.34 172.72 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 136.525 28.575 0)
@@ -16369,7 +16414,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9e684825-bd79-45ff-b6be-d5e5a77c68b8")
-		(property "Reference" "#PWR029"
+		(property "Reference" "#PWR030"
 			(at 198.12 195.58 0)
 			(hide yes)
 			(show_name no)
@@ -16429,7 +16474,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR029")
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -16446,7 +16491,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9fbc7122-a53f-4bb0-ab33-3a00195bc8d8")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR016"
 			(at 116.84 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -16506,7 +16551,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR015")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -16523,7 +16568,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "acdb73b8-b0cc-4b48-8a2d-4e222cb92aa5")
-		(property "Reference" "#PWR020"
+		(property "Reference" "#PWR021"
 			(at 131.445 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -16583,7 +16628,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR020")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -16600,7 +16645,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ad4ecacb-77ea-4a48-a63d-b279abc0fea4")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR015"
 			(at 111.76 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -16660,7 +16705,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR014")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -16677,7 +16722,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b02b6724-7146-4d17-a9ec-8535cad5ae35")
-		(property "Reference" "#PWR027"
+		(property "Reference" "#PWR028"
 			(at 177.8 156.21 0)
 			(hide yes)
 			(show_name no)
@@ -16737,7 +16782,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR027")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -16774,7 +16819,7 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0603"
+		(property "Footprint" "resistors:R_0402"
 			(at 116.84 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -16821,7 +16866,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25741"
+			(at 116.84 99.06 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "import-gschem-td-waterhoogtemeter:capacitor-1")
 		(at 59.69 57.15 270)
@@ -16912,7 +16966,7 @@
 				(justify left)
 			)
 		)
-		(property "LCSC" " C13585"
+		(property "LCSC" "C13585"
 			(at 241.3 16.51 0)
 			(hide yes)
 			(show_name no)
@@ -17039,7 +17093,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c3882c7e-044d-42b0-9fe5-42e4b1596df3")
-		(property "Reference" "#PWR021"
+		(property "Reference" "#PWR022"
 			(at 131.445 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -17099,7 +17153,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "#PWR021")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -17377,7 +17431,7 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0603"
+		(property "Footprint" "resistors:R_0402"
 			(at 116.84 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -17424,7 +17478,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25741"
+			(at 116.84 111.76 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:Polyfuse")
 		(at 53.34 60.325 0)
@@ -17548,7 +17611,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "resistors:R_0603"
+		(property "Footprint" "resistors:R_0402"
 			(at 54.2798 66.548 0)
 			(hide yes)
 			(show_name no)
@@ -17592,7 +17655,7 @@
 				(justify left)
 			)
 		)
-		(property "LCSC" "C23186"
+		(property "LCSC" "C25905"
 			(at -15.875 -105.41 0)
 			(hide yes)
 			(show_name no)
@@ -17604,7 +17667,7 @@
 				)
 			)
 		)
-		(property "ManufacturerNo" "RC0603FR-075K1L"
+		(property "ManufacturerNo" "0402WGF5101TCE"
 			(at -15.875 -105.41 0)
 			(hide yes)
 			(show_name no)
