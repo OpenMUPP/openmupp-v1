@@ -5929,7 +5929,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "00ce9f6f-8d49-4757-9403-48b66d9d3360")
-		(property "Reference" "#PWR073"
+		(property "Reference" "#PWR086"
 			(at 356.235 131.445 0)
 			(hide yes)
 			(show_name no)
@@ -5989,7 +5989,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR073")
+					(reference "#PWR086")
 					(unit 1)
 				)
 			)
@@ -6006,7 +6006,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "01a4835a-95dc-451b-aef4-db2b33692012")
-		(property "Reference" "U10"
+		(property "Reference" "U3"
 			(at 33.655 45.72 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6146,7 +6146,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "U10")
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -6163,7 +6163,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "09e30405-a83d-4235-99dc-45d2f84c0013")
-		(property "Reference" "R39"
+		(property "Reference" "R19"
 			(at 194.215 104.14 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6225,7 +6225,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "R39")
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -6242,7 +6242,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0a32e47f-80db-4f48-a355-91b43b8eb390")
-		(property "Reference" "R35"
+		(property "Reference" "R15"
 			(at 194.215 78.74 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6304,7 +6304,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "R35")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -6321,7 +6321,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0a6bb7fe-e64e-411a-9021-f6b1c713c156")
-		(property "Reference" "#PWR063"
+		(property "Reference" "#PWR048"
 			(at 106.045 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -6381,7 +6381,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR063")
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
@@ -6398,7 +6398,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0a89e989-ff1d-4fe4-8290-6de8c5fabc0e")
-		(property "Reference" "R37"
+		(property "Reference" "R17"
 			(at 194.215 91.44 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6460,7 +6460,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "R37")
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -6477,7 +6477,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0f5fe2dc-a177-40f0-b958-39b6688ad850")
-		(property "Reference" "R32"
+		(property "Reference" "R12"
 			(at 194.215 59.69 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6539,7 +6539,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "R32")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -6556,7 +6556,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0fa1b2b5-9f84-4814-90ec-c1d27554e1e1")
-		(property "Reference" "#PWR040"
+		(property "Reference" "#PWR065"
 			(at 276.86 254 0)
 			(hide yes)
 			(show_name no)
@@ -6616,7 +6616,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR040")
+					(reference "#PWR065")
 					(unit 1)
 				)
 			)
@@ -6633,7 +6633,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1387c852-10bd-4d83-a1d7-867e02184695")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR040"
 			(at 95.885 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -6693,7 +6693,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR028")
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
@@ -6710,7 +6710,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "151dbf6b-4781-4463-9d4b-3e0a1c10eb99")
-		(property "Reference" "R34"
+		(property "Reference" "R14"
 			(at 194.215 72.39 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6772,7 +6772,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "R34")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -6789,7 +6789,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "17a7721e-3420-4cf9-9966-b0dcdfe67cc2")
-		(property "Reference" "R33"
+		(property "Reference" "R13"
 			(at 194.215 66.04 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6851,7 +6851,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "R33")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -6868,7 +6868,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1f83e8da-8c76-427b-b98c-187fc5dd8eb2")
-		(property "Reference" "#PWR062"
+		(property "Reference" "#PWR047"
 			(at 106.045 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -6928,7 +6928,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR062")
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -7040,7 +7040,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "257f6530-a9b4-4fc7-b609-1b80a3277c2c")
-		(property "Reference" "#PWR036"
+		(property "Reference" "#PWR069"
 			(at 292.1 231.14 0)
 			(hide yes)
 			(show_name no)
@@ -7100,7 +7100,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR036")
+					(reference "#PWR069")
 					(unit 1)
 				)
 			)
@@ -7117,7 +7117,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "26df4b05-1e87-4843-a3b4-b21182956e89")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR052"
 			(at 246.38 243.84 0)
 			(hide yes)
 			(show_name no)
@@ -7177,7 +7177,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR012")
+					(reference "#PWR052")
 					(unit 1)
 				)
 			)
@@ -7194,7 +7194,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "271e5353-51cc-4a93-bd29-b9bd0f0f0a21")
-		(property "Reference" "#PWR065"
+		(property "Reference" "#PWR061"
 			(at 271.145 27.305 0)
 			(hide yes)
 			(show_name no)
@@ -7254,7 +7254,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR065")
+					(reference "#PWR061")
 					(unit 1)
 				)
 			)
@@ -7271,7 +7271,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "276457e6-f9bf-49d0-a67f-2c56a97d5bf7")
-		(property "Reference" "#PWR021"
+		(property "Reference" "#PWR074"
 			(at 307.34 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -7331,7 +7331,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR021")
+					(reference "#PWR074")
 					(unit 1)
 				)
 			)
@@ -7348,7 +7348,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "276504e2-2ed7-4a08-a6b2-767f138118bc")
-		(property "Reference" "C23"
+		(property "Reference" "C17"
 			(at 262.255 241.3 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7412,7 +7412,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "C23")
+					(reference "C17")
 					(unit 1)
 				)
 			)
@@ -7429,7 +7429,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "294246b6-14e4-4137-8fe6-8ae19715affe")
-		(property "Reference" "#PWR020"
+		(property "Reference" "#PWR068"
 			(at 292.1 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -7489,7 +7489,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR020")
+					(reference "#PWR068")
 					(unit 1)
 				)
 			)
@@ -7662,7 +7662,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "33f7875f-098f-453b-805a-baa67d3c18c3")
-		(property "Reference" "C21"
+		(property "Reference" "C15"
 			(at 247.015 241.3 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7726,7 +7726,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "C21")
+					(reference "C15")
 					(unit 1)
 				)
 			)
@@ -7743,7 +7743,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3410ae8d-a440-43ca-a4f6-6b18ef3edb01")
-		(property "Reference" "C24"
+		(property "Reference" "C18"
 			(at 277.495 218.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7807,7 +7807,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "C24")
+					(reference "C18")
 					(unit 1)
 				)
 			)
@@ -7824,7 +7824,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "35581b49-db45-4936-b216-ebc13b30d8dd")
-		(property "Reference" "#PWR051"
+		(property "Reference" "#PWR072"
 			(at 294.005 37.465 0)
 			(hide yes)
 			(show_name no)
@@ -7884,7 +7884,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR051")
+					(reference "#PWR072")
 					(unit 1)
 				)
 			)
@@ -7901,7 +7901,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "36c9462b-2aec-4c41-b29f-db2066d814a3")
-		(property "Reference" "R31"
+		(property "Reference" "R11"
 			(at 194.215 53.34 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7963,7 +7963,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "R31")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -7980,7 +7980,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "37bf6a18-4776-44c2-b2e6-5922978342a6")
-		(property "Reference" "C29"
+		(property "Reference" "C23"
 			(at 307.975 241.3 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8044,7 +8044,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "C29")
+					(reference "C23")
 					(unit 1)
 				)
 			)
@@ -8061,7 +8061,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3b31b07b-2fb6-47f8-b218-cd7a8d135224")
-		(property "Reference" "#PWR052"
+		(property "Reference" "#PWR073"
 			(at 301.625 37.465 0)
 			(hide yes)
 			(show_name no)
@@ -8121,7 +8121,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR052")
+					(reference "#PWR073")
 					(unit 1)
 				)
 			)
@@ -8138,7 +8138,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "453d7dc4-ce33-4d69-a661-6b32579a1ffe")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR031"
 			(at 37.465 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -8198,7 +8198,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR022")
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -8215,7 +8215,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "498466e5-96f5-4647-9970-e62c8e709b22")
-		(property "Reference" "#PWR038"
+		(property "Reference" "#PWR053"
 			(at 246.38 254 0)
 			(hide yes)
 			(show_name no)
@@ -8275,7 +8275,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR038")
+					(reference "#PWR053")
 					(unit 1)
 				)
 			)
@@ -8448,7 +8448,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4d99ebbd-7a10-47f4-be17-271e5ef0b404")
-		(property "Reference" "#PWR082"
+		(property "Reference" "#PWR060"
 			(at 269.24 196.85 0)
 			(hide yes)
 			(show_name no)
@@ -8508,7 +8508,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR082")
+					(reference "#PWR060")
 					(unit 1)
 				)
 			)
@@ -8525,7 +8525,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4f8388a8-cfc7-42a6-8e66-871380e86b0a")
-		(property "Reference" "#PWR054"
+		(property "Reference" "#PWR064"
 			(at 276.86 243.84 0)
 			(hide yes)
 			(show_name no)
@@ -8585,7 +8585,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR054")
+					(reference "#PWR064")
 					(unit 1)
 				)
 			)
@@ -8602,7 +8602,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "53275676-9f75-4e5a-84ab-38566d2a2632")
-		(property "Reference" "#PWR034"
+		(property "Reference" "#PWR055"
 			(at 261.62 231.14 0)
 			(hide yes)
 			(show_name no)
@@ -8662,7 +8662,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR034")
+					(reference "#PWR055")
 					(unit 1)
 				)
 			)
@@ -8679,7 +8679,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "581d4553-b1a2-4013-9961-de790d73a404")
-		(property "Reference" "R36"
+		(property "Reference" "R16"
 			(at 194.215 85.09 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8741,7 +8741,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "R36")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -8758,7 +8758,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5bf82ae2-ceb9-422a-bae5-ed295c113aa9")
-		(property "Reference" "U15"
+		(property "Reference" "U8"
 			(at 222.885 168.91 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8845,7 +8845,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "U15")
+					(reference "U8")
 					(unit 1)
 				)
 			)
@@ -8862,7 +8862,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5e9e2315-a4a5-4f91-8d4c-a7d82b1e507b")
-		(property "Reference" "U17"
+		(property "Reference" "U10"
 			(at 314.325 168.91 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8949,7 +8949,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "U17")
+					(reference "U10")
 					(unit 1)
 				)
 			)
@@ -8966,7 +8966,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6317189f-50c0-418c-8c12-547817f545d1")
-		(property "Reference" "#PWR058"
+		(property "Reference" "#PWR045"
 			(at 106.045 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -9026,7 +9026,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR058")
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -9043,7 +9043,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6395e6af-7bed-4e48-98f1-9afc16d78b72")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR050"
 			(at 246.38 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -9103,7 +9103,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR016")
+					(reference "#PWR050")
 					(unit 1)
 				)
 			)
@@ -9120,7 +9120,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "65fbf1a8-0c6f-43ef-90b0-0a4a8733c1ea")
-		(property "Reference" "R41"
+		(property "Reference" "R21"
 			(at 194.215 116.84 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9182,7 +9182,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "R41")
+					(reference "R21")
 					(unit 1)
 				)
 			)
@@ -9199,7 +9199,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6898f1e7-10fd-485a-8fe4-3b6578a5ecde")
-		(property "Reference" "#PWR031"
+		(property "Reference" "#PWR059"
 			(at 263.525 64.135 0)
 			(hide yes)
 			(show_name no)
@@ -9259,7 +9259,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR031")
+					(reference "#PWR059")
 					(unit 1)
 				)
 			)
@@ -9276,7 +9276,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "68ba0096-af5e-4169-942f-12ae309774db")
-		(property "Reference" "#PWR043"
+		(property "Reference" "#PWR032"
 			(at 40.005 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -9336,7 +9336,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR043")
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -9353,7 +9353,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "68ea7514-ae19-4d49-917b-1b105ba880c8")
-		(property "Reference" "#PWR059"
+		(property "Reference" "#PWR046"
 			(at 106.045 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -9413,7 +9413,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR059")
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -9430,7 +9430,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6a47af8e-6383-4f00-9e9f-eb71eeab61c1")
-		(property "Reference" "#PWR046"
+		(property "Reference" "#PWR043"
 			(at 98.425 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -9490,7 +9490,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR046")
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -9665,7 +9665,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6d1102bc-c187-4e8e-bf38-a79dbd1ff0dc")
-		(property "Reference" "#PWR048"
+		(property "Reference" "#PWR030"
 			(at 27.305 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -9725,7 +9725,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR048")
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -9742,7 +9742,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6d2f11c3-bc5b-4aa0-9814-021a68063487")
-		(property "Reference" "U12"
+		(property "Reference" "U5"
 			(at 92.075 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9828,7 +9828,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "U12")
+					(reference "U5")
 					(unit 1)
 				)
 			)
@@ -9845,7 +9845,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7149cc89-1561-4d27-91f4-e8cc39247dd0")
-		(property "Reference" "C26"
+		(property "Reference" "C20"
 			(at 292.735 218.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9909,7 +9909,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "C26")
+					(reference "C20")
 					(unit 1)
 				)
 			)
@@ -9926,7 +9926,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7408978c-63d7-412d-abe2-c763a87cc5fd")
-		(property "Reference" "#PWR023"
+		(property "Reference" "#PWR037"
 			(at 95.885 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -9986,7 +9986,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR023")
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
@@ -10003,7 +10003,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "79723196-557a-486e-9a71-fd3322e26db6")
-		(property "Reference" "#PWR029"
+		(property "Reference" "#PWR035"
 			(at 85.725 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -10063,7 +10063,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR029")
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -10080,7 +10080,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "79b027c3-6bf3-47ce-8439-521743ded2b6")
-		(property "Reference" "#PWR039"
+		(property "Reference" "#PWR057"
 			(at 261.62 254 0)
 			(hide yes)
 			(show_name no)
@@ -10140,7 +10140,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR039")
+					(reference "#PWR057")
 					(unit 1)
 				)
 			)
@@ -10157,7 +10157,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7a13604d-bc61-488b-9227-c2f4d4e3355a")
-		(property "Reference" "#PWR049"
+		(property "Reference" "#PWR034"
 			(at 85.725 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -10217,7 +10217,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR049")
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -10234,7 +10234,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7f4914d8-f551-43d8-9735-fc2668dc7f8a")
-		(property "Reference" "U14"
+		(property "Reference" "U7"
 			(at 92.075 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10320,7 +10320,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "U14")
+					(reference "U7")
 					(unit 1)
 				)
 			)
@@ -10337,7 +10337,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8073aeda-4adb-475a-90b8-64b851d73328")
-		(property "Reference" "#PWR042"
+		(property "Reference" "#PWR077"
 			(at 307.34 254 0)
 			(hide yes)
 			(show_name no)
@@ -10397,7 +10397,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR042")
+					(reference "#PWR077")
 					(unit 1)
 				)
 			)
@@ -10414,7 +10414,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "80a2e92c-ede5-4c5a-ab36-d8b9af828633")
-		(property "Reference" "U16"
+		(property "Reference" "U9"
 			(at 268.605 168.91 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10501,7 +10501,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "U16")
+					(reference "U9")
 					(unit 1)
 				)
 			)
@@ -10518,7 +10518,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8c89e50f-7349-4df3-9ca9-04a9a5345e74")
-		(property "Reference" "#PWR044"
+		(property "Reference" "#PWR041"
 			(at 98.425 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -10578,7 +10578,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR044")
+					(reference "#PWR041")
 					(unit 1)
 				)
 			)
@@ -10595,7 +10595,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8e825089-b6a9-40ff-b5b1-b2dd3d2216e7")
-		(property "Reference" "#PWR056"
+		(property "Reference" "#PWR076"
 			(at 307.34 243.84 0)
 			(hide yes)
 			(show_name no)
@@ -10655,7 +10655,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR056")
+					(reference "#PWR076")
 					(unit 1)
 				)
 			)
@@ -10672,7 +10672,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8f504849-8830-418d-b853-a5de489729f0")
-		(property "Reference" "#PWR053"
+		(property "Reference" "#PWR056"
 			(at 261.62 243.84 0)
 			(hide yes)
 			(show_name no)
@@ -10732,7 +10732,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR053")
+					(reference "#PWR056")
 					(unit 1)
 				)
 			)
@@ -10749,7 +10749,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "902a31fa-509d-416a-b553-8c51f624fe24")
-		(property "Reference" "C28"
+		(property "Reference" "C22"
 			(at 307.975 218.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10813,7 +10813,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "C28")
+					(reference "C22")
 					(unit 1)
 				)
 			)
@@ -10909,7 +10909,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "92ec0a9d-f8f5-4bf2-ba37-18a56a0c929e")
-		(property "Reference" "#PWR045"
+		(property "Reference" "#PWR042"
 			(at 98.425 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -10969,7 +10969,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR045")
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -10986,7 +10986,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "93de8639-ef6f-4b5d-abef-3f0f5bd3fd05")
-		(property "Reference" "#PWR076"
+		(property "Reference" "#PWR049"
 			(at 223.52 196.85 0)
 			(hide yes)
 			(show_name no)
@@ -11046,7 +11046,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR076")
+					(reference "#PWR049")
 					(unit 1)
 				)
 			)
@@ -11063,7 +11063,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "95b2c901-e271-4217-a9c7-2c87124ae3d0")
-		(property "Reference" "#PWR070"
+		(property "Reference" "#PWR083"
 			(at 320.675 113.665 0)
 			(hide yes)
 			(show_name no)
@@ -11124,7 +11124,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR070")
+					(reference "#PWR083")
 					(unit 1)
 				)
 			)
@@ -11141,7 +11141,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a15fb718-dccf-40a6-958b-39e6cee74ac9")
-		(property "Reference" "C20"
+		(property "Reference" "C14"
 			(at 247.015 218.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11205,7 +11205,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "C20")
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -11222,7 +11222,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a21b55bd-93d1-4539-bfa2-9c2539f63e1a")
-		(property "Reference" "#PWR074"
+		(property "Reference" "#PWR081"
 			(at 330.835 108.585 0)
 			(hide yes)
 			(show_name no)
@@ -11282,7 +11282,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR074")
+					(reference "#PWR081")
 					(unit 1)
 				)
 			)
@@ -11299,7 +11299,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a3fd8fcd-7d71-4a40-88d5-5c62e6d82055")
-		(property "Reference" "C22"
+		(property "Reference" "C16"
 			(at 262.255 218.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11363,7 +11363,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "C22")
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -11380,7 +11380,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a4f64596-84c8-407e-b4a8-769a01e0b1d0")
-		(property "Reference" "U13"
+		(property "Reference" "U6"
 			(at 92.075 107.95 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11466,7 +11466,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "U13")
+					(reference "U6")
 					(unit 1)
 				)
 			)
@@ -11562,7 +11562,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a6b9fa1a-784a-4ca9-9da0-bfd7c15eb729")
-		(property "Reference" "C27"
+		(property "Reference" "C21"
 			(at 292.735 241.3 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11626,7 +11626,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "C27")
+					(reference "C21")
 					(unit 1)
 				)
 			)
@@ -11643,7 +11643,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b414a661-00d3-4764-bf10-e58f079e012e")
-		(property "Reference" "R40"
+		(property "Reference" "R20"
 			(at 194.215 110.49 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11705,7 +11705,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "R40")
+					(reference "R20")
 					(unit 1)
 				)
 			)
@@ -11722,7 +11722,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b4acdb92-00ec-4729-9ba8-6218c5087602")
-		(property "Reference" "#PWR057"
+		(property "Reference" "#PWR033"
 			(at 47.625 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -11782,7 +11782,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR057")
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -11799,7 +11799,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "be21010a-5f3c-42de-8b00-1b2b42dd308f")
-		(property "Reference" "#PWR030"
+		(property "Reference" "#PWR078"
 			(at 309.245 27.305 0)
 			(hide yes)
 			(show_name no)
@@ -11859,7 +11859,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR030")
+					(reference "#PWR078")
 					(unit 1)
 				)
 			)
@@ -11876,7 +11876,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c16c6c26-d46f-4c55-b8f9-4dc0e3ce2756")
-		(property "Reference" "#PWR083"
+		(property "Reference" "#PWR079"
 			(at 314.96 196.85 0)
 			(hide yes)
 			(show_name no)
@@ -11936,7 +11936,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR083")
+					(reference "#PWR079")
 					(unit 1)
 				)
 			)
@@ -11953,7 +11953,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c217e55b-5c4f-4904-9eda-b4c829a8ce9a")
-		(property "Reference" "R38"
+		(property "Reference" "R18"
 			(at 194.215 97.79 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12015,7 +12015,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "R38")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -12032,7 +12032,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c4a1df43-d3c4-4093-b6ea-047c81a5a619")
-		(property "Reference" "#PWR047"
+		(property "Reference" "#PWR044"
 			(at 98.425 167.64 0)
 			(hide yes)
 			(show_name no)
@@ -12092,7 +12092,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR047")
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -12109,7 +12109,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c9525c2a-52ef-41b4-ba4e-de0b8dc01450")
-		(property "Reference" "#PWR068"
+		(property "Reference" "#PWR080"
 			(at 316.865 27.305 0)
 			(hide yes)
 			(show_name no)
@@ -12169,7 +12169,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR068")
+					(reference "#PWR080")
 					(unit 1)
 				)
 			)
@@ -12186,7 +12186,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ceda2f0c-2bc6-48e7-bd17-9d686e51f81f")
-		(property "Reference" "#PWR075"
+		(property "Reference" "#PWR087"
 			(at 375.92 214.63 0)
 			(hide yes)
 			(show_name no)
@@ -12246,7 +12246,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR075")
+					(reference "#PWR087")
 					(unit 1)
 				)
 			)
@@ -12263,7 +12263,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cf3b2f80-1f02-4713-aa73-5f74aa4621f8")
-		(property "Reference" "J3"
+		(property "Reference" "J4"
 			(at 338.455 106.045 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12283,7 +12283,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_IDC:IDC-Header_2x10_P2.54mm_Vertical"
+		(property "Footprint" "Connector_IDC:IDC-Header_2x10_P2.54mm_Horizontal"
 			(at 337.185 118.745 0)
 			(hide yes)
 			(show_name no)
@@ -12379,7 +12379,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "J3")
+					(reference "J4")
 					(unit 1)
 				)
 			)
@@ -12475,7 +12475,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d702d298-16a0-4fa1-b87d-cd7714275cd9")
-		(property "Reference" "#PWR037"
+		(property "Reference" "#PWR075"
 			(at 307.34 231.14 0)
 			(hide yes)
 			(show_name no)
@@ -12535,7 +12535,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR037")
+					(reference "#PWR075")
 					(unit 1)
 				)
 			)
@@ -12552,7 +12552,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d9fd6526-3edf-4d77-933d-7074e11864ad")
-		(property "Reference" "#PWR026"
+		(property "Reference" "#PWR039"
 			(at 95.885 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -12612,7 +12612,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR026")
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -12708,7 +12708,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ddc6e399-1c15-4f0e-a1ba-0e6ba4b5abae")
-		(property "Reference" "#PWR069"
+		(property "Reference" "#PWR082"
 			(at 320.675 111.125 0)
 			(hide yes)
 			(show_name no)
@@ -12769,7 +12769,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR069")
+					(reference "#PWR082")
 					(unit 1)
 				)
 			)
@@ -12786,7 +12786,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e45d4a58-8370-4628-9dff-cfac0cd5dab8")
-		(property "Reference" "#PWR050"
+		(property "Reference" "#PWR036"
 			(at 85.725 162.56 0)
 			(hide yes)
 			(show_name no)
@@ -12846,7 +12846,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR050")
+					(reference "#PWR036")
 					(unit 1)
 				)
 			)
@@ -12863,7 +12863,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e98a1971-9a0c-4ea7-9e53-fa89ca4f8f1a")
-		(property "Reference" "#PWR025"
+		(property "Reference" "#PWR038"
 			(at 95.885 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -12923,7 +12923,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR025")
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -12940,7 +12940,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ea5a9100-26b3-44a9-853f-0addb0de27c1")
-		(property "Reference" "#PWR071"
+		(property "Reference" "#PWR084"
 			(at 320.675 116.205 0)
 			(hide yes)
 			(show_name no)
@@ -13001,7 +13001,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR071")
+					(reference "#PWR084")
 					(unit 1)
 				)
 			)
@@ -13018,7 +13018,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "eabba527-c610-420b-ae8d-7183f3ee018d")
-		(property "Reference" "#PWR064"
+		(property "Reference" "#PWR058"
 			(at 263.525 27.305 0)
 			(hide yes)
 			(show_name no)
@@ -13078,7 +13078,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR064")
+					(reference "#PWR058")
 					(unit 1)
 				)
 			)
@@ -13095,7 +13095,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ec8446df-3c67-4aae-8bf0-3d22f4858415")
-		(property "Reference" "#PWR072"
+		(property "Reference" "#PWR085"
 			(at 320.675 118.745 0)
 			(hide yes)
 			(show_name no)
@@ -13156,7 +13156,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR072")
+					(reference "#PWR085")
 					(unit 1)
 				)
 			)
@@ -13173,7 +13173,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ed75126b-577a-4b00-9623-6c18ab76184f")
-		(property "Reference" "#PWR041"
+		(property "Reference" "#PWR071"
 			(at 292.1 254 0)
 			(hide yes)
 			(show_name no)
@@ -13233,7 +13233,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR041")
+					(reference "#PWR071")
 					(unit 1)
 				)
 			)
@@ -13250,7 +13250,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ed99fe81-b7a5-4a5b-83f3-c364e888c4dd")
-		(property "Reference" "#PWR018"
+		(property "Reference" "#PWR062"
 			(at 276.86 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -13310,7 +13310,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR018")
+					(reference "#PWR062")
 					(unit 1)
 				)
 			)
@@ -13327,7 +13327,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "edc81717-b919-42f7-8710-de269632a17e")
-		(property "Reference" "U11"
+		(property "Reference" "U4"
 			(at 92.075 36.83 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13419,7 +13419,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "U11")
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -13436,7 +13436,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f1cf411e-000e-4803-bb6d-c5a390f29a3c")
-		(property "Reference" "C25"
+		(property "Reference" "C19"
 			(at 277.495 241.3 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13500,7 +13500,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "C25")
+					(reference "C19")
 					(unit 1)
 				)
 			)
@@ -13517,7 +13517,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f5726272-99e7-4daf-9c38-d6842ac19198")
-		(property "Reference" "#PWR035"
+		(property "Reference" "#PWR063"
 			(at 276.86 231.14 0)
 			(hide yes)
 			(show_name no)
@@ -13577,7 +13577,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR035")
+					(reference "#PWR063")
 					(unit 1)
 				)
 			)
@@ -13594,7 +13594,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f5cc115d-c46b-4967-be9b-1cc60096cd26")
-		(property "Reference" "#PWR055"
+		(property "Reference" "#PWR070"
 			(at 292.1 243.84 0)
 			(hide yes)
 			(show_name no)
@@ -13654,7 +13654,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR055")
+					(reference "#PWR070")
 					(unit 1)
 				)
 			)
@@ -13750,7 +13750,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f957bfd1-435d-49be-bee6-8f1bc6bc63bf")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR054"
 			(at 261.62 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -13810,7 +13810,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR017")
+					(reference "#PWR054")
 					(unit 1)
 				)
 			)
@@ -13827,7 +13827,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f995e542-7a3b-43a7-84c4-594ecde3cb7e")
-		(property "Reference" "#PWR033"
+		(property "Reference" "#PWR051"
 			(at 246.38 231.14 0)
 			(hide yes)
 			(show_name no)
@@ -13887,7 +13887,7 @@
 		(instances
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR033")
+					(reference "#PWR051")
 					(unit 1)
 				)
 			)
