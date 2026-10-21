@@ -15135,7 +15135,7 @@
 				)
 			)
 		)
-		(property "Footprint" "buttons_switches:SW_Push_XUNPU_TS-1088"
+		(property "Footprint" "buttons_switches:SW_Push_HanElectricity_TS1109_4.5x4.5mm_H3.8mm"
 			(at 131.445 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -15183,7 +15183,7 @@
 			)
 		)
 	
-		(property "LCSC" "C720477"
+		(property "LCSC" "C22375347"
 			(at 131.445 68.58 0)
 			(hide yes)
 			(effects
