@@ -15135,7 +15135,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_NO_CK_PTS125Sx43SMTR"
+		(property "Footprint" "buttons_switches:SW_Push_XUNPU_TS-1088"
 			(at 131.445 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -15182,7 +15182,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C720477"
+			(at 131.445 68.58 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:LED")
 		(at 198.12 182.88 90)
