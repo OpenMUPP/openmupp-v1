@@ -9847,6 +9847,12 @@
 		(uuid "303cef1d-14ed-4ced-bfb4-a9f7161cb4d3")
 	)
 	(junction
+		(at 49.53 64.135)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "448cb07c-5507-4117-abe2-d02326050b35")
+	)
+	(junction
 		(at 48.895 79.375)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -10540,7 +10546,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.895 64.135) (xy 53.34 64.135)
+			(xy 48.895 64.135) (xy 49.53 64.135)
 		)
 		(stroke
 			(width 0)
@@ -10870,6 +10876,16 @@
 	)
 	(wire
 		(pts
+			(xy 49.53 64.135) (xy 53.34 64.135)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a00b1b02-3c81-4fed-98f1-82b83e018531")
+	)
+	(wire
+		(pts
 			(xy 66.04 81.915) (xy 48.895 81.915)
 		)
 		(stroke
@@ -11007,6 +11023,16 @@
 			(type default)
 		)
 		(uuid "b8684cca-3e8f-4e8d-86aa-64224d9b71ab")
+	)
+	(wire
+		(pts
+			(xy 49.53 55.245) (xy 49.53 64.135)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c322c78a-b803-4527-9503-918667c333b6")
 	)
 	(wire
 		(pts
@@ -13046,6 +13072,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C25092"
+			(at 80.01 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "3a9fa015-ae2d-4822-9326-7947370c7ac3")
 		)
@@ -13060,16 +13097,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C25092"
-			(at 80.01 81.28 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "power:GND")
 		(at 102.87 34.29 0)
@@ -13369,6 +13397,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C11702"
+			(at 198.12 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "ec5b3405-daa1-497c-b42a-89780a43439e")
 		)
@@ -13383,16 +13422,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C11702"
-			(at 198.12 172.72 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 111.76 36.83 0)
@@ -13915,6 +13945,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C25092"
+			(at 79.375 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "51010b97-e912-4f70-8296-7c881be8b483")
 		)
@@ -13929,16 +13970,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C25092"
-			(at 79.375 83.82 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:Crystal_GND24")
 		(at 102.87 29.21 0)
@@ -14758,6 +14790,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C25744"
+			(at 131.445 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "2a719662-9930-4247-8720-c9082415d406")
 		)
@@ -14772,16 +14815,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C25744"
-			(at 131.445 83.82 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "custom_power:GND")
 		(at 50.8 133.985 0)
@@ -15168,6 +15202,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C22375347"
+			(at 131.445 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "aa413c3f-d183-4ecc-9205-7eac9723f7d1")
 		)
@@ -15182,16 +15227,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C22375347"
-			(at 131.445 68.58 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:LED")
 		(at 198.12 182.88 90)
@@ -16307,6 +16343,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C11702"
+			(at 180.34 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "e896b221-c8d7-4c51-813c-25b7a74115ea")
 		)
@@ -16321,16 +16368,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C11702"
-			(at 180.34 172.72 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:C")
 		(at 136.525 28.575 0)
@@ -16861,6 +16899,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C25741"
+			(at 116.84 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "1614460e-81e7-474f-a9c1-d2005b801754")
 		)
@@ -16875,16 +16924,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C25741"
-			(at 116.84 99.06 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "import-gschem-td-waterhoogtemeter:capacitor-1")
 		(at 59.69 57.15 270)
@@ -17473,6 +17513,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C25741"
+			(at 116.84 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "79d240d1-d31b-42b3-a50e-5beec35b21af")
 		)
@@ -17487,16 +17538,7 @@
 				)
 			)
 		)
-	
-		(property "LCSC" "C25741"
-			(at 116.84 111.76 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		))
+	)
 	(symbol
 		(lib_id "Device:Polyfuse")
 		(at 53.34 60.325 0)
@@ -17775,6 +17817,85 @@
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VBUS")
+		(at 49.53 55.245 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e6f2af3e-204c-4141-96df-3d000cf52026")
+		(property "Reference" "#PWR0111"
+			(at 49.53 59.055 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VBUS"
+			(at 49.53 51.1119 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 55.245 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 55.245 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VBUS\""
+			(at 49.53 55.245 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "20b3e187-104d-4932-80d6-2d777da2a044")
+		)
+		(instances
+			(project "versaloon-ng"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
+					(reference "#PWR0111")
 					(unit 1)
 				)
 			)
