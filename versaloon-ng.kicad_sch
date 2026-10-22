@@ -10116,7 +10116,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 149.86) (xy 48.895 149.86)
+			(xy 44.45 149.225) (xy 48.895 149.225)
 		)
 		(stroke
 			(width 0)
@@ -10496,16 +10496,6 @@
 	)
 	(wire
 		(pts
-			(xy 48.895 149.86) (xy 48.895 149.225)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5bde4f50-2464-4de8-a7c9-a037706be3c2")
-	)
-	(wire
-		(pts
 			(xy 131.445 78.74) (xy 151.13 78.74)
 		)
 		(stroke
@@ -10553,16 +10543,6 @@
 			(type default)
 		)
 		(uuid "665e6215-2df9-4548-ab9e-d928993147a9")
-	)
-	(wire
-		(pts
-			(xy 48.895 149.225) (xy 44.45 149.225)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "67964ea8-14ec-4ed8-8ef2-eabdf5480261")
 	)
 	(wire
 		(pts
@@ -13770,7 +13750,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_2x07_P1.27mm_Vertical"
+		(property "Footprint" ""
 			(at 53.975 154.305 0)
 			(hide yes)
 			(show_name no)
@@ -15543,7 +15523,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 44.45 149.86 0)
+		(at 44.45 149.225 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15553,7 +15533,7 @@
 		(dnp no)
 		(uuid "6a5d93fd-9962-4b29-990f-fe5a7bb62c42")
 		(property "Reference" "#P01"
-			(at 44.45 149.86 0)
+			(at 44.45 149.225 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15564,7 +15544,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 44.45 151.765 0)
+			(at 43.18 146.05 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15574,7 +15554,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 44.45 149.86 0)
+			(at 44.45 149.225 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15584,7 +15564,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 44.45 149.86 0)
+			(at 44.45 149.225 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15594,7 +15574,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 44.45 149.86 0)
+			(at 44.45 149.225 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
