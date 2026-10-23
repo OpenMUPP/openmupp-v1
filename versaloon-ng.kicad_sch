@@ -9931,6 +9931,12 @@
 		(uuid "958a562d-3188-43cf-8481-ad4c063dd027")
 	)
 	(junction
+		(at 44.45 149.225)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9b72f78a-4ae5-4870-9eea-f4cbaa02feaa")
+	)
+	(junction
 		(at 179.07 66.04)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9969,20 +9975,16 @@
 		(uuid "264c18ce-7266-4d5c-a9c7-aab9cff1105c")
 	)
 	(no_connect
+		(at 48.895 156.845)
+		(uuid "293db546-20e6-49ca-8aad-d146ed15c77a")
+	)
+	(no_connect
 		(at 48.895 94.615)
 		(uuid "4ad3d7ae-5985-434d-95cc-3ce3581f2df5")
 	)
 	(no_connect
-		(at 201.93 76.2)
-		(uuid "717c348f-745e-4af1-9b4c-fec656bbff56")
-	)
-	(no_connect
 		(at 48.895 92.075)
 		(uuid "80ef3bf8-16ed-415d-8346-581b50909774")
-	)
-	(no_connect
-		(at 48.895 156.845)
-		(uuid "c86c79fb-5c7e-4060-a470-7b082908eb76")
 	)
 	(wire
 		(pts
@@ -10113,16 +10115,6 @@
 			(type default)
 		)
 		(uuid "10e99b88-18a1-43c5-9faf-1161f647456e")
-	)
-	(wire
-		(pts
-			(xy 44.45 149.225) (xy 48.895 149.225)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "12d1eee3-d49d-4dc2-a95d-6197fbff292f")
 	)
 	(wire
 		(pts
@@ -10326,6 +10318,16 @@
 	)
 	(wire
 		(pts
+			(xy 201.93 76.2) (xy 204.47 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37ddd4c1-f49f-413b-ae5b-dec7eb993c5f")
+	)
+	(wire
+		(pts
 			(xy 150.495 24.765) (xy 157.48 24.765)
 		)
 		(stroke
@@ -10333,6 +10335,16 @@
 			(type default)
 		)
 		(uuid "394406af-1f58-42e7-b989-3181bff8ce76")
+	)
+	(wire
+		(pts
+			(xy 162.56 186.69) (xy 162.56 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39d6fa6c-d231-4ad5-adf5-041cf5c9f3ae")
 	)
 	(wire
 		(pts
@@ -10826,6 +10838,16 @@
 	)
 	(wire
 		(pts
+			(xy 162.56 176.53) (xy 162.56 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b69ed3c-2afc-4801-a74f-bc1b2a7e4611")
+	)
+	(wire
+		(pts
 			(xy 201.93 81.28) (xy 204.47 81.28)
 		)
 		(stroke
@@ -11003,6 +11025,16 @@
 			(type default)
 		)
 		(uuid "b8684cca-3e8f-4e8d-86aa-64224d9b71ab")
+	)
+	(wire
+		(pts
+			(xy 44.45 149.225) (xy 48.895 149.225)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1632d44-cfd3-4f25-bc7f-33a3efa3f373")
 	)
 	(wire
 		(pts
@@ -11213,6 +11245,16 @@
 			(type default)
 		)
 		(uuid "f57415d2-a842-40dd-a5a2-dfe85eacfd8c")
+	)
+	(wire
+		(pts
+			(xy 162.56 168.91) (xy 162.56 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6856b82-293f-4a73-98d1-e56bd78dbb14")
 	)
 	(wire
 		(pts
@@ -11434,7 +11476,7 @@
 		)
 		(uuid "6511d79f-1ef2-478b-9ee5-cb6032dac3ec")
 	)
-	(label "LED_STATE"
+	(label "LED_STATE1"
 		(at 180.34 166.37 0)
 		(effects
 			(font
@@ -11463,6 +11505,16 @@
 			(justify right bottom)
 		)
 		(uuid "6bc37d2a-3311-4104-9e39-a1713a6ea582")
+	)
+	(label "LED_STATE2"
+		(at 204.47 76.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "74037100-c885-4fd4-8b3a-651e224103a6")
 	)
 	(label "TCK"
 		(at 148.59 129.54 180)
@@ -11654,7 +11706,7 @@
 		)
 		(uuid "cb4bb240-0ece-47bf-93bc-772b0123582c")
 	)
-	(label "LED_STATE"
+	(label "LED_STATE1"
 		(at 148.59 106.68 180)
 		(effects
 			(font
@@ -11713,6 +11765,16 @@
 			(justify right bottom)
 		)
 		(uuid "efb8a84c-845f-4241-b3d3-6336d2739ccf")
+	)
+	(label "LED_STATE2"
+		(at 162.56 166.37 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f535bad1-5fe6-4596-a635-378ea75fcbe1")
 	)
 	(label "TDO"
 		(at 204.47 81.28 0)
@@ -12981,6 +13043,85 @@
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "C11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 162.56 182.88 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "11bd6329-e816-4db2-ab95-e86fd54c4e8a")
+		(property "Reference" "D4"
+			(at 160.02 182.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED state"
+			(at 165.1 182.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+			(at 162.56 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 162.56 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a23ef544-c760-47ce-aa78-fe3dc560303d")
+		)
+		(pin "2"
+			(uuid "ec62bde3-bdba-44b7-a29a-5cf6a8168b19")
+		)
+		(instances
+			(project "versaloon-ng"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
+					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -14540,6 +14681,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 44.45 153.035 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4a3c51ec-0189-4992-939f-bd0f682152f9")
+		(property "Reference" "C30"
+			(at 43.815 150.495 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 43.815 155.575 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "capacitors:C_0603"
+			(at 44.45 153.035 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 153.035 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 44.45 153.035 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "6e3491ff-1a73-4baa-abc5-fefec57c8b7d")
+		)
+		(pin "1"
+			(uuid "c3b90556-d6e3-499d-89e7-2b8a97e6a3bd")
+		)
+		(instances
+			(project "versaloon-ng"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
+					(reference "C30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 220.98 86.36 90)
 		(unit 1)
@@ -14950,6 +15173,87 @@
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "waterhoogtemeter-rescue:GND-custom_power")
+		(at 45.085 158.75 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "510e3fcc-9f90-48aa-b279-901409384b6f")
+		(property "Reference" "#PWR0113"
+			(at 45.085 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 3.429 3.429)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 43.18 158.4452 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.8636 0.8636)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 45.085 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 45.085 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 45.085 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dae217cb-a6a1-4cf7-8d7a-a31cc32ca2f0")
+		)
+		(instances
+			(project "versaloon-ng"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
+					(reference "#PWR0113")
 					(unit 1)
 				)
 			)
@@ -15668,6 +15972,173 @@
 			(project "versaloon-ng"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR025")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 162.56 172.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "712bbef6-f0ec-4f89-91e4-6a5f9c26ddf8")
+		(property "Reference" "R40"
+			(at 164.592 172.72 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 162.56 172.72 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "resistors:R_0402"
+			(at 162.56 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 162.56 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C11702"
+			(at 162.56 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2f9a070b-55a2-4432-92d2-aaf5eacf4e4a")
+		)
+		(pin "2"
+			(uuid "b5526356-baec-4ae0-aaf1-ab5c3b6b6579")
+		)
+		(instances
+			(project "versaloon-ng"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
+					(reference "R40")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 162.56 189.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "72de0549-c67e-4276-ae1a-d03eecc2d225")
+		(property "Reference" "#PWR0112"
+			(at 162.56 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 162.56 193.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 162.56 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 162.56 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "75648271-b5b1-425c-9f7b-1f0f0f7969a4")
+		)
+		(instances
+			(project "versaloon-ng"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
+					(reference "#PWR0112")
 					(unit 1)
 				)
 			)
