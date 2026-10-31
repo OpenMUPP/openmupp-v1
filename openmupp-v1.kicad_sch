@@ -12342,7 +12342,7 @@
 			(uuid "7546759d-94ed-41d3-bec0-00a02659cee6")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR05")
 					(unit 1)
@@ -12419,7 +12419,7 @@
 			(uuid "71620322-0919-49ef-9a5c-2d919a17f3af")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR029")
 					(unit 1)
@@ -12526,7 +12526,7 @@
 			(uuid "a6d718d3-7dca-48bb-b9f5-3eb49ea5c600")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "U1")
 					(unit 1)
@@ -12747,7 +12747,7 @@
 			(uuid "6dac080f-81b5-43b4-bcd2-56c57725eddd")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "U2")
 					(unit 1)
@@ -12959,7 +12959,7 @@
 			(uuid "bf0dda1f-ae26-4fa0-97a3-555899dc5ab9")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "J1")
 					(unit 1)
@@ -13040,7 +13040,7 @@
 			(uuid "5ee92266-9989-4e92-a072-7035b7b48399")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "C11")
 					(unit 1)
@@ -13119,7 +13119,7 @@
 			(uuid "ec62bde3-bdba-44b7-a29a-5cf6a8168b19")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "D4")
 					(unit 1)
@@ -13211,7 +13211,7 @@
 			(uuid "8101eef1-fca5-4445-98a7-681f46ee6525")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "R4")
 					(unit 1)
@@ -13288,7 +13288,7 @@
 			(uuid "ef7cfdbe-4fc6-4646-a27e-3104b0b32cbb")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR014")
 					(unit 1)
@@ -13369,7 +13369,7 @@
 			(uuid "f4de90ad-1b23-4aac-a2d1-124d0f844375")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "C10")
 					(unit 1)
@@ -13446,7 +13446,7 @@
 			(uuid "00bbfc3d-decd-4a84-9ef6-a576851eef26")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR017")
 					(unit 1)
@@ -13536,7 +13536,7 @@
 			(uuid "3b2cb7bc-52b6-43d0-be7d-bdc42bdcbc8a")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "R9")
 					(unit 1)
@@ -13617,7 +13617,7 @@
 			(uuid "8bdc9187-b21a-47f8-80a3-185ed9ee63be")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "C3")
 					(unit 1)
@@ -13698,7 +13698,7 @@
 			(uuid "dbdc2f6a-4bb0-40e8-ba59-dc22668bee67")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "C4")
 					(unit 1)
@@ -13775,7 +13775,7 @@
 			(uuid "c603ad3d-8894-4433-9a6e-5794a62f7471")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR024")
 					(unit 1)
@@ -13852,7 +13852,7 @@
 			(uuid "9fabb039-4042-42d0-9d01-16c704cfd025")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR013")
 					(unit 1)
@@ -13992,7 +13992,7 @@
 			(uuid "6ef6c6c3-254e-4135-a642-53b0ba54d92b")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "J2")
 					(unit 1)
@@ -14084,7 +14084,7 @@
 			(uuid "37183505-77e1-4e29-a7e6-e09b8cb72c73")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "R3")
 					(unit 1)
@@ -14204,7 +14204,7 @@
 			(uuid "11e41d47-9d42-41a3-b292-b5a7cdbb85af")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "Y1")
 					(unit 1)
@@ -14285,7 +14285,7 @@
 			(uuid "e1b9e0c7-736f-44ae-9adb-dfd481cde483")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "C13")
 					(unit 1)
@@ -14366,7 +14366,7 @@
 			(uuid "114d4204-9ed8-4a4d-b993-dd0487dd4009")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "C7")
 					(unit 1)
@@ -14443,7 +14443,7 @@
 			(uuid "ef5c9d26-b5db-4594-bdf9-d873338cea0f")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR023")
 					(unit 1)
@@ -14520,7 +14520,7 @@
 			(uuid "fda4d657-b9a5-4a4e-8a55-b15119d0fdbe")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR027")
 					(unit 1)
@@ -14595,7 +14595,7 @@
 			(uuid "eeb0351a-64b0-49cb-b4ba-ec1e16383fd9")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#P02")
 					(unit 1)
@@ -14672,7 +14672,7 @@
 			(uuid "bda36d40-2f0d-43f6-ae83-50ef9940211d")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR012")
 					(unit 1)
@@ -14754,7 +14754,7 @@
 			(uuid "c3b90556-d6e3-499d-89e7-2b8a97e6a3bd")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "C30")
 					(unit 1)
@@ -14844,7 +14844,7 @@
 			(uuid "90b3d876-507c-4771-a94c-81f8a298e3b0")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "R10")
 					(unit 1)
@@ -14921,7 +14921,7 @@
 			(uuid "fca17516-7975-40b3-bdae-faa92bb09ac2")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR026")
 					(unit 1)
@@ -15011,7 +15011,7 @@
 			(uuid "18cdafa8-fc98-45ec-b2d5-d565d56cfc67")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "R7")
 					(unit 1)
@@ -15089,7 +15089,7 @@
 			(uuid "a44bdd7e-e0c1-4a21-b9f7-60cd1fccc157")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR06")
 					(unit 1)
@@ -15170,7 +15170,7 @@
 			(uuid "ef900233-d9b4-4ce8-8d47-f701a4aa85d6")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR01")
 					(unit 1)
@@ -15251,7 +15251,7 @@
 			(uuid "dae217cb-a6a1-4cf7-8d7a-a31cc32ca2f0")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR0113")
 					(unit 1)
@@ -15332,7 +15332,7 @@
 			(uuid "b712d7de-1a20-4a49-a7e2-818afb86770d")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "C6")
 					(unit 1)
@@ -15413,7 +15413,7 @@
 			(uuid "ea79fe19-f1d2-4e5d-bea8-8587ca079a38")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "C12")
 					(unit 1)
@@ -15504,7 +15504,7 @@
 			(uuid "c5c539c5-72c6-43a5-b4c5-0c1438d4c17b")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "SW1")
 					(unit 1)
@@ -15583,7 +15583,7 @@
 			(uuid "37b531ec-5dc7-4df1-9001-9dad437ce0b5")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "D2")
 					(unit 1)
@@ -15662,7 +15662,7 @@
 			(uuid "e277c169-d118-4059-9143-0fc1b59368f9")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR08")
 					(unit 1)
@@ -15740,7 +15740,7 @@
 			(uuid "5cca1383-adfd-451f-a428-90948b06bc3d")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR04")
 					(unit 1)
@@ -15817,7 +15817,7 @@
 			(uuid "d0b81330-1e33-44fd-ae0a-4f53a8d35de5")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR018")
 					(unit 1)
@@ -15892,7 +15892,7 @@
 			(uuid "115a21ad-cdca-4f12-9ca1-673da1e14c1e")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#P01")
 					(unit 1)
@@ -15969,7 +15969,7 @@
 			(uuid "6f0d5459-41be-4ef7-9631-96369d820b62")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR025")
 					(unit 1)
@@ -16059,7 +16059,7 @@
 			(uuid "b5526356-baec-4ae0-aaf1-ab5c3b6b6579")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "R40")
 					(unit 1)
@@ -16136,7 +16136,7 @@
 			(uuid "75648271-b5b1-425c-9f7b-1f0f0f7969a4")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR0112")
 					(unit 1)
@@ -16216,7 +16216,7 @@
 			(uuid "271ba06a-b928-43ce-a6fc-5b8fe79513a0")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR07")
 					(unit 1)
@@ -16295,7 +16295,7 @@
 			(uuid "f343867a-d1ca-4056-a235-8efcb257a9e1")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR011")
 					(unit 1)
@@ -16372,7 +16372,7 @@
 			(uuid "6fa36498-c657-4827-a342-ecfa026cbf3d")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR019")
 					(unit 1)
@@ -16565,7 +16565,7 @@
 			(uuid "21760aaa-1380-4c43-a4ee-5ff871e4c80d")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "R2")
 					(unit 1)
@@ -16642,7 +16642,7 @@
 			(uuid "b130fee9-9d50-4c51-9eaa-6bb77e785786")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR020")
 					(unit 1)
@@ -16722,7 +16722,7 @@
 			(uuid "5a4d346d-46d0-4d3c-abb3-6b97019b07ac")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR010")
 					(unit 1)
@@ -16812,7 +16812,7 @@
 			(uuid "a44e104a-71c8-4e25-bc06-5b04a9778cb0")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "R8")
 					(unit 1)
@@ -16893,7 +16893,7 @@
 			(uuid "d0b37bb8-7bec-4342-b4db-69d181037082")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "C5")
 					(unit 1)
@@ -16970,7 +16970,7 @@
 			(uuid "f63e3422-80ca-4f95-a8ee-d31afbf60b6c")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR030")
 					(unit 1)
@@ -17047,7 +17047,7 @@
 			(uuid "60a725b7-864d-4d2f-99c1-0079f1560cd6")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR016")
 					(unit 1)
@@ -17124,7 +17124,7 @@
 			(uuid "0c0d6dd7-a24a-438b-a723-32d52e441cdf")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR021")
 					(unit 1)
@@ -17201,7 +17201,7 @@
 			(uuid "42583fec-2362-46bd-904d-d5ddfefe2ae8")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR015")
 					(unit 1)
@@ -17278,7 +17278,7 @@
 			(uuid "81590c00-4438-46e6-82a0-21f85448cfdb")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR028")
 					(unit 1)
@@ -17368,7 +17368,7 @@
 			(uuid "06c87cad-7eef-48a4-8750-01a4c784d8ad")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "R5")
 					(unit 1)
@@ -17574,7 +17574,7 @@
 			(uuid "0873d2b2-38c7-4e29-a95b-5d1ac161eada")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "C1")
 					(unit 1)
@@ -17651,7 +17651,7 @@
 			(uuid "67fc03b7-0c8d-4c62-be3d-793eb1b619fa")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR022")
 					(unit 1)
@@ -17732,7 +17732,7 @@
 			(uuid "684af020-36b8-4007-9151-f1938a6c1b80")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR09")
 					(unit 1)
@@ -17813,7 +17813,7 @@
 			(uuid "4029cdf0-70c1-4c5e-9904-5b7ee620fa87")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "C8")
 					(unit 1)
@@ -17892,7 +17892,7 @@
 			(uuid "4cd5d796-6ac2-4464-a1bc-599737476964")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "D1")
 					(unit 1)
@@ -17982,7 +17982,7 @@
 			(uuid "5c4198e3-abcc-4fb4-8e6b-46fd24563edf")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "R6")
 					(unit 1)
@@ -18072,7 +18072,7 @@
 			(uuid "d4531f2c-4ba8-4758-9090-4816f05e8f9c")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "F1")
 					(unit 1)
@@ -18265,7 +18265,7 @@
 			(uuid "05567d5b-bf92-480c-8acc-4bdf49990cbc")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "R1")
 					(unit 1)
@@ -18344,7 +18344,7 @@
 			(uuid "20b3e187-104d-4932-80d6-2d777da2a044")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR0111")
 					(unit 1)
@@ -18425,7 +18425,7 @@
 			(uuid "1d74d1cc-dd24-4045-9c38-559691a05b88")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR02")
 					(unit 1)
@@ -18506,7 +18506,7 @@
 			(uuid "1e4c2800-48cd-4cef-a22f-63b4f6847cba")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "C9")
 					(unit 1)
@@ -18629,7 +18629,7 @@
 			(uuid "29afa038-a4c7-4198-800f-8a96aa82bdbb")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "J3")
 					(unit 1)
@@ -18710,7 +18710,7 @@
 			(uuid "a6a95c31-f533-45f1-ad3d-2aa747a904ec")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "C2")
 					(unit 1)
@@ -18788,7 +18788,7 @@
 			(uuid "e76f03e2-b125-4d67-bf26-5754fa1fe63f")
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR03")
 					(unit 1)
@@ -18865,7 +18865,7 @@
 			)
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(page "3")
 				)
@@ -19051,7 +19051,7 @@
 			)
 		)
 		(instances
-			(project "versaloon-ng"
+			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(page "2")
 				)

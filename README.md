@@ -1,8 +1,8 @@
-# Versaloon-NG probe board
+# OpenMUPP v1 probe board
 
-Versaloon-NG is a multi-protocol programming and debug probe.
+OpenMUPP v1 is a multi-protocol programming and debug probe.
 The design is open hardware.
-The board name is `VersaloonNG-v1`.
+The board name is `OpenMUPP v1`.
 The KiCad 10 project is in this repository.
 
 **Disclaimer:** this project is in no way related to or associated with the original Versaloon project or its author. This board is an independent hardware design.
@@ -51,10 +51,10 @@ flowchart LR
 
 | File | Content |
 |------|---------|
-| `versaloon-ng.kicad_sch` | Root sheet: U1, USB-C, VBUS fuse, crystal, J2, J4, LEDs, key. |
+| `openmupp-v1.kicad_sch` | Root sheet: U1, USB-C, VBUS fuse, crystal, J2, J4, LEDs, key. |
 | `target_interface.kicad_sch` | Level shifters, ESD, series resistors, target connector J3. |
 | `power.kicad_sch` | 3.3 V LDO, 12 V boost, VPP switch, target power switch. |
-| `versaloon-ng.kicad_sym` | Project symbols (TPS2553). |
+| `openmupp-v1.kicad_sym` | Project symbols (TPS2553). |
 
 The power sheet has three inputs from the MCU: `VPP_EN` (PC14), `VPP_ON` (PC15) and `TARGET_PWR_EN` (PB8). It makes the global nets `VPP` and `VTREF`.
 
@@ -167,11 +167,11 @@ PA1 and PB9 are unused. Most H5 pins are in analog mode at reset, which is the r
 
 ## Firmware
 
-The firmware is the `versaloon-ng` project. Firmware updates use the ROM USB DFU bootloader of the STM32H5. Press the key (or use `VERSALOON_FW_UPDATE`) to jump to it. Then use `dfu-util` or STM32CubeProgrammer.
+The firmware is the `openmupp` project. Firmware updates use the ROM USB DFU bootloader of the STM32H5. Press the key (or use `VERSALOON_FW_UPDATE`) to jump to it. Then use `dfu-util` or STM32CubeProgrammer.
 
 Related repositories:
 
-- Firmware: <https://gitlab.vandertogt.org/embedded-projects/versaloon-ng>
+- Firmware: <https://gitlab.vandertogt.org/embedded-projects/openmupp>
 - Drivers: <https://gitlab.vandertogt.org/embedded-libraries/system-stm32> and <https://gitlab.vandertogt.org/embedded-libraries/libart-stm32>
 - KiCad footprints: <https://private footprint library>
 
@@ -187,9 +187,9 @@ Related repositories:
 1. Clone this repository.
 2. Clone `kicad-footprints`.
 3. In KiCad, open **Preferences, Manage Footprint Libraries**. Add each `*.pretty` directory of `kicad-footprints` with its name as the nickname, without `.pretty`.
-4. Open `versaloon-ng.kicad_pro`.
+4. Open `openmupp-v1.kicad_pro`.
 
-The project symbol library `versaloon-ng` is in the repository. `sym-lib-table` links it with `${KIPRJMOD}`.
+The project symbol library `openmupp-v1` is in the repository. `sym-lib-table` links it with `${KIPRJMOD}`.
 
 ### Conventions
 
