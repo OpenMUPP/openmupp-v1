@@ -11581,6 +11581,20 @@
 		)
 		(uuid "ff9a362d-d08e-46c2-abc7-7488399ac481")
 	)
+	(wire
+		(pts
+			(xy 151.13 109.22)
+			(xy 148.59 109.22)
+		)
+		(uuid "443cf764-1481-4dfe-9145-0e465d62b84f")
+	)
+	(wire
+		(pts
+			(xy 250.19 149.86)
+			(xy 247.65 149.86)
+		)
+		(uuid "8ed0651c-615b-452b-b650-bbcc2a66c2d5")
+	)
 	(label "TARGET_PWR_EN"
 		(at 247.65 142.24 180)
 		(effects
@@ -12011,16 +12025,6 @@
 		)
 		(uuid "c04ba7fa-c97e-4470-84e1-4ed6d4530655")
 	)
-	(label "AUX2"
-		(at 204.47 83.82 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c79a155a-d909-4e08-8691-3d52aed2c47d")
-	)
 	(label "UART_RX"
 		(at 204.47 99.06 0)
 		(effects
@@ -12150,6 +12154,36 @@
 			(justify right bottom)
 		)
 		(uuid "a1b0e04f-4a87-461f-ac02-15cc19aaf3fe")
+	)
+	(label "VPP_SENSE"
+		(at 204.47 83.82 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ae30d97f-96e5-4201-a68a-90b5049a95e2")
+	)
+	(label "AUX2"
+		(at 148.59 109.22 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "08e01c99-2b16-42f5-9418-b0769e6bdfe9")
+	)
+	(label "VPP_SENSE"
+		(at 247.65 149.86 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f11b3613-daf2-4f9f-a3e0-c36e5a026a53")
 	)
 	(global_label "SWDIO"
 		(shape bidirectional)
@@ -12460,6 +12494,10 @@
 				(justify left)
 			)
 			(uuid "c6666e1a-1c91-40c0-89ef-9ffd3380fd9c")
+		)
+		(pin "VPP_SENSE" output
+			(at 250.19 149.86 180)
+			(uuid "11e49c8a-5310-43cb-afe4-014bb643de9d")
 		)
 		(instances
 			(project "openmupp-v1"
