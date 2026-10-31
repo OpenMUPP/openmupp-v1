@@ -72,7 +72,7 @@ The probe MCU always runs at 3.3 V. The target side of each shifter runs from `V
 | nRESET / debugWIRE | Open-drain, both | BSS138 (Q1) |
 
 - **Idle state.** `DIR_OUT` and `DIR_SWDIO` have external 100 kΩ pull-downs (R26, R27). A floating direction pin selects target to probe, so the target side is high-impedance. This also holds while the MCU is in reset.
-- **Pull-ups.** 10 kΩ to `VTREF` on SWDIO, TDO, RTCK, UART RX and nRESET. The shifters have dynamic 100 kΩ pull-downs, so an external pull-up must be 15 kΩ or less.
+- **Pull-ups.** 2.2 kΩ to `VTREF` on SWDIO (R22). The one-wire interface needs the fast rise time. 10 kΩ to `VTREF` on TDO, RTCK, UART RX and nRESET. The shifters have dynamic 100 kΩ pull-downs, so an external pull-up must be 15 kΩ or less.
 - **Series resistors.** 33 Ω (R31 to R41) on all J3 signals. The shifter edges are fast.
 - **VTref sense.** A 100 kΩ / 100 kΩ divider (R42, R43) and a 100 nF capacitor go to PB0.
 - **Isolation.** A shifter isolates the target when `VTREF` is below 100 mV.
