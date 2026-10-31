@@ -56,7 +56,7 @@ flowchart LR
 | `power.kicad_sch` | 3.3 V LDO, 12 V boost, VPP switch, target power switch. |
 | `openmupp-v1.kicad_sym` | Project symbols (TPS2553). |
 
-The power sheet has three inputs from the MCU: `VPP_EN` (PC14), `VPP_ON` (PC15), `VPP_12V_SEL` (PA8), `TARGET_PWR_EN` (PB8) and `TARGET_5V_EN` (PB10). It makes the global nets `VPP` and `VTREF`.
+The power sheet has five inputs from the MCU: `VPP_EN` (PC14), `VPP_ON` (PC15), `VPP_12V_SEL` (PA8), `TARGET_PWR_EN` (PB8) and `TARGET_5V_EN` (PB10). It has one output, `VPP_SENSE` (PA4). It makes the global nets `VPP` and `VTREF`.
 
 ### Level shifting
 
@@ -121,6 +121,8 @@ The boost cannot pull its output down. Thus the firmware must change the level i
 3. Wait until C29 discharges to the new level (0.5 s to 1 s when it goes from 12 V down to 8.4 V).
 4. Set `VPP_ON` high.
 
+`VPP_SENSE` measures the boost output through a divider (R47 100 kΩ, R48 33 kΩ). At 12.4 V, the ADC pin gets about 3.1 V. The firmware reads it before it sets `VPP_ON`, and after a level change to see that C29 has discharged.
+
 The firmware must set **both** `VPP_EN` (PC14) and `VPP_ON` (PC15) high to apply VPP on J3 pin 19. Both pins have pull-downs. The firmware applies VPP only when the adapter ID shows a high-voltage adapter and the protocol needs VPP.
 
 A high-voltage adapter is not passive. It must protect the shared line from VPP, for example with a diode and a resistor on UPDI. All other adapters are passive.
@@ -167,17 +169,18 @@ The worst-case error is about 0.007 in x, and the windows are ±0.05 wide. The f
 | nRESET / debugWIRE drive (`SRST`) | PB6 | LPUART1_TX, inverted, to the gate of Q1 |
 | nRESET / debugWIRE read-back (`SRST_RX`) | PB7 | LPUART1_RX, from U4 |
 | UART TX, UART RX | PA9, PA10 | USART1 |
-| `AUX1`, `AUX2` | PA2, PA4 | Outputs in the `DIR_OUT` group |
+| `AUX1`, `AUX2` | PA2, PB3 | Outputs in the `DIR_OUT` group |
 | USB | PA11, PA12 | USB D− and D+ |
 | `VTREF_SENSE`, `ADAPTER_ID` | PB0, PB1 | ADC |
 | `TARGET_PWR_EN` | PB8 | |
 | `VPP_EN`, `VPP_ON` | PC14, PC15 | |
 | `VPP_12V_SEL` | PA8 | Low: 8.4 V. High: 12 V. |
+| `VPP_SENSE` | PA4 | ADC. Divider R47, R48 and C32 on the boost output (before Q2). |
 | LED state 1, LED state 2, LED USB | PB2, PA1, PA15 | |
 | Key and BOOT0 | PC13 | Also the jump to the ROM USB bootloader |
 | Probe debug | PA13, PA14 | SWDIO, SWCLK on J4 |
 
-PB3 and PB9 are unused. Most H5 pins are in analog mode at reset, which is the reason for the external pull resistors on the direction pins.
+PB9 is unused. Most H5 pins are in analog mode at reset, which is the reason for the external pull resistors on the direction pins.
 
 ## Firmware
 
