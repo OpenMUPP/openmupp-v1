@@ -8053,7 +8053,7 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0402"
+		(property "Footprint" "resistors:R_0603"
 			(at 187.96 163.83 0)
 			(hide yes)
 			(effects
@@ -8088,7 +8088,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C23265"
+			(at 187.96 163.83 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:R")
 		(at 167.64 165.1 0)

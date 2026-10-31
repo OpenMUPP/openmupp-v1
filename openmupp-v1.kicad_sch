@@ -18753,7 +18753,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C37704"
+			(at 99.06 106.68 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:+3.3V")
 		(at 99.06 111.76 0)
