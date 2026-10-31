@@ -74,6 +74,7 @@ The probe MCU always runs at 3.3 V. The target side of each shifter runs from `V
 - **nRESET path.** Q1 has its source on GND and its drain on nRESET. The MCU never drives nRESET high. A 100 kΩ pull-down (R28) keeps the gate low while the MCU is in reset. U4 channel 4 reads the real line level back. The USART sees its own transmit, so it can detect collisions.
 - **Spare channels.** U4 channels 5 to 8 are unused. Their B inputs are tied to GND. The A outputs are not connected. `DIR` and `~OE` are tied to GND, so U4 always works from target to probe.
 - **Pull-ups.** 2.2 kΩ to `VTREF` on SWDIO (R22). The one-wire interface needs the fast rise time. 10 kΩ to `VTREF` on TDO, RTCK, UART RX and nRESET. The shifters have dynamic 100 kΩ pull-downs, so an external pull-up must be 15 kΩ or less.
+- **UART TX has its own shifter.** U6 is a fixed-direction part, so it always drives the line. U3 shares one direction pin (`DIR_OUT`). While `DIR_OUT` is low, the target side of U3 is high-impedance, and `T_UART_TX` has no pull-up. The UART bridge must work when the JTAG outputs are released, so UART TX does not use the free channels of U3.
 - **Series resistors.** 33 Ω (R31 to R41) on all J3 signals. The shifter edges are fast.
 - **VTref sense.** A 100 kΩ / 100 kΩ divider (R42, R43) and a 100 nF capacitor go to PB0.
 - **Isolation.** A shifter isolates the target when `VTREF` is below 100 mV.
