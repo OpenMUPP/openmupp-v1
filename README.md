@@ -35,15 +35,15 @@ flowchart LR
 
 | Block | Part | Notes |
 |-------|------|-------|
-| MCU | STM32H523CC, LQFP48 (U1) | Cortex-M33, 250 MHz, 256 KB flash, 272 KB RAM. 24 MHz crystal (Y1). |
-| USB | USB-C receptacle (J11), USBLC6-2SC6 (U5) | USB 2.0 full speed. 5.1 kΩ CC resistors. |
+| MCU | STM32H523CC, LQFP48 (U2) | Cortex-M33, 250 MHz, 256 KB flash, 272 KB RAM. 24 MHz crystal (Y1). |
+| USB | USB-C receptacle (J11), USBLC6-2SC6 (U1) | USB 2.0 full speed. 5.1 kΩ CC resistors. |
 | 3.3 V rail | XC6220B331MR-G LDO | Supplies the MCU and the target power switch. |
 | VBUS protection | 750 mA polyfuse (F1) | Expect `+5V` near 4.4 V at full load. |
-| Target power | TPS2553 (U7) | Current limit about 520 mA (ILIM 51 kΩ). The output is `VTREF`. |
-| VPP | MT3608 boost (U6), AO3401A P-FET (Q3) | See [High voltage (VPP)](#high-voltage-vpp). |
-| Level shifters | SN74LXC8T245 (U10), SN74LXC2T45 (U11), SN74LXC1T45 (U12 to U14) | All parts work from 1.1 V to 5.5 V. |
-| Reset path | BSS138 (Q1) | Open-drain nRESET and debugWIRE. |
-| ESD | TPD4E05U06 (U15 to U17) | On all J3 signals except the supplies. |
+| Target power | TPS2553 (U12) | Current limit about 520 mA (ILIM 51 kΩ). The output is `VTREF`. |
+| VPP | MT3608 boost (U13), AO3401A P-FET (Q3) | See [High voltage (VPP)](#high-voltage-vpp). |
+| Level shifters | SN74LXC8T245 (U3, U4), SN74LXC1T45 (U5, U6) | All parts work from 1.1 V to 5.5 V. |
+| Reset path | BSS138 (Q1), U4 channel 4 | Q1 pulls nRESET low. U4 reads the line back. |
+| ESD | TPD4E05U06 (U8 to U10) | On all J3 signals except the supplies. |
 | Probe debug | J4 (5-pin SWD) | Debugs the probe MCU only. **It is not a target connector.** |
 | User I/O | SW1 (key and BOOT0), LEDs D8 (state) and D9 (USB) | |
 
@@ -64,14 +64,15 @@ The probe MCU always runs at 3.3 V. The target side of each shifter runs from `V
 
 | Target signal | Direction | Shifter |
 |---------------|-----------|---------|
-| TCK, TDI, TRST, `AUX1`, `AUX2` | Out | U10, direction pin `DIR_OUT` |
-| TDO, RTCK | In | U11, fixed target to probe |
-| TMS / SWDIO | Both | U12, direction pin `DIR_SWDIO` |
-| UART TX | Out | U13, fixed |
-| UART RX | In | U14, fixed |
-| nRESET / debugWIRE | Open-drain, both | BSS138 (Q1) |
+| TCK, TDI, TRST, `AUX1`, `AUX2` | Out | U3, direction pin `DIR_OUT` |
+| TDO, RTCK, UART RX, nRESET read-back | In | U4, fixed target to probe |
+| TMS / SWDIO | Both | U5, direction pin `DIR_SWDIO` |
+| UART TX | Out | U6, fixed |
+| nRESET / debugWIRE, drive | Out, open-drain | BSS138 (Q1), low side |
 
 - **Idle state.** `DIR_OUT` and `DIR_SWDIO` have external 100 kΩ pull-downs (R26, R27). A floating direction pin selects target to probe, so the target side is high-impedance. This also holds while the MCU is in reset.
+- **nRESET path.** Q1 has its source on GND and its drain on nRESET. The MCU never drives nRESET high. A 100 kΩ pull-down (R28) keeps the gate low while the MCU is in reset. U4 channel 4 reads the real line level back. The USART sees its own transmit, so it can detect collisions.
+- **Spare channels.** U4 channels 5 to 8 are unused. Their B inputs are tied to GND. The A outputs are not connected. `DIR` and `~OE` are tied to GND, so U4 always works from target to probe.
 - **Pull-ups.** 2.2 kΩ to `VTREF` on SWDIO (R22). The one-wire interface needs the fast rise time. 10 kΩ to `VTREF` on TDO, RTCK, UART RX and nRESET. The shifters have dynamic 100 kΩ pull-downs, so an external pull-up must be 15 kΩ or less.
 - **Series resistors.** 33 Ω (R31 to R41) on all J3 signals. The shifter edges are fast.
 - **VTref sense.** A 100 kΩ / 100 kΩ divider (R42, R43) and a 100 nF capacitor go to PB0.
@@ -153,7 +154,8 @@ The worst-case error is about 0.007 in x, and the windows are ±0.05 wide. The f
 | `DIR_SWDIO` | PB5 | GPIO (TIM3_CH2, AF2, for the one-wire engine), with external pull-down |
 | `DIR_OUT` | PB12 | GPIO, with external pull-down |
 | TRST, RTCK | PB4, PA0 | GPIO |
-| nRESET / debugWIRE | PB10 | USART3_TX, half-duplex, through the open-drain path |
+| nRESET / debugWIRE drive (`SRST`) | PB6 | LPUART1_TX, inverted, to the gate of Q1 |
+| nRESET / debugWIRE read-back (`SRST_RX`) | PB7 | LPUART1_RX, from U4 |
 | UART TX, UART RX | PA9, PA10 | USART1 |
 | `AUX1`, `AUX2` | PA2, PA4 | Outputs in the `DIR_OUT` group |
 | USB | PA11, PA12 | USB D− and D+ |
@@ -164,7 +166,7 @@ The worst-case error is about 0.007 in x, and the windows are ±0.05 wide. The f
 | Key and BOOT0 | PC13 | Also the jump to the ROM USB bootloader |
 | Probe debug | PA13, PA14 | SWDIO, SWCLK on J4 |
 
-PA8, PB3, PB6, PB7 and PB9 are unused. Most H5 pins are in analog mode at reset, which is the reason for the external pull resistors on the direction pins.
+PA8, PB3, PB9 and PB10 are unused. Most H5 pins are in analog mode at reset, which is the reason for the external pull resistors on the direction pins.
 
 ## Firmware
 
