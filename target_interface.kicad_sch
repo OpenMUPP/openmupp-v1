@@ -7822,7 +7822,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2.2k"
 			(at 263.525 27.305 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7865,7 +7865,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25744"
+		(property "LCSC" "C25879"
 			(at 263.525 27.305 0)
 			(hide yes)
 			(show_name no)

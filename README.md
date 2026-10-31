@@ -44,14 +44,14 @@ flowchart LR
 | Level shifters | SN74LXC8T245 (U10), SN74LXC2T45 (U11), SN74LXC1T45 (U12 to U14) | All parts work from 1.1 V to 5.5 V. |
 | Reset path | BSS138 (Q1) | Open-drain nRESET and debugWIRE. |
 | ESD | TPD4E05U06 (U15 to U17) | On all J3 signals except the supplies. |
-| Probe debug | J2 (STDC14), J4 (5-pin SWD) | Debug the probe MCU only. **They are not target connectors.** |
+| Probe debug | J4 (5-pin SWD) | Debugs the probe MCU only. **It is not a target connector.** |
 | User I/O | SW1 (key and BOOT0), LEDs D8 (state) and D9 (USB) | |
 
 ### Sheets
 
 | File | Content |
 |------|---------|
-| `openmupp-v1.kicad_sch` | Root sheet: U1, USB-C, VBUS fuse, crystal, J2, J4, LEDs, key. |
+| `openmupp-v1.kicad_sch` | Root sheet: U1, USB-C, VBUS fuse, crystal, J4, LEDs, key. |
 | `target_interface.kicad_sch` | Level shifters, ESD, series resistors, target connector J3. |
 | `power.kicad_sch` | 3.3 V LDO, 12 V boost, VPP switch, target power switch. |
 | `openmupp-v1.kicad_sym` | Project symbols (TPS2553). |
@@ -72,7 +72,7 @@ The probe MCU always runs at 3.3 V. The target side of each shifter runs from `V
 | nRESET / debugWIRE | Open-drain, both | BSS138 (Q1) |
 
 - **Idle state.** `DIR_OUT` and `DIR_SWDIO` have external 100 kΩ pull-downs (R26, R27). A floating direction pin selects target to probe, so the target side is high-impedance. This also holds while the MCU is in reset.
-- **Pull-ups.** 10 kΩ to `VTREF` on SWDIO, TDO, RTCK, UART RX and nRESET. The shifters have dynamic 100 kΩ pull-downs, so an external pull-up must be 15 kΩ or less.
+- **Pull-ups.** 2.2 kΩ to `VTREF` on SWDIO (R22). The one-wire interface needs the fast rise time. 10 kΩ to `VTREF` on TDO, RTCK, UART RX and nRESET. The shifters have dynamic 100 kΩ pull-downs, so an external pull-up must be 15 kΩ or less.
 - **Series resistors.** 33 Ω (R31 to R41) on all J3 signals. The shifter edges are fast.
 - **VTref sense.** A 100 kΩ / 100 kΩ divider (R42, R43) and a 100 nF capacitor go to PB0.
 - **Isolation.** A shifter isolates the target when `VTREF` is below 100 mV.
@@ -150,7 +150,8 @@ The worst-case error is about 0.007 in x, and the windows are ±0.05 wide. The f
 | TDI / ISP MOSI | PB15 | SPI2_MOSI |
 | TDO / ISP MISO | PB14 | SPI2_MISO. Same net as PA3 (USART2_RX, for SWO). |
 | TMS / SWDIO | PA6, PA7 | One net on the A side of U12 |
-| `DIR_SWDIO`, `DIR_OUT` | PA8, PB12 | GPIO, with external pull-downs |
+| `DIR_SWDIO` | PB5 | GPIO (TIM3_CH2, AF2, for the one-wire engine), with external pull-down |
+| `DIR_OUT` | PB12 | GPIO, with external pull-down |
 | TRST, RTCK | PB4, PA0 | GPIO |
 | nRESET / debugWIRE | PB10 | USART3_TX, half-duplex, through the open-drain path |
 | UART TX, UART RX | PA9, PA10 | USART1 |
@@ -159,11 +160,11 @@ The worst-case error is about 0.007 in x, and the windows are ±0.05 wide. The f
 | `VTREF_SENSE`, `ADAPTER_ID` | PB0, PB1 | ADC |
 | `TARGET_PWR_EN` | PB8 | |
 | `VPP_EN`, `VPP_ON` | PC14, PC15 | |
-| LED state, LED USB | PB2, PB5 | |
+| LED state 1, LED state 2, LED USB | PB2, PA1, PA15 | |
 | Key and BOOT0 | PC13 | Also the jump to the ROM USB bootloader |
-| Probe debug | PA13, PA14, PB3, PA15, PB6, PB7 | SWDIO, SWCLK, SWO, JTDI, `DBG_TX`, `DBG_RX` on J2 and J4 |
+| Probe debug | PA13, PA14 | SWDIO, SWCLK on J4 |
 
-PA1 and PB9 are unused. Most H5 pins are in analog mode at reset, which is the reason for the external pull resistors on the direction pins.
+PA8, PB3, PB6, PB7 and PB9 are unused. Most H5 pins are in analog mode at reset, which is the reason for the external pull resistors on the direction pins.
 
 ## Firmware
 
