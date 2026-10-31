@@ -52,7 +52,7 @@ flowchart LR
 | File | Content |
 |------|---------|
 | `openmupp-v1.kicad_sch` | Root sheet: U1, USB-C, VBUS fuse, crystal, J4, LEDs, key. |
-| `target_interface.kicad_sch` | Level shifters, ESD, series resistors, target connector J3. |
+| `target_interface.kicad_sch` | Level shifters, ESD, series resistors, target connector J3, `ADAPTER_ID` clamp, `VTREF` sense divider. |
 | `power.kicad_sch` | 3.3 V LDO, 12 V boost, VPP switch, target power switch. |
 | `openmupp-v1.kicad_sym` | Project symbols (TPS2553). |
 
