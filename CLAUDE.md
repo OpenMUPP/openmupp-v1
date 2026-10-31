@@ -1,4 +1,4 @@
-# OpenMUPP-v1 probe board
+# OpenMUPP v1 probe board
 
 KiCad 10 project for a Versaloon-style multi-protocol probe built around an STM32H523.
 The design plan is `/home/armin/Nextcloud/dev-plans/vsl-new-board/vsl-new-board-level-shifting.md`.

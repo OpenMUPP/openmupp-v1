@@ -1,8 +1,8 @@
-# OpenMUPP-v1 probe board
+# OpenMUPP v1 probe board
 
-OpenMUPP-v1 is a multi-protocol programming and debug probe.
+OpenMUPP v1 is a multi-protocol programming and debug probe.
 The design is open hardware.
-The board name is `OpenMUPP-v1`.
+The board name is `OpenMUPP v1`.
 The KiCad 10 project is in this repository.
 
 **Disclaimer:** this project is in no way related to or associated with the original Versaloon project or its author. This board is an independent hardware design.
