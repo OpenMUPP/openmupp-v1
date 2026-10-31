@@ -167,11 +167,11 @@ PA1 and PB9 are unused. Most H5 pins are in analog mode at reset, which is the r
 
 ## Firmware
 
-The firmware is the `versaloon-ng` project. Firmware updates use the ROM USB DFU bootloader of the STM32H5. Press the key (or use `VERSALOON_FW_UPDATE`) to jump to it. Then use `dfu-util` or STM32CubeProgrammer.
+The firmware is the `openmupp` project. Firmware updates use the ROM USB DFU bootloader of the STM32H5. Press the key (or use `VERSALOON_FW_UPDATE`) to jump to it. Then use `dfu-util` or STM32CubeProgrammer.
 
 Related repositories:
 
-- Firmware: <https://gitlab.vandertogt.org/embedded-projects/versaloon-ng>
+- Firmware: <https://gitlab.vandertogt.org/embedded-projects/openmupp>
 - Drivers: <https://gitlab.vandertogt.org/embedded-libraries/system-stm32> and <https://gitlab.vandertogt.org/embedded-libraries/libart-stm32>
 - KiCad footprints: <https://private footprint library>
 
