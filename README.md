@@ -150,7 +150,8 @@ The worst-case error is about 0.007 in x, and the windows are ±0.05 wide. The f
 | TDI / ISP MOSI | PB15 | SPI2_MOSI |
 | TDO / ISP MISO | PB14 | SPI2_MISO. Same net as PA3 (USART2_RX, for SWO). |
 | TMS / SWDIO | PA6, PA7 | One net on the A side of U12 |
-| `DIR_SWDIO`, `DIR_OUT` | PA8, PB12 | GPIO, with external pull-downs |
+| `DIR_SWDIO` | PB5 | GPIO (TIM3_CH2, AF2, for the one-wire engine), with external pull-down |
+| `DIR_OUT` | PB12 | GPIO, with external pull-down |
 | TRST, RTCK | PB4, PA0 | GPIO |
 | nRESET / debugWIRE | PB10 | USART3_TX, half-duplex, through the open-drain path |
 | UART TX, UART RX | PA9, PA10 | USART1 |
@@ -159,11 +160,11 @@ The worst-case error is about 0.007 in x, and the windows are ±0.05 wide. The f
 | `VTREF_SENSE`, `ADAPTER_ID` | PB0, PB1 | ADC |
 | `TARGET_PWR_EN` | PB8 | |
 | `VPP_EN`, `VPP_ON` | PC14, PC15 | |
-| LED state, LED USB | PB2, PB5 | |
+| LED state 1, LED state 2, LED USB | PB2, PA1, PA15 | |
 | Key and BOOT0 | PC13 | Also the jump to the ROM USB bootloader |
-| Probe debug | PA13, PA14, PB3, PA15, PB6, PB7 | SWDIO, SWCLK, SWO, JTDI, `DBG_TX`, `DBG_RX` on J2 and J4 |
+| Probe debug | PA13, PA14, PB6, PB7 | SWDIO, SWCLK, `DBG_TX`, `DBG_RX` on J2 |
 
-PA1 and PB9 are unused. Most H5 pins are in analog mode at reset, which is the reason for the external pull resistors on the direction pins.
+PA8, PB3 and PB9 are unused. Most H5 pins are in analog mode at reset, which is the reason for the external pull resistors on the direction pins.
 
 ## Firmware
 
