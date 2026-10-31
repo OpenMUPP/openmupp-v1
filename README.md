@@ -44,14 +44,14 @@ flowchart LR
 | Level shifters | SN74LXC8T245 (U10), SN74LXC2T45 (U11), SN74LXC1T45 (U12 to U14) | All parts work from 1.1 V to 5.5 V. |
 | Reset path | BSS138 (Q1) | Open-drain nRESET and debugWIRE. |
 | ESD | TPD4E05U06 (U15 to U17) | On all J3 signals except the supplies. |
-| Probe debug | J2 (STDC14), J4 (5-pin SWD) | Debug the probe MCU only. **They are not target connectors.** |
+| Probe debug | J4 (5-pin SWD) | Debugs the probe MCU only. **It is not a target connector.** |
 | User I/O | SW1 (key and BOOT0), LEDs D8 (state) and D9 (USB) | |
 
 ### Sheets
 
 | File | Content |
 |------|---------|
-| `openmupp-v1.kicad_sch` | Root sheet: U1, USB-C, VBUS fuse, crystal, J2, J4, LEDs, key. |
+| `openmupp-v1.kicad_sch` | Root sheet: U1, USB-C, VBUS fuse, crystal, J4, LEDs, key. |
 | `target_interface.kicad_sch` | Level shifters, ESD, series resistors, target connector J3. |
 | `power.kicad_sch` | 3.3 V LDO, 12 V boost, VPP switch, target power switch. |
 | `openmupp-v1.kicad_sym` | Project symbols (TPS2553). |
@@ -162,9 +162,9 @@ The worst-case error is about 0.007 in x, and the windows are ±0.05 wide. The f
 | `VPP_EN`, `VPP_ON` | PC14, PC15 | |
 | LED state 1, LED state 2, LED USB | PB2, PA1, PA15 | |
 | Key and BOOT0 | PC13 | Also the jump to the ROM USB bootloader |
-| Probe debug | PA13, PA14, PB6, PB7 | SWDIO, SWCLK, `DBG_TX`, `DBG_RX` on J2 |
+| Probe debug | PA13, PA14 | SWDIO, SWCLK on J4 |
 
-PA8, PB3 and PB9 are unused. Most H5 pins are in analog mode at reset, which is the reason for the external pull resistors on the direction pins.
+PA8, PB3, PB6, PB7 and PB9 are unused. Most H5 pins are in analog mode at reset, which is the reason for the external pull resistors on the direction pins.
 
 ## Firmware
 
