@@ -8708,7 +8708,7 @@
 		(at 153.44 87.71 -90)
 		(descr "HanElectricity TS1109 tact switch, 4.5 x 4.5 mm, gull wing, 4 pads (top pair = 1, bottom pair = 2). Land pattern from datasheet: 7.5 mm outer span, 4.5 mm gap, 1.5 x 1.5 mm pads, 3.0 mm pitch. LCSC C22375347 (H3.8, 260 gf).")
 		(property "Reference" "SW1"
-			(at -0.61 -3.56 180)
+			(at -0.61 -3.56 0)
 			(layer "F.SilkS")
 			(uuid "f3e9f973-f8dd-4cc4-bfaa-2e01ae77e7fc")
 			(effects
@@ -8810,12 +8810,6 @@
 		(path "/5768b2ab-ed1c-477d-802f-aa750b7fad27")
 		(sheetname "/")
 		(sheetfile "openmupp-v1.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8849,17 +8843,27 @@
 			(layer "F.SilkS")
 			(uuid "9df9d2b4-dab1-4c5e-bc77-b583b3b98cd8")
 		)
-		(fp_poly
-			(pts
-				(xy -4 -2.5) (xy 4 -2.5) (xy 4 2.5) (xy -4 2.5)
-			)
+		(fp_rect
+			(start -4 -2.5)
+			(end 4 2.5)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "93c41452-afff-4eac-8a10-94d9d36bde7d")
+			(uuid "35264493-5da2-4ce5-b8ec-b858036160b3")
+		)
+		(fp_rect
+			(start -2.25 -2.25)
+			(end 2.25 2.25)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "903eb8bb-9a80-4482-b371-cb9a145602e4")
 		)
 		(fp_circle
 			(center 0 0)
@@ -8871,18 +8875,6 @@
 			(fill no)
 			(layer "F.Fab")
 			(uuid "8e589dc6-4930-4c04-af73-2df770e9c0cd")
-		)
-		(fp_poly
-			(pts
-				(xy -2.25 -2.25) (xy 2.25 -2.25) (xy 2.25 2.25) (xy -2.25 2.25)
-			)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "55439e04-8a35-44cb-97d1-c6f66cf5797d")
 		)
 		(pad "1" smd rect
 			(at -3 -1.5 270)
@@ -8921,6 +8913,17 @@
 			(uuid "de218cde-662c-42ac-9ed1-4ee1b17e8aa2")
 		)
 		(embedded_fonts no)
+		(model "${OTHERUSE3DMOD}/buttons_switches/Tact Switch 4.5mm SMT.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "resistors:R_0402"
 		(layer "F.Cu")
@@ -14077,14 +14080,19 @@
 		(path "/95d73bc5-4b34-43f9-b9ee-1cf6c443cf61/eaeee863-6371-44f8-9fa8-eb6a6d9727a5")
 		(sheetname "/Power/")
 		(sheetfile "power.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -2.7 -2.25)
+			(end 2.7 2.25)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "34cc5a5a-73cf-4540-97e4-a53155f137e6")
+		)
 		(fp_circle
 			(center -3.1 0)
 			(end -2.95 0)
@@ -14096,29 +14104,16 @@
 			(layer "F.SilkS")
 			(uuid "054a6375-df20-4b01-ae6d-da5c6b62cf76")
 		)
-		(fp_poly
-			(pts
-				(xy -2.7 -2.25) (xy 2.7 -2.25) (xy 2.7 2.25) (xy -2.7 2.25)
-			)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "2ef477ca-2e89-4273-ab80-940274fc610f")
-		)
-		(fp_poly
-			(pts
-				(xy -2.8 -2.75) (xy 2.8 -2.75) (xy 2.8 2.75) (xy -2.8 2.75)
-			)
+		(fp_rect
+			(start -2.8 -2.75)
+			(end 2.8 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "6b2ee51f-e645-473d-8977-d379a8d392cc")
+			(uuid "8110fed8-b31f-42c2-9e62-c09cd44705d9")
 		)
 		(fp_poly
 			(pts
@@ -14133,7 +14128,7 @@
 			(uuid "995b2132-e4cf-49f5-958b-67968870b4a1")
 		)
 		(pad "1" smd rect
-			(at -1.850001 0 90)
+			(at -1.85 0 90)
 			(size 1.4 4.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "+5V")
@@ -14142,7 +14137,7 @@
 			(uuid "de3d90ed-8738-4f75-9ea0-d1f32f4d2102")
 		)
 		(pad "2" smd rect
-			(at 1.850001 0 90)
+			(at 1.85 0 90)
 			(size 1.4 4.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "Net-(D3-A)")
@@ -14151,6 +14146,17 @@
 			(uuid "f1f5d1f6-1ce7-45c8-9da3-2500d38a8b78")
 		)
 		(embedded_fonts no)
+		(model "${OTHERUSE3DMOD}/inductors/IND_SWPA5040S_SNL.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Package_SO:TSSOP-24_4.4x7.8mm_P0.65mm"
 		(layer "F.Cu")
