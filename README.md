@@ -56,7 +56,7 @@ flowchart LR
 | `power.kicad_sch` | 3.3 V LDO, 12 V boost, VPP switch, target power switch. |
 | `openmupp-v1.kicad_sym` | Project symbols (TPS2553). |
 
-The power sheet has three inputs from the MCU: `VPP_EN` (PC14), `VPP_ON` (PC15) and `TARGET_PWR_EN` (PB8). It makes the global nets `VPP` and `VTREF`.
+The power sheet has three inputs from the MCU: `VPP_EN` (PC14), `VPP_ON` (PC15), `VPP_12V_SEL` (PA8), `TARGET_PWR_EN` (PB8) and `TARGET_5V_EN` (PB10). It makes the global nets `VPP` and `VTREF`.
 
 ### Level shifting
 
@@ -95,7 +95,7 @@ J3 is a 2 × 10 IDC header, 2.54 mm. The footprint is `Connector_IDC:IDC-Header_
 | 13 | UART TX (probe output) | 14 | UART RX (probe input) |
 | 15 | TRST | 16 | Adapter ID (ADC, 3.3 V domain) |
 | 17 | `AUX1` | 18 | `AUX2` |
-| 19 | VPP (12 V, gated) | 20 | GND |
+| 19 | VPP (8.4 V or 12 V, gated) | 20 | GND |
 
 - **Target power is on pin 1.** One pin carries the sense and the supply. The limit is about 520 mA.
 - **Pin 2 is reserved.** A later adapter that needs a second supply pin can use it, with its own switch.
@@ -110,7 +110,16 @@ The TPS2553 sits on the 3.3 V rail. Its output is `VTREF`.
 
 ### High voltage (VPP)
 
-The MT3608 boost makes 12 V. The boost passes its input through when it is off. Thus a P-FET switch gates VPP.
+The MT3608 boost makes the VPP voltage. The boost passes its input through when it is off. Thus a P-FET switch gates VPP.
+
+The default VPP voltage is 8.4 V. This level is safe for PIC parts with VIHH = 8 V to 9 V. VIHH is the high voltage that the part needs on its MCLR pin to start programming. R34 (130 kΩ) and R35 (10 kΩ) set it. To get 12 V, the firmware sets `VPP_12V_SEL` (PA8) high. This turns on Q5, which puts R45 (21.5 kΩ) in parallel with R35. R46 (100 kΩ) pulls the gate low, so a reset or a floating pin gives 8.4 V.
+
+The boost cannot pull its output down. Thus the firmware must change the level in this order:
+
+1. Set `VPP_ON` low.
+2. Set `VPP_12V_SEL` to the new level.
+3. Wait until C29 discharges to the new level (0.5 s to 1 s when it goes from 12 V down to 8.4 V).
+4. Set `VPP_ON` high.
 
 The firmware must set **both** `VPP_EN` (PC14) and `VPP_ON` (PC15) high to apply VPP on J3 pin 19. Both pins have pull-downs. The firmware applies VPP only when the adapter ID shows a high-voltage adapter and the protocol needs VPP.
 
@@ -163,11 +172,12 @@ The worst-case error is about 0.007 in x, and the windows are ±0.05 wide. The f
 | `VTREF_SENSE`, `ADAPTER_ID` | PB0, PB1 | ADC |
 | `TARGET_PWR_EN` | PB8 | |
 | `VPP_EN`, `VPP_ON` | PC14, PC15 | |
+| `VPP_12V_SEL` | PA8 | Low: 8.4 V. High: 12 V. |
 | LED state 1, LED state 2, LED USB | PB2, PA1, PA15 | |
 | Key and BOOT0 | PC13 | Also the jump to the ROM USB bootloader |
 | Probe debug | PA13, PA14 | SWDIO, SWCLK on J4 |
 
-PA8, PB3, PB9 and PB10 are unused. Most H5 pins are in analog mode at reset, which is the reason for the external pull resistors on the direction pins.
+PB3 and PB9 are unused. Most H5 pins are in analog mode at reset, which is the reason for the external pull resistors on the direction pins.
 
 ## Firmware
 

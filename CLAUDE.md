@@ -19,11 +19,12 @@ The design plan is `/home/armin/Nextcloud/dev-plans/vsl-new-board/vsl-new-board-
 | `power.kicad_sch` | 3.3 V LDO, 12 V boost, VPP switch, target power switch |
 | `openmupp-v1.kicad_sym` | Project symbols (TPS2553) |
 
-Power sheet interface: inputs `VPP_EN` (PC14), `VPP_ON` (PC15), `TARGET_PWR_EN` (PB8), `TARGET_5V_EN` (PB10). Global nets `VPP` and `VTREF`.
+Power sheet interface: inputs `VPP_EN` (PC14), `VPP_ON` (PC15), `TARGET_PWR_EN` (PB8), `TARGET_5V_EN` (PB10), `VPP_12V_SEL` (PA8). Global nets `VPP` and `VTREF`.
 
 ## Design decisions
 
 - 12 V for AVR/PIC high-voltage programming: MT3608 boost. The boost passes its input through when off, so a P-FET switch gates VPP. Both `VPP_EN` and `VPP_ON` must be high.
+- VPP level: default 8.4 V (R34 130 kΩ, R35 10 kΩ) for PIC parts with VIHH 8 V to 9 V. `VPP_12V_SEL` (PA8) turns on Q5 (BSS138), which adds R45 (21.5 kΩ) in parallel with R35 for about 12 V. R46 pulls the gate low, so reset gives 8.4 V. The boost cannot pull its output down. Firmware order: `VPP_ON` low, select level, wait, `VPP_ON` high (issue #4). The FB net is `VPP_FB`.
 - Target power: TPS2553 on the 3.3 V rail, about 520 mA limit (ILIM 51 kΩ). Its output joins `VTREF`. EN high supplies the target. EN low senses the target voltage, because the part blocks reverse current.
 - 5 V target supply: a second TPS2553 (U14) switches `+5V` to `VTREF`. ILIM 91 kΩ gives about 300 mA. `TARGET_5V_EN` (PB10) drives its EN through a 10 kΩ resistor (R42). Q4 (BSS138) pulls U14 EN low when `TARGET_PWR_EN` is high, so 3.3 V has priority. Firmware must still turn both switches off between changes (see issue #3).
 - `ADAPTER_ID` reaches PB1 through R44 (10 kΩ). D5 (BAT54C, both anodes) clamps PB1 to `+3.3V`, so 5 V on J3 pin 16 does not harm the MCU. The PB1 side of R44 is net `ADAPTER_ID_MCU`.
