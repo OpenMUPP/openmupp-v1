@@ -511,7 +511,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "versaloon-ng.kicad_pro",
+    "filename": "openmupp-v1.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -707,7 +707,7 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "versaloon-ng.kicad_sch",
+        "filename": "openmupp-v1.kicad_sch",
         "name": "Root",
         "uuid": "26052ec4-b7f0-4f53-b73f-c5fe34396dff"
       }

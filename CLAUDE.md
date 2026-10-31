@@ -1,4 +1,4 @@
-# Versaloon-NG probe board
+# OpenMUPP-v1 probe board
 
 KiCad 10 project for a Versaloon-style multi-protocol probe built around an STM32H523.
 The design plan is `/home/armin/Nextcloud/dev-plans/vsl-new-board/vsl-new-board-level-shifting.md`.
@@ -14,10 +14,10 @@ The design plan is `/home/armin/Nextcloud/dev-plans/vsl-new-board/vsl-new-board-
 
 | File | Content |
 |---|---|
-| `versaloon-ng.kicad_sch` | Root sheet: STM32H523 (U1), USB-C (J11), VBUS fuse (F1), probe debug headers J2 (STDC14) and J4 (5-pin SWD), sheet instances |
+| `openmupp-v1.kicad_sch` | Root sheet: STM32H523 (U1), USB-C (J11), VBUS fuse (F1), probe debug headers J2 (STDC14) and J4 (5-pin SWD), sheet instances |
 | `target_interface.kicad_sch` | Level shifters, ESD, target connector J3 (2 × 10, 2.54 mm) |
 | `power.kicad_sch` | 3.3 V LDO, 12 V boost, VPP switch, target power switch |
-| `versaloon-ng.kicad_sym` | Project symbols (TPS2553) |
+| `openmupp-v1.kicad_sym` | Project symbols (TPS2553) |
 
 Power sheet interface: inputs `VPP_EN` (PC14), `VPP_ON` (PC15), `TARGET_PWR_EN` (PB8). Global nets `VPP` and `VTREF`.
 
