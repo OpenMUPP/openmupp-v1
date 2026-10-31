@@ -9836,6 +9836,16 @@
 	)
 	(wire
 		(pts
+			(xy 148.59 104.14) (xy 151.13 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "07af519f-54ab-47ab-8fdc-e3e43d03865b")
+	)
+	(wire
+		(pts
 			(xy 76.2 81.915) (xy 79.375 81.915)
 		)
 		(stroke
@@ -11074,6 +11084,16 @@
 		)
 		(uuid "ff9a362d-d08e-46c2-abc7-7488399ac481")
 	)
+	(label "AUX2"
+		(at 148.59 109.22 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "023dd39d-fd61-4884-ad1b-75b698c66d35")
+	)
 	(label "TARGET_PWR_EN"
 		(at 247.65 142.24 180)
 		(effects
@@ -11083,16 +11103,6 @@
 			(justify right bottom)
 		)
 		(uuid "03809f92-c4d3-4683-b757-5bf64c9cf1a4")
-	)
-	(label "AUX2"
-		(at 148.59 109.22 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "08e01c99-2b16-42f5-9418-b0769e6bdfe9")
 	)
 	(label "TARGET_5V_EN"
 		(at 148.59 124.46 180)
@@ -11274,16 +11284,6 @@
 		)
 		(uuid "481bd24e-c414-4382-9f2a-2f0d0f2adc3d")
 	)
-	(label "VPP_12V_SEL"
-		(at 204.47 93.98 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4e11d23b-3fb4-4b4e-89e6-dc78f660eb92")
-	)
 	(label "UART_TX"
 		(at 204.47 96.52 0)
 		(effects
@@ -11435,7 +11435,7 @@
 		(uuid "a1b0e04f-4a87-461f-ac02-15cc19aaf3fe")
 	)
 	(label "ADAPTER_ID_MCU"
-		(at 151.13 104.14 180)
+		(at 148.59 104.14 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11504,16 +11504,6 @@
 		)
 		(uuid "adddcec0-6a0b-42ff-94dc-c8e701354e07")
 	)
-	(label "VPP_SENSE"
-		(at 204.47 83.82 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ae30d97f-96e5-4201-a68a-90b5049a95e2")
-	)
 	(label "SRST"
 		(at 148.59 116.84 180)
 		(effects
@@ -11535,6 +11525,16 @@
 		(uuid "b1f37f74-05c8-4eab-a05a-e4ba799b3fa5")
 	)
 	(label "VPP_12V_SEL"
+		(at 204.47 93.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c04245c2-04a4-4680-b07b-525719ef6c4c")
+	)
+	(label "VPP_12V_SEL"
 		(at 247.65 147.32 180)
 		(effects
 			(font
@@ -11543,6 +11543,16 @@
 			(justify right bottom)
 		)
 		(uuid "c04ba7fa-c97e-4470-84e1-4ed6d4530655")
+	)
+	(label "VPP_SENSE"
+		(at 204.47 83.82 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c7214533-c589-4321-ac9c-2e79e5eff234")
 	)
 	(label "UART_RX"
 		(at 204.47 99.06 0)
@@ -12043,6 +12053,17 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "package/gullwing"
+			(at 71.12 79.375 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "5"
 			(uuid "c85fcfa7-6be1-4d61-a96a-c0c5e64d44b9")
 		)
@@ -12128,6 +12149,17 @@
 			)
 		)
 		(property "Description" "STMicroelectronics Arm Cortex-M33 MCU, 256KB flash, 272KB RAM, 35 GPIO, LQFP48"
+			(at 176.53 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "package/gullwing"
 			(at 176.53 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -12648,6 +12680,17 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 162.56 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "a23ef544-c760-47ce-aa78-fe3dc560303d")
 		)
@@ -13059,6 +13102,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 111.76 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 111.76 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -14641,6 +14695,17 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 198.12 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 198.12 182.88 0)
 			(hide yes)
 			(show_name no)
@@ -16563,6 +16628,17 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+			(at 180.34 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "d72c47c5-0ade-4965-8220-737875da6782")
 		)
@@ -16643,6 +16719,17 @@
 			)
 		)
 		(property "LCSC" "C269118"
+			(at 53.34 60.325 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 53.34 60.325 0)
 			(hide yes)
 			(show_name no)
@@ -17281,6 +17368,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 94.615 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
 			(at 94.615 36.83 0)
 			(hide yes)
 			(show_name no)
