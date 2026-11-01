@@ -204,23 +204,22 @@ The firmware is the `openmupp` project. Firmware updates use the ROM USB DFU boo
 
 Related repositories:
 
-- Firmware: <https://gitlab.vandertogt.org/embedded-projects/openmupp>
-- Drivers: <https://gitlab.vandertogt.org/embedded-libraries/system-stm32> and <https://gitlab.vandertogt.org/embedded-libraries/libart-stm32>
-- KiCad footprints: <https://private footprint library>
+- Firmware: <https://github.com/OpenMUPP/openmupp>
+- Drivers: <https://github.com/armint/system-stm32> and <https://github.com/armint/libart-stm32>
 
 ## Getting started
 
 ### Requirements
 
 - KiCad 10.0.6 or newer.
-- The shared footprint libraries from the `kicad-footprints` repository (see above). The project uses the nicknames `resistors`, `capacitors`, `headers`, `connectors`, `inductors` and `sot`. The stock KiCad libraries (`Package_*`, `Connector_IDC`, `Diode_SMD`, `LED_SMD`, `Fuse`, `Button_Switch_SMD`) must also be present.
+- The shared footprint libraries. They are not public. The PCB file has a copy of each footprint, so you can open and edit the board without them. The project uses the nicknames `resistors`, `capacitors`, `headers`, `connectors`, `inductors` and `sot`. The stock KiCad libraries (`Package_*`, `Connector_IDC`, `Diode_SMD`, `LED_SMD`, `Fuse`, `Button_Switch_SMD`) must also be present.
 
 ### Open the project
 
 1. Clone this repository.
-2. Clone `kicad-footprints`.
-3. In KiCad, open **Preferences, Manage Footprint Libraries**. Add each `*.pretty` directory of `kicad-footprints` with its name as the nickname, without `.pretty`.
-4. Open `openmupp-v1.kicad_pro`.
+2. Open `openmupp-v1.kicad_pro`.
+
+The board and the schematic open without the shared footprint libraries. To change a footprint, edit the copy in the PCB file.
 
 The project symbol library `openmupp-v1` is in the repository. `sym-lib-table` links it with `${KIPRJMOD}`.
 
@@ -229,7 +228,7 @@ The project symbol library `openmupp-v1` is in the repository. `sym-lib-table` l
 - **Reference designators are unique across all sheets.** Check before you add a part.
 - **Every part has an `LCSC` field** for JLCPCB assembly. Prefer parts from the JLCPCB basic library. Each extended part costs a setup fee.
 - **Small N-FETs:** use the BSS138 (LCSC C112239).
-- **Footprints:** add new footprints to `kicad-footprints`, not to this project. Check the pads against the datasheet land pattern.
+- **Footprints:** check the pads against the datasheet land pattern.
 - **Checks:** run ERC after each change. Look for shorted nets and for unconnected pins.
 
 ### Fabrication
@@ -246,4 +245,7 @@ The layout is not done. When it is ready, order from JLCPCB with assembly. The B
 
 ## License
 
-The design is open hardware. A license file is not in the repository yet.
+Copyright Armin van der Togt 2026.
+
+This design is licensed under the CERN Open Hardware Licence Version 2 - Strongly Reciprocal (CERN-OHL-S-2.0). See [LICENSE](LICENSE).
+The design has no warranty. Refer to the licence for the applicable conditions.
