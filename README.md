@@ -217,9 +217,9 @@ Related repositories:
 ### Open the project
 
 1. Clone this repository.
-2. Clone `kicad-footprints`.
-3. In KiCad, open **Preferences, Manage Footprint Libraries**. Add each `*.pretty` directory of `kicad-footprints` with its name as the nickname, without `.pretty`.
-4. Open `openmupp-v1.kicad_pro`.
+2. Open `openmupp-v1.kicad_pro`.
+
+The board and the schematic open without the shared footprint libraries. To change a footprint, edit the copy in the PCB file.
 
 The project symbol library `openmupp-v1` is in the repository. `sym-lib-table` links it with `${KIPRJMOD}`.
 
@@ -228,7 +228,7 @@ The project symbol library `openmupp-v1` is in the repository. `sym-lib-table` l
 - **Reference designators are unique across all sheets.** Check before you add a part.
 - **Every part has an `LCSC` field** for JLCPCB assembly. Prefer parts from the JLCPCB basic library. Each extended part costs a setup fee.
 - **Small N-FETs:** use the BSS138 (LCSC C112239).
-- **Footprints:** add new footprints to `kicad-footprints`, not to this project. Check the pads against the datasheet land pattern.
+- **Footprints:** check the pads against the datasheet land pattern.
 - **Checks:** run ERC after each change. Look for shorted nets and for unconnected pins.
 
 ### Fabrication
