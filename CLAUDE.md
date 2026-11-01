@@ -1,7 +1,6 @@
 # OpenMUPP v1 probe board
 
 KiCad 10 project for a Versaloon-style multi-protocol probe built around an STM32H523.
-The design plan is `/home/armin/Nextcloud/dev-plans/vsl-new-board/vsl-new-board-level-shifting.md`.
 
 ## Editing KiCad files
 
@@ -38,7 +37,7 @@ Power sheet interface: inputs `VPP_EN` (PC14), `VPP_ON` (PC15), `TARGET_PWR_EN` 
 
 - JLCPCB parts: set an `LCSC` field on every part. Prefer the basic library. Extended parts cost a setup fee for each unique part.
 - Reference designators are unique across all sheets. Check before you add a part (the highest numbers are R48, C32, D5, Q5 and U14).
-- Footprints: shared libraries live in `/home/armin/dev/electronics/kicad-footprints` (`inductors:`, `connectors:`, `misc:`, ...). Add new footprints there, not in this project. Check pads against the datasheet land pattern.
+- Footprints: shared libraries live in the private `kicad-footprints` repository (`inductors:`, `connectors:`, `misc:`, ...). Add new footprints there, not in this project. Check pads against the datasheet land pattern.
 - Project symbol table `sym-lib-table` is tracked.
 
 ## Open items

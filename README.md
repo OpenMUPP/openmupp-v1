@@ -204,16 +204,15 @@ The firmware is the `openmupp` project. Firmware updates use the ROM USB DFU boo
 
 Related repositories:
 
-- Firmware: <https://gitlab.vandertogt.org/embedded-projects/openmupp>
-- Drivers: <https://gitlab.vandertogt.org/embedded-libraries/system-stm32> and <https://gitlab.vandertogt.org/embedded-libraries/libart-stm32>
-- KiCad footprints: <https://private footprint library>
+- Firmware: <https://github.com/OpenMUPP/openmupp>
+- Drivers: <https://github.com/armint/system-stm32> and <https://github.com/armint/libart-stm32>
 
 ## Getting started
 
 ### Requirements
 
 - KiCad 10.0.6 or newer.
-- The shared footprint libraries from the `kicad-footprints` repository (see above). The project uses the nicknames `resistors`, `capacitors`, `headers`, `connectors`, `inductors` and `sot`. The stock KiCad libraries (`Package_*`, `Connector_IDC`, `Diode_SMD`, `LED_SMD`, `Fuse`, `Button_Switch_SMD`) must also be present.
+- The shared footprint libraries. They are not public. The PCB file has a copy of each footprint, so you can open and edit the board without them. The project uses the nicknames `resistors`, `capacitors`, `headers`, `connectors`, `inductors` and `sot`. The stock KiCad libraries (`Package_*`, `Connector_IDC`, `Diode_SMD`, `LED_SMD`, `Fuse`, `Button_Switch_SMD`) must also be present.
 
 ### Open the project
 
@@ -246,4 +245,7 @@ The layout is not done. When it is ready, order from JLCPCB with assembly. The B
 
 ## License
 
-The design is open hardware. A license file is not in the repository yet.
+Copyright Armin van der Togt 2026.
+
+This design is licensed under the CERN Open Hardware Licence Version 2 - Strongly Reciprocal (CERN-OHL-S-2.0). See [LICENSE](LICENSE).
+The design has no warranty. Refer to the licence for the applicable conditions.
