@@ -70,7 +70,7 @@ The boost cannot pull its output down. Thus the firmware must change the level i
 
 The firmware must set **both** `VPP_EN` (PC14) and `VPP_ON` (PC15) high to apply VPP on J4 pin 19. Both pins have pull-downs. The firmware applies VPP only when the adapter ID shows a high-voltage adapter and the protocol needs VPP.
 
-A high-voltage adapter is not passive. It must protect the shared line from VPP, for example with a diode and a resistor on UPDI. All other adapters are passive.
+The VPP circuitry is on the main board. Thus a high-voltage adapter can be passive, like all other adapters.
 
 ## MCU pin map
 
