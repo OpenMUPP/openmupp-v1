@@ -13,26 +13,35 @@ The KiCad 10 project is in this repository.
 - It transfers data **faster than the original Versaloon Mini**. The core runs at 250 MHz.
 - It connects to targets from **1.2 V to 5 V** through level shifters. A 1.2 V target is limited to about 5 MHz.
 - It supplies the target with **3.3 V (up to about 520 mA) or 5 V (up to about 300 mA)**.
-- It makes **12 V (VPP)** for high-voltage programming of AVR and PIC parts.
+- It makes a selectable **VPP of 8.4 V or 12 V** for high-voltage programming of AVR and PIC parts.
 - It has **one target connector (J4)**. A passive adapter board maps J4 to each target pinout.
 
 ## Hardware overview
 
 ```mermaid
 flowchart LR
-    usb["USB-C (J1)"] --> fuse["Polyfuse F1<br/>750 mA"]
+    usb["USB-C (J1)"] --> fuse["Polyfuse F1<br/>750 mA<br/>+5V"]
     fuse --> ldo["3.3 V LDO"]
-    fuse --> boost["12 V boost"]
+    fuse --> boost["Boost (U13)<br/>8.4 V or 12 V"]
     ldo --> mcu["STM32H523 (U2)<br/>3.3 V"]
     mcu <--> ls["Level shifters<br/>U3 to U6"]
     ls --> esd["33 Ω series resistors<br/>and ESD diodes"]
-    esd --> j3["Target connector J4<br/>2 × 10, 2.54 mm"]
-    ldo --> tps["3.3 V target switch<br/>TPS2553 (U12)"]
-    tps --> j3
+    esd --> j4["Target connector J4<br/>2 × 10, 2.54 mm"]
+
+    ldo --> tps33["3.3 V target switch<br/>TPS2553 (U12)"]
     fuse --> tps5["5 V target switch<br/>TPS2553 (U14)"]
-    tps5 --> j3
-    boost --> vpp["VPP switch (P-FET)"]
-    vpp --> j3
+    tps33 --> vtref(("VTREF"))
+    tps5 --> vtref
+    vtref --> j4
+
+    boost --> vpp["VPP switch<br/>P-FET (Q2)"]
+    vpp --> j4
+
+    mcu -- "TARGET_PWR_EN" --> tps33
+    mcu -- "TARGET_5V_EN" --> tps5
+    mcu -- "VPP_12V_SEL<br/>(Q5: 8.4 V / 12 V)" --> boost
+    mcu -- "VPP_EN, VPP_ON" --> vpp
+    boost -- "VPP_SENSE" --> mcu
 ```
 
 | Block | Part | Notes |
@@ -41,8 +50,8 @@ flowchart LR
 | USB | USB-C receptacle (J1), USBLC6-2SC6 (U1) | USB 2.0 full speed. 5.1 kΩ CC resistors. |
 | 3.3 V rail | XC6220B331MR-G LDO | Supplies the MCU and the target power switch. |
 | VBUS protection | 750 mA polyfuse (F1) | Expect `+5V` near 4.4 V at full load. |
-| Target power | TPS2553 (U12, 3.3 V), TPS2553 (U14, 5 V) | Current limit about 520 mA (ILIM 51 kΩ) at 3.3 V and about 300 mA (ILIM 91 kΩ) at 5 V. Both outputs join `VTREF`. See [Target power](#target-power). |
-| VPP | MT3608 boost (U13), AO3401A P-FET (Q2), BSS138 drivers (Q3, Q5) | See [High voltage (VPP)](#high-voltage-vpp). |
+| Target power (3.3 V or 5 V) | TPS2553 (U12, 3.3 V), TPS2553 (U14, 5 V), BSS138 interlock (Q4) | Current limit about 520 mA (ILIM 51 kΩ) at 3.3 V and about 300 mA (ILIM 91 kΩ) at 5 V. Both outputs join `VTREF`. See [Target power](#target-power). |
+| VPP (8.4 V or 12 V) | MT3608 boost (U13), AO3401A P-FET (Q2), BSS138 drivers (Q3, Q5) | The firmware selects the level with `VPP_12V_SEL`. See [High voltage (VPP)](#high-voltage-vpp). |
 | Level shifters | SN74LXC8T245 (U3, U4), SN74LXC1T45 (U5, U6) | All parts work from 1.1 V to 5.5 V. |
 | Reset path | BSS138 (Q1), U4 channel 4 | Q1 pulls nRESET low. U4 reads the line back. |
 | ESD | TPD4E05U06 (U8 to U10) | On all J4 signals except the supplies. |
