@@ -5,8 +5,6 @@ The design is open hardware.
 The board name is `OpenMUPP v1`.
 The KiCad 10 project is in this repository.
 
-**Disclaimer:** this project is in no way related to or associated with the original Versaloon project or its author. This board is an independent hardware design.
-
 ## What the board does
 
 - It runs **USB CDC, CMSIS-DAP v2 and EDBG (AVR) at the same time** in one firmware image.
