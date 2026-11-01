@@ -57,7 +57,7 @@ Expect about 4.4 V on `VTREF` at 5 V and full board load, because of the polyfus
 
 The MT3608 boost makes the VPP voltage. The boost passes its input through when it is off. Thus a P-FET switch gates VPP.
 
-The default VPP voltage is 8.4 V. This level is safe for PIC parts with VIHH = 8 V to 9 V. VIHH is the high voltage that the part needs on its MCLR pin to start programming. R34 (130 kΩ, design value; the schematic has 191 kΩ, see issue #6) and R35 (10 kΩ) set it. To get 12 V, the firmware sets `VPP_12V_SEL` (PA8) high. This turns on Q5, which puts R45 (21.5 kΩ) in parallel with R35. R46 (100 kΩ) pulls the gate low, so a reset or a floating pin gives 8.4 V.
+The default VPP voltage is 8.4 V. This level is safe for PIC parts with VIHH = 8 V to 9 V. VIHH is the high voltage that the part needs on its MCLR pin to start programming. R34 (130 kΩ) and R35 (10 kΩ) set it. To get 12 V, the firmware sets `VPP_12V_SEL` (PA8) high. This turns on Q5, which puts R45 (21.5 kΩ) in parallel with R35. R46 (100 kΩ) pulls the gate low, so a reset or a floating pin gives 8.4 V.
 
 The boost cannot pull its output down. Thus the firmware must change the level in this order:
 
