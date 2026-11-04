@@ -77,6 +77,7 @@ The VPP circuitry is on the main board. Thus a high-voltage adapter can be passi
 | Function | Pin | Notes |
 |----------|-----|-------|
 | TCK / SWCLK / ISP SCK | PB10 | SPI2_SCK, master |
+| TCK link | PA5 | SPI1_SCK, slave. R10 (0 Ω, fitted) connects PA5 to the TCK net. |
 | TDI / ISP MOSI | PB15 | SPI2_MOSI |
 | TDO / ISP MISO | PB14 | SPI2_MISO. Same net as PA3 (USART2_RX, for SWO). |
 | TMS / SWDIO | PA6, PA7 | One net on the A side of U5 |
@@ -97,5 +98,7 @@ The VPP circuitry is on the main board. Thus a high-voltage adapter can be passi
 | LED state 1, LED state 2, LED USB | PB2, PA1, PA15 | |
 | Key and BOOT0 | PC13 | Also the jump to the ROM USB bootloader |
 | Probe debug | PA13, PA14 | SWDIO, SWCLK on J3 |
+
+R10 is fitted on purpose. The JTAG fast path of the firmware uses two SPI peripherals. SPI2 is the master and makes TCK on PB10. SPI1 is a slave and shifts TMS out on its MISO pin, PA6. SPI1 gets its clock from TCK through R10 on PA5. Thus TMS stays in step with TCK. Do not remove R10, or the fast path cannot shift TMS.
 
 PB9 is unused. Most H5 pins are in analog mode at reset, which is the reason for the external pull resistors on the direction pins.
