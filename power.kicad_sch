@@ -5014,7 +5014,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C270632"
+		(property "LCSC" "C52929"
 			(at 193.04 45.085 0)
 			(hide yes)
 			(show_name no)
@@ -6918,7 +6918,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C14663"
+			(at 186.69 109.22 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:R")
 		(at 214.63 45.085 0)
@@ -7087,7 +7096,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25872"
+			(at 182.88 50.8 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 170.18 71.12 0)
@@ -8864,7 +8882,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25779"
+			(at 179.07 109.22 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:R")
 		(at 156.21 50.165 0)

@@ -8292,7 +8292,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C14663"
+			(at 261.62 243.84 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:R")
 		(at 335.28 236.22 0)
@@ -8952,7 +8961,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C14663"
+			(at 246.38 243.84 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 276.86 220.98 0)
@@ -9033,7 +9051,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C14663"
+			(at 276.86 220.98 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 294.005 31.115 0)
@@ -10177,7 +10204,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C138714"
+			(at 223.52 177.8 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 335.28 240.03 0)
@@ -10358,7 +10394,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C138714"
+			(at 314.96 177.8 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 342.9 236.22 0)
@@ -10439,7 +10484,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C14663"
+			(at 342.9 236.22 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:+3.3V")
 		(at 246.38 217.17 0)
@@ -11366,7 +11420,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C14663"
+			(at 292.1 220.98 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:+3.3V")
 		(at 85.725 121.92 0)
@@ -11624,7 +11687,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C138714"
+			(at 269.24 177.8 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 50.8 170.18 0)
@@ -12515,7 +12587,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C14663"
+			(at 246.38 220.98 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:VCC")
 		(at 327.025 108.585 90)
@@ -12673,7 +12754,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C14663"
+			(at 261.62 220.98 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Logic_LevelTranslator:SN74LVC1T45DBV")
 		(at 98.425 116.84 0)
@@ -13048,7 +13138,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C14663"
+			(at 292.1 243.84 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:VCC")
 		(at 335.28 224.79 0)
@@ -13711,7 +13810,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C25076"
+			(at 321.31 131.445 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:VCC")
 		(at 316.865 23.495 0)
@@ -15313,7 +15421,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C14663"
+			(at 276.86 243.84 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 276.86 224.79 0)
