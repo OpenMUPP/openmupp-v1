@@ -79,7 +79,7 @@ The VPP circuitry is on the main board. Thus a high-voltage adapter can be passi
 | TCK / SWCLK / ISP SCK | PB10 | SPI2_SCK, master |
 | TDI / ISP MOSI | PB15 | SPI2_MOSI |
 | TDO / ISP MISO | PB14 | SPI2_MISO. Same net as PA3 (USART2_RX, for SWO). |
-| TMS / SWDIO | PA6, PA7 | One net on the A side of U12 |
+| TMS / SWDIO | PA6, PA7 | One net on the A side of U5 |
 | `DIR_SWDIO` | PB5 | GPIO (TIM3_CH2, AF2, for the one-wire engine), with external pull-down |
 | `DIR_OUT` | PB12 | GPIO, with external pull-down |
 | TRST, RTCK | PB4, PA0 | GPIO |
