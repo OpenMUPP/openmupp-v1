@@ -9,7 +9,7 @@
 | `power.kicad_sch` | 3.3 V LDO, 12 V boost, VPP switch, target power switches (U12, U14). |
 | `openmupp-v1.kicad_sym` | Project symbols (TPS2553). |
 
-The power sheet has five inputs from the MCU: `VPP_EN` (PC14), `VPP_ON` (PC15), `VPP_12V_SEL` (PA8), `TARGET_PWR_EN` (PB8) and `TARGET_5V_EN` (PB10). It has one output, `VPP_SENSE` (PA4). It makes the global nets `VPP` and `VTREF`.
+The power sheet has five inputs from the MCU: `VPP_EN` (PC14), `VPP_ON` (PC15), `VPP_12V_SEL` (PA8), `TARGET_PWR_EN` (PB8) and `TARGET_5V_EN` (PB13). It has one output, `VPP_SENSE` (PA4). It makes the global nets `VPP` and `VTREF`.
 
 ## Level shifting
 
@@ -38,7 +38,7 @@ The probe MCU always runs at 3.3 V. The target side of each shifter runs from `V
 Two TPS2553 switches output to `VTREF`. U12 switches the 3.3 V rail. U14 switches `+5V`.
 
 - `TARGET_PWR_EN` (PB8) high: U12 supplies 3.3 V to the target. The limit is about 520 mA.
-- `TARGET_5V_EN` (PB10) high: U14 supplies 5 V to the target. The limit is about 300 mA. R42 (10 kΩ) is in series with the enable pin of U14.
+- `TARGET_5V_EN` (PB13) high: U14 supplies 5 V to the target. The limit is about 300 mA. R42 (10 kΩ) is in series with the enable pin of U14.
 - Both low: `VTREF` senses the target voltage. The parts block reverse current.
 
 Q4 (BSS138) pulls the enable pin of U14 low when `TARGET_PWR_EN` is high. Thus 3.3 V has priority if the firmware sets both pins by mistake.
@@ -76,7 +76,7 @@ The VPP circuitry is on the main board. Thus a high-voltage adapter can be passi
 
 | Function | Pin | Notes |
 |----------|-----|-------|
-| TCK / SWCLK / ISP SCK | PB13 | SPI2_SCK, master |
+| TCK / SWCLK / ISP SCK | PB10 | SPI2_SCK, master |
 | TDI / ISP MOSI | PB15 | SPI2_MOSI |
 | TDO / ISP MISO | PB14 | SPI2_MISO. Same net as PA3 (USART2_RX, for SWO). |
 | TMS / SWDIO | PA6, PA7 | One net on the A side of U12 |
@@ -90,7 +90,7 @@ The VPP circuitry is on the main board. Thus a high-voltage adapter can be passi
 | USB | PA11, PA12 | USB D− and D+ |
 | `VTREF_SENSE`, `ADAPTER_ID` | PB0, PB1 | ADC |
 | `TARGET_PWR_EN` | PB8 | 3.3 V target switch (U12) |
-| `TARGET_5V_EN` | PB10 | 5 V target switch (U14), through R42 |
+| `TARGET_5V_EN` | PB13 | 5 V target switch (U14), through R42. PB13 is an `FT_c` pin (UCPD CC). Its drive is low and SPI2_SCK on PB13 is limited to 3 MHz. Thus TCK is on PB10. |
 | `VPP_EN`, `VPP_ON` | PC14, PC15 | |
 | `VPP_12V_SEL` | PA8 | Low: 8.4 V. High: 12 V. |
 | `VPP_SENSE` | PA4 | ADC. Divider R47, R48 and C32 on the boost output (before Q2). |
