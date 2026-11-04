@@ -25,9 +25,9 @@ The probe MCU always runs at 3.3 V. The target side of each shifter runs from `V
 
 - **Idle state.** `DIR_OUT` and `DIR_SWDIO` have external 100 kΩ pull-downs (R26, R27). A floating direction pin selects target to probe, so the target side is high-impedance. This also holds while the MCU is in reset.
 - **nRESET path.** Q1 has its source on GND and its drain on nRESET. The MCU never drives nRESET high. A 100 kΩ pull-down (R28) keeps the gate low while the MCU is in reset. U4 channel 4 reads the real line level back. The USART sees its own transmit, so it can detect collisions.
-- **Spare channels.** U4 channels 5 to 8 are unused. Their B inputs are tied to GND. The A outputs are not connected. `DIR` and `~OE` are tied to GND, so U4 always works from target to probe.
+- **Spare channels.** U4 channels 5 to 8 are unused. Their B inputs are tied to GND. The A outputs are not connected. `DIR` and `~OE` are tied to GND, so U4 always works from target to probe. U3 channels 6 to 8 are also unused. 100 kΩ pull-downs (R49 to R51) connect their A pins to GND. Their B pins are not connected.
 - **Pull-ups.** 2.2 kΩ to `VTREF` on SWDIO (R22). The one-wire interface needs the fast rise time. 10 kΩ to `VTREF` on TDO, RTCK, UART RX and nRESET. The shifters have dynamic 100 kΩ pull-downs, so an external pull-up must be 15 kΩ or less.
-- **UART TX has its own shifter.** U6 is a fixed-direction part, so it always drives the line. U3 shares one direction pin (`DIR_OUT`). While `DIR_OUT` is low, the target side of U3 is high-impedance, and `T_UART_TX` has no pull-up. The UART bridge must work when the JTAG outputs are released, so UART TX does not use the free channels of U3.
+- **UART TX has its own shifter.** U6 is a fixed-direction part, so it always drives the line. U3 shares one direction pin (`DIR_OUT`). While `DIR_OUT` is low, the target side of U3 is high-impedance. The UART bridge must work when the JTAG outputs are released, so UART TX does not use the free channels of U3. R53 (100 kΩ) pulls `UART_TX` (PA9) up to 3.3 V. Thus U6 keeps `T_UART_TX` high when PA9 is high-impedance, for example while the MCU is in reset.
 - **Series resistors.** 33 Ω (R11 to R21) on all J4 signals except pin 16 (`ADAPTER_ID`). The shifter edges are fast.
 - **VTref sense.** A 100 kΩ / 100 kΩ divider (R5, R6) and a 100 nF capacitor (C4) go to PB0.
 - **Isolation.** A shifter isolates the target when `VTREF` is below 100 mV.
@@ -55,7 +55,9 @@ Expect about 4.4 V on `VTREF` at 5 V and full board load, because of the polyfus
 
 ## High voltage (VPP)
 
-The MT3608 boost makes the VPP voltage. The boost passes its input through when it is off. Thus a P-FET switch gates VPP.
+The MT3608 boost makes the VPP voltage. The boost passes its input through when it is off. Thus a P-FET switch (Q2) gates VPP. When Q3 turns on, R36 and R37 (100 kΩ each) set the gate-source voltage of Q2 to half of the boost output. At 12 V, this is −6 V, in the ±12 V limit of the AO3401A.
+
+R52 (100 Ω) is in series between Q2 and J4 pin 19. It limits the current if pin 19 is shorted to GND or to a clamped target pin.
 
 The default VPP voltage is 8.4 V. This level is safe for PIC parts with VIHH = 8 V to 9 V. VIHH is the high voltage that the part needs on its MCLR pin to start programming. R34 (130 kΩ) and R35 (10 kΩ) set it. To get 12 V, the firmware sets `VPP_12V_SEL` (PA8) high. This turns on Q5, which puts R45 (21.5 kΩ) in parallel with R35. R46 (100 kΩ) pulls the gate low, so a reset or a floating pin gives 8.4 V.
 
@@ -68,9 +70,15 @@ The boost cannot pull its output down. Thus the firmware must change the level i
 
 `VPP_SENSE` measures the boost output through a divider (R47 100 kΩ, R48 33 kΩ). At 8.4 V, the ADC pin gets about 2.1 V. At 12 V, it gets about 3.0 V. The firmware reads it before it sets `VPP_ON`, and after a level change to see that C29 has discharged.
 
-The firmware must set **both** `VPP_EN` (PC14) and `VPP_ON` (PC15) high to apply VPP on J4 pin 19. Both pins have pull-downs. The firmware applies VPP only when the adapter ID shows a high-voltage adapter and the protocol needs VPP.
+The firmware must set **both** `VPP_EN` (PC14) and `VPP_ON` (PC15) high to apply VPP on J4 pin 19 (through R52). Both pins have pull-downs. The firmware applies VPP only when the adapter ID shows a high-voltage adapter and the protocol needs VPP.
 
 The VPP circuitry is on the main board. Thus a high-voltage adapter can be passive, like all other adapters.
+
+## MCU support parts
+
+- **VCAP.** The two `VCAP` pins of U2 (22 and 46) are on one net. C6 and C8 (2.2 µF each) are on this net. On the PCB, put C6 near pin 22 and C8 near pin 46.
+- **NRST.** C22 (100 nF) connects `NRST` (U2 pin 7) to GND. `NRST` also goes to J3 pin 5.
+- **USB.** PA11 and PA12 connect to U1 directly, with no series resistors. The USB driver of the MCU has the matching impedance.
 
 ## MCU pin map
 
