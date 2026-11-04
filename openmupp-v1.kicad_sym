@@ -4,6 +4,7 @@
   (generator_version "10.0")
 
 
+
   (symbol "TPS2553"
     (pin_names
       (offset 1.016))
@@ -32,7 +33,7 @@
       (name "EN" (effects (font (size 1.27 1.27))))
       (number "3" (effects (font (size 1.27 1.27))))
     )
-    (pin power_out line (at 7.62 2.54 180)
+    (pin passive line (at 7.62 2.54 180)
       (length 2.54)
       (name "OUT" (effects (font (size 1.27 1.27))))
       (number "6" (effects (font (size 1.27 1.27))))
