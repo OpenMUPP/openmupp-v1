@@ -3367,6 +3367,12 @@
 		(uuid "64eba34a-d794-4df6-993c-dae85f743229")
 	)
 	(junction
+		(at 85.09 104.775)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6f589060-edd3-450e-911a-ec6f85a6baa4")
+	)
+	(junction
 		(at 214.63 41.275)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3674,6 +3680,16 @@
 	)
 	(wire
 		(pts
+			(xy 85.09 104.775) (xy 97.155 104.775)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76a67161-425b-46fb-bda4-dc8641e5e841")
+	)
+	(wire
+		(pts
 			(xy 138.43 33.655) (xy 144.78 33.655)
 		)
 		(stroke
@@ -3784,7 +3800,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.835 104.775) (xy 97.155 104.775)
+			(xy 76.835 104.775) (xy 85.09 104.775)
 		)
 		(stroke
 			(width 0)
@@ -4954,7 +4970,7 @@
 				)
 			)
 		)
-		(property "Value" "191k"
+		(property "Value" "130k"
 			(at 193.04 45.085 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8199,7 +8215,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "100k"
 			(at 214.63 56.515 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8242,7 +8258,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25744"
+		(property "LCSC" "C25741"
 			(at 214.63 56.515 0)
 			(hide yes)
 			(show_name no)
@@ -8263,6 +8279,83 @@
 			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/95d73bc5-4b34-43f9-b9ee-1cf6c443cf61"
 					(reference "R37")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 85.09 104.775 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b7dd465a-ecd9-4397-9495-341db7281e0d")
+		(property "Reference" "#PWR037"
+			(at 85.09 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 85.09 100.965 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 85.09 104.775 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 85.09 104.775 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 85.09 104.775 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a1e93eb9-c0f3-4fdc-9ae4-f1aa9240b611")
+		)
+		(instances
+			(project "openmupp-v1"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/95d73bc5-4b34-43f9-b9ee-1cf6c443cf61"
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
