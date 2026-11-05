@@ -12663,7 +12663,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C19666"
+			(at 165.1 28.575 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:LED")
 		(at 162.56 182.88 90)
@@ -12911,7 +12920,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C14663"
+			(at 157.48 28.575 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 145.415 70.485 0)
@@ -13170,7 +13188,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C1574"
+			(at 111.76 36.83 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 144.145 149.86 0)
@@ -13525,7 +13552,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C15849"
+			(at 183.515 28.575 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 143.51 28.575 0)
@@ -13606,7 +13642,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C14663"
+			(at 143.51 28.575 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 136.525 147.32 0)
@@ -14409,7 +14454,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C23630"
+			(at 136.525 143.51 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 176.53 28.575 0)
@@ -14490,7 +14544,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C14663"
+			(at 176.53 28.575 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Switch:SW_Push")
 		(at 131.445 68.58 90)
@@ -15582,7 +15645,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C14663"
+			(at 145.415 66.675 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "waterhoogtemeter-rescue:GND-custom_power")
 		(at 70.485 88.9 0)
@@ -15833,7 +15905,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C14663"
+			(at 136.525 28.575 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:GND")
 		(at 198.12 189.23 0)
@@ -16586,7 +16667,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C23630"
+			(at 144.145 146.05 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:LED")
 		(at 180.34 182.88 90)
@@ -17211,7 +17301,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C14663"
+			(at 150.495 28.575 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "waveboard-modbus-addon-rescue:Conn_01x05-conn")
 		(at 56.515 129.54 0)
@@ -17426,7 +17525,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C1574"
+			(at 94.615 36.83 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(sheet
 		(at 250.19 134.62)
 		(size 60.96 20.32)
