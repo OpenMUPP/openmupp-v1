@@ -283,7 +283,12 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      [
+        "pin_to_pin|1511300|1397000|49564641-9d25-4453-b52d-c16fc95c5a92|f95e1db1-1bf5-4e1b-8fc4-c5d2f0a2ec83|/26052ec4-b7f0-4f53-b73f-c5fe34396dff|/26052ec4-b7f0-4f53-b73f-c5fe34396dff|/26052ec4-b7f0-4f53-b73f-c5fe34396dff",
+        "Pins are supposed to be connected as per datasheet"
+      ]
+    ],
     "meta": {
       "version": 0
     },
