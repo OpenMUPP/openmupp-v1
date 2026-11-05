@@ -2571,7 +2571,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin passive line
 					(at 7.62 2.54 180)
 					(length 2.54)
 					(name "OUT"
@@ -5013,7 +5013,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C270632"
+		(property "LCSC" "C52929"
 			(at 193.04 45.085 0)
 			(hide yes)
 			(show_name no)
@@ -6903,6 +6903,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C14663"
+			(at 186.69 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "2d2bdae0-7982-4f96-8219-99a3d0d703dd")
 		)
@@ -7062,6 +7073,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 182.88 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25872"
 			(at 182.88 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -8839,6 +8861,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 179.07 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25779"
 			(at 179.07 109.22 0)
 			(hide yes)
 			(show_name no)

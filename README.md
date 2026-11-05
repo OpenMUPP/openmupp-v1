@@ -79,7 +79,7 @@ J4 is a 2 × 10 IDC header, 2.54 mm. The footprint in the schematic is `Connecto
 
 ### Adapter boards and adapter ID
 
-An adapter board has connectors, wires and one ID resistor. The resistor goes from J4 pin 16 to GND. R30 (10 kΩ) pulls pin 16 up to 3.3 V. The firmware reads the ratio x = R<sub>ID</sub> / (R<sub>ID</sub> + 10 kΩ) on PB1. The ADC reference and R30 share the 3.3 V rail, so supply drift cancels. R44 (10 kΩ) in series and the diode D5 (BAT54C) to 3.3 V protect PB1 (net `ADAPTER_ID_MCU`). They work when a 5 V target supply is on pin 16 by mistake. The firmware must use a long ADC sample time and keep the internal pull resistors off.
+An adapter board has connectors, wires and one ID resistor. The resistor goes from J4 pin 16 to GND. R30 (10 kΩ) pulls pin 16 up to 3.3 V. The firmware reads the ratio x = R<sub>ID</sub> / (R<sub>ID</sub> + 10 kΩ) on PB1. The ADC reference and R30 share the 3.3 V rail, so supply drift cancels. R44 (10 kΩ) in series and one diode of D5 (BAT54C) to 3.3 V protect PB1 (net `ADAPTER_ID_MCU`). They work when a 5 V target supply is on pin 16 by mistake. Only one anode of D5 is on `ADAPTER_ID_MCU`. The other anode is on GND, so its leakage does not go into PB1. The firmware must use a long ADC sample time and keep the internal pull resistors off.
 
 The AVR 10-pin connector uses the Atmel-ICE pinout. Three passive variants route the data pin to SWDIO:
 
