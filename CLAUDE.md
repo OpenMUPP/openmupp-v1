@@ -13,11 +13,12 @@ KiCad 10 project. Design documentation is in `README.md` and `docs/hardware.md`.
 
 - VPP net names: the boost feedback net is `VPP_FB`. The boost output before Q2 is `VPP_BOOST`.
 - `ADAPTER_ID_MCU` (PB1 side of R44) and `VTREF_SENSE` (PB0) are outputs of the target interface sheet.
-- `VPP_SENSE` is on PA4. It was `AUX2`, which is now on PB3 (a plain GPIO). Only PA3, PA4, PA6, PA7, PB0 and PB1 have ADC channels on this package.
+- The MCU is a CH32V307RCT6. The pin map is in `docs/hardware.md`. Probe signals must use pins that exist on LQFP64 and QFN68.
+- ADC pins on this package: PA0 to PA7, PB0, PB1 and PC0 to PC5. `VPP_SENSE` is on PA4, `VTREF_SENSE` on PB0, `ADAPTER_ID_MCU` on PB1.
 
 ## Conventions
 
-- Reference designators: the highest numbers in use are R53, C32, D5, Q5 and U14.
+- Reference designators: the highest numbers in use are R54, C32, D5, Q5 and U14.
 - New footprints go in the private `kicad-footprints` repository (`inductors:`, `connectors:`, `misc:`, ...), not in this project.
 - Project symbol table `sym-lib-table` is tracked.
 

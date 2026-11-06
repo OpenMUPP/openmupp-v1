@@ -8,7 +8,7 @@ The KiCad 10 project is in this repository.
 ## What the board does
 
 - It runs **USB CDC, CMSIS-DAP v2 and EDBG (AVR) at the same time** in one firmware image.
-- It transfers data **faster than the original Versaloon Mini**. The core runs at 250 MHz.
+- It transfers data **faster than the original Versaloon Mini**. The core runs at 144 MHz, and USB runs at high speed (480 Mbit/s).
 - It connects to targets from **1.2 V to 5 V** through level shifters. A 1.2 V target is limited to about 5 MHz.
 - It supplies the target with **3.3 V (up to about 520 mA) or 5 V (up to about 300 mA)**.
 - It makes a selectable **VPP of 8.4 V or 12 V** for high-voltage programming of AVR and PIC parts.
@@ -21,7 +21,7 @@ flowchart LR
     usb["USB-C (J1)"] --> fuse["Polyfuse F1<br/>750 mA<br/>+5V"]
     fuse --> ldo["3.3 V LDO"]
     fuse --> boost["Boost (U13)<br/>8.4 V or 12 V"]
-    ldo --> mcu["STM32H523 (U2)<br/>3.3 V"]
+    ldo --> mcu["CH32V307RCT6 (U2)<br/>3.3 V"]
     mcu <--> ls["Level shifters<br/>U3 to U6"]
     ls --> esd["33 Ω series resistors<br/>and ESD diodes"]
     esd --> j4["Target connector J4<br/>2 × 10, 2.54 mm"]
@@ -44,8 +44,8 @@ flowchart LR
 
 | Block | Part | Notes |
 |-------|------|-------|
-| MCU | STM32H523CC, LQFP48 (U2) | Cortex-M33, 250 MHz, 256 KB flash, 272 KB RAM. 24 MHz crystal (Y1). |
-| USB | USB-C receptacle (J1), USBLC6-2SC6 (U1) | USB 2.0 full speed. 5.1 kΩ CC resistors. |
+| MCU | CH32V307RCT6, LQFP64 (U2) | QingKe V4F RISC-V, 144 MHz, 256 KB flash, 64 KB SRAM. 8 MHz crystal (Y1). |
+| USB | USB-C receptacle (J1), USBLC6-2SC6 (U1) | USB 2.0 high speed (USBHS on PB6, PB7). 5.1 kΩ CC resistors. |
 | 3.3 V rail | XC6220B331MR-G LDO | Supplies the MCU and the target power switch. |
 | VBUS protection | 750 mA polyfuse (F1) | Expect `+5V` near 4.4 V at full load. |
 | Target power (3.3 V or 5 V) | TPS2553 (U12, 3.3 V), TPS2553 (U14, 5 V), BSS138 interlock (Q4) | Current limit about 520 mA (ILIM 51 kΩ) at 3.3 V and about 300 mA (ILIM 91 kΩ) at 5 V. Both outputs join `VTREF`. See [Target power](docs/hardware.md#target-power). |
@@ -109,12 +109,12 @@ See [docs/hardware.md](docs/hardware.md) for the sheets, level shifting, target 
 
 ## Firmware
 
-The firmware is the `openmupp` project. Firmware updates use the ROM USB DFU bootloader of the STM32H5. Press the key (or use `VERSALOON_FW_UPDATE`) to jump to it. Then use `dfu-util` or STM32CubeProgrammer.
+The firmware is the `openmupp` project. The CH32V307 has a ROM bootloader. It can program the flash through USART1 or USB (WCH ISP protocol). Hold SW1 (BOOT0) during reset to start it. The firmware port to the CH32V307 is in progress. A firmware jump to the bootloader is not available yet.
 
 Related repositories:
 
 - Firmware: <https://github.com/OpenMUPP/openmupp>
-- Drivers: <https://github.com/armint/system-stm32> and <https://github.com/armint/libart-stm32>
+- Drivers: <https://github.com/armint/ch32v00x-system> and <https://github.com/armint/ch32v00x-art>
 
 ## Getting started
 
