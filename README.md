@@ -121,7 +121,7 @@ Related repositories:
 ### Requirements
 
 - KiCad 10.0.6 or newer.
-- The shared footprint libraries. They are not public. The PCB file has a copy of each footprint, so you can open and edit the board without them. The project uses the nicknames `resistors`, `capacitors`, `headers`, `connectors`, `inductors` and `sot`. The stock KiCad libraries (`Package_*`, `Connector_IDC`, `Diode_SMD`, `LED_SMD`, `Fuse`, `Button_Switch_SMD`) must also be present.
+- The shared footprint libraries. They are not public. The PCB file has a copy of each footprint, so you can open and edit the board without them. The project uses the nicknames `resistors`, `capacitors`, `headers`, `connectors`, `inductors` and `sot`. The stock KiCad libraries (`Package_*`, `Connector_IDC`, `Diode_SMD`, `LED_SMD`, `Crystal`, `Fuse`, `Button_Switch_SMD`) must also be present.
 
 ### Open the project
 

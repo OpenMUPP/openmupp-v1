@@ -111,7 +111,9 @@ Each probe signal uses a pin that exists on LQFP64 (`CH32V307RCT6`) and on QFN68
 | `VPP_EN`, `VPP_ON` | PC14, PC15 | Backup-domain pins: 3 mA, 2 MHz and 30 pF maximum. Static levels only. |
 | `VPP_12V_SEL` | PC13 | Low: 8.4 V. High: 12 V. Backup-domain pin, same limits as PC14. |
 | `VPP_SENSE` | PA4 | ADC channel 4. Divider R47, R48 and C32 on the boost output (before Q2). |
-| LED state 1, LED state 2, LED USB | PB4, PA1, PA15 | |
+| LED state 1 (`LED_STATE1`) | PC4 | D1 through R8 (1 kΩ). Active high. |
+| LED state 2 (`LED_STATE2`) | PA7 | D4 through R40 (1 kΩ). Active high. |
+| LED USB (`LED_USB`) | PA6 | D2 through R9 (1 kΩ). Active high. |
 | Key | PB3 | Reads the `BOOT0` net (SW1), active high |
 | `BOOT1` | PB2 | R54 pull-down |
 | Crystal | PD0, PD1 | Y1, 8 MHz |
@@ -119,4 +121,4 @@ Each probe signal uses a pin that exists on LQFP64 (`CH32V307RCT6`) and on QFN68
 
 R10 is fitted on purpose. The JTAG fast path of the firmware uses two SPI peripherals. SPI2 is the master and makes TCK on PB13. SPI3 (remap) is a slave and shifts TMS out on its MISO pin, PC11. SPI3 gets its clock from TCK through R10 on PC10. Thus TMS stays in step with TCK. Do not remove R10, or the fast path cannot shift TMS.
 
-These pins are not connected: PA5, PA6, PA7, PA11, PA12, PC0 to PC2, PC4 to PC9, PC12 and PD2. The CH32V307 has no JTAG port, so PA15, PB3 and PB4 are GPIO after reset. The GPIO pins are floating inputs at reset. Thus the direction pins need their external pull-down resistors.
+These pins are not connected: PA1, PA5, PA11, PA12, PA15, PB4, PC0 to PC2, PC5 to PC9, PC12 and PD2. The CH32V307 has no JTAG port, so PB3 is a GPIO after reset. The GPIO pins are floating inputs at reset. Thus the direction pins need their external pull-down resistors.

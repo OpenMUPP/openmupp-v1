@@ -9663,12 +9663,6 @@
 		(uuid "5ed87560-0fa2-4453-a77e-41dbf356f92f")
 	)
 	(junction
-		(at 201.93 24.765)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "63ef1302-2903-4f8b-ba7c-5a9603d5e3cb")
-	)
-	(junction
 		(at 135.255 61.595)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9721,12 +9715,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8a763568-68b1-4952-8eb4-55ab7bd1d462")
-	)
-	(junction
-		(at 201.93 32.385)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "92413e5f-2cd2-48a2-9886-97f744ea7acd")
 	)
 	(junction
 		(at 190.5 32.385)
@@ -9801,7 +9789,11 @@
 		(uuid "09a01605-be72-4948-b30c-3dec59057ee5")
 	)
 	(no_connect
-		(at 176.53 88.265)
+		(at 176.53 126.365)
+		(uuid "20ca2ce1-d83c-42ca-a8ac-e53ea9da4bb0")
+	)
+	(no_connect
+		(at 176.53 85.725)
 		(uuid "2a6f6466-e45c-4676-bb47-93b4329f2c5c")
 	)
 	(no_connect
@@ -9817,7 +9809,7 @@
 		(uuid "60e4814a-21e4-466d-905d-7a33349cfcdd")
 	)
 	(no_connect
-		(at 176.53 85.725)
+		(at 176.53 75.565)
 		(uuid "6d2b72e9-9910-4458-b1f4-2e1c35a2e2d7")
 	)
 	(no_connect
@@ -9833,6 +9825,10 @@
 		(uuid "89ad5754-a459-4745-9651-426d83d2dfd3")
 	)
 	(no_connect
+		(at 176.53 111.125)
+		(uuid "a91015e8-2c19-47c6-a9c2-60c8b150ee6d")
+	)
+	(no_connect
 		(at 140.97 133.985)
 		(uuid "aa8b7c1f-61b1-4ea0-aaa9-1c26b7afad2a")
 	)
@@ -9843,14 +9839,6 @@
 	(no_connect
 		(at 140.97 139.065)
 		(uuid "b9e7d876-e9d4-4f45-a2c5-8bc3621c80af")
-	)
-	(no_connect
-		(at 176.53 90.805)
-		(uuid "bb413074-decd-4d97-b4cc-27c9d0d2907f")
-	)
-	(no_connect
-		(at 140.97 126.365)
-		(uuid "c9e9cbbc-6312-4d98-a300-ef7135b3a915")
 	)
 	(no_connect
 		(at 140.97 131.445)
@@ -9962,16 +9950,6 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 32.385) (xy 208.915 32.385)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0e22deed-6156-43ce-84f4-33cb01a44918")
-	)
-	(wire
-		(pts
 			(xy 182.88 222.885) (xy 180.34 222.885)
 		)
 		(stroke
@@ -9989,6 +9967,16 @@
 			(type default)
 		)
 		(uuid "10cda11e-cd88-4d6a-883d-a4e1ac739d5f")
+	)
+	(wire
+		(pts
+			(xy 176.53 90.805) (xy 179.07 90.805)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "12cf35d5-3dd7-46a4-a4e5-3b450a69fed7")
 	)
 	(wire
 		(pts
@@ -10082,16 +10070,6 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 24.765) (xy 208.915 24.765)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "25b5bd06-911f-4ee0-b6b6-e34323b8e4cc")
-	)
-	(wire
-		(pts
 			(xy 182.88 24.765) (xy 186.055 24.765)
 		)
 		(stroke
@@ -10149,6 +10127,26 @@
 			(type default)
 		)
 		(uuid "2e681f6a-f057-4e5d-ae8e-2d3e0e5df6e8")
+	)
+	(wire
+		(pts
+			(xy 140.97 126.365) (xy 138.43 126.365)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ee8d4d7-fd20-4369-8b86-a148b46d7cac")
+	)
+	(wire
+		(pts
+			(xy 176.53 88.265) (xy 179.07 88.265)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "30136ded-4b19-4f11-8fd6-290502c98f37")
 	)
 	(wire
 		(pts
@@ -10522,16 +10520,6 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 126.365) (xy 179.07 126.365)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "750c9260-8a03-417f-8143-119d1e528096")
-	)
-	(wire
-		(pts
 			(xy 64.135 70.485) (xy 64.135 69.215)
 		)
 		(stroke
@@ -10589,16 +10577,6 @@
 			(type default)
 		)
 		(uuid "80978141-e730-4097-8781-b2a9efc179f0")
-	)
-	(wire
-		(pts
-			(xy 176.53 75.565) (xy 179.07 75.565)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "81f85a63-e430-4607-add2-207f04257cae")
 	)
 	(wire
 		(pts
@@ -10879,16 +10857,6 @@
 			(type default)
 		)
 		(uuid "bb5f23b0-0110-4a96-8854-c5feca62e77f")
-	)
-	(wire
-		(pts
-			(xy 176.53 111.125) (xy 179.07 111.125)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bc3b26af-3ccd-4563-a4ab-f7e2563e3650")
 	)
 	(wire
 		(pts
@@ -11260,6 +11228,16 @@
 		)
 		(uuid "11f5594f-fd89-426f-b05a-8404ea3fa8e2")
 	)
+	(label "LED_USB"
+		(at 179.07 88.265 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "14841351-ede5-48aa-ac99-5bfe66cb32bd")
+	)
 	(label "BOOT0"
 		(at 131.445 78.105 0)
 		(effects
@@ -11390,6 +11368,16 @@
 		)
 		(uuid "377498af-b00e-48b8-b98b-b0a05933a7bf")
 	)
+	(label "LED_STATE1"
+		(at 138.43 126.365 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "38d0ce94-b85c-4727-a273-015edaa46667")
+	)
 	(label "AUX1"
 		(at 247.65 86.36 180)
 		(effects
@@ -11449,16 +11437,6 @@
 			(justify left bottom)
 		)
 		(uuid "4bdb72cb-858a-45e1-beee-8b1c51d69306")
-	)
-	(label "LED_STATE2"
-		(at 179.07 75.565 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "516cae83-8cd7-4d95-b1c2-a4092493b9ae")
 	)
 	(label "LED_USB"
 		(at 62.865 160.02 0)
@@ -11570,16 +11548,6 @@
 		)
 		(uuid "9b6980c1-2dd3-4bbc-9091-02fe63cb6556")
 	)
-	(label "LED_STATE1"
-		(at 179.07 126.365 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9cfcf6eb-3b87-4917-a2e3-c640525ad874")
-	)
 	(label "TCK_LINK"
 		(at 138.43 141.605 180)
 		(effects
@@ -11650,15 +11618,15 @@
 		)
 		(uuid "b1f37f74-05c8-4eab-a05a-e4ba799b3fa5")
 	)
-	(label "LED_USB"
-		(at 179.07 111.125 0)
+	(label "LED_STATE2"
+		(at 179.07 90.805 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "b5123830-7b9f-4647-944e-4c580335b0f8")
+		(uuid "b3f341a4-546c-43fe-9016-eb44b5e74ba1")
 	)
 	(label "VPP_EN"
 		(at 138.43 151.765 180)
@@ -13281,12 +13249,6 @@
 		(pin "2"
 			(uuid "0726d5e6-9d53-4602-9906-368a92c26269")
 		)
-		(pin "4"
-			(uuid "a397b87a-0ccc-45a8-86e9-52e624af389b")
-		)
-		(pin "3"
-			(uuid "d9c9979a-f3f2-4d70-849c-0621b4f0f432")
-		)
 		(pin "1"
 			(uuid "11e41d47-9d42-41a3-b292-b5a7cdbb85af")
 		)
@@ -13294,98 +13256,6 @@
 			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "Y1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 208.915 28.575 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "21b5b073-f001-434e-a349-02df5db7bd6d")
-		(property "Reference" "C13"
-			(at 209.55 26.035 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1uF"
-			(at 209.55 31.115 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "capacitors:C_0603"
-			(at 208.915 28.575 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 208.915 28.575 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 208.915 28.575 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C15849"
-			(at 208.915 28.575 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "1d549a25-1d27-4563-8f3d-d4c5c23c8253")
-		)
-		(pin "1"
-			(uuid "e1b9e0c7-736f-44ae-9adb-dfd481cde483")
-		)
-		(instances
-			(project "openmupp-v1"
-				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
-					(reference "C13")
 					(unit 1)
 				)
 			)
@@ -14095,7 +13965,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Inductor_THT:Choke_Schaffner_RN102-04-14.0x14.0mm"
+		(property "Footprint" "Package_QFP:TQFP-64_10x10mm_P0.5mm"
 			(at 201.93 154.305 0)
 			(hide yes)
 			(show_name no)
