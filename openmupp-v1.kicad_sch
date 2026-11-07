@@ -9809,10 +9809,6 @@
 		(uuid "60e4814a-21e4-466d-905d-7a33349cfcdd")
 	)
 	(no_connect
-		(at 176.53 75.565)
-		(uuid "6d2b72e9-9910-4458-b1f4-2e1c35a2e2d7")
-	)
-	(no_connect
 		(at 48.895 92.075)
 		(uuid "80ef3bf8-16ed-415d-8346-581b50909774")
 	)
@@ -10520,6 +10516,16 @@
 	)
 	(wire
 		(pts
+			(xy 176.53 75.565) (xy 186.055 75.565)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75a10adb-95a6-458b-92de-b64585bf05ca")
+	)
+	(wire
+		(pts
 			(xy 64.135 70.485) (xy 64.135 69.215)
 		)
 		(stroke
@@ -10827,6 +10833,16 @@
 			(type default)
 		)
 		(uuid "b55819f3-7ce1-4cb0-ad45-369f5d7297d4")
+	)
+	(wire
+		(pts
+			(xy 193.675 75.565) (xy 196.215 75.565)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b69e6f32-51ee-432a-baa9-bca61fbf951c")
 	)
 	(wire
 		(pts
@@ -11197,6 +11213,16 @@
 			(justify right bottom)
 		)
 		(uuid "03809f92-c4d3-4683-b757-5bf64c9cf1a4")
+	)
+	(label "TMS_SWDIO"
+		(at 196.215 75.565 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0dc97909-b4ab-40e0-a1ee-2865c13a2f66")
 	)
 	(label "TMS_SWDIO"
 		(at 138.43 144.145 180)
@@ -13500,6 +13526,96 @@
 			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#P02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 189.865 75.565 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2d331291-28b2-4bb5-af16-24cbb89fb05c")
+		(property "Reference" "R55"
+			(at 189.865 73.533 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0R"
+			(at 189.865 75.565 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "resistors:R_0402"
+			(at 189.865 75.565 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 189.865 75.565 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 189.865 75.565 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C17168"
+			(at 189.865 75.565 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e22c6f7d-0507-4bb7-8f52-9eac5edadd35")
+		)
+		(pin "2"
+			(uuid "8dfba2ea-3fad-4a59-9cd4-7b14d7206ab4")
+		)
+		(instances
+			(project "openmupp-v1"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
+					(reference "R55")
 					(unit 1)
 				)
 			)

@@ -97,6 +97,7 @@ Each probe signal uses a pin that exists on LQFP64 (`CH32V307RCT6`) and on QFN68
 | TDI / ISP MOSI | PB15 | SPI2_MOSI |
 | TDO / ISP MISO | PB14 | SPI2_MISO. Same net as PA3 (USART2_RX, for SWO). |
 | TMS / SWDIO | PC11 | SPI3_MISO (SPI3 remap) for the JTAG fast path. TIM10_CH4 (default map) for the one-wire engine. One pin for output and input. |
+| SWIM input | PA1 | TIM2_CH2 (default map), TIM5_CH2 as an alternative. R55 (0 Ω, fitted) connects PA1 to the TMS / SWDIO net. Keep PA1 a floating input when SWIM does not run. |
 | `DIR_SWDIO` | PC3 | GPIO, with external pull-down. TIM10_CH3 (default map), the same timer as TMS. |
 | `DIR_OUT` | PB10 | GPIO, with external pull-down |
 | TRST, RTCK | PB9, PA8 | GPIO |
@@ -121,4 +122,6 @@ Each probe signal uses a pin that exists on LQFP64 (`CH32V307RCT6`) and on QFN68
 
 R10 is fitted on purpose. The JTAG fast path of the firmware uses two SPI peripherals. SPI2 is the master and makes TCK on PB13. SPI3 (remap) is a slave and shifts TMS out on its MISO pin, PC11. SPI3 gets its clock from TCK through R10 on PC10. Thus TMS stays in step with TCK. Do not remove R10, or the fast path cannot shift TMS.
 
-These pins are not connected: PA1, PA5, PA11, PA12, PA15, PB4, PC0 to PC2, PC5 to PC9, PC12 and PD2. The CH32V307 has no JTAG port, so PB3 is a GPIO after reset. The GPIO pins are floating inputs at reset. Thus the direction pins need their external pull-down resistors.
+R55 is fitted for SWIM, the debug protocol of the STM8. The STM8 sends its bits with its own clock. Thus the probe measures the low time of each bit with a timer in PWM input mode. This timer runs at the same time as TIM10, which sends the probe bits on PC11. Thus the input needs a second pin and a second timer. The counter reset needs channel 1 or 2 of the timer, and PA1 is TIM2_CH2. TIM2 has DMA requests for CC1 and CC2. TIM3_CH2 has no DMA request, so PB4 and PC6 do not work.
+
+These pins are not connected: PA5, PA11, PA12, PA15, PB4, PC0 to PC2, PC5 to PC9, PC12 and PD2. The CH32V307 has no JTAG port, so PB3 is a GPIO after reset. The GPIO pins are floating inputs at reset. Thus the direction pins need their external pull-down resistors.
