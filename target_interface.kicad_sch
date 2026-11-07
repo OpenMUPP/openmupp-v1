@@ -4593,10 +4593,22 @@
 		(uuid "c9a9e7ea-52e0-4093-96a6-6689be64c415")
 	)
 	(junction
-		(at 22.225 88.265)
+		(at 50.165 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "1be9879e-d764-4b4e-bdbc-cc35b8365a83")
+		(uuid "0fadf211-ee1d-437a-8a4b-694a17110791")
+	)
+	(junction
+		(at 30.48 162.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "38055065-80b2-44ba-a023-a9cb775f971f")
+	)
+	(junction
+		(at 30.48 157.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "393d7f4b-76bb-45a8-86c5-43afce78649e")
 	)
 	(junction
 		(at 30.48 172.72)
@@ -4605,10 +4617,40 @@
 		(uuid "39d514ae-4cb9-46ae-9357-0b01d978a4f8")
 	)
 	(junction
+		(at 29.845 91.44)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "403ef3a6-3b8b-4130-a965-239ca75a9169")
+	)
+	(junction
+		(at 29.845 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "406e2fde-f31c-4a4e-a8f1-1248c2814783")
+	)
+	(junction
 		(at 84.455 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4dc35d8e-360e-4509-99f6-a07290acfb2f")
+	)
+	(junction
+		(at 30.48 167.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5579235d-4bcf-494a-b6e5-c7a638ca80c4")
+	)
+	(junction
+		(at 29.845 93.98)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6dc6b12a-5934-43b7-9865-b516409b8063")
+	)
+	(junction
+		(at 30.48 170.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "728a9524-27a0-47bd-90d0-8ec0a920921c")
 	)
 	(junction
 		(at 50.8 157.48)
@@ -4617,10 +4659,10 @@
 		(uuid "8141ae20-55ad-4ff8-899e-043da3696f27")
 	)
 	(junction
-		(at 22.225 86.36)
+		(at 50.165 91.44)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9a94691e-dfe4-4d7f-8fb7-64ee4537a4f4")
+		(uuid "8142b386-0d05-4502-aa97-430abe7cbee0")
 	)
 	(junction
 		(at 375.92 236.22)
@@ -4647,36 +4689,18 @@
 		(uuid "f069f7d2-761d-4bf6-b3fc-522fa5b92973")
 	)
 	(no_connect
-		(at 30.48 162.56)
-		(uuid "0768959a-4309-4a4f-84e3-ce251f6b0c41")
-	)
-	(no_connect
-		(at 30.48 152.4)
-		(uuid "0a802737-7ce1-4ce7-b707-e50752d1e15c")
-	)
-	(no_connect
-		(at 30.48 157.48)
-		(uuid "2b316690-ae09-4a47-ad2b-8352c9e8624b")
-	)
-	(no_connect
-		(at 30.48 167.64)
-		(uuid "53e921e1-753e-423c-8411-a022d64e57be")
-	)
-	(no_connect
 		(at 344.805 108.585)
 		(uuid "5f48b491-895e-471b-bdfe-c1cac4c0fe08")
 	)
-	(no_connect
-		(at 50.165 81.28)
-		(uuid "7d8e8ae5-369f-4ecf-8f5e-f30af304bfa6")
-	)
-	(no_connect
-		(at 50.165 91.44)
-		(uuid "9f111bef-75f4-461c-a652-0169ec332cbd")
-	)
-	(no_connect
-		(at 50.165 86.36)
-		(uuid "9fae3fdd-1382-4b68-9f90-e9ae3d650a17")
+	(wire
+		(pts
+			(xy 30.48 167.64) (xy 30.48 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00a4af05-2522-4491-982b-aedca7ca3e5a")
 	)
 	(wire
 		(pts
@@ -4697,16 +4721,6 @@
 			(type default)
 		)
 		(uuid "0545f987-d7c5-483b-beac-df32259e5266")
-	)
-	(wire
-		(pts
-			(xy 22.225 86.36) (xy 22.225 88.265)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0914f8f5-e9d8-40c0-8507-2cd0223258b0")
 	)
 	(wire
 		(pts
@@ -4767,6 +4781,16 @@
 			(type default)
 		)
 		(uuid "155ef889-6624-4eda-b9ab-ba21dfd8f042")
+	)
+	(wire
+		(pts
+			(xy 29.845 86.36) (xy 29.845 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "172ca093-27eb-482b-b0cd-711d45d2614f")
 	)
 	(wire
 		(pts
@@ -4970,16 +4994,6 @@
 	)
 	(wire
 		(pts
-			(xy 19.05 88.265) (xy 22.225 88.265)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "46d51788-53d4-430d-b2a8-07dfe03c226d")
-	)
-	(wire
-		(pts
 			(xy 270.51 65.405) (xy 270.51 66.04)
 		)
 		(stroke
@@ -5090,16 +5104,6 @@
 	)
 	(wire
 		(pts
-			(xy 22.225 88.265) (xy 22.225 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "68255ea5-8055-4b72-a0f5-5df1e9cc9b90")
-	)
-	(wire
-		(pts
 			(xy 344.805 126.365) (xy 347.345 126.365)
 		)
 		(stroke
@@ -5107,6 +5111,16 @@
 			(type default)
 		)
 		(uuid "69ac3f67-66dc-4b02-aa89-b3fb5a33dbbe")
+	)
+	(wire
+		(pts
+			(xy 54.61 91.44) (xy 54.61 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7137f0fe-63bc-4402-a130-23db012edf56")
 	)
 	(wire
 		(pts
@@ -5137,6 +5151,26 @@
 			(type default)
 		)
 		(uuid "7aa53439-1a3b-4463-91dd-82e2a6b4fb71")
+	)
+	(wire
+		(pts
+			(xy 30.48 162.56) (xy 30.48 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e0e3f8a-745d-4df3-a958-293527868003")
+	)
+	(wire
+		(pts
+			(xy 50.165 81.28) (xy 50.165 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83ea0da7-7f3a-4590-be47-bf09d772de3f")
 	)
 	(wire
 		(pts
@@ -5200,6 +5234,26 @@
 	)
 	(wire
 		(pts
+			(xy 29.845 81.28) (xy 29.845 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92020ca5-4350-4e5d-be83-99f86c06bd66")
+	)
+	(wire
+		(pts
+			(xy 30.48 152.4) (xy 30.48 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9382e1a6-9c6c-4c84-bfe3-d02fd2b578fd")
+	)
+	(wire
+		(pts
 			(xy 375.92 210.82) (xy 375.92 214.63)
 		)
 		(stroke
@@ -5217,6 +5271,16 @@
 			(type default)
 		)
 		(uuid "9e79a0cb-a5cf-4bf1-9a34-caa5c40e7875")
+	)
+	(wire
+		(pts
+			(xy 50.165 86.36) (xy 50.165 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f8d15fd-4728-4bcd-abe6-258f428bc0d1")
 	)
 	(wire
 		(pts
@@ -5290,16 +5354,6 @@
 	)
 	(wire
 		(pts
-			(xy 22.225 81.28) (xy 22.225 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b60c3226-12cc-4eee-87ff-d548df5e6bac")
-	)
-	(wire
-		(pts
 			(xy 30.48 170.18) (xy 30.48 175.26)
 		)
 		(stroke
@@ -5307,6 +5361,16 @@
 			(type default)
 		)
 		(uuid "b7e8a09e-e9d5-4e93-82b7-b6a306fa8e48")
+	)
+	(wire
+		(pts
+			(xy 29.845 91.44) (xy 29.845 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bc01e6ba-4c32-435b-9ab3-18b6e07a4905")
 	)
 	(wire
 		(pts
@@ -5410,6 +5474,16 @@
 	)
 	(wire
 		(pts
+			(xy 30.48 157.48) (xy 30.48 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e445ea24-f56c-4782-820b-b7962104a5d7")
+	)
+	(wire
+		(pts
 			(xy 327.025 116.205) (xy 332.105 116.205)
 		)
 		(stroke
@@ -5437,6 +5511,16 @@
 			(type default)
 		)
 		(uuid "ee8fff62-28a1-484f-aa6b-3aaf76902a53")
+	)
+	(wire
+		(pts
+			(xy 50.165 91.44) (xy 54.61 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f22528fe-6412-4ece-8069-3997a796a710")
 	)
 	(wire
 		(pts
@@ -11162,83 +11246,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 19.05 88.265 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "6d1102bc-c187-4e8e-bf38-a79dbd1ff0dc")
-		(property "Reference" "#PWR031"
-			(at 19.05 94.615 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 19.05 92.075 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 19.05 88.265 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 19.05 88.265 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 19.05 88.265 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "17c53be4-10a4-4451-9a33-c0b78f6bdfb5")
-		)
-		(instances
-			(project "openmupp-v1"
-				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "#PWR031")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Logic_LevelTranslator:SN74LVC1T45DBV")
 		(at 98.425 82.55 0)
 		(unit 1)
@@ -11791,8 +11798,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 26.035 81.28 90)
+		(lib_id "power:GND")
+		(at 54.61 93.98 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11800,9 +11807,10 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "86cc4884-545c-4940-8ab5-a342b9f3aa39")
-		(property "Reference" "R49"
-			(at 26.035 79.248 90)
+		(uuid "867162a0-149b-4db0-a4a6-5df8028b6630")
+		(property "Reference" "#PWR031"
+			(at 54.61 100.33 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11811,8 +11819,8 @@
 				)
 			)
 		)
-		(property "Value" "100k"
-			(at 26.035 81.28 90)
+		(property "Value" "GND"
+			(at 54.61 97.79 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11821,8 +11829,8 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0402"
-			(at 26.035 81.28 0)
+		(property "Footprint" ""
+			(at 54.61 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11833,7 +11841,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 26.035 81.28 0)
+			(at 54.61 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11843,8 +11851,8 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
-			(at 26.035 81.28 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 54.61 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11853,118 +11861,14 @@
 					(size 1.27 1.27)
 				)
 			)
-		)
-		(property "LCSC" "C25741"
-			(at 26.035 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "71f435d6-fe13-4914-b15c-b47055b8efca")
 		)
 		(pin "1"
-			(uuid "5283e958-8d8d-4e35-8744-beb996fb12d9")
+			(uuid "a4642011-3d8a-4b50-876b-2f6ab681bce3")
 		)
 		(instances
 			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "R49")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 26.035 86.36 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "89dbf778-de95-46c7-94b2-ef15f84c91b5")
-		(property "Reference" "R50"
-			(at 26.035 84.328 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100k"
-			(at 26.035 86.36 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "resistors:R_0402"
-			(at 26.035 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 26.035 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 26.035 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C25741"
-			(at 26.035 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "8e68d32d-6bff-40d8-ab8c-249ac693877c")
-		)
-		(pin "1"
-			(uuid "677459d1-24ec-4f4e-8f8f-146eff2d98ff")
-		)
-		(instances
-			(project "openmupp-v1"
-				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "R50")
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -14227,96 +14131,6 @@
 			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
 					(reference "J4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 26.035 91.44 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "cfacc0dc-0e1d-4bff-9afa-c36a22cc6197")
-		(property "Reference" "R51"
-			(at 26.035 89.408 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100k"
-			(at 26.035 91.44 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "resistors:R_0402"
-			(at 26.035 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 26.035 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 26.035 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C25741"
-			(at 26.035 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "7a41d39d-c3f9-472f-9980-ef96b55bebb9")
-		)
-		(pin "1"
-			(uuid "5ff7927c-28af-4de5-8f82-5768ad0ad8c7")
-		)
-		(instances
-			(project "openmupp-v1"
-				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff/f18e2d46-55c6-4bef-bcfa-40c9c4a9d0f5"
-					(reference "R51")
 					(unit 1)
 				)
 			)
