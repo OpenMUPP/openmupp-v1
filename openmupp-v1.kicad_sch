@@ -8021,145 +8021,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:VCC"
-			(power global)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "VCC"
-				(at 0 3.556 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"VCC\""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "VCC_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "VCC_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "waterhoogtemeter-rescue:GND-custom_power"
 			(power global)
 			(pin_numbers
@@ -9952,6 +9813,12 @@
 		(uuid "c8856277-8b40-45e4-ba90-45b9ef1c88da")
 	)
 	(junction
+		(at 92.71 112.395)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d4018ac5-39ba-44f3-b08c-e02e1fbe135a")
+	)
+	(junction
 		(at 175.895 24.765)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9982,8 +9849,8 @@
 		(uuid "20ca2ce1-d83c-42ca-a8ac-e53ea9da4bb0")
 	)
 	(no_connect
-		(at 176.53 85.725)
-		(uuid "2a6f6466-e45c-4676-bb47-93b4329f2c5c")
+		(at 140.97 149.225)
+		(uuid "2a8344a3-b8c5-477d-95a4-b9b92243aa3a")
 	)
 	(no_connect
 		(at 48.895 94.615)
@@ -10000,10 +9867,6 @@
 	(no_connect
 		(at 140.97 133.985)
 		(uuid "aa8b7c1f-61b1-4ea0-aaa9-1c26b7afad2a")
-	)
-	(no_connect
-		(at 140.97 116.205)
-		(uuid "ad2a3093-5d60-423a-abdb-552292e59304")
 	)
 	(no_connect
 		(at 140.97 131.445)
@@ -10108,16 +9971,6 @@
 			(type default)
 		)
 		(uuid "0dc1a608-b01d-41c8-be80-6f47a8dfdc47")
-	)
-	(wire
-		(pts
-			(xy 250.19 147.32) (xy 247.65 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "10cda11e-cd88-4d6a-883d-a4e1ac739d5f")
 	)
 	(wire
 		(pts
@@ -10318,6 +10171,16 @@
 			(type default)
 		)
 		(uuid "2e681f6a-f057-4e5d-ae8e-2d3e0e5df6e8")
+	)
+	(wire
+		(pts
+			(xy 92.71 112.395) (xy 85.09 112.395)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2eb28b5a-1ef9-431f-93eb-c31c6e3739c8")
 	)
 	(wire
 		(pts
@@ -10861,6 +10724,16 @@
 	)
 	(wire
 		(pts
+			(xy 179.07 85.725) (xy 176.53 85.725)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "898fe99b-9b4f-4665-9782-0c1a2f1ae992")
+	)
+	(wire
+		(pts
 			(xy 139.065 73.025) (xy 140.97 73.025)
 		)
 		(stroke
@@ -11111,16 +10984,6 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 149.225) (xy 138.43 149.225)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b78b050e-5203-4577-8550-b786991607b4")
-	)
-	(wire
-		(pts
 			(xy 76.2 79.375) (xy 81.28 79.375)
 		)
 		(stroke
@@ -11138,6 +11001,16 @@
 			(type default)
 		)
 		(uuid "bb5f23b0-0110-4a96-8854-c5feca62e77f")
+	)
+	(wire
+		(pts
+			(xy 247.65 147.32) (xy 250.19 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bfbc0a1d-ec71-48a1-81d4-0076009e0f33")
 	)
 	(wire
 		(pts
@@ -11221,6 +11094,16 @@
 	)
 	(wire
 		(pts
+			(xy 138.43 116.205) (xy 140.97 116.205)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d1137e6e-750f-48f4-b7e3-ff0b29a8f0d0")
+	)
+	(wire
+		(pts
 			(xy 247.65 154.94) (xy 250.19 154.94)
 		)
 		(stroke
@@ -11228,6 +11111,16 @@
 			(type default)
 		)
 		(uuid "d13bbaec-a3b6-4e5b-9889-878b26a95a57")
+	)
+	(wire
+		(pts
+			(xy 92.71 103.505) (xy 92.71 104.775)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d5c0d4c2-18b5-4362-93cf-d6badcf8ffaf")
 	)
 	(wire
 		(pts
@@ -11421,6 +11314,16 @@
 	)
 	(wire
 		(pts
+			(xy 92.71 112.395) (xy 100.33 112.395)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f136ff32-6ff9-4eb2-8789-39d5ffc2c2a7")
+	)
+	(wire
+		(pts
 			(xy 94.615 29.21) (xy 99.06 29.21)
 		)
 		(stroke
@@ -11539,16 +11442,6 @@
 		)
 		(uuid "0dfa6473-3081-44d2-9ff4-55bf90eb5d03")
 	)
-	(label "VPP_12V_SEL"
-		(at 138.43 149.225 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "11248043-319b-4e43-9bc2-6532b468988d")
-	)
 	(label "HSE_IN"
 		(at 138.43 103.505 180)
 		(effects
@@ -11628,6 +11521,16 @@
 			(justify right bottom)
 		)
 		(uuid "236b34a2-32f5-4bf2-96ac-2d3ab56577ef")
+	)
+	(label "V5_SENSE"
+		(at 85.09 112.395 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "23fd6fe9-764c-4d6d-be2b-7e88f2ad8d2c")
 	)
 	(label "VPP_ON"
 		(at 247.65 139.7 180)
@@ -11738,6 +11641,16 @@
 			(justify left bottom)
 		)
 		(uuid "3daa791a-c741-4fb6-99dd-8dda07aac485")
+	)
+	(label "VPP_12V_ADJ"
+		(at 247.65 147.32 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3db30327-f453-419f-aa64-4fab9f11570c")
 	)
 	(label "AUX2"
 		(at 247.65 73.66 180)
@@ -12039,16 +11952,6 @@
 		)
 		(uuid "baca7ec5-3ce3-4291-8f4f-0dec872c5e1c")
 	)
-	(label "VPP_12V_SEL"
-		(at 247.65 147.32 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "c04ba7fa-c97e-4470-84e1-4ed6d4530655")
-	)
 	(label "UART_TX"
 		(at 179.07 95.885 0)
 		(effects
@@ -12088,6 +11991,16 @@
 			(justify right bottom)
 		)
 		(uuid "d055d311-b806-419b-8bc8-4ba420aa3c15")
+	)
+	(label "V5_SENSE"
+		(at 138.43 116.205 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d41f2ac6-4cf4-40fa-b93a-a46ae104b0f9")
 	)
 	(label "VPP_SENSE"
 		(at 179.07 83.185 0)
@@ -12178,6 +12091,16 @@
 			(justify left bottom)
 		)
 		(uuid "f162c986-6e7c-4235-8e37-1e95550c4535")
+	)
+	(label "VPP_12V_ADJ"
+		(at 179.07 85.725 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f1938372-1e18-4f7a-86bd-2cb696001a71")
 	)
 	(label "SRST"
 		(at 179.07 146.685 0)
@@ -12980,7 +12903,7 @@
 				)
 			)
 		)
-		(property "Value" "LED state"
+		(property "Value" "State 2 (red)"
 			(at 31.75 186.69 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13048,7 +12971,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C2286"
+			(at 29.21 186.69 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:C")
 		(at 182.88 28.575 0)
@@ -13329,7 +13261,7 @@
 				)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "3.3k"
 			(at 64.77 176.53 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13372,7 +13304,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C11702"
+		(property "LCSC" "C25890"
 			(at 64.77 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -13862,6 +13794,96 @@
 			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 92.71 108.585 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "24bec357-6862-4df2-8aea-9b2f8046daf0")
+		(property "Reference" "R45"
+			(at 94.742 108.585 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 92.71 108.585 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "resistors:R_0402"
+			(at 92.71 108.585 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 92.71 108.585 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 92.71 108.585 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25741"
+			(at 92.71 108.585 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f401d165-7552-4d34-a67f-5515dc36724c")
+		)
+		(pin "2"
+			(uuid "a461bf09-9cdf-4b17-acbb-e32b1f9de3cd")
+		)
+		(instances
+			(project "openmupp-v1"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
+					(reference "R45")
 					(unit 1)
 				)
 			)
@@ -14432,7 +14454,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25104"
 			(at 123.19 141.605 0)
 			(hide yes)
 			(show_name no)
@@ -14892,7 +14914,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C2988083"
+			(at 158.75 112.395 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "custom_power:GND")
 		(at 50.8 133.985 0)
@@ -15047,6 +15078,98 @@
 			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 100.33 116.205 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5557b707-db71-4d70-84ff-9707ac9edfc1")
+		(property "Reference" "C8"
+			(at 100.965 113.665 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 100.965 118.745 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "capacitors:C_0603"
+			(at 100.33 116.205 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 100.33 116.205 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 100.33 116.205 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 100.33 116.205 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7827620b-7c3d-4f81-b9f1-3614c8dc9014")
+		)
+		(pin "2"
+			(uuid "478f7f85-6b8d-4ad1-afb9-0773e7d74971")
+		)
+		(instances
+			(project "openmupp-v1"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -15256,7 +15379,7 @@
 				)
 			)
 		)
-		(property "Value" "LED USB"
+		(property "Value" "USB (green)"
 			(at 67.31 186.69 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15324,7 +15447,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C12624"
+			(at 64.77 186.69 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "power:+5V")
 		(at 62.23 55.88 0)
@@ -15720,6 +15852,173 @@
 			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 92.71 116.205 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "785968c7-281d-430c-aab1-d56d5fe75a44")
+		(property "Reference" "R46"
+			(at 94.742 116.205 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 92.71 116.205 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "resistors:R_0402"
+			(at 92.71 116.205 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 92.71 116.205 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 92.71 116.205 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25741"
+			(at 92.71 116.205 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "7f80fb2b-a9ce-4c02-9811-ad5b62d23ba5")
+		)
+		(pin "1"
+			(uuid "ea04252e-2fec-4d8e-9413-ca632899f061")
+		)
+		(instances
+			(project "openmupp-v1"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
+					(reference "R46")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 100.33 120.015 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7981424f-bf5f-46be-adb8-5e4c0d1e80b3")
+		(property "Reference" "#PWR0144"
+			(at 100.33 126.365 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 100.33 123.825 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 100.33 120.015 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 100.33 120.015 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 100.33 120.015 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "129a5bc0-93d2-4afd-b498-60af0f56cf13")
+		)
+		(instances
+			(project "openmupp-v1"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
+					(reference "#PWR0144")
 					(unit 1)
 				)
 			)
@@ -16666,6 +16965,83 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 92.71 120.015 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "96247cde-4b82-4836-8bf5-8d5470ed6596")
+		(property "Reference" "#PWR0143"
+			(at 92.71 126.365 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 92.71 123.825 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 92.71 120.015 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 92.71 120.015 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 92.71 120.015 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bc9abc56-78a1-4116-a1f7-a08705c23712")
+		)
+		(instances
+			(project "openmupp-v1"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
+					(reference "#PWR0143")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 64.77 193.04 0)
 		(unit 1)
 		(body_style 1)
@@ -17357,7 +17733,7 @@
 				)
 			)
 		)
-		(property "Value" "LED state"
+		(property "Value" "State 1 (blue)"
 			(at 49.53 186.69 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17421,6 +17797,94 @@
 			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
 					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	
+		(property "LCSC" "C2288"
+			(at 46.99 186.69 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
+	(symbol
+		(lib_id "power:+5V")
+		(at 92.71 103.505 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "da476ce3-b77b-47c5-a61c-c72adff8c0ac")
+		(property "Reference" "#PWR016"
+			(at 92.71 107.315 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 92.71 99.3719 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 92.71 103.505 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 92.71 103.505 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 92.71 103.505 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2bd36552-28a5-45ac-b2db-6dc54dbcd759")
+		)
+		(instances
+			(project "openmupp-v1"
+				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -17525,7 +17989,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1.1K"
+		(property "Value" "1k"
 			(at 119.38 127.635 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17583,7 +18047,16 @@
 				)
 			)
 		)
-	)
+	
+		(property "LCSC" "C11702"
+			(at 119.38 125.095 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
 	(symbol
 		(lib_id "Device:Polyfuse")
 		(at 53.34 60.325 0)
@@ -18511,16 +18984,6 @@
 				(justify left)
 			)
 		)
-		(pin "VPP_12V_SEL" input
-			(at 250.19 147.32 180)
-			(uuid "c6666e1a-1c91-40c0-89ef-9ffd3380fd9c")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "VPP_SENSE" output
 			(at 250.19 149.86 180)
 			(uuid "11e49c8a-5310-43cb-afe4-014bb643de9d")
@@ -18554,6 +19017,16 @@
 		(pin "VPP_SENSE2" output
 			(at 250.19 152.4 180)
 			(uuid "463ec0a0-6984-4686-8694-cff0ccefb2f3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "VPP_12V_ADJ" input
+			(at 250.19 147.32 180)
+			(uuid "b8d68678-5eec-4187-9237-5cce52a96d2c")
 			(effects
 				(font
 					(size 1.27 1.27)
