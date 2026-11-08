@@ -53,7 +53,7 @@ flowchart LR
 | Level shifters | SN74LXC8T245 (U3, U4), SN74LXC1T45 (U5, U6) | All parts work from 1.1 V to 5.5 V. |
 | Reset path | BSS138 (Q1), U4 channel 4 | Q1 pulls nRESET low. U4 reads the line back. |
 | ESD | TPD4E05U06 (U8 to U10) | On all J4 signals except the supplies. |
-| Probe debug | J3 (5-pin SWD) | Debugs the probe MCU only. **It is not a target connector.** |
+| Probe debug | J3 (5-pin SWD), J2 (3-pin UART) | J3 debugs the probe MCU only. J2 is the log port of the probe firmware. **They are not target connectors.** |
 | User I/O | SW1 (key and BOOT0), LEDs D1 and D4 (state) and D2 (USB) | |
 
 ### Target connector J4
