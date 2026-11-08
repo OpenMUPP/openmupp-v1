@@ -47,7 +47,7 @@ flowchart LR
 | MCU | CH32V307RCT6, LQFP64 (U2) | QingKe V4F RISC-V, 144 MHz, 256 KB flash, 64 KB SRAM. 8 MHz crystal (Y1). |
 | USB | USB-C receptacle (J1), USBLC6-2SC6 (U1) | USB 2.0 high speed (USBHS on PB6, PB7). 5.1 kΩ CC resistors. |
 | 3.3 V rail | XC6220B331MR-G LDO | Supplies the MCU and the target power switch. |
-| VBUS protection | 1.1 A polyfuse (F1), 2.2 A trip, 16 V | Expect `+5V` near 4.55 V at full load and 4.75 V VBUS. |
+| VBUS protection | 1.1 A polyfuse (F1), 2.2 A trip, 16 V | At 4.75 V VBUS, expect `+5V` at about 4.6 V or more at full load. See [Target power](docs/hardware.md#target-power). |
 | Target power (3.3 V or 5 V) | TPS2553 (U12, 3.3 V), TPS2553 (U14, 5 V), BSS138 interlock (Q4) | Current limit about 520 mA (ILIM 51 kΩ) at 3.3 V and about 300 mA (ILIM 91 kΩ) at 5 V. Both outputs join `VTREF`. See [Target power](docs/hardware.md#target-power). |
 | VPP (5 V to 13 V) | MT3608 boost (U13), AO3401A P-FET (Q2), BSS138 driver (Q3) | The firmware sets the level with the DAC on PA5 (`VPP_12V_ADJ`). See [High voltage (VPP)](docs/hardware.md#high-voltage-vpp). |
 | Level shifters | SN74LXC8T245 (U3, U4), SN74LXC1T45 (U5, U6) | All parts work from 1.1 V to 5.5 V. |

@@ -55,7 +55,19 @@ The interlock does not remove the overlap in a change from 5 V to 3.3 V. The fir
 4. For a change from 5 V to 3.3 V, wait until `VTREF` is less than 3.4 V. `VTREF_SENSE` shows half of `VTREF`, so wait for less than 1.7 V.
 5. Turn on one switch.
 
-Expect about 4.5 V on `VTREF` at 5 V and full board load, because of the polyfuse F1 and the drop in U14. This value starts from the USB minimum of 4.75 V. It uses the maximum resistance of F1 after a trip (270 mΩ, about 0.18 V at 650 mA). The cable drop is not included.
+The polyfuse F1 and the target switch U14 decrease the 5 V target supply. The worst-case values below use these assumptions:
+
+- VBUS is 4.75 V, the USB minimum. The cable drop is not included.
+- F1 has its maximum resistance after a trip, 270 mΩ.
+- U14 has its maximum on-resistance up to 105 °C, 140 mΩ.
+- The probe itself uses about 100 mA (MCU with USB high speed, LEDs, shifters). This is an estimate, not a measurement. The boost (VPP) is off.
+
+| Target supply | Current through F1 | `+5V` | `VTREF` |
+|---------------|--------------------|-------|---------|
+| 5 V at 300 mA | about 400 mA | 4.64 V | 4.6 V |
+| 3.3 V at 520 mA | about 620 mA | 4.58 V | 3.23 V (U12 drops 0.07 V from the LDO output) |
+
+The two target switches cannot be on at the same time, so F1 never carries both target currents.
 
 ## High voltage (VPP)
 
