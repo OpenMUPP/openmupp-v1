@@ -12767,16 +12767,6 @@
 		)
 		(uuid "356e0326-3e03-46a0-83bc-c0ce83212f0d")
 	)
-	(label "TCK_RB"
-		(at 138.43 131.445 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "8dfe09ce-dca8-4254-a92a-94c253d5e132")
-	)
 	(label "TDI_RB"
 		(at 138.43 133.985 180)
 		(effects
@@ -12788,6 +12778,16 @@
 		(uuid "e1649498-2d1d-495e-820c-b4b48ab40af5")
 	)
 	(label "AUX1_RB"
+		(at 138.43 131.445 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5e6bbf38-b76f-4b7b-be2b-5db18cc00d19")
+	)
+	(label "TCK_RB"
 		(at 138.43 136.525 180)
 		(effects
 			(font
@@ -12795,7 +12795,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "bc78fe91-c752-4a00-8ed2-a298a6e3bcfe")
+		(uuid "618de57b-7a93-43dc-b40f-03d66771181d")
 	)
 	(global_label "SWDCLK"
 		(shape input)
