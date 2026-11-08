@@ -16126,7 +16126,7 @@
 				)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "470R"
 			(at 60.96 152.4 90)
 			(effects
 				(font
@@ -16170,7 +16170,7 @@
 			)
 		)
 	
-		(property "LCSC" "C11702"
+		(property "LCSC" "C25117"
 			(at 60.96 152.4 0)
 			(hide yes)
 			(effects
@@ -16195,7 +16195,7 @@
 				)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "470R"
 			(at 60.96 157.48 90)
 			(effects
 				(font
@@ -16239,7 +16239,7 @@
 			)
 		)
 	
-		(property "LCSC" "C11702"
+		(property "LCSC" "C25117"
 			(at 60.96 157.48 0)
 			(hide yes)
 			(effects
@@ -16264,7 +16264,7 @@
 				)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "470R"
 			(at 60.96 162.56 90)
 			(effects
 				(font
@@ -16308,7 +16308,7 @@
 			)
 		)
 	
-		(property "LCSC" "C11702"
+		(property "LCSC" "C25117"
 			(at 60.96 162.56 0)
 			(hide yes)
 			(effects
