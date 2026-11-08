@@ -55,7 +55,7 @@ The interlock does not remove the overlap in a change from 5 V to 3.3 V. The fir
 4. For a change from 5 V to 3.3 V, wait until `VTREF` is less than 3.4 V. `VTREF_SENSE` shows half of `VTREF`, so wait for less than 1.7 V.
 5. Turn on one switch.
 
-Expect about 4.4 V on `VTREF` at 5 V and full board load, because of the polyfuse F1 and the drop in U14.
+Expect about 4.5 V on `VTREF` at 5 V and full board load, because of the polyfuse F1 and the drop in U14. This value starts from the USB minimum of 4.75 V. It uses the maximum resistance of F1 after a trip (270 mΩ, about 0.18 V at 650 mA). The cable drop is not included.
 
 ## High voltage (VPP)
 

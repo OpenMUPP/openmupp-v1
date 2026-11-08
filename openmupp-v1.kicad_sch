@@ -19085,7 +19085,7 @@
 				)
 			)
 		)
-		(property "Value" "750mA"
+		(property "Value" "1.1A"
 			(at 55.88 60.325 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19117,7 +19117,7 @@
 				)
 			)
 		)
-		(property "Description" "Resettable fuse, 750mA hold, 1.5A trip, 16V, 1206"
+		(property "Description" "Resettable fuse, 1.1A hold, 2.2A trip, 16V, 1206"
 			(at 53.34 60.325 0)
 			(hide yes)
 			(show_name no)
@@ -19128,7 +19128,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C269118"
+		(property "LCSC" "C7542961"
 			(at 53.34 60.325 0)
 			(hide yes)
 			(show_name no)
