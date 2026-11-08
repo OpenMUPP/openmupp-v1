@@ -63,18 +63,18 @@ R52 (100 Ω) is in series between Q2 and J4 pin 19. It limits the current if pin
 
 The DAC output on PA5 (DAC channel 2, net `VPP_12V_ADJ`) sets the VPP voltage. R34 (165 kΩ) and R35 (10 kΩ) are the feedback divider of the boost. R58 and R57 (20 kΩ each) inject the DAC voltage into the feedback node `VPP_FB`. C34 (100 nF) at the middle of R57 and R58 filters DAC noise. Place R57 near the FB pin of U13.
 
-A higher DAC voltage gives a lower VPP. The values below use the 0.6 V feedback reference of the MT3608:
+A higher DAC voltage gives a lower VPP. The values below use the typical 0.6 V feedback reference of the MT3608. The datasheet range is 0.588 V to 0.612 V:
 
 | PA5 state | VPP |
 |-----------|-----|
-| 0 V (DAC at 0, or GPIO output low) | 13.0 V, the hardware maximum |
-| High-impedance (reset, DAC off) | 10.5 V |
+| 0 V (DAC at 0, or GPIO output low) | 13.0 V, the hardware maximum (12.5 V to 13.5 V with the FB and 1 % resistor tolerances) |
+| High-impedance (reset, DAC off) | 10.5 V (10.1 V to 10.9 V) |
 | About 1.93 V | 5 V |
 | Higher | The boost passes its input through (about VBUS) |
 
 VPP = 0.6 V + R34 × (0.6 V / R35 + (0.6 V − V<sub>DAC</sub>) / (R57 + R58)).
 
-Each PA5 fault state gives a VPP between VBUS and 13 V. Thus a firmware error cannot make more than 13 V. The default of 10.5 V is more than VIHH of some PIC parts (8 V to 9 V). VIHH is the high voltage that the part needs on its MCLR pin to start programming. Thus the firmware must set the DAC before it sets `VPP_EN`, and it must check `VPP_SENSE` before it sets `VPP_ON`.
+Each PA5 fault state gives a VPP between VBUS and the hardware maximum. Thus a firmware error cannot make more than 13.5 V. The tolerances make the DAC setting for a given VPP inexact. Thus the firmware sets the DAC, reads `VPP_SENSE` and corrects the DAC until VPP is correct. The default of 10.5 V is more than VIHH of some PIC parts (8 V to 9 V). VIHH is the high voltage that the part needs on its MCLR pin to start programming. Thus the firmware must set the DAC before it sets `VPP_EN`, and it must check `VPP_SENSE` before it sets `VPP_ON`.
 
 The boost cannot pull its output down. Thus the firmware must change the level in this order:
 
