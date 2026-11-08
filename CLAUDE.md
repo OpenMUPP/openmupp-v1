@@ -18,7 +18,7 @@ KiCad 10 project. Design documentation is in `README.md` and `docs/hardware.md`.
 
 ## Conventions
 
-- Reference designators: the highest numbers in use are R58, C34, D5, J4, Q4 and U14. Q5 is free.
+- Reference designators: the highest numbers in use are R61, C34, D5, J4, Q4 and U14. Q5 is free.
 - New footprints go in the private `kicad-footprints` repository (`inductors:`, `connectors:`, `misc:`, ...), not in this project.
 - Project symbol table `sym-lib-table` is tracked.
 

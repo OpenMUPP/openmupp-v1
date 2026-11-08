@@ -19,13 +19,15 @@ The probe MCU always runs at 3.3 V. The target side of each shifter runs from `V
 |---------------|-----------|---------|
 | TCK, TDI, TRST, `AUX1`, `AUX2` | Out | U3, direction pin `DIR_OUT` |
 | TDO, RTCK, UART RX, nRESET read-back | In | U4, fixed target to probe |
+| TCK, TDI, `AUX1` read-back | In | U4, fixed target to probe |
 | TMS / SWDIO | Both | U5, direction pin `DIR_SWDIO` |
 | UART TX | Out (default) or in | U6, direction pin `UART_TX_DIR` |
 | nRESET / debugWIRE, drive | Out, open-drain | BSS138 (Q1), low side |
 
 - **Idle state.** `DIR_OUT` and `DIR_SWDIO` have external 100 kΩ pull-downs (R26, R27). A floating direction pin selects target to probe, so the target side is high-impedance. This also holds while the MCU is in reset.
 - **nRESET path.** Q1 has its source on GND and its drain on nRESET. The MCU never drives nRESET high. A 100 kΩ pull-down (R28) keeps the gate low while the MCU is in reset. U4 channel 4 reads the real line level back. The USART sees its own transmit, so it can detect collisions.
-- **Spare channels.** U4 channels 5 to 8 are unused. Their B inputs are tied to GND. The A outputs are not connected. `DIR` and `~OE` are tied to GND, so U4 always works from target to probe. U3 channels 6 to 8 are also unused. Their A and B pins are all tied to GND. `DIR_OUT` changes direction, so either side can be the input. The input is always low, so the output always drives low into GND and there is no contention. Do not leave these pins open: the internal pull-downs are dynamic and do not hold an input low.
+- **Output read-back.** U4 channels 5 to 7 read TCK, TDI and `AUX1` back from the connector side of the 33 Ω series resistors (`xTCK`, `xTDI`, `xAUX1`). Thus the firmware sees the real line level at J4, also while U3 drives the line. It can find a short, a target that drives against the probe, or a wrong `VTREF`. A 1 kΩ resistor in each tap (R59, R60, R61) isolates the trace to U4 from the target line. Place these resistors near J4. With about 4 pF at the U4 input, the RC time is about 4 ns. The outputs go to PC6 (`TCK_RB`), PC7 (`TDI_RB`) and PC8 (`AUX1_RB`). Each of these pins has a TIM8 channel (default map) and a TIM3 channel (full remap). Thus the firmware can use a timer capture on any read-back, for example to measure the TCK frequency or the loop delay. `AUX2` has no read-back yet. Channel 8 is free for it.
+- **Spare channels.** U4 channel 8 is unused. Its B input and its A output are tied to GND. The A output always drives low into GND, so there is no contention. `DIR` and `~OE` are tied to GND, so U4 always works from target to probe. U3 channels 6 to 8 are also unused. Their A and B pins are all tied to GND. `DIR_OUT` changes direction, so either side can be the input. The input is always low, so the output always drives low into GND and there is no contention. Do not leave these pins open: the internal pull-downs are dynamic and do not hold an input low.
 - **Pull-ups.** 2.2 kΩ to `VTREF` on SWDIO (R22). The one-wire interface needs the fast rise time. 10 kΩ to `VTREF` on TDO, RTCK, UART RX and nRESET. The shifters have dynamic 100 kΩ pull-downs, so an external pull-up must be 15 kΩ or less.
 - **UART TX has its own shifter.** U6 has its own direction pin, `UART_TX_DIR` (PC9). R56 (100 kΩ) pulls it up to 3.3 V, so U6 drives the target by default. The firmware can set `UART_TX_DIR` low to read the line, for example for a single-wire UART. U3 shares one direction pin (`DIR_OUT`). While `DIR_OUT` is low, the target side of U3 is high-impedance. The UART bridge must work when the JTAG outputs are released, so UART TX does not use the free channels of U3. R53 (100 kΩ) pulls `UART_TX` (PA9) up to 3.3 V. Thus U6 keeps `T_UART_TX` high when PA9 is high-impedance, for example while the MCU is in reset. R53 and R56 together give this idle state.
 - **Series resistors.** 33 Ω (R11 to R21) on all J4 signals except pin 16 (`ADAPTER_ID`). The shifter edges are fast.
@@ -126,6 +128,7 @@ Each probe signal uses a pin that exists on LQFP64 (`CH32V307RCT6`) and on QFN68
 | TRST, RTCK | PB9, PA8 | GPIO |
 | nRESET / debugWIRE drive (`SRST`) | PB12 | GPIO, to the gate of Q1. The CH32V307 USART cannot invert TX, so the firmware drives debugWIRE output in software. |
 | nRESET / debugWIRE read-back (`SRST_RX`) | PB11 | USART3_RX, from U4 |
+| TCK, TDI, `AUX1` read-back (`TCK_RB`, `TDI_RB`, `AUX1_RB`) | PC6, PC7, PC8 | Inputs, from U4 channels 5 to 7. TIM8_CH1 to CH3 (default map), TIM3_CH1 to CH3 (full remap). |
 | UART TX, UART RX | PA9, PA10 | USART1 |
 | `AUX1`, `AUX2` | PA2, PA0 | Outputs in the `DIR_OUT` group |
 | USB | PB6, PB7 | USBHS D− and D+ |
@@ -153,4 +156,4 @@ R10 is fitted on purpose. The JTAG fast path of the firmware uses two SPI periph
 
 R55 is fitted for SWIM, the debug protocol of the STM8. The STM8 sends its bits with its own clock. Thus the probe measures the low time of each bit with a timer in PWM input mode. This timer runs at the same time as TIM10, which sends the probe bits on PC11. Thus the input needs a second pin and a second timer. The counter reset needs channel 1 or 2 of the timer, and PA1 is TIM2_CH2. TIM2 has DMA requests for CC1 and CC2. TIM3_CH2 has no DMA request, so PB4 and PC6 do not work.
 
-These pins are not connected: PA15, PB4, PC5 to PC8 and PC13. PC13 is a backup-domain pin with the same limits as PC14. The CH32V307 has no JTAG port, so PB3 is a GPIO after reset. The GPIO pins are floating inputs at reset. Thus the direction pins need their external pull resistors.
+These pins are not connected: PA15, PB4, PC5 and PC13. PC13 is a backup-domain pin with the same limits as PC14. The CH32V307 has no JTAG port, so PB3 is a GPIO after reset. The GPIO pins are floating inputs at reset. Thus the direction pins need their external pull resistors.
