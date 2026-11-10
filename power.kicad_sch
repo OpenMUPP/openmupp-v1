@@ -5790,7 +5790,7 @@
 				)
 			)
 		)
-		(property "Value" "165k"
+		(property "Value" "180k"
 			(at 193.675 60.96 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5833,7 +5833,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C2998078"
+		(property "LCSC" "C25760"
 			(at 193.675 60.96 0)
 			(hide yes)
 			(show_name no)

@@ -11,7 +11,7 @@ The KiCad 10 project is in this repository.
 - It transfers data **faster than the original Versaloon Mini**. The core runs at 144 MHz, and USB runs at high speed (480 Mbit/s).
 - It connects to targets from **1.2 V to 5 V** through level shifters. A 1.2 V target is limited to about 5 MHz.
 - It supplies the target with **3.3 V (up to about 520 mA) or 5 V (up to about 300 mA)**.
-- It makes an adjustable **VPP of 5 V to 13 V** for high-voltage programming of AVR and PIC parts.
+- It makes an adjustable **VPP of 5 V to 14 V** for high-voltage programming of AVR and PIC parts.
 - It has **one target connector (J4)**. A passive adapter board maps J4 to each target pinout.
 
 ## Hardware overview
@@ -20,7 +20,7 @@ The KiCad 10 project is in this repository.
 flowchart LR
     usb["USB-C (J1)"] --> fuse["Polyfuse F1<br/>1.1 A<br/>+5V"]
     fuse --> ldo["3.3 V LDO"]
-    fuse --> boost["Boost (U13)<br/>5 V to 13 V"]
+    fuse --> boost["Boost (U13)<br/>5 V to 14 V"]
     ldo --> mcu["CH32V307RCT6 (U2)<br/>3.3 V"]
     mcu <--> ls["Level shifters<br/>U3 to U6"]
     ls --> esd["33 Ω series resistors<br/>and ESD diodes"]
@@ -37,7 +37,7 @@ flowchart LR
 
     mcu -- "TARGET_PWR_EN" --> tps33
     mcu -- "TARGET_5V_EN" --> tps5
-    mcu -- "VPP_12V_ADJ<br/>(DAC: 5 V to 13 V)" --> boost
+    mcu -- "VPP_12V_ADJ<br/>(DAC: 5 V to 14 V)" --> boost
     mcu -- "VPP_EN, VPP_ON" --> vpp
     boost -- "VPP_SENSE" --> mcu
 ```
@@ -49,7 +49,7 @@ flowchart LR
 | 3.3 V rail | XC6220B331MR-G LDO | Supplies the MCU and the target power switch. |
 | VBUS protection | 1.1 A polyfuse (F1), 2.2 A trip, 16 V | At 4.75 V VBUS, expect `+5V` at about 4.6 V or more at full load. See [Target power](docs/hardware.md#target-power). |
 | Target power (3.3 V or 5 V) | TPS2553 (U12, 3.3 V), TPS2553 (U14, 5 V), BSS138 interlock (Q4) | Current limit about 520 mA (ILIM 51 kΩ) at 3.3 V and about 300 mA (ILIM 91 kΩ) at 5 V. Both outputs join `VTREF`. See [Target power](docs/hardware.md#target-power). |
-| VPP (5 V to 13 V) | MT3608 boost (U13), AO3401A P-FET (Q2), BSS138 driver (Q3), MMBT3906 current limit (Q5) | The firmware sets the level with the DAC on PA5 (`VPP_12V_ADJ`). Current limit about 17 mA. See [High voltage (VPP)](docs/hardware.md#high-voltage-vpp). |
+| VPP (5 V to 14 V) | MT3608 boost (U13), AO3401A P-FET (Q2), BSS138 driver (Q3), MMBT3906 current limit (Q5) | The firmware sets the level with the DAC on PA5 (`VPP_12V_ADJ`). Current limit about 17 mA. See [High voltage (VPP)](docs/hardware.md#high-voltage-vpp). |
 | Level shifters | SN74LXC8T245 (U3, U4), SN74LXC1T45 (U5, U6) | All parts work from 1.1 V to 5.5 V. |
 | Reset path | BSS138 (Q1), U4 channel 4 | Q1 pulls nRESET low. U4 reads the line back. |
 | ESD | TPD4E05U06 (U8 to U10) | On all J4 signals except the supplies. |
@@ -71,7 +71,7 @@ J4 is a 2 × 10 IDC header, 2.54 mm. The footprint in the schematic is `Connecto
 | 13 | UART TX (probe output) | 14 | UART RX (probe input) |
 | 15 | TRST | 16 | Adapter ID (ADC, 3.3 V domain) |
 | 17 | `AUX1` | 18 | `AUX2` |
-| 19 | VPP (5 V to 13 V, gated) | 20 | GND |
+| 19 | VPP (5 V to 14 V, gated) | 20 | GND |
 
 - **Target power is on pin 1.** One pin carries the sense and the supply. The limit is about 520 mA at 3.3 V and about 300 mA at 5 V.
 - **Pin 2 is reserved.** A later adapter that needs a second supply pin can use it, with its own switch.

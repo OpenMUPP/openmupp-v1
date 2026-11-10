@@ -71,28 +71,28 @@ The two target switches cannot be on at the same time, so F1 never carries both 
 
 ## High voltage (VPP)
 
-The MT3608 boost makes the VPP voltage. The boost passes its input through when it is off. Thus a P-FET switch (Q2) gates VPP. When Q3 turns on, R36 and R37 (100 kΩ each) set the gate-source voltage of Q2 to half of the boost output. At the 13 V maximum, this is −6.5 V, in the ±12 V limit of the AO3401A.
+The MT3608 boost makes the VPP voltage. The boost passes its input through when it is off. Thus a P-FET switch (Q2) gates VPP. When Q3 turns on, R36 and R37 (100 kΩ each) set the gate-source voltage of Q2 to half of the boost output. At the 14.1 V nominal maximum, this is about −7.1 V (−7.3 V at the 14.7 V worst case). This is in the ±12 V limit of the AO3401A.
 
 **Current limit.** R52 (33 Ω) is in series between `VPP_BOOST` and the source of Q2. Q5 (MMBT3906, PNP) senses the voltage across R52. The emitter of Q5 connects to `VPP_BOOST`, the base to the source of Q2, and the collector to the gate of Q2. When the voltage across R52 gets to about 0.55 V, Q5 turns on and pulls the gate of Q2 up. Q2 then holds the current at the limit. The limit is about 17 mA at 25 °C. It decreases to about 14 mA at 85 °C, because the base-emitter voltage of Q5 decreases by about 2 mV/°C.
 
-Thus a short from pin 19 to GND, or to a clamped target pin, does not damage a part. In a short, Q2 dissipates VPP × 17 mA, about 0.22 W at 13 V. With a thermal resistance of about 125 °C/W, the junction temperature of Q2 increases by about 28 °C. The firmware must still switch off VPP when it finds a short (see `VPP_SENSE2` below).
+Thus a short from pin 19 to GND, or to a clamped target pin, does not damage a part. In a short, Q2 dissipates VPP × 17 mA, about 0.25 W at 14.7 V. With a thermal resistance of about 125 °C/W, the junction temperature of Q2 increases by about 31 °C. The firmware must still switch off VPP when it finds a short (see `VPP_SENSE2` below).
 
 The limit is for flash PIC and AVR parts. Their MCLR or RESET pin takes less than 1 mA, and at 1 mA R52 drops only 33 mV. The probe does not support EPROMs and EPROM-based PIC parts (for example PIC16C5x). These parts need 30 mA to 100 mA on VPP.
 
-The DAC output on PA5 (DAC channel 2, net `VPP_12V_ADJ`) sets the VPP voltage. R34 (165 kΩ) and R35 (10 kΩ) are the feedback divider of the boost. R58 and R57 (20 kΩ each) inject the DAC voltage into the feedback node `VPP_FB`. C34 (100 nF) at the middle of R57 and R58 filters DAC noise. Place R57 near the FB pin of U13.
+The DAC output on PA5 (DAC channel 2, net `VPP_12V_ADJ`) sets the VPP voltage. R34 (180 kΩ) and R35 (10 kΩ) are the feedback divider of the boost. R58 and R57 (20 kΩ each) inject the DAC voltage into the feedback node `VPP_FB`. C34 (100 nF) at the middle of R57 and R58 filters DAC noise. Place R57 near the FB pin of U13.
 
 A higher DAC voltage gives a lower VPP. The values below use the typical 0.6 V feedback reference of the MT3608. The datasheet range is 0.588 V to 0.612 V:
 
 | PA5 state | VPP |
 |-----------|-----|
-| 0 V (DAC at 0, or GPIO output low) | 13.0 V, the hardware maximum (12.5 V to 13.5 V with the FB and 1 % resistor tolerances) |
-| High-impedance (reset, DAC off) | 10.5 V (10.1 V to 10.9 V) |
-| About 1.93 V | 5 V |
+| 0 V (DAC at 0, or GPIO output low) | 14.1 V, the hardware maximum (13.6 V to 14.7 V with the FB and 1 % resistor tolerances) |
+| High-impedance (reset, DAC off) | 11.4 V (11.0 V to 11.9 V) |
+| About 2.02 V | 5 V |
 | Higher | The boost passes its input through (about VBUS) |
 
 VPP = 0.6 V + R34 × (0.6 V / R35 + (0.6 V − V<sub>DAC</sub>) / (R57 + R58)).
 
-Each PA5 fault state gives a VPP between VBUS and the hardware maximum. Thus a firmware error cannot make more than 13.5 V. The tolerances make the DAC setting for a given VPP inexact. Thus the firmware sets the DAC, reads `VPP_SENSE` and corrects the DAC until VPP is correct. The default of 10.5 V is more than VIHH of some PIC parts (8 V to 9 V). VIHH is the high voltage that the part needs on its MCLR pin to start programming. Thus the firmware must set the DAC before it sets `VPP_EN`, and it must check `VPP_SENSE` before it sets `VPP_ON`.
+Each PA5 fault state gives a VPP between VBUS and the hardware maximum. Thus a firmware error cannot make more than 14.7 V. With worst-case tolerances, the hardware maximum is at least 13.6 V. Thus each board can make 13.5 V for parts that need it. The tolerances make the DAC setting for a given VPP inexact. Thus the firmware sets the DAC, reads `VPP_SENSE` and corrects the DAC until VPP is correct. The default of 11.4 V is more than VIHH of some PIC parts (8 V to 9 V). VIHH is the high voltage that the part needs on its MCLR pin to start programming. The hardware maximum is also more than the absolute maximum of some targets, for example 13 V on the AVR RESET pin. Thus the firmware must set the DAC before it sets `VPP_EN`, and it must check `VPP_SENSE` before it sets `VPP_ON`. Q2 keeps VPP off J4 until `VPP_ON` is high, so a wrong level never gets to the target if the firmware does this check. The firmware must also limit the DAC setting to the maximum VPP of each target family.
 
 The boost cannot pull its output down. Thus the firmware must change the level in this order:
 
@@ -101,9 +101,9 @@ The boost cannot pull its output down. Thus the firmware must change the level i
 3. Keep `VPP_EN` high. Wait until `VPP_SENSE` shows the new level, because C29 must discharge for a step down. If this takes more than 2 s, stop and report an error.
 4. Set `VPP_ON` high.
 
-`VPP_SENSE` measures the boost output through a divider (R47 100 kΩ, R48 27 kΩ). At 5 V, the ADC pin gets about 1.06 V. At 13 V, it gets about 2.76 V. The ADC reaches full scale at about 15.5 V, so the firmware can see an overshoot. The firmware reads it before it sets `VPP_ON`, and after a level change to see that C29 has discharged.
+`VPP_SENSE` measures the boost output through a divider (R47 100 kΩ, R48 27 kΩ). At 5 V, the ADC pin gets about 1.06 V. At 14.1 V, it gets about 3.0 V. The ADC reaches full scale at about 15.5 V, so the firmware can see an overshoot. The firmware reads it before it sets `VPP_ON`, and after a level change to see that C29 has discharged.
 
-`VPP_SENSE2` (PC1) measures VPP after R52 and Q2, on the J4 side. The divider is R50 (100 kΩ) and R51 (27 kΩ), with C33 (100 nF). It has the same ratio as the `VPP_SENSE` divider. While VPP is on, the difference between the two readings is the voltage across R52 and Q2. Below the current limit, this is 33 mV per mA in R52. In the current limit, Q2 takes the remaining voltage, so the difference becomes large. Thus the firmware can see that Q2 switched, measure the VPP current, and find a short on pin 19. The 1 % divider tolerances can give an offset of up to about 0.25 V at 13 V. The firmware can measure this offset while pin 19 has no load, and subtract it. The divider loads pin 19 with 127 kΩ to GND while VPP is off.
+`VPP_SENSE2` (PC1) measures VPP after R52 and Q2, on the J4 side. The divider is R50 (100 kΩ) and R51 (27 kΩ), with C33 (100 nF). It has the same ratio as the `VPP_SENSE` divider. While VPP is on, the difference between the two readings is the voltage across R52 and Q2. Below the current limit, this is 33 mV per mA in R52. In the current limit, Q2 takes the remaining voltage, so the difference becomes large. Thus the firmware can see that Q2 switched, measure the VPP current, and find a short on pin 19. The 1 % divider tolerances can give an offset of up to about 0.3 V at 14 V. The firmware can measure this offset while pin 19 has no load, and subtract it. The divider loads pin 19 with 127 kΩ to GND while VPP is off.
 
 The firmware must set **both** `VPP_EN` (PC14) and `VPP_ON` (PC15) high to apply VPP on J4 pin 19 (through R52 and Q2). Both pins have pull-downs. The firmware applies VPP only when the adapter ID shows a high-voltage adapter and the protocol needs VPP.
 
@@ -152,7 +152,7 @@ Each probe signal uses a pin that exists on LQFP64 (`CH32V307RCT6`) and on QFN68
 | `TARGET_PWR_EN` | PB8 | 3.3 V target switch (U12) |
 | `TARGET_5V_EN` | PB5 | 5 V target switch (U14), through R42 |
 | `VPP_EN`, `VPP_ON` | PC14, PC15 | Backup-domain pins: 3 mA, 2 MHz and 30 pF maximum. Static levels only. |
-| `VPP_12V_ADJ` | PA5 | DAC channel 2. Sets VPP from 5 V to 13 V. High-impedance gives 10.5 V. |
+| `VPP_12V_ADJ` | PA5 | DAC channel 2. Sets VPP from 5 V to 14 V. High-impedance gives 11.4 V. |
 | `V5_SENSE` | PC0 | ADC channel 10. `+5V` divided by 2 (R45, R46, C8). |
 | `VPP_SENSE` | PA4 | ADC channel 4. Divider R47, R48 and C32 on the boost output (before Q2). |
 | `VPP_SENSE2` | PC1 | ADC channel 11. Divider R50, R51 and C33 on VPP after Q2 (J4 pin 19). |
