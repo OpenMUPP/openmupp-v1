@@ -73,6 +73,8 @@ The two target switches cannot be on at the same time, so F1 never carries both 
 
 The MT3608 boost makes the VPP voltage. The boost passes its input through when it is off. Thus a P-FET switch (Q2) gates VPP. When Q3 turns on, R36 and R37 (100 kΩ each) set the gate-source voltage of Q2 to half of the boost output. At the 14.1 V nominal maximum, this is about −7.1 V (−7.3 V at the 14.7 V worst case). This is in the ±12 V limit of the AO3401A.
 
+**Output capacitors.** C29 and C35 (10 µF, 25 V, X5R, 0805 each) are in parallel on `VPP_BOOST`. The DC bias decreases each one to about 2.4 µF at 14 V, so the total is about 5 µF. The MT3608 datasheet recommends 22 µF. The VPP load is small, so the ripple stays low. Do a check of the boost stability on the first board.
+
 **Current limit.** R52 (33 Ω) is in series between `VPP_BOOST` and the source of Q2. Q5 (MMBT3906, PNP) senses the voltage across R52. The emitter of Q5 connects to `VPP_BOOST`, the base to the source of Q2, and the collector to the gate of Q2. When the voltage across R52 gets to about 0.55 V, Q5 turns on and pulls the gate of Q2 up. Q2 then holds the current at the limit. The limit is about 17 mA at 25 °C. It decreases to about 14 mA at 85 °C, because the base-emitter voltage of Q5 decreases by about 2 mV/°C.
 
 Thus a short from pin 19 to GND, or to a clamped target pin, does not damage a part. In a short, Q2 dissipates VPP × 17 mA, about 0.25 W at 14.7 V. With a thermal resistance of about 125 °C/W, the junction temperature of Q2 increases by about 31 °C. The firmware must still switch off VPP when it finds a short (see `VPP_SENSE2` below).
@@ -98,10 +100,10 @@ The boost cannot pull its output down. Thus the firmware must change the level i
 
 1. Set `VPP_ON` low.
 2. Set the DAC to the new level.
-3. Keep `VPP_EN` high. Wait until `VPP_SENSE` shows the new level, because C29 must discharge for a step down. If this takes more than 2 s, stop and report an error.
+3. Keep `VPP_EN` high. Wait until `VPP_SENSE` shows the new level, because C29 and C35 must discharge for a step down. Only the dividers discharge them, so a step from 14.1 V to 5 V takes about 0.7 s. If this takes more than 2 s, stop and report an error.
 4. Set `VPP_ON` high.
 
-`VPP_SENSE` measures the boost output through a divider (R47 100 kΩ, R48 27 kΩ). At 5 V, the ADC pin gets about 1.06 V. At 14.1 V, it gets about 3.0 V. The ADC reaches full scale at about 15.5 V, so the firmware can see an overshoot. The firmware reads it before it sets `VPP_ON`, and after a level change to see that C29 has discharged.
+`VPP_SENSE` measures the boost output through a divider (R47 100 kΩ, R48 27 kΩ). At 5 V, the ADC pin gets about 1.06 V. At 14.1 V, it gets about 3.0 V. The ADC reaches full scale at about 15.5 V, so the firmware can see an overshoot. The firmware reads it before it sets `VPP_ON`, and after a level change to see that C29 and C35 have discharged.
 
 `VPP_SENSE2` (PC1) measures VPP after R52 and Q2, on the J4 side. The divider is R50 (100 kΩ) and R51 (27 kΩ), with C33 (100 nF). It has the same ratio as the `VPP_SENSE` divider. While VPP is on, the difference between the two readings is the voltage across R52 and Q2. Below the current limit, this is 33 mV per mA in R52. In the current limit, Q2 takes the remaining voltage, so the difference becomes large. Thus the firmware can see that Q2 switched, measure the VPP current, and find a short on pin 19. The 1 % divider tolerances can give an offset of up to about 0.3 V at 14 V. The firmware can measure this offset while pin 19 has no load, and subtract it. The divider loads pin 19 with 127 kΩ to GND while VPP is off.
 
