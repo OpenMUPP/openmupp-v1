@@ -9837,10 +9837,6 @@
 		(uuid "eb71b338-1b81-4505-8fcd-ca5f1dbde8ed")
 	)
 	(no_connect
-		(at 140.97 128.905)
-		(uuid "00396234-c97c-44e1-b378-644c69869cba")
-	)
-	(no_connect
 		(at 176.53 126.365)
 		(uuid "20ca2ce1-d83c-42ca-a8ac-e53ea9da4bb0")
 	)
@@ -10059,6 +10055,16 @@
 			(type default)
 		)
 		(uuid "1aa5b369-5278-4cd7-bb34-c5650723d5d7")
+	)
+	(wire
+		(pts
+			(xy 247.65 160.02) (xy 250.19 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d7ad450-2379-4f81-93b6-09eed3710d33")
 	)
 	(wire
 		(pts
@@ -10329,6 +10335,16 @@
 			(type default)
 		)
 		(uuid "4500e64a-90f7-497d-b885-1e82bc9f9973")
+	)
+	(wire
+		(pts
+			(xy 140.97 128.905) (xy 138.43 128.905)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "49a0ad44-5e3b-4b36-8931-bf442fcab408")
 	)
 	(wire
 		(pts
@@ -12120,6 +12136,16 @@
 		)
 		(uuid "d6029fc0-6e14-4d0c-8bd9-58dc92fcaf36")
 	)
+	(label "VPP_PD"
+		(at 247.65 160.02 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "dd83d136-3cae-445c-a0b3-e4c5a68c6367")
+	)
 	(label "SRST_RX"
 		(at 247.65 99.06 180)
 		(effects
@@ -12229,6 +12255,16 @@
 			(justify right bottom)
 		)
 		(uuid "f35c194d-fa98-4467-8072-2d855356bb77")
+	)
+	(label "VPP_PD"
+		(at 138.43 128.905 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f51d1178-6588-4524-98b7-d0646bf41219")
 	)
 	(label "LED_STATE2"
 		(at 29.21 170.18 0)
@@ -19152,6 +19188,16 @@
 				(justify left)
 			)
 		)
+		(pin "VPP_PD" input
+			(at 250.19 160.02 180)
+			(uuid "3a5676df-4bed-4ad1-be46-18f26796c8ab")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(instances
 			(project "openmupp-v1"
 				(path "/26052ec4-b7f0-4f53-b73f-c5fe34396dff"
@@ -19411,5 +19457,4 @@
 			(page "1")
 		)
 	)
-	(embedded_fonts no)
 )

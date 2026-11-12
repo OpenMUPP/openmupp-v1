@@ -34,11 +34,13 @@ flowchart LR
 
     boost --> vpp["VPP switch<br/>P-FET (Q2)"]
     vpp --> j4
+    pd["Pin 19 pull-down<br/>N-FET (Q6), pull-up to VTREF"] --> j4
 
     mcu -- "TARGET_PWR_EN" --> tps33
     mcu -- "TARGET_5V_EN" --> tps5
     mcu -- "VPP_12V_ADJ<br/>(DAC: 5 V to 14 V)" --> boost
     mcu -- "VPP_EN, VPP_ON" --> vpp
+    mcu -- "VPP_PD" --> pd
     boost -- "VPP_SENSE" --> mcu
 ```
 
@@ -49,7 +51,7 @@ flowchart LR
 | 3.3 V rail | XC6220B331MR-G LDO | Supplies the MCU and the target power switch. |
 | VBUS protection | 1.1 A polyfuse (F1), 2.2 A trip, 16 V | At 4.75 V VBUS, expect `+5V` at about 4.6 V or more at full load. See [Target power](docs/hardware.md#target-power). |
 | Target power (3.3 V or 5 V) | TPS2553 (U12, 3.3 V), TPS2553 (U14, 5 V), FDV301N interlock (Q4) | Current limit about 300 mA (ILIM 91 kΩ) on each rail. Both outputs join `VTREF`. See [Target power](docs/hardware.md#target-power). |
-| VPP (5 V to 14 V) | MT3608 boost (U13), AO3401A P-FET (Q2), FDV301N driver (Q3), MMBT3906 current limit (Q5) | The firmware sets the level with the DAC on PA5 (`VPP_12V_ADJ`). Current limit about 17 mA. See [High voltage (VPP)](docs/hardware.md#high-voltage-vpp). |
+| VPP (5 V to 14 V) | MT3608 boost (U13), AO3401A P-FET (Q2), FDV301N driver (Q3), MMBT3906 current limit (Q5), FDV301N pull-down (Q6) | The firmware sets the level with the DAC on PA5 (`VPP_12V_ADJ`). Current limit about 17 mA. Pin 19 has three states: 0 V, `VTREF` and VPP. See [High voltage (VPP)](docs/hardware.md#high-voltage-vpp). |
 | Level shifters | SN74LXC8T245 (U3, U4), SN74LXC1T45 (U5, U6) | All parts work from 1.1 V to 5.5 V. |
 | Reset path | FDV301N (Q1), U4 channel 4 | Q1 pulls nRESET low. U4 reads the line back. |
 | ESD | TPD4E05U06 (U8 to U10) | On all J4 signals except the supplies. |
@@ -71,7 +73,7 @@ J4 is a 2 × 10 IDC header, 2.54 mm. The footprint in the schematic is `Connecto
 | 13 | UART TX (probe output) | 14 | UART RX (probe input) |
 | 15 | TRST | 16 | Adapter ID (ADC, 3.3 V domain) |
 | 17 | `AUX1` | 18 | `AUX2` |
-| 19 | VPP (5 V to 14 V, gated) | 20 | GND |
+| 19 | VPP (0 V, `VTREF`, or 5 V to 14 V) | 20 | GND |
 
 - **Target power is on pin 1.** One pin carries the sense and the supply. The limit is about 300 mA at 3.3 V and at 5 V.
 - **Pin 2 is reserved.** A later adapter that needs a second supply pin can use it, with its own switch.
