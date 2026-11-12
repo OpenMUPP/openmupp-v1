@@ -132,7 +132,7 @@ While `VPP_ON` is high and `VPP_PD` is high, `VPP_SENSE2` reads near 0 V. Thus t
 
 **Reverse current through Q2.** In the run state, pin 19 can be higher than `VPP_BOOST`. When the boost is off, `VPP_BOOST` is `+5V` minus the drop of D3, about 4.35 V to 4.85 V. The body diode of Q2 conducts from pin 19 to `VPP_BOOST` when pin 19 is more than about 0.5 V higher. This occurs only with a target supply above about 5.3 V, or when the probe has no USB power and the target has its own supply. R39 limits the current to some tens of µA. D3 blocks the path into `+5V`. In this case the run level is about `VPP_BOOST` + 0.5 V. For a 5.5 V target this is about 4.9 V, more than 0.8 × VDD.
 
-The VPP circuitry is on the main board. Thus a high-voltage adapter can be passive, like all other adapters.
+The VPP circuitry and the reset levels are on the main board. See [connectors/](../connectors/README.md) for the adapters.
 
 ## MCU support parts
 
