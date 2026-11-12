@@ -167,8 +167,8 @@ Each probe signal uses a pin that exists on LQFP64 (`CH32V307RCT6`) and on QFN68
 | `DIR_SWDIO` | PC3 | GPIO, with external pull-down. TIM10_CH3 (default map), the same timer as TMS. |
 | `DIR_OUT` | PB10 | GPIO, with external pull-down |
 | TRST, RTCK | PB9, PA8 | GPIO |
-| nRESET / debugWIRE drive (`SRST`) | PB12 | GPIO, to the gate of Q1. The CH32V307 USART cannot invert TX, so the firmware drives debugWIRE output in software. |
-| nRESET / debugWIRE read-back (`SRST_RX`) | PB11 | USART3_RX, from U4 |
+| nRESET / debugWIRE / UPDI drive (`SRST`) | PB12 | GPIO, to the gate of Q1. The CH32V307 USART cannot invert TX, so the firmware drives debugWIRE and UPDI output in software. |
+| nRESET / debugWIRE / UPDI read-back (`SRST_RX`) | PB11 | USART3_RX, from U4 |
 | TCK, TDI, `AUX1` read-back (`TCK_RB`, `TDI_RB`, `AUX1_RB`) | PC8, PC7, PC6 | Inputs, from U4 channels 5 to 7. TIM8_CH1 to CH3 (default map), TIM3_CH1 to CH3 (full remap). |
 | UART TX, UART RX | PA9, PA10 | USART1 |
 | `AUX1`, `AUX2` | PA2, PA0 | Outputs in the `DIR_OUT` group |

@@ -2697,10 +2697,6 @@
 		(uuid "0acbe4d3-edfa-4948-b642-761e907e174a")
 	)
 	(no_connect
-		(at 58.42 78.74)
-		(uuid "89443f92-2561-4fec-84e3-990841ac0c18")
-	)
-	(no_connect
 		(at 45.72 83.82)
 		(uuid "cdd0775f-c5bb-4f05-bc62-197dba0eb83d")
 	)
@@ -2739,6 +2735,14 @@
 	(no_connect
 		(at 71.12 154.94)
 		(uuid "3e05eeb9-edbc-442b-95b1-8a5c4e66cf6f")
+	)
+	(no_connect
+		(at 71.12 172.72)
+		(uuid "cc3836bd-ffac-49bb-9b40-3a9bf914b425")
+	)
+	(no_connect
+		(at 83.82 172.72)
+		(uuid "b299fe63-ee0a-49d7-9cfa-cc6cad041d79")
 	)
 	(wire
 		(pts
@@ -3204,13 +3208,6 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 140.97)
-			(xy 111.76 143.51)
-		)
-		(uuid "bc303d53-c45a-4b29-97e6-eb45876eb1d6")
-	)
-	(wire
-		(pts
 			(xy 71.12 149.86)
 			(xy 68.58 149.86)
 		)
@@ -3222,13 +3219,6 @@
 			(xy 93.98 144.78)
 		)
 		(uuid "c442309f-cd28-4218-8e88-7e67d9d6b00e")
-	)
-	(wire
-		(pts
-			(xy 111.76 133.35)
-			(xy 111.76 130.81)
-		)
-		(uuid "96df0788-abde-481e-98de-e47a03b60f6c")
 	)
 	(wire
 		(pts
@@ -3250,6 +3240,41 @@
 			(xy 86.36 154.94)
 		)
 		(uuid "45a78e60-e8f4-4382-87fd-064f72c24e55")
+	)
+	(wire
+		(pts
+			(xy 58.42 78.74)
+			(xy 60.96 78.74)
+		)
+		(uuid "63ff2390-7a57-4b0c-b8e5-1b2cfa40f1da")
+	)
+	(wire
+		(pts
+			(xy 71.12 170.18)
+			(xy 68.58 170.18)
+		)
+		(uuid "9321d22e-e104-4556-ac2e-4df1bc5ce14c")
+	)
+	(wire
+		(pts
+			(xy 83.82 170.18)
+			(xy 86.36 170.18)
+		)
+		(uuid "12c56854-b8e2-4b6f-acc6-cfa1bc546fd9")
+	)
+	(wire
+		(pts
+			(xy 71.12 175.26)
+			(xy 68.58 175.26)
+		)
+		(uuid "c710da9e-fe05-4665-a950-ac462afcf1b0")
+	)
+	(wire
+		(pts
+			(xy 83.82 175.26)
+			(xy 86.36 175.26)
+		)
+		(uuid "22404168-c435-4fdf-a4f4-599dabe14b11")
 	)
 	(label "RESET_HV"
 		(at 208.28 106.68 0)
@@ -3671,26 +3696,6 @@
 		)
 		(uuid "81bf74bf-36ec-48b4-98ce-29d2ee2d8936")
 	)
-	(label "TPIDATA_UPDI"
-		(at 60.96 68.58 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "66c02cc7-7d9a-4b6f-bea2-df84187aee29")
-	)
-	(label "TPIDATA_UPDI"
-		(at 220.98 73.66 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "2df4acc1-ae5d-4ba9-accf-ffdcb766ef9a")
-	)
 	(label "PROG_EN0"
 		(at 149.86 121.92 0)
 		(effects
@@ -3872,16 +3877,6 @@
 		(uuid "e48df6f0-5c34-4011-91ca-7c0500d32969")
 	)
 	(label "UPDI_HV"
-		(at 111.76 143.51 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4011cc7d-78f0-443a-8f4c-096d1d854217")
-	)
-	(label "UPDI_HV"
 		(at 68.58 149.86 180)
 		(effects
 			(font
@@ -3902,16 +3897,6 @@
 		(uuid "df6c5008-920c-4e2e-bde3-57b0f8c37b0b")
 	)
 	(label "VTREF"
-		(at 111.76 130.81 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "f7e340a9-a2d5-4db3-84c5-48b5a30b4a2a")
-	)
-	(label "VTREF"
 		(at 86.36 149.86 0)
 		(effects
 			(font
@@ -3920,16 +3905,6 @@
 			(justify left bottom)
 		)
 		(uuid "3957cd71-2e25-4251-99bf-4d51b41a2874")
-	)
-	(label "TPIDATA_UPDI"
-		(at 101.6 134.62 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "cba342c7-a0de-4df8-b581-7d8f431b9dcc")
 	)
 	(label "GND"
 		(at 86.36 154.94 0)
@@ -3941,10 +3916,90 @@
 		)
 		(uuid "44d4599e-5255-43d7-95e8-9239cef996c0")
 	)
-  (text "OpenMUPP v1 AVR high-voltage adapter (adapter ID slot 8, R1 = 39k 1 %)\nTargets: ATtiny HVSP (J2, J3), TPI with 12 V on RESET (J4), UPDI with the HV pulse on RESET (J4) or on the UPDI pin (J6).\n\nJ1 plugs directly onto J4 of the OpenMUPP v1 probe. Pin numbers of J1 are the J4 pin numbers.\nJ4 pin 2 (reserved) stays open. J4 pin 16 (adapter ID) never goes to the target.\nPut only one target in J2, J3, J4 or J6 at a time. VPP goes to RESET_HV and to UPDI_HV together. HVSP: the probe supplies 5 V on VTREF.\nD1 and D2 isolate RESET_HV and UPDI_HV from each other and from VPP while VPP is off. Set VPP about 0.3 V higher (12.3 V for 12 V).\nReset circuit (RESET_HV): reset = AUX2 high (Q1 on, 0 V). Run = AUX2 low, VPP off (VTREF through R2).\nProgram = AUX2 low, VPP on. R2 holds RESET at 0 V while VTREF is 0 V (HVSP entry needs this).\nFIRMWARE: never set AUX2 high while VPP is on. Q1 then shorts VPP to GND (current limit about 17 mA).\nR4 to R7 hold the HVSP Prog_enable pins at 0 during entry (ATtiny25/45/85 PB0 to PB2, ATtiny24A/44A/84A PA0 to PA2).\n     J4 pin 8 is an input only, so SDO needs R4.\nUPDI HV protection (Q2): the gate is on VTREF, so the probe side (J4 pin 4) stays below VTREF - VGS(th).\n     The ESD diode on J4 pin 4 clamps at about 6 V. While VPP is off, Q2 passes UPDI in both directions.\n     R8 pulls UPDI_HV up. The probe has 2.2k on its side. During the pulse, about 1.5 mA flows from VPP through R8 into VTREF.\n     Q2 needs VTREF above VGS(th) (up to 1.5 V for BSS138) to pass a low level. Use VTREF of 1.8 V or more.\nJ5 debug UART: labels are from the probe side (RX = probe input)."
+	(label "TPIDATA"
+		(at 60.96 68.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "27e6f08c-1934-4307-973e-64a898b3a90f")
+	)
+	(label "TPIDATA"
+		(at 220.98 73.66 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2818409d-022b-4049-b1f2-5269b082378e")
+	)
+	(label "UPDI"
+		(at 101.6 134.62 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "110c77d6-ec32-4a75-b1fd-ba87da51e564")
+	)
+	(label "UPDI"
+		(at 60.96 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f30a0905-8155-4599-9637-e10e6c9185e1")
+	)
+	(label "UPDI"
+		(at 68.58 170.18 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c5075730-a711-406d-b0fc-de2c92e0b7cd")
+	)
+	(label "VTREF"
+		(at 86.36 170.18 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9fa79fcc-bf84-4a9b-a09d-1e793e6f3ba7")
+	)
+	(label "RESET_HV"
+		(at 68.58 175.26 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "04ed93c1-837d-4ac0-8e3e-d9de7a98b308")
+	)
+	(label "GND"
+		(at 86.36 175.26 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "171e57a3-e61e-45a1-a637-326e3f5e30de")
+	)
+  (text "OpenMUPP v1 AVR high-voltage adapter (adapter ID slot 8, R1 = 39k 1 %)\nTargets: ATtiny HVSP (J2, J3), TPI with 12 V on RESET (J4), UPDI with HV on the UPDI pin (J6, tinyAVR 0/1/2), UPDI with HV on a separate RESET pin (J7).\n\nJ1 plugs directly onto J4 of the OpenMUPP v1 probe. Pin numbers of J1 are the J4 pin numbers. J4 pin 2 stays open. J4 pin 16 never goes to the target.\nConnect only one target to J2, J3, J4, J6 or J7. VPP goes to RESET_HV (D1) and UPDI_HV (D2) together. Set VPP about 0.3 V higher (12.3 V for 12 V).\nUPDI uses J4 pin 12 (open-drain Q1 on the probe, 10k pull-up, read-back on USART3_RX), not pin 4 (2.2k pull-up). TPI data uses J4 pin 4.\nReset circuit (RESET_HV): reset = AUX2 high (Q1 on, 0 V). Run = AUX2 low, VPP off (VTREF through R2). Program = AUX2 low, VPP on.\nR2 holds RESET at 0 V while VTREF is 0 V (HVSP entry needs this).\nFIRMWARE: never set AUX2 high while VPP is on. Q1 then shorts VPP to GND (current limit about 17 mA).\nR4 to R7 hold the HVSP Prog_enable pins at 0 during entry (ATtiny25/45/85 PB0 to PB2, ATtiny24A/44A/84A PA0 to PA2). J4 pin 8 is an input only.\nUPDI HV protection (Q2): gate on VTREF, so the UPDI net (J4 pin 12) stays at or below VTREF while UPDI_HV is at 12 V.\n     While VPP is off, Q2 passes UPDI in both directions. The probe pulls UPDI high (10k). The target pulls UPDI_HV high (internal pull-up).\nQ1 and Q2 are FDV301N: VGS(th) 1.06 V max, so they work with VTREF down to 1.8 V. VGS must stay above -0.3 V.\nJ5 debug UART: labels are from the probe side (RX = probe input). It works at the same time as UPDI."
     (at 30.48 50.8 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "8ec79395-7ad9-404a-bb3b-a0d77b818cde")
+    (uuid "497bdcd0-22f2-4261-82ed-6b9e359f4173")
   )
 	(symbol
 		(lib_id "Connector_Generic:Conn_02x10_Odd_Even")
@@ -4142,7 +4197,7 @@
 				)
 			)
 		)
-		(property "Value" "TPI / UPDI 2x3 (HV)"
+		(property "Value" "TPI 2x3 (HV on RESET)"
 			(at 229.87 81.28 0)
 			(effects
 				(font
@@ -4383,7 +4438,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BSS138"
+		(property "Value" "FDV301N"
 			(at 200.66 116.84 0)
 			(effects
 				(font
@@ -4401,7 +4456,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF"
+		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/fdv301n-d.pdf"
 			(at 195.58 116.84 0)
 			(hide yes)
 			(effects
@@ -4410,7 +4465,7 @@
 				)
 			)
 		)
-		(property "Description" "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23"
+		(property "Description" "25V Vds, 0.22A Id, VGS(th) 1.06V max, N-Channel digital FET, SOT-23"
 			(at 195.58 116.84 0)
 			(hide yes)
 			(effects
@@ -4865,7 +4920,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BSS138"
+		(property "Value" "FDV301N"
 			(at 93.98 132.08 0)
 			(effects
 				(font
@@ -4883,7 +4938,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF"
+		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/fdv301n-d.pdf"
 			(at 93.98 137.16 0)
 			(hide yes)
 			(effects
@@ -4892,7 +4947,7 @@
 				)
 			)
 		)
-		(property "Description" "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23"
+		(property "Description" "25V Vds, 0.22A Id, VGS(th) 1.06V max, N-Channel digital FET, SOT-23"
 			(at 93.98 137.16 0)
 			(hide yes)
 			(effects
@@ -4905,66 +4960,6 @@
 			(project "adapter-avr-hv"
 				(path "/12e5e138-ab03-41c1-b350-f173ec4c2ae9"
 					(reference "Q2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 111.76 137.16 0)
-		(unit 1)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "469b6dbe-5fe7-4fbc-910a-665ae730e7b3")
-		(property "Reference" "R8"
-			(at 113.792 137.16 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "4.7k"
-			(at 111.76 137.16 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "resistors:R_0603"
-			(at 111.76 137.16 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 111.76 137.16 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 111.76 137.16 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "adapter-avr-hv"
-				(path "/12e5e138-ab03-41c1-b350-f173ec4c2ae9"
-					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -5025,6 +5020,66 @@
 			(project "adapter-avr-hv"
 				(path "/12e5e138-ab03-41c1-b350-f173ec4c2ae9"
 					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_02x03_Odd_Even")
+		(at 76.2 172.72 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9e038f55-225f-4bf8-92bb-4f21535d3446")
+		(property "Reference" "J7"
+			(at 77.47 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "UPDI 2x3 (HV on RESET pin)"
+			(at 77.47 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical"
+			(at 76.2 172.72 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 172.72 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, double row, 02x03, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 76.2 172.72 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "adapter-avr-hv"
+				(path "/12e5e138-ab03-41c1-b350-f173ec4c2ae9"
+					(reference "J7")
 					(unit 1)
 				)
 			)

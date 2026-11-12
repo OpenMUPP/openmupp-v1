@@ -6,7 +6,7 @@ Each folder is a KiCad 10 project with the schematic of one target adapter. The 
 |--------------------------------------------|------------------|------|----------------|----------------------------------------------------------------|
 | [adapter-arm](adapter-arm/)                | Arm              | 4    | 6.8 kΩ         | ARM JTAG 20, Cortex Debug 10, STDC14                           |
 | [adapter-pin-header](adapter-pin-header/)  | Pin header       | 5    | 10 kΩ          | 1 × 6 SWD / CH32 / SWIM, 1 × 4 ST SWIM, 2 × 5 WCH-LinkE layout |
-| [adapter-avr-hv](adapter-avr-hv/)          | AVR high voltage | 8    | 39 kΩ          | DIP-8 and DIP-14 sockets (HVSP), 2 × 3 TPI / UPDI, 2 × 3 UPDI with HV on the UPDI pin |
+| [adapter-avr-hv](adapter-avr-hv/)          | AVR high voltage | 8    | 39 kΩ          | DIP-8 and DIP-14 sockets (HVSP), 2 × 3 TPI, two 2 × 3 UPDI (HV on the UPDI pin, HV on the RESET pin) |
 | [adapter-pic-hv](adapter-pic-hv/)          | PIC high voltage | 9    | 91 kΩ          | PICkit ICSP 1 × 6                                              |
 
 The slot table and the J4 pinout are in the [main README](../README.md#adapter-boards-and-adapter-id).
@@ -33,7 +33,7 @@ J4 on the probe is a shrouded, right-angle header (`IDC-Header_2x10_P2.54mm_Hori
 
 - J1 pin 19 (VPP) connects to the RESET or MCLR net. On `adapter-pic-hv` the connection is direct. On `adapter-avr-hv` it goes through D1 (BAT54W), see [UPDI high-voltage pulse](#updi-high-voltage-pulse).
 - R2 (10 kΩ) goes from `VTREF` to the RESET or MCLR net.
-- Q1 (BSS138) pulls the net to GND. `AUX2` (J1 pin 18) drives the gate. R3 (100 kΩ) holds the gate low.
+- Q1 (FDV301N) pulls the net to GND. `AUX2` (J1 pin 18) drives the gate. R3 (100 kΩ) holds the gate low.
 
 | State   | `AUX2` | VPP | Line level            |
 |---------|--------|-----|-----------------------|
@@ -41,28 +41,54 @@ J4 on the probe is a shrouded, right-angle header (`IDC-Header_2x10_P2.54mm_Hori
 | Run     | Low    | Off | `VTREF` through 10 kΩ |
 | Program | Low    | On  | VPP                   |
 
-The firmware must never set `AUX2` high while VPP is on, because Q1 then shorts VPP to GND. The BSS138 threshold is up to 1.5 V. Use `VTREF` of 1.8 V or more, or a FET with a lower threshold.
+The firmware must never set `AUX2` high while VPP is on, because Q1 then shorts VPP to GND.
+
+The FDV301N has V<sub>GS(th)</sub> of 1.06 V maximum. Thus `AUX2` turns Q1 on with `VTREF` down to 1.8 V. A BSS138 (up to 1.5 V) does not turn on reliably at 1.8 V.
+
+## UPDI on J4 pin 12
+
+UPDI uses J4 pin 12 (nRESET / debugWIRE), not J4 pin 4 (SWDIO). The reasons:
+
+- The UPDI pin of a tinyAVR is a weak driver. The ATtiny1614/16/17 data sheet (DS40002204A, table 36-16, VOL2) guarantees only 0.1 mA at 1.8 V and 0.5 mA at 5 V.
+- J4 pin 4 has a 2.2 kΩ pull-up on the probe. The target must then sink 0.8 mA to 2.3 mA. See issue [#6](https://github.com/OpenMUPP/openmupp-v1/issues/6).
+- J4 pin 12 has a 10 kΩ pull-up. The target must sink 0.18 mA at 1.8 V and 0.5 mA at 5 V.
+- J4 pin 12 is open-drain (Q1 on the probe). This is the physical layer that UPDI expects.
+
+Effects on the firmware:
+
+- The read-back of J4 pin 12 goes to PB11 (USART3_RX). The USART receives UPDI and sees its own transmit.
+- The CH32V307 USART cannot invert TX, so the firmware sends UPDI in software through Q1 (PB12). debugWIRE uses the same method.
+- The rise time with 10 kΩ and about 30 pF to 50 pF is about 0.3 µs to 0.5 µs. This is sufficient for 225 kbps (the maximum UPDI rate at 1.8 V). It is not sufficient for 0.9 Mbps. These values are estimates, not measurements.
+- The debug UART (J4 pins 13 and 14) stays free during UPDI.
+
+TPI data stays on J4 pin 4. On the TPI parts (ATtiny4/5/9/10), TPIDATA is a normal I/O pin with full drive strength.
 
 ## UPDI high-voltage pulse
 
-The tinyAVR 0, 1 and 2 series parts get the HV pulse on the UPDI pin. Some newer AVR parts get it on the RESET pin. `adapter-avr-hv` has a header for each case:
+`adapter-avr-hv` has three 2 × 3 headers for TPI and UPDI:
 
-- J4 (2 × 3 TPI / UPDI): the data pin goes directly to J1 pin 4. VPP goes only to pin 5 (RESET).
-- J6 (2 × 3 UPDI): the data pin is `UPDI_HV`. VPP goes to this pin.
+| Header | Use | Pin 1 (data) | Pin 5 | HV goes to |
+|--------|-----|--------------|-------|------------|
+| J4 | TPI, HV on RESET | `TPIDATA` (J1 pin 4) | `RESET_HV` | Pin 5 |
+| J6 | UPDI, HV on the UPDI pin (tinyAVR 0, 1 and 2 series) | `UPDI_HV` (through Q2 to J1 pin 12) | Open | Pin 1 |
+| J7 | UPDI, HV on a separate RESET pin | `UPDI` (J1 pin 12) | `RESET_HV` | Pin 5 |
 
-The parts of the UPDI path on J6:
+On the tinyAVR 0, 1 and 2 series, the UPDI pin and the RESET pin are the same pin. The data sheet calls the HV entry "UPDI Enable with High-Voltage Override of RESET Pin". The HV detection level (V<sub>HVRST</sub>) is 11.5 V to 12.5 V. J7 is for parts with a separate RESET pin, for example the AVR DD family. Check the data sheet of each part before you use J7.
+
+The parts of the UPDI path:
 
 1. D2 (BAT54W) connects VPP to `UPDI_HV`. D1 (BAT54W) connects VPP to `RESET_HV`. While VPP is off, the two diodes isolate the two nets from each other and from the VPP sense divider on the probe. Each diode has a drop of about 0.3 V. Set VPP to about 12.3 V for 12 V on the target pin.
-2. Q2 (BSS138) is a pass switch between `UPDI_HV` (drain) and J1 pin 4 (source). The gate is on `VTREF`. Thus the probe side stays below `VTREF` − V<sub>GS(th)</sub> when the target side is at 12 V. The body diode is then reverse biased. The ESD diode on J4 pin 4 of the probe clamps at about 6 V, so this protection is necessary.
-3. While VPP is off, Q2 passes UPDI data in both directions. The 2.2 kΩ pull-up on the probe pulls the probe side high. R8 (4.7 kΩ) pulls `UPDI_HV` high.
-4. During the pulse, about 1.5 mA flows from VPP through R8 into `VTREF` (at 12 V and 5 V). The probe supplies `VTREF`, so this is acceptable.
+2. Q2 (FDV301N) is a pass switch between `UPDI_HV` (drain) and `UPDI` (source, J1 pin 12). The gate is on `VTREF`. When `UPDI_HV` is at 12 V, Q2 is off and the 10 kΩ pull-up on the probe holds `UPDI` at `VTREF`. The body diode is then reverse biased. The ESD diode on J4 pin 12 of the probe clamps at about 6 V, so this protection is necessary.
+3. While VPP is off, Q2 passes UPDI data in both directions. The probe pulls `UPDI` high (10 kΩ). The internal pull-up of the target pulls `UPDI_HV` high. The adapter has no pull-up on `UPDI_HV`, so it adds no load to the weak UPDI pad.
 
 Limits:
 
-- Q2 passes a low level only when `VTREF` is above V<sub>GS(th)</sub>. For the BSS138 this is up to 1.5 V. Use `VTREF` of 1.8 V or more.
-- A low-to-high edge on the target side above `VTREF` − V<sub>GS(th)</sub> comes from R8 only. With about 30 pF, the rise time is about 0.3 µs. This is sufficient for the default UPDI baud rate. Check it before you use high UPDI baud rates. These values are estimates, not measurements.
-- VPP goes to `RESET_HV` and to `UPDI_HV` at the same time. Connect only one target to J2, J3, J4 or J6.
-- The TPS2553 on the probe has a soft start of some milliseconds. Check the pulse timing in the target datasheet before the firmware design.
+- Q2 passes a low level only when `VTREF` is above V<sub>GS(th)</sub>. The FDV301N has 1.06 V maximum, so `VTREF` of 1.8 V is sufficient. The tinyAVR parts run from 1.8 V to 5.5 V.
+- The gate-source voltage of the FDV301N must stay above −0.3 V. The source (`UPDI`) has a 10 kΩ pull-up to the gate potential (`VTREF`), so it does not go above the gate. Q2 leakage (I<sub>DSS</sub> 1 µA maximum at 20 V) moves `UPDI` by about 10 mV.
+- A low-to-high edge on `UPDI_HV` above `VTREF` − V<sub>GS(th)</sub> comes from the target pull-up only. This is slower than on `UPDI`. Check the rise time at the UPDI baud rate.
+- VPP goes to `RESET_HV` and to `UPDI_HV` at the same time. Connect only one target to J2, J3, J4, J6 or J7.
+- After the pulse, the line must return to the normal level quickly: the debugger drives it low 1 µs to 10 µs after the HV ends (data sheet figure 33-6). D2 makes `UPDI_HV` follow VPP down. If VPP on the probe falls slowly, the sequence fails. Measure the VPP fall time on the probe before the firmware design.
+- The TPS2553 on the probe has a soft start of some milliseconds. Check the pulse timing in the target data sheet.
 
 ## HVSP pull-downs
 

@@ -89,7 +89,9 @@ The AVR 10-pin connector uses the Atmel-ICE pinout. Three passive variants route
 |---------|-----------|------|
 | A | JTAG, ISP, debugWIRE | 1 |
 | B | PDI | 2 |
-| C | TPI, UPDI, aWire | 3 |
+| C | TPI, aWire | 3 |
+
+UPDI does not use SWDIO. It uses J4 pin 12 (nRESET), because the 2.2 kΩ pull-up on SWDIO is too strong for the UPDI pin of the target. See [connectors/README.md](connectors/README.md#updi-on-j4-pin-12). A UPDI adapter variant for the Atmel-ICE 10-pin connector has no slot yet.
 
 | Slot | R<sub>ID</sub> (E24, 1 %) | x | Accept window | Use |
 |------|------------------|-------|---------------|-----|
