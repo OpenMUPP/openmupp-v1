@@ -1631,7 +1631,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "OpenMUPP v1 PIC high-voltage adapter (adapter ID slot 9, R1 = 91k 1 %)\nTargets: PIC ICSP, high-voltage and low-voltage entry. PICkit 4/5 8-pin: pins 1 to 6 are the same.\n\nJ1 plugs directly onto J4 of the OpenMUPP v1 probe. Pin numbers of J1 are the J4 pin numbers.\nJ4 pin 2 (reserved) stays open. J4 pin 16 (adapter ID) never goes to the target.\nReset circuit (MCLR_VPP): reset = AUX2 high (Q1 on, 0 V). Run = AUX2 low, VPP off (VTREF through R2).\nProgram = AUX2 low, VPP on (VPP from J4 pin 19). R3 holds Q1 off when AUX2 is high-impedance.\nFIRMWARE: never set AUX2 high while VPP is on. Q1 then shorts VPP to GND (current limit about 17 mA).\nQ1 is an FDV301N: VGS(th) 1.06 V max, so AUX2 turns it on with VTREF down to 1.8 V.\nJ3 debug UART: labels are from the probe side (RX = probe input)."
+	(text "OpenMUPP v1 PIC high-voltage adapter (adapter ID slot 9, R1 = 91k 1 %)\nTargets: PIC ICSP, high-voltage and low-voltage entry. PICkit 4/5 8-pin: pins 1 to 6 are the same.\n\nJ1 plugs directly onto J4 of the OpenMUPP v1 probe. Pin numbers of J1 are the J4 pin numbers.\nJ4 pin 2 (reserved) stays open. J4 pin 16 (adapter ID) never goes to the target. J4 pin 18 (AUX2) is not used.\nMCLR_VPP connects directly to J4 pin 19. The probe sets the three MCLR levels on pin 19:\nreset = 0 V (Q6 on the probe), run = VTREF (10k and BAT54 on the probe), program = VPP.\nJ3 debug UART: labels are from the probe side (RX = probe input)."
 		(exclude_from_sim no)
 		(at 30.48 40.64 0)
 		(effects
@@ -1640,23 +1640,15 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "be6643e0-6907-4e1b-9686-57ba5a198ec9")
-	)
-	(junction
-		(at 152.4 127)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "47f9942c-aa25-4711-87ca-27bcf06464bd")
-	)
-	(junction
-		(at 134.62 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9a2e63ec-2a63-49d6-8709-28e463dfad50")
+		(uuid "029afe51-d762-4d8d-81b1-9d4f4c592f63")
 	)
 	(no_connect
 		(at 45.72 83.82)
 		(uuid "0d6b12aa-6a9e-4299-8995-a0301df0c3d9")
+	)
+	(no_connect
+		(at 58.42 86.36)
+		(uuid "4f022b45-d63c-44e5-b58b-4b97cb19f388")
 	)
 	(no_connect
 		(at 45.72 78.74)
@@ -1730,16 +1722,6 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 151.13) (xy 134.62 153.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2c4f968c-e104-444f-865f-b5f280b4390d")
-	)
-	(wire
-		(pts
 			(xy 223.52 144.78) (xy 220.98 144.78)
 		)
 		(stroke
@@ -1747,16 +1729,6 @@
 			(type default)
 		)
 		(uuid "314d177c-1647-4a67-b634-c189a310f789")
-	)
-	(wire
-		(pts
-			(xy 152.4 127) (xy 162.56 127)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "389b9ace-1cb5-4d80-9ae3-ec1f17e63ea7")
 	)
 	(wire
 		(pts
@@ -1780,16 +1752,6 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 120.65) (xy 152.4 127)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5e60ca42-317e-4591-b094-621c57be9d4f")
-	)
-	(wire
-		(pts
 			(xy 45.72 71.12) (xy 43.18 71.12)
 		)
 		(stroke
@@ -1807,26 +1769,6 @@
 			(type default)
 		)
 		(uuid "6a237d9c-4d41-4378-8470-a4dd7d7c925e")
-	)
-	(wire
-		(pts
-			(xy 134.62 139.7) (xy 127 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6d28ed21-a130-4260-8446-6e24b0e66779")
-	)
-	(wire
-		(pts
-			(xy 152.4 144.78) (xy 152.4 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "81c87277-b2db-432e-b827-0256d1b5a93e")
 	)
 	(wire
 		(pts
@@ -1877,16 +1819,6 @@
 			(type default)
 		)
 		(uuid "b4c46712-5f3a-4117-8f41-4cd49fd36904")
-	)
-	(wire
-		(pts
-			(xy 134.62 139.7) (xy 134.62 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bff5bc66-f3e9-45cb-be2f-fc10e3fc28e5")
 	)
 	(wire
 		(pts
@@ -1960,16 +1892,6 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 139.7) (xy 134.62 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e2461f54-2292-430c-a235-04d855bc5b33")
-	)
-	(wire
-		(pts
 			(xy 58.42 81.28) (xy 60.96 81.28)
 		)
 		(stroke
@@ -1990,26 +1912,6 @@
 	)
 	(wire
 		(pts
-			(xy 58.42 86.36) (xy 60.96 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ecb8b345-c0b6-49d6-be1a-2a698a9a99d6")
-	)
-	(wire
-		(pts
-			(xy 152.4 127) (xy 152.4 134.62)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f0bd1134-932c-45a4-bfa3-13153e486f17")
-	)
-	(wire
-		(pts
 			(xy 223.52 73.66) (xy 220.98 73.66)
 		)
 		(stroke
@@ -2017,16 +1919,6 @@
 			(type default)
 		)
 		(uuid "f456152b-7854-4e99-8445-8c9a99a80d41")
-	)
-	(wire
-		(pts
-			(xy 152.4 113.03) (xy 152.4 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f474986b-f57e-4a5e-8e70-2f336e4fdf17")
 	)
 	(label "UART_TX"
 		(at 43.18 81.28 180)
@@ -2037,16 +1929,6 @@
 			(justify right bottom)
 		)
 		(uuid "047646f5-ec17-467b-ad45-b74d7d6690fb")
-	)
-	(label "VTREF"
-		(at 152.4 110.49 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "0bf8ee49-6a3b-4ce0-80f7-a5e43c2e2d25")
 	)
 	(label "UART_RX"
 		(at 220.98 139.7 180)
@@ -2098,16 +1980,6 @@
 		)
 		(uuid "2ffb9485-ac4d-4bda-86b3-3445d929e625")
 	)
-	(label "RST_GATE"
-		(at 60.96 86.36 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "32e1db37-c7d9-4c1a-8cc0-44446853de22")
-	)
 	(label "UART_RX"
 		(at 60.96 81.28 0)
 		(effects
@@ -2117,16 +1989,6 @@
 			(justify left bottom)
 		)
 		(uuid "393c41f3-9064-4dc9-b942-b0a54f46136a")
-	)
-	(label "GND"
-		(at 134.62 153.67 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "48b9c690-7125-45fb-8b56-d18b52fdd01f")
 	)
 	(label "GND"
 		(at 43.18 68.58 180)
@@ -2248,16 +2110,6 @@
 		)
 		(uuid "b25f3a2a-4ab6-466b-84b7-9742e32bb2a7")
 	)
-	(label "MCLR_VPP"
-		(at 162.56 127 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c4a7c5c2-f1a9-49b3-a0c5-17700c978804")
-	)
 	(label "PGD"
 		(at 220.98 78.74 180)
 		(effects
@@ -2267,26 +2119,6 @@
 			(justify right bottom)
 		)
 		(uuid "cda3ed89-0984-4f4a-b87d-33a9b519c552")
-	)
-	(label "RST_GATE"
-		(at 127 139.7 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "d0279a76-23f2-4da7-8530-078eeb62b4bf")
-	)
-	(label "GND"
-		(at 152.4 147.32 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e3ab619f-88d4-4aba-9d56-0c14bd8d7c68")
 	)
 	(label "PGD"
 		(at 60.96 68.58 0)
@@ -2403,185 +2235,27 @@
 			)
 		)
 		(pin "1"
-			(uuid "9dd7d8ca-c1a5-47bc-b8ca-89939e73e9a1")
+			(uuid "b903425e-fdc5-44df-a476-f564107f3b06")
 		)
 		(pin "2"
-			(uuid "71e95681-2e75-45eb-9582-bc0235578837")
+			(uuid "0e330d64-677b-4385-9942-8e8b22241151")
 		)
 		(pin "3"
-			(uuid "1ee090c6-6087-40db-a2c5-73f4bbacd87e")
+			(uuid "1059a382-cc37-4af9-8d9a-ae26665c6c63")
 		)
 		(pin "4"
-			(uuid "48567839-540b-454e-87fe-a713cb582464")
+			(uuid "e762a6a7-dcdd-4722-9586-cd1350808cdd")
 		)
 		(pin "5"
-			(uuid "7a6cffc9-9647-485c-9c0b-f760e3c79dcc")
+			(uuid "5bf16308-7690-4560-a132-c472525cb2d2")
 		)
 		(pin "6"
-			(uuid "ed2cbe1f-b47d-410d-96bc-0c28588a9201")
+			(uuid "89855ee7-5e1a-447a-b239-3e5901cf3616")
 		)
 		(instances
 			(project "adapter-pic-hv"
 				(path "/b2e561ca-0dbe-445c-809e-3db22678f27a"
 					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 152.4 116.84 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "1f78d37a-c7e1-4b6a-8c56-773694b94eb7")
-		(property "Reference" "R2"
-			(at 154.432 116.84 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 152.4 116.84 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "resistors:R_0603"
-			(at 152.4 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 152.4 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 152.4 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "45d78181-fadb-4da8-9f5a-92a109872e9b")
-		)
-		(pin "2"
-			(uuid "fa9d0187-1862-4335-97e7-2208b345e92c")
-		)
-		(instances
-			(project "adapter-pic-hv"
-				(path "/b2e561ca-0dbe-445c-809e-3db22678f27a"
-					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 134.62 147.32 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "87b681d1-fe1f-446e-856e-74432a048e2e")
-		(property "Reference" "R3"
-			(at 136.652 147.32 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100k"
-			(at 134.62 147.32 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "resistors:R_0603"
-			(at 134.62 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 134.62 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 134.62 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7736625d-7a40-4067-bd15-ac103b5391b7")
-		)
-		(pin "2"
-			(uuid "690d416a-4b38-4422-9161-7082399eb0f8")
-		)
-		(instances
-			(project "adapter-pic-hv"
-				(path "/b2e561ca-0dbe-445c-809e-3db22678f27a"
-					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -2652,64 +2326,64 @@
 			)
 		)
 		(pin "1"
-			(uuid "2bc06dff-781e-469b-ad42-6724cc44c119")
+			(uuid "bd980eb8-5f5d-4d71-ba38-f04a27fd7e24")
 		)
 		(pin "2"
-			(uuid "d868e862-52bc-4337-af3c-295f2b4246ba")
+			(uuid "db856563-8878-4251-950b-e97893cc9a1d")
 		)
 		(pin "3"
-			(uuid "083c530a-7d25-42c1-b1b9-a732a7d402c8")
+			(uuid "37430e60-2543-4ef8-a6de-e3608301a2c1")
 		)
 		(pin "4"
-			(uuid "63f8014e-9e7a-4568-b176-69c7fc64eb3f")
+			(uuid "91ea91aa-00fd-4201-802f-7178b725c48d")
 		)
 		(pin "5"
-			(uuid "0e80b60b-48f4-4da7-811e-cf8c5ffb98b6")
+			(uuid "f033c768-3157-4ee5-a846-86dadc08bfb4")
 		)
 		(pin "6"
-			(uuid "a1dc79b0-5fd5-4860-80c2-1039c0154a7c")
+			(uuid "2dc0c90e-5fdf-4380-9ac0-a4e487bc67c0")
 		)
 		(pin "7"
-			(uuid "8c93395a-a1a2-4c36-8fa4-528328a09366")
+			(uuid "02a07cb4-e4a4-41e3-abd4-7194a422b42c")
 		)
 		(pin "8"
-			(uuid "6b02b73c-daae-424f-a548-31f6ce9eaed2")
+			(uuid "3cfa3c6d-8e19-46ed-9fe2-9bda167ea3e7")
 		)
 		(pin "9"
-			(uuid "bef8cb0b-150e-41da-a2fc-0c8f0d32f59e")
+			(uuid "98d85b55-c0bd-4f84-a3d8-a2ec74119f66")
 		)
 		(pin "10"
-			(uuid "1ee12685-6fe8-460b-bad9-488a29e400c1")
+			(uuid "9a51ebeb-553a-4177-9425-15653333505c")
 		)
 		(pin "11"
-			(uuid "97551f27-6987-4597-ba36-c4187c8902b1")
+			(uuid "965cf3b9-2618-447f-9548-a0527d71268d")
 		)
 		(pin "12"
-			(uuid "25c03a46-9457-44ee-8588-1c0470d6c2e1")
+			(uuid "8a7a1ae4-5806-4546-8c24-ccef443f89e4")
 		)
 		(pin "13"
-			(uuid "d00807e8-bacc-4d68-a666-67379fad4cd8")
+			(uuid "de32ca65-c020-460d-a46f-9ca6c55d379b")
 		)
 		(pin "14"
-			(uuid "4bac1f2f-671c-481a-934e-e43320185267")
+			(uuid "dbe2ff67-f650-4c74-a7a8-8dd0dc6f4b5c")
 		)
 		(pin "15"
-			(uuid "d465a515-01fa-4b38-bd9b-ad3aa621f599")
+			(uuid "3476d582-d0a2-4e30-80f4-4c14c7669e2e")
 		)
 		(pin "16"
-			(uuid "b21de122-efe9-493f-a0f2-f279fce223fc")
+			(uuid "49b199ca-1bef-404f-90bf-51e47c7d93d1")
 		)
 		(pin "17"
-			(uuid "72119cea-8122-423e-9c04-746225d22fdb")
+			(uuid "e7a00b47-3a6b-482b-9526-63211b27ad67")
 		)
 		(pin "18"
-			(uuid "ddc969d2-636e-4c1c-b788-cd2116166748")
+			(uuid "42c9ccc0-e086-4c9a-ad2f-cb6a81e685f0")
 		)
 		(pin "19"
-			(uuid "f1afd0e2-8a46-4b52-abc8-3ee8bae9dd9f")
+			(uuid "c34bf88e-bb40-436f-b130-836985224abf")
 		)
 		(pin "20"
-			(uuid "b5939265-0e5b-4e36-83ff-67878a492780")
+			(uuid "121ca2c8-04e4-4184-8a65-f65fba03dc99")
 		)
 		(instances
 			(project "adapter-pic-hv"
@@ -2785,99 +2459,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "f0722765-11b4-4196-9ed3-33d175b4e249")
+			(uuid "b3cad4ca-e35a-44ea-89f0-7a7b6f4a2076")
 		)
 		(pin "2"
-			(uuid "2287c8ca-0a75-4897-8475-d1ef705d8243")
+			(uuid "1d376339-f866-4a64-b422-d566d00f0136")
 		)
 		(instances
 			(project "adapter-pic-hv"
 				(path "/b2e561ca-0dbe-445c-809e-3db22678f27a"
 					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_FET:BSS138")
-		(at 149.86 139.7 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "b7eac54f-43b5-4ea7-9f94-265f8054a835")
-		(property "Reference" "Q1"
-			(at 154.94 137.795 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "FDV301N"
-			(at 154.94 139.7 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 149.86 139.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/fdv301n-d.pdf"
-			(at 149.86 139.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "25V Vds, 0.22A Id, VGS(th) 1.06V max, N-Channel digital FET, SOT-23"
-			(at 149.86 139.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d5e5ba7f-3f04-4e60-868f-4b9e221a5865")
-		)
-		(pin "2"
-			(uuid "4af29114-1018-4a71-9f2b-8a2febe4a074")
-		)
-		(pin "3"
-			(uuid "f4221c3e-20a1-4a93-bb75-9dd6f49393dc")
-		)
-		(instances
-			(project "adapter-pic-hv"
-				(path "/b2e561ca-0dbe-445c-809e-3db22678f27a"
-					(reference "Q1")
 					(unit 1)
 				)
 			)
@@ -2948,16 +2538,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "5c8028c1-fb16-4b85-aa0f-26ba1f04153f")
+			(uuid "6d492d82-ecee-4f50-98c8-91a66b7325ed")
 		)
 		(pin "2"
-			(uuid "f57e4610-b9d5-41f8-afbc-595cf3ac06f9")
+			(uuid "10964dd5-b450-4637-a69b-fb347237e3c8")
 		)
 		(pin "3"
-			(uuid "e4cd2ea4-f087-4b1c-bbd8-c86ccc2bf0f8")
+			(uuid "91c43e87-0501-4f5e-a0e3-80692b13851d")
 		)
 		(pin "4"
-			(uuid "04a07753-2100-4a22-b7ff-50d5ee5de97d")
+			(uuid "7ddc2fae-e411-4415-94bf-9988886bf199")
 		)
 		(instances
 			(project "adapter-pic-hv"

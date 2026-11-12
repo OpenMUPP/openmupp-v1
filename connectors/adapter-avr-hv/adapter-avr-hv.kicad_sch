@@ -2651,7 +2651,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "OpenMUPP v1 AVR high-voltage adapter (adapter ID slot 8, R1 = 39k 1 %)\nTargets: ATtiny HVSP (J2, J3), TPI with 12 V on RESET (J4), UPDI with HV on the UPDI pin (J6, tinyAVR 0/1/2), UPDI with HV on a separate RESET pin (J7).\n\nJ1 plugs directly onto J4 of the OpenMUPP v1 probe. Pin numbers of J1 are the J4 pin numbers. J4 pin 2 stays open. J4 pin 16 never goes to the target.\nConnect only one target to J2, J3, J4, J6 or J7. VPP goes to RESET_HV (D1) and UPDI_HV (D2) together. Set VPP about 0.3 V higher (12.3 V for 12 V).\nUPDI uses J4 pin 12 (open-drain Q1 on the probe, 10k pull-up, read-back on USART3_RX), not pin 4 (2.2k pull-up). TPI data uses J4 pin 4.\nReset circuit (RESET_HV): reset = AUX2 high (Q1 on, 0 V). Run = AUX2 low, VPP off (VTREF through R2). Program = AUX2 low, VPP on.\nR2 holds RESET at 0 V while VTREF is 0 V (HVSP entry needs this).\nFIRMWARE: never set AUX2 high while VPP is on. Q1 then shorts VPP to GND (current limit about 17 mA).\nR4 to R7 hold the HVSP Prog_enable pins at 0 during entry (ATtiny25/45/85 PB0 to PB2, ATtiny24A/44A/84A PA0 to PA2). J4 pin 8 is an input only.\nUPDI HV protection (Q2): gate on VTREF, so the UPDI net (J4 pin 12) stays at or below VTREF while UPDI_HV is at 12 V.\n     While VPP is off, Q2 passes UPDI in both directions. The probe pulls UPDI high (10k). The target pulls UPDI_HV high (internal pull-up).\nQ1 and Q2 are FDV301N: VGS(th) 1.06 V max, so they work with VTREF down to 1.8 V. VGS must stay above -0.3 V.\nJ5 debug UART: labels are from the probe side (RX = probe input). It works at the same time as UPDI."
+	(text "OpenMUPP v1 AVR high-voltage adapter (adapter ID slot 8, R1 = 39k 1 %)\nTargets: ATtiny HVSP (J2, J3), TPI with 12 V on RESET (J4), UPDI with HV on the UPDI pin (J6, tinyAVR 0/1/2), UPDI with HV on a separate RESET pin (J7).\n\nJ1 plugs directly onto J4 of the OpenMUPP v1 probe. Pin numbers of J1 are the J4 pin numbers. J4 pin 2 stays open. J4 pin 16 never goes to the target. J4 pin 18 (AUX2) is not used.\nConnect only one target to J2, J3, J4, J6 or J7. VPP goes to RESET_VPP (direct) and UPDI_HV (D2) together. D2 drops about 0.3 V.\nUPDI uses J4 pin 12 (open-drain Q1 on the probe, 10k pull-up, read-back on USART3_RX), not pin 4 (2.2k pull-up). TPI data uses J4 pin 4.\nRESET_VPP connects directly to J4 pin 19. The probe sets the three RESET levels on pin 19:\nreset = 0 V (Q6 on the probe, also while VTREF comes up for HVSP entry), run = VTREF (10k and BAT54 on the probe), program = VPP.\nR4 to R7 hold the HVSP Prog_enable pins at 0 during entry (ATtiny25/45/85 PB0 to PB2, ATtiny24A/44A/84A PA0 to PA2). J4 pin 8 is an input only.\nUPDI HV protection (Q2): gate on VTREF, so the UPDI net (J4 pin 12) stays at or below VTREF while UPDI_HV is at 12 V.\n     While VPP is off, Q2 passes UPDI in both directions. The probe pulls UPDI high (10k). The target pulls UPDI_HV high (internal pull-up).\nQ2 is an FDV301N: VGS(th) 1.06 V max, so it works with VTREF down to 1.8 V. VGS must stay above -0.3 V.\nJ5 debug UART: labels are from the probe side (RX = probe input). It works at the same time as UPDI."
 		(exclude_from_sim no)
 		(at 30.48 50.8 0)
 		(effects
@@ -2660,19 +2660,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "497bdcd0-22f2-4261-82ed-6b9e359f4173")
-	)
-	(junction
-		(at 198.12 106.68)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ed203d61-d00c-498d-a631-0da36212d95d")
-	)
-	(junction
-		(at 180.34 116.84)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f53d83a4-8713-406a-bd7c-8124404a94cf")
+		(uuid "e817a321-0ebc-4cb6-9a58-26778d96d378")
 	)
 	(no_connect
 		(at 83.82 152.4)
@@ -2723,22 +2711,16 @@
 		(uuid "e9ef2fdc-7ac5-4197-bd9a-8390f87d9224")
 	)
 	(no_connect
+		(at 58.42 86.36)
+		(uuid "ebbc5cbc-705b-4c75-8072-ad303d411ad2")
+	)
+	(no_connect
 		(at 58.42 66.04)
 		(uuid "ef63921d-da5f-48d0-b8a8-7bb402052220")
 	)
 	(no_connect
 		(at 236.22 76.2)
 		(uuid "fc395130-3cad-4785-8f01-d399466ea0f1")
-	)
-	(wire
-		(pts
-			(xy 180.34 128.27) (xy 180.34 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "07004c2c-e44c-46ab-9802-a5221aff9088")
 	)
 	(wire
 		(pts
@@ -2772,16 +2754,6 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 121.92) (xy 198.12 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "14e77e30-75e6-4005-9b00-31f70641af42")
-	)
-	(wire
-		(pts
 			(xy 147.32 76.2) (xy 149.86 76.2)
 		)
 		(stroke
@@ -2789,16 +2761,6 @@
 			(type default)
 		)
 		(uuid "151dc91f-8ccb-4825-99f3-da86257f4ec1")
-	)
-	(wire
-		(pts
-			(xy 85.09 106.68) (xy 82.55 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1c4e5e7e-33ee-4cb6-ae61-80ae437ba092")
 	)
 	(wire
 		(pts
@@ -2832,16 +2794,6 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 106.68) (xy 198.12 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2877a4d6-d9ce-4409-b0d1-f8aa3f74e5f5")
-	)
-	(wire
-		(pts
 			(xy 88.9 134.62) (xy 86.36 134.62)
 		)
 		(stroke
@@ -2849,16 +2801,6 @@
 			(type default)
 		)
 		(uuid "2a37bf16-0a10-44f0-a64f-102dcefaea3f")
-	)
-	(wire
-		(pts
-			(xy 198.12 100.33) (xy 198.12 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "34b69621-8c0a-4680-9c7e-64e9fe7edc91")
 	)
 	(wire
 		(pts
@@ -2972,16 +2914,6 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 116.84) (xy 180.34 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6c856b30-b04b-4eaf-b797-7202d3245655")
-	)
-	(wire
-		(pts
 			(xy 147.32 119.38) (xy 149.86 119.38)
 		)
 		(stroke
@@ -3009,16 +2941,6 @@
 			(type default)
 		)
 		(uuid "7734ada8-102c-4f7a-8962-b14bef39a130")
-	)
-	(wire
-		(pts
-			(xy 190.5 116.84) (xy 180.34 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7bc27269-9274-4e68-ae52-d8241e2f64eb")
 	)
 	(wire
 		(pts
@@ -3062,16 +2984,6 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 106.68) (xy 95.25 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "89751d79-6ab0-49f3-93fa-752516cfc716")
-	)
-	(wire
-		(pts
 			(xy 147.32 78.74) (xy 149.86 78.74)
 		)
 		(stroke
@@ -3079,26 +2991,6 @@
 			(type default)
 		)
 		(uuid "8a6595e8-d575-4e39-8e24-23958a2fd87c")
-	)
-	(wire
-		(pts
-			(xy 198.12 106.68) (xy 208.28 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8c865e7c-9ea0-45d6-9b9e-03b302c8e8a7")
-	)
-	(wire
-		(pts
-			(xy 198.12 92.71) (xy 198.12 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8f4839e2-d4f3-43a7-884e-d8b3980ad292")
 	)
 	(wire
 		(pts
@@ -3192,16 +3084,6 @@
 	)
 	(wire
 		(pts
-			(xy 58.42 86.36) (xy 60.96 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a3a915e2-e485-4504-b465-cba83b862e1a")
-	)
-	(wire
-		(pts
 			(xy 101.6 171.45) (xy 101.6 173.99)
 		)
 		(stroke
@@ -3229,16 +3111,6 @@
 			(type default)
 		)
 		(uuid "b0be4e61-fc39-41ea-b56c-cf14f838e885")
-	)
-	(wire
-		(pts
-			(xy 180.34 116.84) (xy 172.72 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b160469a-7fb9-4524-ade6-b2c77f20a971")
 	)
 	(wire
 		(pts
@@ -3500,16 +3372,6 @@
 		)
 		(uuid "003731bd-bda6-41fc-a54c-69a46093ba41")
 	)
-	(label "RESET_HV"
-		(at 68.58 175.26 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "04ed93c1-837d-4ac0-8e3e-d9de7a98b308")
-	)
 	(label "VTREF"
 		(at 220.98 144.78 180)
 		(effects
@@ -3530,16 +3392,6 @@
 		)
 		(uuid "10738518-2c73-4156-a0ec-84ba23bc0e92")
 	)
-	(label "VPP"
-		(at 95.25 119.38 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "10aea2e1-bf46-498b-a4b3-712769377719")
-	)
 	(label "UPDI"
 		(at 101.6 134.62 0)
 		(effects
@@ -3550,26 +3402,6 @@
 		)
 		(uuid "110c77d6-ec32-4a75-b1fd-ba87da51e564")
 	)
-	(label "RST_GATE"
-		(at 60.96 86.36 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1171706d-a5f0-42e1-950d-0e20f278a6b5")
-	)
-	(label "RESET_HV"
-		(at 82.55 106.68 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "12d1ca98-0d2d-496f-b3b5-8b2254aefc0b")
-	)
 	(label "GND"
 		(at 86.36 175.26 0)
 		(effects
@@ -3579,16 +3411,6 @@
 			(justify left bottom)
 		)
 		(uuid "171e57a3-e61e-45a1-a637-326e3f5e30de")
-	)
-	(label "RESET_HV"
-		(at 132.08 127 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "193ae20b-0d0b-43b9-a623-6a788ae10bc4")
 	)
 	(label "SDI"
 		(at 149.86 81.28 0)
@@ -3730,16 +3552,6 @@
 		)
 		(uuid "368aa4bd-954a-4ee0-85e5-d6bde8e0d1fa")
 	)
-	(label "RESET_HV"
-		(at 208.28 106.68 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "369c35ef-8c2c-48e7-bd56-ba23a09cf253")
-	)
 	(label "VTREF"
 		(at 86.36 149.86 0)
 		(effects
@@ -3769,16 +3581,6 @@
 			(justify right bottom)
 		)
 		(uuid "3f042b2d-94c7-4272-adf2-c8f35c5b50e0")
-	)
-	(label "VTREF"
-		(at 198.12 90.17 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "40d5e977-c523-4f3e-a36c-3de66466bd04")
 	)
 	(label "GND"
 		(at 86.36 154.94 0)
@@ -3830,16 +3632,6 @@
 		)
 		(uuid "5731f83c-ee45-494b-90aa-8a682ab87772")
 	)
-	(label "RST_GATE"
-		(at 172.72 116.84 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "5a50406e-ba67-4f30-925c-4bae7e8e99cc")
-	)
 	(label "PROG_EN2"
 		(at 147.32 161.29 0)
 		(effects
@@ -3850,6 +3642,16 @@
 		)
 		(uuid "62792df7-ed73-4493-b508-a8eef9739279")
 	)
+	(label "RESET_VPP"
+		(at 43.18 88.9 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "65dda1a0-26c1-4545-a23f-95b9c4de29d6")
+	)
 	(label "GND"
 		(at 101.6 173.99 0)
 		(effects
@@ -3859,26 +3661,6 @@
 			(justify left bottom)
 		)
 		(uuid "6cd8a972-b7c1-4d9b-beb3-504306bfeb56")
-	)
-	(label "GND"
-		(at 180.34 130.81 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "7243fa2b-1702-41e5-9e39-7fcf2fab1c24")
-	)
-	(label "VPP"
-		(at 43.18 88.9 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "7d3bb7eb-bb42-42fe-a3ac-b6440932f899")
 	)
 	(label "SDO"
 		(at 101.6 161.29 0)
@@ -3909,16 +3691,6 @@
 			(justify left bottom)
 		)
 		(uuid "8a617829-f493-4115-8585-97ccc598cf89")
-	)
-	(label "RESET_HV"
-		(at 220.98 78.74 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "8c3c73ea-aad4-4eb6-ac14-392488152f00")
 	)
 	(label "UPDI_HV"
 		(at 82.55 119.38 180)
@@ -3980,6 +3752,16 @@
 		)
 		(uuid "988874b1-0cd4-4896-84d8-3f8e60a8341e")
 	)
+	(label "RESET_VPP"
+		(at 68.58 175.26 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9dee03e1-372f-43c9-b622-c609bd550a54")
+	)
 	(label "VTREF"
 		(at 86.36 170.18 0)
 		(effects
@@ -4030,6 +3812,16 @@
 		)
 		(uuid "b5ac97f0-559d-4303-ba7d-f7a85b8509d1")
 	)
+	(label "RESET_VPP"
+		(at 95.25 119.38 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b96b8756-d218-4476-bae3-0dc1ef511061")
+	)
 	(label "PROG_EN1"
 		(at 149.86 124.46 0)
 		(effects
@@ -4039,26 +3831,6 @@
 			(justify left bottom)
 		)
 		(uuid "ba35a2ce-9fe6-43b0-8602-753389f31a4f")
-	)
-	(label "GND"
-		(at 198.12 124.46 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "bccd2487-3f9e-494d-b530-ce757cb331fd")
-	)
-	(label "VPP"
-		(at 95.25 106.68 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "bceff999-eed9-43ae-bf37-03eb23300a7c")
 	)
 	(label "GND"
 		(at 132.08 81.28 180)
@@ -4120,6 +3892,16 @@
 		)
 		(uuid "cc137a00-7c1a-4d46-b8f4-0cf7c82730f9")
 	)
+	(label "RESET_VPP"
+		(at 132.08 73.66 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d1f74d1f-9368-446c-8c63-ec83651f917d")
+	)
 	(label "SDO"
 		(at 149.86 132.08 0)
 		(effects
@@ -4160,15 +3942,15 @@
 		)
 		(uuid "e48df6f0-5c34-4011-91ca-7c0500d32969")
 	)
-	(label "RESET_HV"
-		(at 132.08 73.66 180)
+	(label "RESET_VPP"
+		(at 132.08 127 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
 		)
-		(uuid "e4e61e24-045b-4d08-99e6-cb11bafa3d2b")
+		(uuid "ed6a340b-46a5-4465-af72-98a25b0c570e")
 	)
 	(label "UPDI"
 		(at 60.96 78.74 0)
@@ -4200,6 +3982,16 @@
 		)
 		(uuid "f63d281a-b6df-469e-9827-a1450d9a2c93")
 	)
+	(label "RESET_VPP"
+		(at 220.98 78.74 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fe9eb894-8858-485b-bd39-4d8f8f27b2fb")
+	)
 	(label "SDO"
 		(at 149.86 76.2 0)
 		(effects
@@ -4209,88 +4001,6 @@
 			(justify left bottom)
 		)
 		(uuid "ff189329-f4f3-4a9e-ae69-a1f8cb73b61b")
-	)
-	(symbol
-		(lib_id "Diode:BAT54W")
-		(at 88.9 106.68 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "1274c597-5180-42db-8496-0903915091eb")
-		(property "Reference" "D1"
-			(at 88.9 104.14 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "BAT54W"
-			(at 88.9 109.22 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
-			(at 88.9 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf"
-			(at 88.9 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Schottky barrier diode, SOT-323"
-			(at 88.9 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "cddfe29b-609a-4d0f-80c1-15af0f7d6d71")
-		)
-		(pin "2"
-			(uuid "46e2c0fd-46c8-46c4-aa22-2f49a637c409")
-		)
-		(pin "3"
-			(uuid "df211679-f4b3-474a-abdc-2682c3acc6d6")
-		)
-		(instances
-			(project "adapter-avr-hv"
-				(path "/12e5e138-ab03-41c1-b350-f173ec4c2ae9"
-					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -4366,85 +4076,6 @@
 			(project "adapter-avr-hv"
 				(path "/12e5e138-ab03-41c1-b350-f173ec4c2ae9"
 					(reference "R7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 198.12 96.52 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "353acc5b-cc2b-42e5-9402-651f40ca4170")
-		(property "Reference" "R2"
-			(at 200.152 96.52 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 198.12 96.52 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "resistors:R_0603"
-			(at 198.12 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 198.12 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 198.12 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "139d6cd6-f349-41f2-abf5-0b98fdff11e8")
-		)
-		(pin "2"
-			(uuid "c20bb99c-b776-460d-b092-3a3af7ed0aa4")
-		)
-		(instances
-			(project "adapter-avr-hv"
-				(path "/12e5e138-ab03-41c1-b350-f173ec4c2ae9"
-					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -4603,169 +4234,6 @@
 			(project "adapter-avr-hv"
 				(path "/12e5e138-ab03-41c1-b350-f173ec4c2ae9"
 					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_FET:BSS138")
-		(at 195.58 116.84 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "552baa4e-e622-43f1-be73-7ac2a5312f20")
-		(property "Reference" "Q1"
-			(at 200.66 114.935 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "FDV301N"
-			(at 200.66 116.84 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 195.58 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/fdv301n-d.pdf"
-			(at 195.58 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "25V Vds, 0.22A Id, VGS(th) 1.06V max, N-Channel digital FET, SOT-23"
-			(at 195.58 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "bb254dd3-4d95-4e9b-adac-a5d697edfd25")
-		)
-		(pin "2"
-			(uuid "d6402bbd-0fdd-4185-9b0b-1286c8007f28")
-		)
-		(pin "3"
-			(uuid "78f48336-d424-4985-bcba-e59b16d629c4")
-		)
-		(instances
-			(project "adapter-avr-hv"
-				(path "/12e5e138-ab03-41c1-b350-f173ec4c2ae9"
-					(reference "Q1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 180.34 124.46 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5f4f4a7c-e487-4126-afd1-20cf82add272")
-		(property "Reference" "R3"
-			(at 182.372 124.46 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100k"
-			(at 180.34 124.46 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "resistors:R_0603"
-			(at 180.34 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 180.34 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 180.34 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "94fb89df-54f4-43c9-84f5-344b56f22856")
-		)
-		(pin "2"
-			(uuid "5939727e-18c1-4bf8-83c2-923ee6b84c44")
-		)
-		(instances
-			(project "adapter-avr-hv"
-				(path "/12e5e138-ab03-41c1-b350-f173ec4c2ae9"
-					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -5803,5 +5271,4 @@
 			(page "1")
 		)
 	)
-	(embedded_fonts no)
 )
