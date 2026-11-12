@@ -2238,10 +2238,10 @@
 		)
 		(uuid "6cde372d-127f-4e37-8727-9636cca959bc")
 	)
-  (text "OpenMUPP v1 PIC high-voltage adapter (adapter ID slot 9, R1 = 91k 1 %)\nTargets: PIC ICSP, high-voltage and low-voltage entry. PICkit 4/5 8-pin: pins 1 to 6 are the same.\n\nJ1 plugs directly onto J4 of the OpenMUPP v1 probe. Pin numbers of J1 are the J4 pin numbers.\nJ4 pin 2 (reserved) stays open. J4 pin 16 (adapter ID) never goes to the target.\nReset circuit (MCLR_VPP): reset = AUX2 high (Q1 on, 0 V). Run = AUX2 low, VPP off (VTREF through R2).\nProgram = AUX2 low, VPP on (VPP from J4 pin 19). R3 holds Q1 off when AUX2 is high-impedance.\nFIRMWARE: never set AUX2 high while VPP is on. Q1 then shorts VPP to GND (current limit about 17 mA).\nBSS138 VGS(th) is up to 1.5 V: use VTREF of 1.8 V or more, or a lower-threshold FET.\nJ3 debug UART: labels are from the probe side (RX = probe input)."
+  (text "OpenMUPP v1 PIC high-voltage adapter (adapter ID slot 9, R1 = 91k 1 %)\nTargets: PIC ICSP, high-voltage and low-voltage entry. PICkit 4/5 8-pin: pins 1 to 6 are the same.\n\nJ1 plugs directly onto J4 of the OpenMUPP v1 probe. Pin numbers of J1 are the J4 pin numbers.\nJ4 pin 2 (reserved) stays open. J4 pin 16 (adapter ID) never goes to the target.\nReset circuit (MCLR_VPP): reset = AUX2 high (Q1 on, 0 V). Run = AUX2 low, VPP off (VTREF through R2).\nProgram = AUX2 low, VPP on (VPP from J4 pin 19). R3 holds Q1 off when AUX2 is high-impedance.\nFIRMWARE: never set AUX2 high while VPP is on. Q1 then shorts VPP to GND (current limit about 17 mA).\nQ1 is an FDV301N: VGS(th) 1.06 V max, so AUX2 turns it on with VTREF down to 1.8 V.\nJ3 debug UART: labels are from the probe side (RX = probe input)."
     (at 30.48 40.64 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "8ebb0c90-90f4-4f08-bee6-63f3c16c79fe")
+    (uuid "be6643e0-6907-4e1b-9686-57ba5a198ec9")
   )
 	(symbol
 		(lib_id "Connector_Generic:Conn_02x10_Odd_Even")
@@ -2560,7 +2560,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BSS138"
+		(property "Value" "FDV301N"
 			(at 154.94 139.7 0)
 			(effects
 				(font
@@ -2578,7 +2578,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF"
+		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/fdv301n-d.pdf"
 			(at 149.86 139.7 0)
 			(hide yes)
 			(effects
@@ -2587,7 +2587,7 @@
 				)
 			)
 		)
-		(property "Description" "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23"
+		(property "Description" "25V Vds, 0.22A Id, VGS(th) 1.06V max, N-Channel digital FET, SOT-23"
 			(at 149.86 139.7 0)
 			(hide yes)
 			(effects
