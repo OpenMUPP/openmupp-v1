@@ -10,7 +10,7 @@ The KiCad 10 project is in this repository.
 - It runs **USB CDC, CMSIS-DAP v2 and EDBG (AVR) at the same time** in one firmware image.
 - It transfers data **faster than the original Versaloon Mini**. The core runs at 144 MHz, and USB runs at high speed (480 Mbit/s).
 - It connects to targets from **1.2 V to 5 V** through level shifters. A 1.2 V target is limited to about 5 MHz.
-- It supplies the target with **3.3 V (up to about 520 mA) or 5 V (up to about 300 mA)**.
+- It supplies the target with **3.3 V or 5 V (up to about 300 mA)**.
 - It makes an adjustable **VPP of 5 V to 14 V** for high-voltage programming of AVR and PIC parts.
 - It has **one target connector (J4)**. A passive adapter board maps J4 to each target pinout.
 
@@ -48,7 +48,7 @@ flowchart LR
 | USB | USB-C receptacle (J1), USBLC6-2SC6 (U1) | USB 2.0 high speed (USBHS on PB6, PB7). 5.1 kΩ CC resistors. |
 | 3.3 V rail | XC6220B331MR-G LDO | Supplies the MCU and the target power switch. |
 | VBUS protection | 1.1 A polyfuse (F1), 2.2 A trip, 16 V | At 4.75 V VBUS, expect `+5V` at about 4.6 V or more at full load. See [Target power](docs/hardware.md#target-power). |
-| Target power (3.3 V or 5 V) | TPS2553 (U12, 3.3 V), TPS2553 (U14, 5 V), BSS138 interlock (Q4) | Current limit about 520 mA (ILIM 51 kΩ) at 3.3 V and about 300 mA (ILIM 91 kΩ) at 5 V. Both outputs join `VTREF`. See [Target power](docs/hardware.md#target-power). |
+| Target power (3.3 V or 5 V) | TPS2553 (U12, 3.3 V), TPS2553 (U14, 5 V), BSS138 interlock (Q4) | Current limit about 300 mA (ILIM 91 kΩ) on each rail. Both outputs join `VTREF`. See [Target power](docs/hardware.md#target-power). |
 | VPP (5 V to 14 V) | MT3608 boost (U13), AO3401A P-FET (Q2), BSS138 driver (Q3), MMBT3906 current limit (Q5) | The firmware sets the level with the DAC on PA5 (`VPP_12V_ADJ`). Current limit about 17 mA. See [High voltage (VPP)](docs/hardware.md#high-voltage-vpp). |
 | Level shifters | SN74LXC8T245 (U3, U4), SN74LXC1T45 (U5, U6) | All parts work from 1.1 V to 5.5 V. |
 | Reset path | BSS138 (Q1), U4 channel 4 | Q1 pulls nRESET low. U4 reads the line back. |
@@ -73,7 +73,7 @@ J4 is a 2 × 10 IDC header, 2.54 mm. The footprint in the schematic is `Connecto
 | 17 | `AUX1` | 18 | `AUX2` |
 | 19 | VPP (5 V to 14 V, gated) | 20 | GND |
 
-- **Target power is on pin 1.** One pin carries the sense and the supply. The limit is about 520 mA at 3.3 V and about 300 mA at 5 V.
+- **Target power is on pin 1.** One pin carries the sense and the supply. The limit is about 300 mA at 3.3 V and at 5 V.
 - **Pin 2 is reserved.** A later adapter that needs a second supply pin can use it, with its own switch.
 - **Pin 16 goes to the adapter only.** It never goes to the target.
 

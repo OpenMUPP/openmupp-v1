@@ -27,7 +27,7 @@ The probe MCU always runs at 3.3 V. The target side of each shifter runs from `V
 - **Idle state.** `DIR_OUT` and `DIR_SWDIO` have external 100 kΩ pull-downs (R26, R27). A floating direction pin selects target to probe, so the target side is high-impedance. This also holds while the MCU is in reset.
 - **nRESET path.** Q1 has its source on GND and its drain on nRESET. The MCU never drives nRESET high. A 100 kΩ pull-down (R28) keeps the gate low while the MCU is in reset. U4 channel 4 reads the real line level back. The USART sees its own transmit, so it can detect collisions.
 - **Output read-back.** U4 channels 5 to 7 read TCK, TDI and `AUX1` back from the connector side of the 33 Ω series resistors (`xTCK`, `xTDI`, `xAUX1`). Thus the firmware sees the real line level at J4, also while U3 drives the line. It can find a short, a target that drives against the probe, or a wrong `VTREF`. A 470 Ω resistor in each tap (R59, R60, R61) isolates the trace to U4 from the target line. Place these resistors near J4. With about 4 pF at the U4 input, the RC time is about 2 ns. The outputs go to PC8 (`TCK_RB`), PC7 (`TDI_RB`) and PC6 (`AUX1_RB`). This reverse order keeps the PCB traces from U4 to the MCU parallel. Each of these pins has a TIM8 channel (default map) and a TIM3 channel (full remap). Thus the firmware can use a timer capture on any read-back, for example to measure the TCK frequency or the loop delay. `AUX2` has no read-back yet. Channel 8 is free for it.
-- **Spare channels.** U4 channel 8 is unused. Its B input and its A output are tied to GND. The A output always drives low into GND, so there is no contention. `DIR` and `~OE` are tied to GND, so U4 always works from target to probe. U3 channels 6 to 8 are also unused. Their A pins (A6 to A8) connect together, and R62 (10 kΩ) pulls them down to GND. Their B pins (B6 to B8) connect together, and R63 (10 kΩ) pulls them down to GND. `DIR_OUT` changes direction, so either side can be the input. The input is always low, so the output always drives low into its 10 kΩ pull-down and there is no contention. Do not leave these pins open: the internal pull-downs are dynamic and do not hold an input low.
+- **Spare channels.** U4 channel 8 is unused. Its B input is tied to GND, and its A output is not connected. `DIR` and `~OE` are tied to GND, so U4 always works from target to probe. U3 channels 6 to 8 are also unused. Their A pins (A6 to A8) connect together, and R62 (10 kΩ) pulls them down to GND. Their B pins (B6 to B8) connect together, and R63 (10 kΩ) pulls them down to GND. `DIR_OUT` changes direction, so either side can be the input. The input is always low, so the output always drives low into its 10 kΩ pull-down and there is no contention. Do not leave these pins open: the internal pull-downs are dynamic and do not hold an input low.
 - **Pull-ups.** 2.2 kΩ to `VTREF` on SWDIO (R22). The one-wire interface needs the fast rise time. 10 kΩ to `VTREF` on TDO, RTCK, UART RX and nRESET. The shifters have dynamic 100 kΩ pull-downs, so an external pull-up must be 15 kΩ or less.
 - **UART TX has its own shifter.** U6 has its own direction pin, `UART_TX_DIR` (PC9). R56 (100 kΩ) pulls it up to 3.3 V, so U6 drives the target by default. The firmware can set `UART_TX_DIR` low to read the line, for example for a single-wire UART. U3 shares one direction pin (`DIR_OUT`). While `DIR_OUT` is low, the target side of U3 is high-impedance. The UART bridge must work when the JTAG outputs are released, so UART TX does not use the free channels of U3. R53 (100 kΩ) pulls `UART_TX` (PA9) up to 3.3 V. Thus U6 keeps `T_UART_TX` high when PA9 is high-impedance, for example while the MCU is in reset. R53 and R56 together give this idle state.
 - **Series resistors.** 33 Ω (R11 to R21) on all J4 signals except pin 16 (`ADAPTER_ID`). The shifter edges are fast.
@@ -39,7 +39,7 @@ The probe MCU always runs at 3.3 V. The target side of each shifter runs from `V
 
 Two TPS2553 switches output to `VTREF`. U12 switches the 3.3 V rail. U14 switches `+5V`.
 
-- `TARGET_PWR_EN` (PB8) high: U12 supplies 3.3 V to the target. The limit is about 520 mA.
+- `TARGET_PWR_EN` (PB8) high: U12 supplies 3.3 V to the target. The limit is about 300 mA.
 - `TARGET_5V_EN` (PB5) high: U14 supplies 5 V to the target. The limit is about 300 mA. R42 (10 kΩ) is in series with the enable pin of U14.
 - Both low: `VTREF` senses the target voltage. The parts block reverse current.
 
@@ -65,7 +65,7 @@ The polyfuse F1 and the target switch U14 decrease the 5 V target supply. The wo
 | Target supply | Current through F1 | `+5V` | `VTREF` |
 |---------------|--------------------|-------|---------|
 | 5 V at 300 mA | about 400 mA | 4.64 V | 4.6 V |
-| 3.3 V at 520 mA | about 620 mA | 4.58 V | 3.23 V (U12 drops 0.07 V from the LDO output) |
+| 3.3 V at 300 mA | about 400 mA | 4.64 V | 3.26 V (U12 drops 0.04 V from the LDO output) |
 
 The two target switches cannot be on at the same time, so F1 never carries both target currents.
 
@@ -75,7 +75,7 @@ The MT3608 boost makes the VPP voltage. The boost passes its input through when 
 
 **Output capacitors.** C29 and C35 (10 µF, 25 V, X5R, 0805 each) are in parallel on `VPP_BOOST`. The DC bias decreases each one to about 2.4 µF at 14 V, so the total is about 5 µF. The MT3608 datasheet recommends 22 µF. The VPP load is small, so the ripple stays low. Do a check of the boost stability on the first board.
 
-**Current limit.** R52 (33 Ω) is in series between `VPP_BOOST` and the source of Q2. Q5 (MMBT3906, PNP) senses the voltage across R52. The emitter of Q5 connects to `VPP_BOOST`, the base to the source of Q2, and the collector to the gate of Q2. When the voltage across R52 gets to about 0.55 V, Q5 turns on and pulls the gate of Q2 up. Q2 then holds the current at the limit. The limit is about 17 mA at 25 °C. It decreases to about 14 mA at 85 °C, because the base-emitter voltage of Q5 decreases by about 2 mV/°C.
+**Current limit.** R52 (33 Ω) is in series between `VPP_BOOST` and the source of Q2. Q5 (MMBT3906, PNP) senses the voltage across R52. The emitter of Q5 connects to `VPP_BOOST`, and the collector connects to the gate of Q2. The base connects to the source of Q2 through R4 (1 kΩ). R4 limits the base current of Q5 in a sudden short. When the voltage across R52 gets to about 0.55 V, Q5 turns on and pulls the gate of Q2 up. Q2 then holds the current at the limit. The limit is about 17 mA at 25 °C. It decreases to about 14 mA at 85 °C, because the base-emitter voltage of Q5 decreases by about 2 mV/°C.
 
 Thus a short from pin 19 to GND, or to a clamped target pin, does not damage a part. In a short, Q2 dissipates VPP × 17 mA, about 0.25 W at 14.7 V. With a thermal resistance of about 125 °C/W, the junction temperature of Q2 increases by about 31 °C. The firmware must still switch off VPP when it finds a short (see `VPP_SENSE2` below).
 
