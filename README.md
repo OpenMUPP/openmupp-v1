@@ -48,10 +48,10 @@ flowchart LR
 | USB | USB-C receptacle (J1), USBLC6-2SC6 (U1) | USB 2.0 high speed (USBHS on PB6, PB7). 5.1 kΩ CC resistors. |
 | 3.3 V rail | XC6220B331MR-G LDO | Supplies the MCU and the target power switch. |
 | VBUS protection | 1.1 A polyfuse (F1), 2.2 A trip, 16 V | At 4.75 V VBUS, expect `+5V` at about 4.6 V or more at full load. See [Target power](docs/hardware.md#target-power). |
-| Target power (3.3 V or 5 V) | TPS2553 (U12, 3.3 V), TPS2553 (U14, 5 V), BSS138 interlock (Q4) | Current limit about 300 mA (ILIM 91 kΩ) on each rail. Both outputs join `VTREF`. See [Target power](docs/hardware.md#target-power). |
-| VPP (5 V to 14 V) | MT3608 boost (U13), AO3401A P-FET (Q2), BSS138 driver (Q3), MMBT3906 current limit (Q5) | The firmware sets the level with the DAC on PA5 (`VPP_12V_ADJ`). Current limit about 17 mA. See [High voltage (VPP)](docs/hardware.md#high-voltage-vpp). |
+| Target power (3.3 V or 5 V) | TPS2553 (U12, 3.3 V), TPS2553 (U14, 5 V), FDV301N interlock (Q4) | Current limit about 300 mA (ILIM 91 kΩ) on each rail. Both outputs join `VTREF`. See [Target power](docs/hardware.md#target-power). |
+| VPP (5 V to 14 V) | MT3608 boost (U13), AO3401A P-FET (Q2), FDV301N driver (Q3), MMBT3906 current limit (Q5) | The firmware sets the level with the DAC on PA5 (`VPP_12V_ADJ`). Current limit about 17 mA. See [High voltage (VPP)](docs/hardware.md#high-voltage-vpp). |
 | Level shifters | SN74LXC8T245 (U3, U4), SN74LXC1T45 (U5, U6) | All parts work from 1.1 V to 5.5 V. |
-| Reset path | BSS138 (Q1), U4 channel 4 | Q1 pulls nRESET low. U4 reads the line back. |
+| Reset path | FDV301N (Q1), U4 channel 4 | Q1 pulls nRESET low. U4 reads the line back. |
 | ESD | TPD4E05U06 (U8 to U10) | On all J4 signals except the supplies. |
 | Probe debug | J3 (5-pin SWD), J2 (3-pin UART) | J3 debugs the probe MCU only. J2 is the log port of the probe firmware. **They are not target connectors.** |
 | User I/O | SW1 (key and BOOT0), LEDs D1 (blue) and D4 (red) for state, D2 (green) for USB | |
@@ -136,7 +136,7 @@ The project symbol library `openmupp-v1` is in the repository. `sym-lib-table` l
 
 - **Reference designators are unique across all sheets.** Check before you add a part.
 - **Every part has an `LCSC` field** for JLCPCB assembly. Prefer parts from the JLCPCB basic library. Each extended part costs a setup fee.
-- **Small N-FETs:** use the BSS138 (LCSC C112239).
+- **Small N-FETs:** use the FDV301N (LCSC C15310). V<sub>GS(th)</sub> is 1.06 V maximum, so a gate drive of 1.8 V turns it on. The limits are 25 V V<sub>DS</sub> and 8 V V<sub>GS</sub>.
 - **Footprints:** check the pads against the datasheet land pattern.
 - **Checks:** run ERC after each change. Look for shorted nets and for unconnected pins.
 

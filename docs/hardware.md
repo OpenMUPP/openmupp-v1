@@ -22,7 +22,7 @@ The probe MCU always runs at 3.3 V. The target side of each shifter runs from `V
 | TCK, TDI, `AUX1` read-back | In | U4, fixed target to probe |
 | TMS / SWDIO | Both | U5, direction pin `DIR_SWDIO` |
 | UART TX | Out (default) or in | U6, direction pin `UART_TX_DIR` |
-| nRESET / debugWIRE, drive | Out, open-drain | BSS138 (Q1), low side |
+| nRESET / debugWIRE, drive | Out, open-drain | FDV301N (Q1), low side |
 
 - **Idle state.** `DIR_OUT` and `DIR_SWDIO` have external 100 kΩ pull-downs (R26, R27). A floating direction pin selects target to probe, so the target side is high-impedance. This also holds while the MCU is in reset.
 - **nRESET path.** Q1 has its source on GND and its drain on nRESET. The MCU never drives nRESET high. A 100 kΩ pull-down (R28) keeps the gate low while the MCU is in reset. U4 channel 4 reads the real line level back. The USART sees its own transmit, so it can detect collisions.
@@ -45,7 +45,7 @@ Two TPS2553 switches output to `VTREF`. U12 switches the 3.3 V rail. U14 switche
 
 Each switch has an open-drain `~FAULT` output, active low. `3V3_OUT_FAULT` (U12) goes to PA11 and `5V_OUT_FAULT` (U14) goes to PA12. The lines have no external pull-up resistors. The firmware must enable the internal pull-ups before it reads the lines or enables their EXTI interrupts. The TPS2553 does not latch off on overcurrent. It stays in current limit and does a thermal cycle. Thus the firmware must turn off the switch when its fault line goes low.
 
-Q4 (BSS138) pulls the enable pin of U14 low when `TARGET_PWR_EN` is high. Thus 3.3 V has priority if the firmware sets both pins by mistake.
+Q4 (FDV301N) pulls the enable pin of U14 low when `TARGET_PWR_EN` is high. Thus 3.3 V has priority if the firmware sets both pins by mistake.
 
 The interlock does not remove the overlap in a change from 5 V to 3.3 V. The firmware must use this sequence for each change:
 
@@ -71,7 +71,7 @@ The two target switches cannot be on at the same time, so F1 never carries both 
 
 ## High voltage (VPP)
 
-The MT3608 boost makes the VPP voltage. The boost passes its input through when it is off. Thus a P-FET switch (Q2) gates VPP. When Q3 turns on, R36 and R37 (100 kΩ each) set the gate-source voltage of Q2 to half of the boost output. At the 14.1 V nominal maximum, this is about −7.1 V (−7.3 V at the 14.7 V worst case). This is in the ±12 V limit of the AO3401A.
+The MT3608 boost makes the VPP voltage. The boost passes its input through when it is off. Thus a P-FET switch (Q2) gates VPP. When Q3 turns on, R36 and R37 (100 kΩ each) set the gate-source voltage of Q2 to half of the boost output. At the 14.1 V nominal maximum, this is about −7.1 V (−7.3 V at the 14.7 V worst case). This is in the ±12 V limit of the AO3401A. While Q3 is off, its drain is at the boost output, 14.7 V maximum. The FDV301N limit is 25 V.
 
 **Output capacitors.** C29 and C35 (10 µF, 25 V, X5R, 0805 each) are in parallel on `VPP_BOOST`. The DC bias decreases each one to about 2.4 µF at 14 V, so the total is about 5 µF. The MT3608 datasheet recommends 22 µF. The VPP load is small, so the ripple stays low. Do a check of the boost stability on the first board.
 

@@ -8070,7 +8070,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BSS138"
+		(property "Value" "FDV301N"
 			(at 273.685 60.325 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8092,7 +8092,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF"
+		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/fdv301n-d.pdf"
 			(at 268.605 60.325 0)
 			(hide yes)
 			(show_name no)
@@ -8103,7 +8103,7 @@
 				)
 			)
 		)
-		(property "Description" "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23"
+		(property "Description" "25V Vds, 0.22A Id, VGS(th) 1.06V max, N-Channel digital FET, SOT-23"
 			(at 268.605 60.325 0)
 			(hide yes)
 			(show_name no)
@@ -8114,7 +8114,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C112239"
+		(property "LCSC" "C15310"
 			(at 268.605 60.325 0)
 			(hide yes)
 			(show_name no)
