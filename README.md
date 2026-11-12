@@ -12,7 +12,7 @@ The KiCad 10 project is in this repository.
 - It connects to targets from **1.2 V to 5 V** through level shifters. A 1.2 V target is limited to about 5 MHz.
 - It supplies the target with **3.3 V or 5 V (up to about 300 mA)**.
 - It makes an adjustable **VPP of 5 V to 14 V** for high-voltage programming of AVR and PIC parts.
-- It has **one target connector (J4)**. A passive adapter board maps J4 to each target pinout.
+- It has **one target connector (J4)**. An adapter board plugs onto J4 and maps it to each target pinout.
 
 ## Hardware overview
 
@@ -89,7 +89,9 @@ The AVR 10-pin connector uses the Atmel-ICE pinout. Three passive variants route
 |---------|-----------|------|
 | A | JTAG, ISP, debugWIRE | 1 |
 | B | PDI | 2 |
-| C | TPI, UPDI, aWire | 3 |
+| C | TPI, aWire | 3 |
+
+UPDI does not use SWDIO. It uses J4 pin 12 (nRESET), because the 2.2 kΩ pull-up on SWDIO is too strong for the UPDI pin of the target. See [connectors/README.md](connectors/README.md#updi-on-j4-pin-12). A UPDI adapter variant for the Atmel-ICE 10-pin connector has no slot yet.
 
 | Slot | R<sub>ID</sub> (E24, 1 %) | x | Accept window | Use |
 |------|------------------|-------|---------------|-----|
@@ -97,15 +99,17 @@ The AVR 10-pin connector uses the Atmel-ICE pinout. Three passive variants route
 | 1 | 1.1 kΩ | 0.099 | 0.05 to 0.15 | Variant A |
 | 2 | 2.4 kΩ | 0.194 | 0.15 to 0.25 | Variant B |
 | 3 | 4.3 kΩ | 0.301 | 0.25 to 0.35 | Variant C |
-| 4 | 6.8 kΩ | 0.405 | 0.35 to 0.45 | Free |
-| 5 | 10 kΩ | 0.500 | 0.45 to 0.55 | Free |
+| 4 | 6.8 kΩ | 0.405 | 0.35 to 0.45 | Arm adapter |
+| 5 | 10 kΩ | 0.500 | 0.45 to 0.55 | Pin-header adapter |
 | 6 | 15 kΩ | 0.600 | 0.55 to 0.65 | Free |
 | 7 | 24 kΩ | 0.706 | 0.65 to 0.75 | Free |
-| 8 | 39 kΩ | 0.796 | 0.75 to 0.85 | Free |
-| 9 | 91 kΩ | 0.901 | 0.85 to 0.95 | Free (suggested: high-voltage adapter) |
+| 8 | 39 kΩ | 0.796 | 0.75 to 0.85 | AVR high-voltage adapter |
+| 9 | 91 kΩ | 0.901 | 0.85 to 0.95 | PIC high-voltage adapter |
 | — | open | 1.000 | above 0.95 | No adapter |
 
-The worst-case error is about 0.007 in x, and the windows are ±0.05 wide. The firmware treats a free slot as "unknown adapter" and does not enable VPP.
+The worst-case error is about 0.007 in x, and the windows are ±0.05 wide. The firmware treats a free slot as "unknown adapter". The firmware enables VPP only for slots 8 and 9.
+
+The adapter schematics are in [connectors/](connectors/README.md). Each adapter has a female 2 × 10 header that plugs directly onto J4. No ribbon cable is necessary.
 
 See [docs/hardware.md](docs/hardware.md) for the sheets, level shifting, target power, VPP and the MCU pin map.
 

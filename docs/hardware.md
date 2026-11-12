@@ -132,7 +132,7 @@ While `VPP_ON` is high and `VPP_PD` is high, `VPP_SENSE2` reads near 0 V. Thus t
 
 **Reverse current through Q2.** In the run state, pin 19 can be higher than `VPP_BOOST`. When the boost is off, `VPP_BOOST` is `+5V` minus the drop of D3, about 4.35 V to 4.85 V. The body diode of Q2 conducts from pin 19 to `VPP_BOOST` when pin 19 is more than about 0.5 V higher. This occurs only with a target supply above about 5.3 V, or when the probe has no USB power and the target has its own supply. R39 limits the current to some tens of µA. D3 blocks the path into `+5V`. In this case the run level is about `VPP_BOOST` + 0.5 V. For a 5.5 V target this is about 4.9 V, more than 0.8 × VDD.
 
-The VPP circuitry is on the main board. Thus a high-voltage adapter can be passive, like all other adapters.
+The VPP circuitry and the reset levels are on the main board. See [connectors/](../connectors/README.md) for the adapters.
 
 ## MCU support parts
 
@@ -167,8 +167,8 @@ Each probe signal uses a pin that exists on LQFP64 (`CH32V307RCT6`) and on QFN68
 | `DIR_SWDIO` | PC3 | GPIO, with external pull-down. TIM10_CH3 (default map), the same timer as TMS. |
 | `DIR_OUT` | PB10 | GPIO, with external pull-down |
 | TRST, RTCK | PB9, PA8 | GPIO |
-| nRESET / debugWIRE drive (`SRST`) | PB12 | GPIO, to the gate of Q1. The CH32V307 USART cannot invert TX, so the firmware drives debugWIRE output in software. |
-| nRESET / debugWIRE read-back (`SRST_RX`) | PB11 | USART3_RX, from U4 |
+| nRESET / debugWIRE / UPDI drive (`SRST`) | PB12 | GPIO, to the gate of Q1. The CH32V307 USART cannot invert TX, so the firmware drives debugWIRE and UPDI output in software. |
+| nRESET / debugWIRE / UPDI read-back (`SRST_RX`) | PB11 | USART3_RX, from U4 |
 | TCK, TDI, `AUX1` read-back (`TCK_RB`, `TDI_RB`, `AUX1_RB`) | PC8, PC7, PC6 | Inputs, from U4 channels 5 to 7. TIM8_CH1 to CH3 (default map), TIM3_CH1 to CH3 (full remap). |
 | UART TX, UART RX | PA9, PA10 | USART1 |
 | `AUX1`, `AUX2` | PA2, PA0 | Outputs in the `DIR_OUT` group |
