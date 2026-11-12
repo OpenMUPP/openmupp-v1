@@ -2447,7 +2447,7 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0402"
+		(property "Footprint" "resistors:R_0603"
 			(at 50.8 139.7 0)
 			(hide yes)
 			(effects
@@ -2507,7 +2507,7 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0402"
+		(property "Footprint" "resistors:R_0603"
 			(at 152.4 116.84 0)
 			(hide yes)
 			(effects
@@ -2629,7 +2629,7 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0402"
+		(property "Footprint" "resistors:R_0603"
 			(at 134.62 147.32 0)
 			(hide yes)
 			(effects

@@ -2726,7 +2726,7 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0402"
+		(property "Footprint" "resistors:R_0603"
 			(at 50.8 139.7 0)
 			(hide yes)
 			(effects
