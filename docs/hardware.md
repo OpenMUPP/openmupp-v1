@@ -9,7 +9,7 @@
 | `power.kicad_sch` | 3.3 V LDO, adjustable VPP boost, VPP switch, target power switches (U12, U14). |
 | `openmupp-v1.kicad_sym` | Project symbols (TPS2553). |
 
-The power sheet has five inputs from the MCU: `VPP_EN` (PC14), `VPP_ON` (PC15), `VPP_12V_ADJ` (PA5, DAC), `TARGET_PWR_EN` (PB8) and `TARGET_5V_EN` (PB5). It has five outputs: `VPP_SENSE` (PA4), `VPP_SENSE2` (PC1), `V5_SENSE` (PC0), `3V3_OUT_FAULT` (PA11) and `5V_OUT_FAULT` (PA12). It makes the global nets `VPP` and `VTREF`.
+The power sheet has six inputs from the MCU: `VPP_EN` (PC14), `VPP_ON` (PC15), `VPP_PD` (PC5), `VPP_12V_ADJ` (PA5, DAC), `TARGET_PWR_EN` (PB8) and `TARGET_5V_EN` (PB5). It has five outputs: `VPP_SENSE` (PA4), `VPP_SENSE2` (PC1), `V5_SENSE` (PC0), `3V3_OUT_FAULT` (PA11) and `5V_OUT_FAULT` (PA12). It makes the global nets `VPP` and `VTREF`.
 
 ## Level shifting
 
@@ -22,7 +22,7 @@ The probe MCU always runs at 3.3 V. The target side of each shifter runs from `V
 | TCK, TDI, `AUX1` read-back | In | U4, fixed target to probe |
 | TMS / SWDIO | Both | U5, direction pin `DIR_SWDIO` |
 | UART TX | Out (default) or in | U6, direction pin `UART_TX_DIR` |
-| nRESET / debugWIRE, drive | Out, open-drain | BSS138 (Q1), low side |
+| nRESET / debugWIRE, drive | Out, open-drain | FDV301N (Q1), low side |
 
 - **Idle state.** `DIR_OUT` and `DIR_SWDIO` have external 100 kΩ pull-downs (R26, R27). A floating direction pin selects target to probe, so the target side is high-impedance. This also holds while the MCU is in reset.
 - **nRESET path.** Q1 has its source on GND and its drain on nRESET. The MCU never drives nRESET high. A 100 kΩ pull-down (R28) keeps the gate low while the MCU is in reset. U4 channel 4 reads the real line level back. The USART sees its own transmit, so it can detect collisions.
@@ -45,7 +45,7 @@ Two TPS2553 switches output to `VTREF`. U12 switches the 3.3 V rail. U14 switche
 
 Each switch has an open-drain `~FAULT` output, active low. `3V3_OUT_FAULT` (U12) goes to PA11 and `5V_OUT_FAULT` (U14) goes to PA12. The lines have no external pull-up resistors. The firmware must enable the internal pull-ups before it reads the lines or enables their EXTI interrupts. The TPS2553 does not latch off on overcurrent. It stays in current limit and does a thermal cycle. Thus the firmware must turn off the switch when its fault line goes low.
 
-Q4 (BSS138) pulls the enable pin of U14 low when `TARGET_PWR_EN` is high. Thus 3.3 V has priority if the firmware sets both pins by mistake.
+Q4 (FDV301N) pulls the enable pin of U14 low when `TARGET_PWR_EN` is high. Thus 3.3 V has priority if the firmware sets both pins by mistake.
 
 The interlock does not remove the overlap in a change from 5 V to 3.3 V. The firmware must use this sequence for each change:
 
@@ -71,7 +71,7 @@ The two target switches cannot be on at the same time, so F1 never carries both 
 
 ## High voltage (VPP)
 
-The MT3608 boost makes the VPP voltage. The boost passes its input through when it is off. Thus a P-FET switch (Q2) gates VPP. When Q3 turns on, R36 and R37 (100 kΩ each) set the gate-source voltage of Q2 to half of the boost output. At the 14.1 V nominal maximum, this is about −7.1 V (−7.3 V at the 14.7 V worst case). This is in the ±12 V limit of the AO3401A.
+The MT3608 boost makes the VPP voltage. The boost passes its input through when it is off. Thus a P-FET switch (Q2) gates VPP. When Q3 turns on, R36 and R37 (100 kΩ each) set the gate-source voltage of Q2 to half of the boost output. At the 14.1 V nominal maximum, this is about −7.1 V (−7.3 V at the 14.7 V worst case). This is in the ±12 V limit of the AO3401A. While Q3 is off, its drain is at the boost output, 14.7 V maximum. The FDV301N limit is 25 V.
 
 **Output capacitors.** C29 and C35 (10 µF, 25 V, X5R, 0805 each) are in parallel on `VPP_BOOST`. The DC bias decreases each one to about 2.4 µF at 14 V, so the total is about 5 µF. The MT3608 datasheet recommends 22 µF. The VPP load is small, so the ripple stays low. Do a check of the boost stability on the first board.
 
@@ -105,9 +105,32 @@ The boost cannot pull its output down. Thus the firmware must change the level i
 
 `VPP_SENSE` measures the boost output through a divider (R47 100 kΩ, R48 27 kΩ). At 5 V, the ADC pin gets about 1.06 V. At 14.1 V, it gets about 3.0 V. The ADC reaches full scale at about 15.5 V, so the firmware can see an overshoot. The firmware reads it before it sets `VPP_ON`, and after a level change to see that C29 and C35 have discharged.
 
-`VPP_SENSE2` (PC1) measures VPP after R52 and Q2, on the J4 side. The divider is R50 (100 kΩ) and R51 (27 kΩ), with C33 (100 nF). It has the same ratio as the `VPP_SENSE` divider. While VPP is on, the difference between the two readings is the voltage across R52 and Q2. Below the current limit, this is 33 mV per mA in R52. In the current limit, Q2 takes the remaining voltage, so the difference becomes large. Thus the firmware can see that Q2 switched, measure the VPP current, and find a short on pin 19. The 1 % divider tolerances can give an offset of up to about 0.3 V at 14 V. The firmware can measure this offset while pin 19 has no load, and subtract it. The divider loads pin 19 with 127 kΩ to GND while VPP is off.
+`VPP_SENSE2` (PC1) measures VPP after R52 and Q2, on the J4 side. The divider is R50 (100 kΩ) and R51 (27 kΩ), with C33 (100 nF). It has the same ratio as the `VPP_SENSE` divider. While VPP is on, the difference between the two readings is the voltage across R52 and Q2. Below the current limit, this is 33 mV per mA in R52. In the current limit, Q2 takes the remaining voltage, so the difference becomes large. Thus the firmware can see that Q2 switched, measure the VPP current, and find a short on pin 19. The 1 % divider tolerances can give an offset of up to about 0.3 V at 14 V. The firmware can measure this offset while pin 19 has no load, and subtract it. The divider loads pin 19 with 127 kΩ to GND. While VPP is off, `VPP_SENSE2` shows the run level or the reset level of pin 19 (see [Pin 19 states](#pin-19-states)).
 
 The firmware must set **both** `VPP_EN` (PC14) and `VPP_ON` (PC15) high to apply VPP on J4 pin 19 (through R52 and Q2). Both pins have pull-downs. The firmware applies VPP only when the adapter ID shows a high-voltage adapter and the protocol needs VPP.
+
+### Pin 19 states
+
+A PIC MCLR pin and an AVR RESET pin need three levels: 0 V (reset), the target voltage (run) and VPP (program). Q6, R39 and D6 give these levels on J4 pin 19. Thus the high-voltage adapters need no reset circuit.
+
+- Q6 (FDV301N) connects pin 19 to GND. `VPP_PD` (PC5) drives the gate. R64 (100 kΩ) holds the gate low while the MCU is in reset.
+- R39 (10 kΩ) and D6 (BAT54) pull pin 19 up to `VTREF`. D6 has its anode on `VTREF`. While VPP is on, D6 blocks, so VPP does not feed current into `VTREF`. The leakage of D6 is 2 µA maximum at 25 V.
+
+| State | `VPP_ON` | `VPP_PD` | Pin 19 |
+|-------|----------|----------|--------|
+| Reset | Low | High | 0 V. Q6 sinks `VTREF` / 10 kΩ, 0.55 mA maximum. |
+| Run | Low | Low | `VTREF` minus the D6 drop (about 0.2 V at 0.1 mA) |
+| Program | High | Low | VPP |
+| Overlap | High | High | Q5 limits the current to about 17 mA. Q2 dissipates about 0.25 W. |
+
+The overlap is a permitted state. The current limit is designed for a short on pin 19 for an unlimited time. Thus the board has no interlock between `VPP_ON` and `VPP_PD`. The firmware uses the overlap to make clean edges:
+
+1. Program entry: set `VPP_PD` high, then `VPP_ON` high. Wait until Q2 is on (estimate: 200 µs, measure on the first board). Then set `VPP_PD` low. Pin 19 goes from 0 V to VPP directly, with no step at `VTREF`.
+2. Program exit: set `VPP_PD` high, then `VPP_ON` low. Q6 pulls pin 19 to 0 V in less than 1 µs.
+
+While `VPP_ON` is high and `VPP_PD` is high, `VPP_SENSE2` reads near 0 V. Thus the firmware can see an overlap that is too long.
+
+**Reverse current through Q2.** In the run state, pin 19 can be higher than `VPP_BOOST`. When the boost is off, `VPP_BOOST` is `+5V` minus the drop of D3, about 4.35 V to 4.85 V. The body diode of Q2 conducts from pin 19 to `VPP_BOOST` when pin 19 is more than about 0.5 V higher. This occurs only with a target supply above about 5.3 V, or when the probe has no USB power and the target has its own supply. R39 limits the current to some tens of µA. D3 blocks the path into `+5V`. In this case the run level is about `VPP_BOOST` + 0.5 V. For a 5.5 V target this is about 4.9 V, more than 0.8 × VDD.
 
 The VPP circuitry is on the main board. Thus a high-voltage adapter can be passive, like all other adapters.
 
@@ -157,6 +180,7 @@ Each probe signal uses a pin that exists on LQFP64 (`CH32V307RCT6`) and on QFN68
 | `VPP_12V_ADJ` | PA5 | DAC channel 2. Sets VPP from 5 V to 14 V. High-impedance gives 11.4 V. |
 | `V5_SENSE` | PC0 | ADC channel 10. `+5V` divided by 2 (R45, R46, C8). |
 | `VPP_SENSE` | PA4 | ADC channel 4. Divider R47, R48 and C32 on the boost output (before Q2). |
+| `VPP_PD` | PC5 | GPIO, to the gate of Q6. R64 pull-down. High pulls J4 pin 19 to 0 V. |
 | `VPP_SENSE2` | PC1 | ADC channel 11. Divider R50, R51 and C33 on VPP after Q2 (J4 pin 19). |
 | `3V3_OUT_FAULT`, `5V_OUT_FAULT` | PA11, PA12 | `~FAULT` of U12 and U14. Open-drain, active low. Use the internal pull-ups. |
 | `UART_TX_DIR` | PC9 | Direction of U6. R56 pull-up: high is probe to target. |
@@ -174,4 +198,4 @@ R10 is fitted on purpose. The JTAG fast path of the firmware uses two SPI periph
 
 R55 is fitted for SWIM, the debug protocol of the STM8. The STM8 sends its bits with its own clock. Thus the probe measures the low time of each bit with a timer in PWM input mode. This timer runs at the same time as TIM10, which sends the probe bits on PC11. Thus the input needs a second pin and a second timer. The counter reset needs channel 1 or 2 of the timer, and PA1 is TIM2_CH2. TIM2 has DMA requests for CC1 and CC2. TIM3 does not work: PB4 and PC6 are TIM3_CH1 (partial and full remap). In PWM input mode on channel 1, CC2 captures the low time, and TIM3 has no DMA request for CC2. TIM8_CH1 and TIM8_CH2 on PC6 and PC7 both have DMA requests, but these pins carry the `AUX1` and TDI read-back.
 
-These pins are not connected: PA15, PB4, PC5 and PC13. PC13 is a backup-domain pin with the same limits as PC14. The CH32V307 has no JTAG port, so PB3 is a GPIO after reset. The GPIO pins are floating inputs at reset. Thus the direction pins need their external pull resistors.
+These pins are not connected: PA15, PB4 and PC13. PC13 is a backup-domain pin with the same limits as PC14. The CH32V307 has no JTAG port, so PB3 is a GPIO after reset. The GPIO pins are floating inputs at reset. Thus the direction pins need their external pull resistors.
