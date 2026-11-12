@@ -2486,6 +2486,197 @@
 				)
 			)
 		)
+		(symbol "Diode:BAT54W"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BAT54W"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
+				(at 0 -4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Schottky barrier diode, SOT-323"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "schottky diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOT?323*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "BAT54W_0_1"
+				(polyline
+					(pts
+						(xy -1.905 0.635)
+						(xy -1.905 1.27)
+						(xy -1.27 1.27)
+						(xy -1.27 -1.27)
+						(xy -0.635 -1.27)
+						(xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27)
+						(xy 1.27 -1.27)
+						(xy -1.27 0)
+						(xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0)
+						(xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "BAT54W_1_1"
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 0 0 90)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(junction
 		(at 198.12 106.68)
@@ -2536,6 +2727,18 @@
 	(no_connect
 		(at 236.22 76.2)
 		(uuid "fc395130-3cad-4785-8f01-d399466ea0f1")
+	)
+	(no_connect
+		(at 71.12 152.4)
+		(uuid "d8b5bb5a-a14c-4110-9991-270773e1a219")
+	)
+	(no_connect
+		(at 83.82 152.4)
+		(uuid "068ff6a1-6fac-47ba-9502-c1c18f90cb73")
+	)
+	(no_connect
+		(at 71.12 154.94)
+		(uuid "3e05eeb9-edbc-442b-95b1-8a5c4e66cf6f")
 	)
 	(wire
 		(pts
@@ -2964,6 +3167,90 @@
 		)
 		(uuid "1e0f1a6a-899e-4827-9af7-3bee68ed0825")
 	)
+	(wire
+		(pts
+			(xy 92.71 106.68)
+			(xy 95.25 106.68)
+		)
+		(uuid "89751d79-6ab0-49f3-93fa-752516cfc716")
+	)
+	(wire
+		(pts
+			(xy 92.71 119.38)
+			(xy 95.25 119.38)
+		)
+		(uuid "ed25519e-d60f-4282-b2cd-fe5b070024b1")
+	)
+	(wire
+		(pts
+			(xy 85.09 106.68)
+			(xy 82.55 106.68)
+		)
+		(uuid "1c4e5e7e-33ee-4cb6-ae61-80ae437ba092")
+	)
+	(wire
+		(pts
+			(xy 85.09 119.38)
+			(xy 82.55 119.38)
+		)
+		(uuid "975775f6-d648-4b99-86de-97f437989c65")
+	)
+	(wire
+		(pts
+			(xy 88.9 134.62)
+			(xy 86.36 134.62)
+		)
+		(uuid "2a37bf16-0a10-44f0-a64f-102dcefaea3f")
+	)
+	(wire
+		(pts
+			(xy 111.76 140.97)
+			(xy 111.76 143.51)
+		)
+		(uuid "bc303d53-c45a-4b29-97e6-eb45876eb1d6")
+	)
+	(wire
+		(pts
+			(xy 71.12 149.86)
+			(xy 68.58 149.86)
+		)
+		(uuid "7cc6f250-b378-4d77-8dc8-35f5eab4e3d9")
+	)
+	(wire
+		(pts
+			(xy 93.98 142.24)
+			(xy 93.98 144.78)
+		)
+		(uuid "c442309f-cd28-4218-8e88-7e67d9d6b00e")
+	)
+	(wire
+		(pts
+			(xy 111.76 133.35)
+			(xy 111.76 130.81)
+		)
+		(uuid "96df0788-abde-481e-98de-e47a03b60f6c")
+	)
+	(wire
+		(pts
+			(xy 83.82 149.86)
+			(xy 86.36 149.86)
+		)
+		(uuid "7512190f-8cd4-415c-861a-31060cb82524")
+	)
+	(wire
+		(pts
+			(xy 99.06 134.62)
+			(xy 101.6 134.62)
+		)
+		(uuid "92d6c273-4ffc-4870-bfe5-3794f251a127")
+	)
+	(wire
+		(pts
+			(xy 83.82 154.94)
+			(xy 86.36 154.94)
+		)
+		(uuid "45a78e60-e8f4-4382-87fd-064f72c24e55")
+	)
 	(label "RESET_HV"
 		(at 208.28 106.68 0)
 		(effects
@@ -3203,16 +3490,6 @@
 			(justify left bottom)
 		)
 		(uuid "40d5e977-c523-4f3e-a36c-3de66466bd04")
-	)
-	(label "RESET_HV"
-		(at 43.18 88.9 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "6d66b91b-d624-4aea-869f-6c5d816567ae")
 	)
 	(label "RESET_HV"
 		(at 132.08 73.66 180)
@@ -3534,10 +3811,140 @@
 		)
 		(uuid "565d5f54-c7ed-4399-9810-a315011c2fc3")
 	)
-  (text "OpenMUPP v1 AVR high-voltage adapter (adapter ID slot 8, R1 = 39k 1 %)\nTargets: ATtiny HVSP (J2, J3), TPI with 12 V on RESET, UPDI with the HV pulse on RESET (J4).\n\nJ1 plugs directly onto J4 of the OpenMUPP v1 probe. Pin numbers of J1 are the J4 pin numbers.\nJ4 pin 2 (reserved) stays open. J4 pin 16 (adapter ID) never goes to the target.\nPut only one target in J2, J3 or J4 at a time. HVSP: the probe supplies 5 V on VTREF.\nReset circuit (RESET_HV): reset = AUX2 high (Q1 on, 0 V). Run = AUX2 low, VPP off (VTREF through R2).\nProgram = AUX2 low, VPP on. R2 holds RESET at 0 V while VTREF is 0 V (HVSP entry needs this).\nFIRMWARE: never set AUX2 high while VPP is on. Q1 then shorts VPP to GND (current limit about 17 mA).\nR4 to R7 hold the HVSP Prog_enable pins at 0 during entry (J4 pin 8 is an input only, so SDO needs R4).\n     Not in the adapter plan. Check the pins against the ATtiny datasheets before layout.\nJ4 pin 1 (TPIDATA / UPDI) goes directly to J4 pin 4 of the probe. NO HV on the UPDI pin:\n     the ESD diode on J4 pin 4 clamps at about 6 V. The protection part for that is not designed yet.\nJ5 debug UART: labels are from the probe side (RX = probe input)."
-    (at 30.48 45.72 0)
+	(label "VPP"
+		(at 43.18 88.9 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7d3bb7eb-bb42-42fe-a3ac-b6440932f899")
+	)
+	(label "VPP"
+		(at 95.25 106.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "bceff999-eed9-43ae-bf37-03eb23300a7c")
+	)
+	(label "VPP"
+		(at 95.25 119.38 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "10aea2e1-bf46-498b-a4b3-712769377719")
+	)
+	(label "RESET_HV"
+		(at 82.55 106.68 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "12d1ca98-0d2d-496f-b3b5-8b2254aefc0b")
+	)
+	(label "UPDI_HV"
+		(at 82.55 119.38 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8eb1d1f5-fe25-4e5b-a95e-d12d3f23706d")
+	)
+	(label "UPDI_HV"
+		(at 86.36 134.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e48df6f0-5c34-4011-91ca-7c0500d32969")
+	)
+	(label "UPDI_HV"
+		(at 111.76 143.51 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4011cc7d-78f0-443a-8f4c-096d1d854217")
+	)
+	(label "UPDI_HV"
+		(at 68.58 149.86 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ae5e7f8b-86ed-49ab-9e8b-84c0fba1ad7e")
+	)
+	(label "VTREF"
+		(at 93.98 144.78 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "df6c5008-920c-4e2e-bde3-57b0f8c37b0b")
+	)
+	(label "VTREF"
+		(at 111.76 130.81 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f7e340a9-a2d5-4db3-84c5-48b5a30b4a2a")
+	)
+	(label "VTREF"
+		(at 86.36 149.86 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3957cd71-2e25-4251-99bf-4d51b41a2874")
+	)
+	(label "TPIDATA_UPDI"
+		(at 101.6 134.62 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cba342c7-a0de-4df8-b581-7d8f431b9dcc")
+	)
+	(label "GND"
+		(at 86.36 154.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "44d4599e-5255-43d7-95e8-9239cef996c0")
+	)
+  (text "OpenMUPP v1 AVR high-voltage adapter (adapter ID slot 8, R1 = 39k 1 %)\nTargets: ATtiny HVSP (J2, J3), TPI with 12 V on RESET (J4), UPDI with the HV pulse on RESET (J4) or on the UPDI pin (J6).\n\nJ1 plugs directly onto J4 of the OpenMUPP v1 probe. Pin numbers of J1 are the J4 pin numbers.\nJ4 pin 2 (reserved) stays open. J4 pin 16 (adapter ID) never goes to the target.\nPut only one target in J2, J3, J4 or J6 at a time. VPP goes to RESET_HV and to UPDI_HV together. HVSP: the probe supplies 5 V on VTREF.\nD1 and D2 isolate RESET_HV and UPDI_HV from each other and from VPP while VPP is off. Set VPP about 0.3 V higher (12.3 V for 12 V).\nReset circuit (RESET_HV): reset = AUX2 high (Q1 on, 0 V). Run = AUX2 low, VPP off (VTREF through R2).\nProgram = AUX2 low, VPP on. R2 holds RESET at 0 V while VTREF is 0 V (HVSP entry needs this).\nFIRMWARE: never set AUX2 high while VPP is on. Q1 then shorts VPP to GND (current limit about 17 mA).\nR4 to R7 hold the HVSP Prog_enable pins at 0 during entry (ATtiny25/45/85 PB0 to PB2, ATtiny24A/44A/84A PA0 to PA2).\n     J4 pin 8 is an input only, so SDO needs R4.\nUPDI HV protection (Q2): the gate is on VTREF, so the probe side (J4 pin 4) stays below VTREF - VGS(th).\n     The ESD diode on J4 pin 4 clamps at about 6 V. While VPP is off, Q2 passes UPDI in both directions.\n     R8 pulls UPDI_HV up. The probe has 2.2k on its side. During the pulse, about 1.5 mA flows from VPP through R8 into VTREF.\n     Q2 needs VTREF above VGS(th) (up to 1.5 V for BSS138) to pass a low level. Use VTREF of 1.8 V or more.\nJ5 debug UART: labels are from the probe side (RX = probe input)."
+    (at 30.48 50.8 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "193ea94c-7d7c-462e-92c9-059e69c33ab2")
+    (uuid "8ec79395-7ad9-404a-bb3b-a0d77b818cde")
   )
 	(symbol
 		(lib_id "Connector_Generic:Conn_02x10_Odd_Even")
@@ -3863,7 +4270,7 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0402"
+		(property "Footprint" "resistors:R_0603"
 			(at 50.8 139.7 0)
 			(hide yes)
 			(effects
@@ -3923,7 +4330,7 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0402"
+		(property "Footprint" "resistors:R_0603"
 			(at 198.12 96.52 0)
 			(hide yes)
 			(effects
@@ -4045,7 +4452,7 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0402"
+		(property "Footprint" "resistors:R_0603"
 			(at 180.34 124.46 0)
 			(hide yes)
 			(effects
@@ -4105,7 +4512,7 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0402"
+		(property "Footprint" "resistors:R_0603"
 			(at 101.6 167.64 0)
 			(hide yes)
 			(effects
@@ -4165,7 +4572,7 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0402"
+		(property "Footprint" "resistors:R_0603"
 			(at 116.84 167.64 0)
 			(hide yes)
 			(effects
@@ -4225,7 +4632,7 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0402"
+		(property "Footprint" "resistors:R_0603"
 			(at 132.08 167.64 0)
 			(hide yes)
 			(effects
@@ -4285,7 +4692,7 @@
 				)
 			)
 		)
-		(property "Footprint" "resistors:R_0402"
+		(property "Footprint" "resistors:R_0603"
 			(at 147.32 167.64 0)
 			(hide yes)
 			(effects
@@ -4316,6 +4723,308 @@
 			(project "adapter-avr-hv"
 				(path "/12e5e138-ab03-41c1-b350-f173ec4c2ae9"
 					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:BAT54W")
+		(at 88.9 106.68 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1274c597-5180-42db-8496-0903915091eb")
+		(property "Reference" "D1"
+			(at 88.9 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BAT54W"
+			(at 88.9 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
+			(at 88.9 106.68 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf"
+			(at 88.9 106.68 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Schottky barrier diode, SOT-323"
+			(at 88.9 106.68 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "adapter-avr-hv"
+				(path "/12e5e138-ab03-41c1-b350-f173ec4c2ae9"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:BAT54W")
+		(at 88.9 119.38 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c78dea6e-9cb0-4843-9188-6965965bf27f")
+		(property "Reference" "D2"
+			(at 88.9 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BAT54W"
+			(at 88.9 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
+			(at 88.9 119.38 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BAT54W_SER.pdf"
+			(at 88.9 119.38 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Schottky barrier diode, SOT-323"
+			(at 88.9 119.38 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "adapter-avr-hv"
+				(path "/12e5e138-ab03-41c1-b350-f173ec4c2ae9"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:BSS138")
+		(at 93.98 137.16 90)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d4aff4e8-0190-4baf-bf3e-2a179a85c563")
+		(property "Reference" "Q2"
+			(at 92.075 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BSS138"
+			(at 93.98 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 93.98 137.16 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF"
+			(at 93.98 137.16 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23"
+			(at 93.98 137.16 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "adapter-avr-hv"
+				(path "/12e5e138-ab03-41c1-b350-f173ec4c2ae9"
+					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 111.76 137.16 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "469b6dbe-5fe7-4fbc-910a-665ae730e7b3")
+		(property "Reference" "R8"
+			(at 113.792 137.16 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 111.76 137.16 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "resistors:R_0603"
+			(at 111.76 137.16 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 111.76 137.16 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 111.76 137.16 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "adapter-avr-hv"
+				(path "/12e5e138-ab03-41c1-b350-f173ec4c2ae9"
+					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_02x03_Odd_Even")
+		(at 76.2 152.4 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ab9478a1-a954-4c60-ab88-9060a6410a66")
+		(property "Reference" "J6"
+			(at 77.47 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "UPDI 2x3 (HV on UPDI pin)"
+			(at 77.47 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical"
+			(at 76.2 152.4 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 152.4 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, double row, 02x03, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 76.2 152.4 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "adapter-avr-hv"
+				(path "/12e5e138-ab03-41c1-b350-f173ec4c2ae9"
+					(reference "J6")
 					(unit 1)
 				)
 			)
