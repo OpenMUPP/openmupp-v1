@@ -6,7 +6,7 @@ Each folder is a KiCad 10 project with the schematic of one target adapter. The 
 |--------------------------------------------|------------------|------|----------------|----------------------------------------------------------------|
 | [adapter-arm](adapter-arm/)                | Arm              | 4    | 6.8 kΩ         | ARM JTAG 20, Cortex Debug 10, STDC14                           |
 | [adapter-pin-header](adapter-pin-header/)  | Pin header       | 5    | 10 kΩ          | 1 × 6 SWD / CH32 / SWIM, 1 × 4 ST SWIM, 2 × 5 WCH-LinkE layout |
-| [adapter-avr-hv](adapter-avr-hv/)          | AVR high voltage | 8    | 39 kΩ          | DIP-8 and DIP-14 sockets (HVSP), 2 × 3 TPI, two 2 × 3 UPDI (HV on the UPDI pin, HV on the RESET pin) |
+| [adapter-avr-hv](adapter-avr-hv/)          | AVR high voltage | 8    | 39 kΩ          | DIP-8 and DIP-14 sockets (HVSP), 2 × 3 TPI and UPDI            |
 | [adapter-pic-hv](adapter-pic-hv/)          | PIC high voltage | 9    | 91 kΩ          | PICkit ICSP 1 × 6                                              |
 
 The slot table and the J4 pinout are in the [main README](../README.md#adapter-boards-and-adapter-id).
@@ -49,33 +49,35 @@ Effects on the firmware:
 - The rise time with 10 kΩ and about 30 pF to 50 pF is about 0.3 µs to 0.5 µs. This is sufficient for 225 kbps (the maximum UPDI rate at 1.8 V). It is not sufficient for 0.9 Mbps. These values are estimates, not measurements.
 - The debug UART (J4 pins 13 and 14) stays free during UPDI.
 
-TPI data stays on J4 pin 4. On the TPI parts (ATtiny4/5/9/10), TPIDATA is a normal I/O pin with full drive strength.
+On `adapter-avr-hv`, TPI data also uses J4 pin 12, through the same path as UPDI. The TPIDATA pin of the ATtiny4/5/9/10 has an internal pull-up in TPI mode (20 kΩ to 50 kΩ). The target drives a 0 and the first 1 of a sequence. Then the pull-up holds the line high (ATtiny4/5/9/10 data sheet DS40002060A, section 15.3.8). Thus TPI and UPDI see the same physical layer: open drain with a pull-up. Other TPI adapters can still use J4 pin 4.
 
 ## UPDI high-voltage pulse
 
-`adapter-avr-hv` has three 2 × 3 headers for TPI and UPDI:
+`adapter-avr-hv` has one 2 × 3 header (J4) for TPI and UPDI. JP1, a 2-pin jumper header, selects the pin that gets the high voltage (HV):
 
-| Header | Use | Pin 1 (data) | Pin 5 | HV goes to |
-|--------|-----|--------------|-------|------------|
-| J4 | TPI, HV on RESET | `TPIDATA` (J1 pin 4) | `RESET_VPP` (J1 pin 19) | Pin 5 |
-| J6 | UPDI, HV on the UPDI pin (tinyAVR 0, 1 and 2 series) | `UPDI_HV` (through Q2 to J1 pin 12) | Open | Pin 1 |
-| J7 | UPDI, HV on a separate RESET pin | `UPDI` (J1 pin 12) | `RESET_VPP` (J1 pin 19) | Pin 5 |
+| JP1 | Use | Pin 1 (data) | Pin 5 | HV goes to |
+|-----|-----|--------------|-------|------------|
+| Open | TPI (ATtiny4/5/9/10). UPDI with a separate RESET pin, for example AVR DD. | `UPDI_HV` (through Q2 to J1 pin 12) | `RESET_VPP` (J1 pin 19) | Pin 5 |
+| Closed | UPDI with HV on the UPDI pin (tinyAVR 0, 1 and 2 series) | `UPDI_HV` (through Q2 to J1 pin 12) | `RESET_VPP` (J1 pin 19) | Pin 1 and pin 5 |
 
-On the tinyAVR 0, 1 and 2 series, the UPDI pin and the RESET pin are the same pin. The data sheet calls the HV entry "UPDI Enable with High-Voltage Override of RESET Pin". The HV detection level (V<sub>HVRST</sub>) is 11.5 V to 12.5 V. J7 is for parts with a separate RESET pin, for example the AVR DD family. Check the data sheet of each part before you use J7.
+On the tinyAVR 0, 1 and 2 series, the UPDI pin and the RESET pin are the same pin. The data sheet calls the HV entry "UPDI Enable with High-Voltage Override of RESET Pin". The HV detection level (V<sub>HVRST</sub>) is 11.5 V to 12.5 V. The AVR DD setting is not verified against a part. Check the data sheet of each part before you use it.
+
+The TPIDATA pin and the AVR DD UPDI pin must not get 12 V. Thus JP1 must be open for these parts. With JP1 closed, pin 5 also gets VPP. On a tinyAVR target board, pin 5 is usually not connected, so this is permitted. Some target boards connect pin 5 to the UPDI pin. Then pin 19 at 0 V holds the UPDI line low. Check the target board before you use it.
 
 The parts of the UPDI path:
 
-1. D2 (BAT54W) connects J1 pin 19 to `UPDI_HV`. D2 has a drop of about 0.3 V. Set VPP to about 12.3 V for 12 V on the UPDI pin. `RESET_VPP` has no diode, so it gets VPP directly.
+1. D2 (BAT54W) and JP1 connect J1 pin 19 to `UPDI_HV` when JP1 is closed. D2 has a drop of about 0.3 V. Set VPP to about 12.3 V for 12 V on the UPDI pin. `RESET_VPP` has no diode, so it gets VPP directly.
 2. Q2 (FDV301N) is a pass switch between `UPDI_HV` (drain) and `UPDI` (source, J1 pin 12). The gate is on `VTREF`. When `UPDI_HV` is at 12 V, Q2 is off and the 10 kΩ pull-up on the probe holds `UPDI` at `VTREF`. The body diode is then reverse biased. The ESD diode on J4 pin 12 of the probe clamps at about 6 V, so this protection is necessary.
-3. While VPP is off, Q2 passes UPDI data in both directions. The probe pulls `UPDI` high (10 kΩ). The internal pull-up of the target pulls `UPDI_HV` high. The adapter has no pull-up on `UPDI_HV`, so it adds no load to the weak UPDI pad.
-4. Keep pin 19 at 0 V (`VPP_PD` high) during UPDI on J6, except during the HV pulse. In the run state, pin 19 is at `VTREF`. Then R39 on the probe and D2 pull `UPDI_HV` up. When the target sends a 0, it must also sink this current: about 0.13 mA at 1.8 V and 0.45 mA at 5 V. The UPDI pad guarantees only 0.1 mA at 1.8 V. At 0 V on pin 19, D2 blocks and adds no load.
+3. While VPP is off, Q2 passes UPDI and TPI data in both directions. The probe pulls `UPDI` high (10 kΩ). The internal pull-up of the target pulls `UPDI_HV` high. The adapter has no pull-up on `UPDI_HV`, so it adds no load to the weak UPDI pad.
+4. With JP1 closed, keep pin 19 at 0 V (`VPP_PD` high) during UPDI, except during the HV pulse. In the run state, pin 19 is at `VTREF`. Then R39 on the probe and D2 pull `UPDI_HV` up. When the target sends a 0, it must also sink this current: about 0.13 mA at 1.8 V and 0.45 mA at 5 V. The UPDI pad guarantees only 0.1 mA at 1.8 V. At 0 V on pin 19, D2 blocks and adds no load.
+5. The firmware can read the JP1 position before it sets VPP on. Put pin 19 in the run state and set Q1 on. With JP1 closed, current flows from R39 through D2, Q2 and Q1. `VPP_SENSE2` then reads less than about 0.5 V. With JP1 open, `VPP_SENSE2` reads the run level. If the JP1 position does not agree with the selected target, the firmware must not set VPP on. This value is an estimate, not a measurement.
 
 Limits:
 
 - Q2 passes a low level only when `VTREF` is above V<sub>GS(th)</sub>. The FDV301N has 1.06 V maximum, so `VTREF` of 1.8 V is sufficient. The tinyAVR parts run from 1.8 V to 5.5 V.
 - The gate-source voltage of the FDV301N must stay above −0.3 V. The source (`UPDI`) has a 10 kΩ pull-up to the gate potential (`VTREF`), so it does not go above the gate. Q2 leakage (I<sub>DSS</sub> 1 µA maximum at 20 V) moves `UPDI` by about 10 mV.
-- A low-to-high edge on `UPDI_HV` above `VTREF` − V<sub>GS(th)</sub> comes from the target pull-up only. This is slower than on `UPDI`. Check the rise time at the UPDI baud rate.
-- VPP goes to `RESET_VPP` and to `UPDI_HV` at the same time. Connect only one target to J2, J3, J4, J6 or J7.
+- A low-to-high edge on `UPDI_HV` above `VTREF` − V<sub>GS(th)</sub> comes from the target pull-up only. This is slower than on `UPDI`. Check the rise time at the UPDI baud rate and at the TPI clock rate.
+- VPP goes to `RESET_VPP`. With JP1 closed, it also goes to `UPDI_HV` at the same time. Connect only one target to J2, J3 or J4.
 - After the pulse, the line must return to the normal level quickly: the debugger drives it low 1 µs to 10 µs after the HV ends (data sheet figure 33-6). D2 cannot pull `UPDI_HV` down. The probe pulls J4 pin 12 low through its Q1. The adapter Q2 then conducts, because its gate is at `VTREF`, and pulls `UPDI_HV` low. At the same time, Q6 on the probe pulls pin 19 to 0 V in less than 1 µs, so D2 blocks at once.
 - The TPS2553 on the probe has a soft start of some milliseconds. Check the pulse timing in the target data sheet.
 
