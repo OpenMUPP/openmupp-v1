@@ -4,6 +4,7 @@ Each folder is a KiCad 10 project with the schematic of one target adapter. The 
 
 | Folder                                     | Adapter          | Slot | R<sub>ID</sub> | Target connectors                                              |
 |--------------------------------------------|------------------|------|----------------|----------------------------------------------------------------|
+| [adapter-avr-jtag-isp](adapter-avr-jtag-isp/) | AVR variant A | 1 | 1.1 kΩ | Atmel-ICE 10 (1.27 mm), AVR JTAG 10 (2.54 mm), 2 × 3 ISP |
 | [adapter-arm](adapter-arm/)                | Arm              | 4    | 6.8 kΩ         | ARM JTAG 20, Cortex Debug 10, STDC14                           |
 | [adapter-pin-header](adapter-pin-header/)  | Pin header       | 5    | 10 kΩ          | 1 × 6 SWD / CH32 / SWIM, 1 × 4 ST SWIM, 2 × 5 WCH-LinkE layout |
 | [adapter-avr-hv](adapter-avr-hv/)          | AVR high voltage | 8    | 39 kΩ          | DIP-8 and DIP-14 sockets (HVSP), 2 × 3 TPI and UPDI            |
@@ -97,4 +98,5 @@ J4 pin 8 (SDO input) is an input only, so the probe cannot hold SDO low. The tar
 - **WCH-LinkE layout.** The positions of GND, 3V3 and 5V on the WCH-LinkE header come from the schematic text only. Check them on a real WCH-LinkE. Pin 8 (3V3) connects to `VTREF`. Pin 10 (5V) stays open.
 - **ST SWIM order.** Check the order (VDD, SWIM, GND, NRST) against ST UM1075.
 - **1.27 mm headers.** Cortex Debug 10 and STDC14 use plain 1.27 mm pin headers in the schematic. Use shrouded, keyed parts (Samtec FTSH-105 and FTSH-107, or equal). Put their footprints in the `kicad-footprints` repository.
+- **Atmel-ICE 10.** J2 on `adapter-avr-jtag-isp` is a plain 1.27 mm pin header in the schematic. Use a shrouded, keyed part, as for Cortex Debug 10. J4 (AVR JTAG 10, 2.54 mm) uses a shrouded IDC header.
 - **Footprint libraries.** All resistors are 0603 and use `resistors:R_0603` from the `kicad-footprints` repository, as on the main board.
