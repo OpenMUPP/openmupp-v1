@@ -2,7 +2,7 @@
 
 This adapter programs AVR parts that need a high voltage (12 V) on one pin. This is necessary when a fuse disables the normal programming interface. Examples are the RSTDISBL fuse and the RSTPINCFG fuse. The adapter has slot 8 (R1 = 39 kΩ).
 
-The probe supplies all levels on J1 pin 19: 0 V, `VTREF` and VPP. See [Pin 19 states](../../docs/hardware.md#pin-19-states). The circuit details are in [connectors/README.md](../README.md).
+The probe supplies all levels on J1 pin 19: 0 V, `VTREF` and VPP. See [Pin 19 states](../../docs/hardware.md#pin-19-states). The circuit details are in [adapters/README.md](../README.md).
 
 ## Connectors
 

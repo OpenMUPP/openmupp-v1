@@ -91,7 +91,7 @@ The AVR 10-pin connector uses the Atmel-ICE pinout. Three passive variants route
 | B | PDI | 2 |
 | C | TPI, aWire | 3 |
 
-UPDI does not use SWDIO. It uses J4 pin 12 (nRESET), because the 2.2 kΩ pull-up on SWDIO is too strong for the UPDI pin of the target. See [connectors/README.md](connectors/README.md#updi-on-j4-pin-12). A UPDI adapter variant for the Atmel-ICE 10-pin connector has no slot yet.
+UPDI does not use SWDIO. It uses J4 pin 12 (nRESET), because the 2.2 kΩ pull-up on SWDIO is too strong for the UPDI pin of the target. See [adapters/README.md](adapters/README.md#updi-on-j4-pin-12). A UPDI adapter variant for the Atmel-ICE 10-pin connector has no slot yet.
 
 | Slot | R<sub>ID</sub> (E24, 1 %) | x | Accept window | Use |
 |------|------------------|-------|---------------|-----|
@@ -109,7 +109,7 @@ UPDI does not use SWDIO. It uses J4 pin 12 (nRESET), because the 2.2 kΩ pull-up
 
 The worst-case error is about 0.007 in x, and the windows are ±0.05 wide. The firmware treats a free slot as "unknown adapter". The firmware enables VPP only for slots 8 and 9.
 
-The adapter schematics are in [connectors/](connectors/README.md). Each adapter has a female 2 × 10 header that plugs directly onto J4. No ribbon cable is necessary.
+The adapter schematics are in [adapters/](adapters/README.md). Each adapter has a female 2 × 10 header that plugs directly onto J4. No ribbon cable is necessary.
 
 See [docs/hardware.md](docs/hardware.md) for the sheets, level shifting, target power, VPP and the MCU pin map.
 
