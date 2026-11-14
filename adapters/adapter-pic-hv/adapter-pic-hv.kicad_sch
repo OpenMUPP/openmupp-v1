@@ -1631,17 +1631,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "OpenMUPP v1 PIC high-voltage adapter (adapter ID slot 9, R1 = 91k 1 %)\nTargets: PIC ICSP, high-voltage and low-voltage entry. PICkit 4/5 8-pin: pins 1 to 6 are the same.\n\nJ1 plugs directly onto J4 of the OpenMUPP v1 probe. Pin numbers of J1 are the J4 pin numbers.\nJ4 pin 2 (reserved) stays open. J4 pin 16 (adapter ID) never goes to the target. J4 pin 18 (AUX2) is not used.\nMCLR_VPP connects directly to J4 pin 19. The probe sets the three MCLR levels on pin 19:\nreset = 0 V (Q6 on the probe), run = VTREF (10k and BAT54 on the probe), program = VPP.\nJ3 debug UART: labels are from the probe side (RX = probe input)."
-		(exclude_from_sim no)
-		(at 30.48 40.64 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "029afe51-d762-4d8d-81b1-9d4f4c592f63")
-	)
 	(no_connect
 		(at 45.72 83.82)
 		(uuid "0d6b12aa-6a9e-4299-8995-a0301df0c3d9")
@@ -2282,7 +2271,7 @@
 				)
 			)
 		)
-		(property "Value" "OpenMUPP J4 (female)"
+		(property "Value" "OpenMUPP J4"
 			(at 52.07 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2415,7 +2404,7 @@
 				)
 			)
 		)
-		(property "Value" "91k 1%"
+		(property "Value" "91k"
 			(at 50.8 139.7 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2484,7 +2473,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ba09963c-017e-40ed-b7c4-848eccab325c")
-		(property "Reference" "J3"
+		(property "Reference" "J5"
 			(at 228.6 134.62 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2552,10 +2541,16 @@
 		(instances
 			(project "adapter-pic-hv"
 				(path "/b2e561ca-0dbe-445c-809e-3db22678f27a"
-					(reference "J3")
+					(reference "J5")
 					(unit 1)
 				)
 			)
 		)
 	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
 )
