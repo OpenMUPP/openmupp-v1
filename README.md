@@ -115,7 +115,7 @@ See [docs/hardware.md](docs/hardware.md) for the sheets, level shifting, target 
 
 ## Firmware
 
-The firmware is the `openmupp` project. The CH32V307 has a ROM bootloader. It can program the flash through USART1 or USB (WCH ISP protocol). Hold SW1 (BOOT0) during reset to start it. The firmware port to the CH32V307 is in progress. A firmware jump to the bootloader is not available yet.
+The firmware is the `openmupp` project. The CH32V307 has a ROM bootloader. It can program the flash through USB (WCH ISP protocol). The bootloader can also use USART1 (PA9, PA10), but on this board these pins drive LEDs and have no connector. Hold SW1 (BOOT0) during reset to start it. The firmware port to the CH32V307 is in progress. A firmware jump to the bootloader is not available yet.
 
 Related repositories:
 

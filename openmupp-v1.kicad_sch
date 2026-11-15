@@ -11516,16 +11516,6 @@
 		)
 		(uuid "11f5594f-fd89-426f-b05a-8404ea3fa8e2")
 	)
-	(label "LED_USB"
-		(at 179.07 88.265 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "14841351-ede5-48aa-ac99-5bfe66cb32bd")
-	)
 	(label "BOOT0"
 		(at 131.445 78.105 0)
 		(effects
@@ -11776,6 +11766,16 @@
 		)
 		(uuid "4bdb72cb-858a-45e1-beee-8b1c51d69306")
 	)
+	(label "UART_RX"
+		(at 179.07 90.805 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "574bbb88-7c0d-4017-8e29-fe75359dba5c")
+	)
 	(label "LED_USB"
 		(at 64.77 170.18 0)
 		(effects
@@ -11815,6 +11815,16 @@
 			(justify right bottom)
 		)
 		(uuid "62697d7a-3bf6-4fce-bb91-d98aaaaa1048")
+	)
+	(label "UART_TX"
+		(at 179.07 88.265 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "639601ef-3978-411e-b878-c8fc41741f11")
 	)
 	(label "HSE_OUT"
 		(at 114.3 29.21 0)
@@ -12036,16 +12046,6 @@
 		)
 		(uuid "b1f37f74-05c8-4eab-a05a-e4ba799b3fa5")
 	)
-	(label "LED_STATE2"
-		(at 179.07 90.805 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b3f341a4-546c-43fe-9016-eb44b5e74ba1")
-	)
 	(label "VPP_EN"
 		(at 138.43 151.765 180)
 		(effects
@@ -12065,16 +12065,6 @@
 			(justify left bottom)
 		)
 		(uuid "baca7ec5-3ce3-4291-8f4f-0dec872c5e1c")
-	)
-	(label "UART_TX"
-		(at 179.07 95.885 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c17c97df-8046-418a-a781-67c745da9c01")
 	)
 	(label "5V_OUT_FAULT"
 		(at 247.65 157.48 180)
@@ -12126,6 +12116,16 @@
 		)
 		(uuid "d53c49dd-3c89-484e-ba1f-cb21d321c06e")
 	)
+	(label "LED_USB"
+		(at 179.07 95.885 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d53e939f-f9cb-4b21-911d-ef54727e4c37")
+	)
 	(label "TARGET_5V_EN"
 		(at 179.07 128.905 0)
 		(effects
@@ -12176,16 +12176,6 @@
 		)
 		(uuid "e9949fc1-dae5-4a28-b1d2-6c1c8ff5913d")
 	)
-	(label "UART_RX"
-		(at 179.07 98.425 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "eb83657d-213b-489c-9954-b3232011fb8c")
-	)
 	(label "TDO"
 		(at 247.65 68.58 180)
 		(effects
@@ -12195,6 +12185,16 @@
 			(justify right bottom)
 		)
 		(uuid "edb6c738-d849-48e8-a784-e4983143e440")
+	)
+	(label "LED_STATE2"
+		(at 179.07 98.425 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "efddc567-90ad-4afd-825e-54b665d70287")
 	)
 	(label "TRST"
 		(at 179.07 139.065 0)
