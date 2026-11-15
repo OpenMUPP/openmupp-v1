@@ -196,12 +196,12 @@ Each probe signal uses a pin that exists on LQFP64 (`CH32V307RCT6`) and on QFN68
 
 R10 is fitted on purpose. The JTAG fast path of the firmware uses two SPI peripherals. SPI2 is the master and makes TCK on PB13. SPI3 (remap) is a slave and shifts TMS out on its MISO pin, PC11. SPI3 gets its clock from TCK through R10 on PC10. Thus TMS stays in step with TCK. Do not remove R10, or the fast path cannot shift TMS.
 
-The UART bridge uses UART7 on its remap pins (AFIO `USART7_RM` = 01). USART1 does not work for two reasons:
+The UART bridge uses UART7 on its remap pins (AFIO `USART7_RM` = 01). The bridge needs DMA for RX, because an RX interrupt per byte loses bytes at high baud rates ([OpenMUPP#20](https://github.com/OpenMUPP/OpenMUPP/issues/20)). USART1 is not a good choice for two reasons:
 
-- USART1 TX and RX use DMA1 channels 4 and 5. The JTAG fast path uses these channels for SPI2.
+- The USART1 TX and RX requests are on DMA1 channels 4 and 5. The JTAG fast path uses these channels for SPI2.
 - USART1 is on APB2. The firmware halves PCLK2 while the ADC runs, so the USART1 baud rate divider must change at each switch. UART7 is on APB1 and does not see this switch.
 
-UART7 TX and RX use DMA2 channels 8 and 9. The one-wire engine uses TIM10_UP on DMA2 channel 11 and a TIM10 sample channel. The sample channel must be TIM10_CH2 (DMA2 channel 10). TIM10_CH1 (channel 8) and TIM10_CH3 (channel 9) share their DMA channel with UART7. UART8 on PC4 and PC5 does not work: its RX request is on DMA2 channel 11, together with TIM10_UP.
+The UART7 TX and RX requests are on DMA2 channels 8 and 9. The one-wire engine uses TIM10_UP on DMA2 channel 11 and a TIM10 sample channel. TIM10_CH1 (channel 8) and TIM10_CH3 (channel 9) share their DMA channel with UART7. Thus, when UART7 uses DMA, the sample channel must be TIM10_CH2 (DMA2 channel 10). UART8 on PC4 and PC5 is not a good choice: its RX request is on DMA2 channel 11, together with TIM10_UP.
 
 R55 is fitted for SWIM, the debug protocol of the STM8. The STM8 sends its bits with its own clock. Thus the probe measures the low time of each bit with a timer in PWM input mode. This timer runs at the same time as TIM10, which sends the probe bits on PC11. Thus the input needs a second pin and a second timer. The counter reset needs channel 1 or 2 of the timer, and PA1 is TIM2_CH2. TIM2 has DMA requests for CC1 and CC2. TIM3 does not work: PB4 and PC6 are TIM3_CH1 (partial and full remap). In PWM input mode on channel 1, CC2 captures the low time, and TIM3 has no DMA request for CC2. TIM8_CH1 and TIM8_CH2 on PC6 and PC7 both have DMA requests, but these pins carry the `AUX1` and TDI read-back.
 
