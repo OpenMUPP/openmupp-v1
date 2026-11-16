@@ -1,6 +1,6 @@
 # Target adapters for OpenMUPP v1
 
-Each folder is a KiCad 10 project with the schematic of one target adapter. The projects have no board layout yet.
+Each folder is a KiCad 10 project with the schematic and the board layout of one target adapter.
 
 | Folder                                     | Adapter          | Slot | R<sub>ID</sub> | Target connectors                                              |
 |--------------------------------------------|------------------|------|----------------|----------------------------------------------------------------|
@@ -17,12 +17,12 @@ The slot table and the J4 pinout are in the [main README](../README.md#adapter-b
 1. J1 is a female 2 × 10 header, 2.54 mm. It plugs directly onto J4 of the probe. The pin numbers of J1 are the J4 pin numbers.
 2. One 1 % resistor (R1) goes from J1 pin 16 to GND. J1 pin 16 never goes to the target.
 3. J1 pin 2 (reserved) stays open. J1 pin 19 (VPP) stays open on each adapter that is not a high-voltage adapter.
-4. Each adapter has a 1 × 4 debug UART header: 1 GND, 2 RX (probe input), 3 TX (probe output), 4 `VTREF`. The labels are from the probe side. Pins 1 to 3 have the same order as J2 on the main board. Pin 4 lets the UART work without a debug connector to the target.
+4. Each adapter has a 1 × 4 debug UART header (J5): 1 GND, 2 RX (probe input), 3 TX (probe output), 4 `VTREF`. The labels are from the probe side. Pins 1 to 3 have the same order as J2 on the main board. Pin 4 lets the UART work without a debug connector to the target.
 5. Connect only one target connector at a time.
 
 ## Female header on J4
 
-J4 on the probe is a shrouded, right-angle header (`IDC-Header_2x10_P2.54mm_Horizontal`). The adapter schematics use `PinSocket_2x10_P2.54mm_Horizontal` for J1, so the adapter board is in the same plane as the probe. Before layout, check these items:
+J4 on the probe is a shrouded, right-angle header (`IDC-Header_2x10_P2.54mm_Horizontal`). The adapter boards use `PinSocket_2x10_P2.54mm_Horizontal` for J1, so the adapter board is in the same plane as the probe. Check these items before you order the boards:
 
 - **Fit.** The socket body must go into the shroud of J4. Measure the shroud opening and the socket body.
 - **Pin mirror.** The socket and the header mate face to face. Make sure that J1 pin 1 touches J4 pin 1 in the layout.
@@ -67,11 +67,11 @@ The TPIDATA pin and the AVR DD UPDI pin must not get 12 V. Thus JP1 must be open
 
 The parts of the UPDI path:
 
-1. D2 (BAT54W) and JP1 connect J1 pin 19 to `UPDI_HV` when JP1 is closed. D2 has a drop of about 0.3 V. Set VPP to about 12.3 V for 12 V on the UPDI pin. `RESET_VPP` has no diode, so it gets VPP directly.
+1. D1 (BAT54A) and JP1 connect J1 pin 19 to `UPDI_HV` when JP1 is closed. D1 has a drop of about 0.3 V. Set VPP to about 12.3 V for 12 V on the UPDI pin. `RESET_VPP` has no diode, so it gets VPP directly.
 2. Q2 (FDV301N) is a pass switch between `UPDI_HV` (drain) and `UPDI` (source, J1 pin 12). The gate is on `VTREF`. When `UPDI_HV` is at 12 V, Q2 is off and the 10 kΩ pull-up on the probe holds `UPDI` at `VTREF`. The body diode is then reverse biased. The ESD diode on J4 pin 12 of the probe clamps at about 6 V, so this protection is necessary.
 3. While VPP is off, Q2 passes UPDI and TPI data in both directions. The probe pulls `UPDI` high (10 kΩ). The internal pull-up of the target pulls `UPDI_HV` high. The adapter has no pull-up on `UPDI_HV`, so it adds no load to the weak UPDI pad.
-4. With JP1 closed, keep pin 19 at 0 V (`VPP_PD` high) during UPDI, except during the HV pulse. In the run state, pin 19 is at `VTREF`. Then R39 on the probe and D2 pull `UPDI_HV` up. When the target sends a 0, it must also sink this current: about 0.13 mA at 1.8 V and 0.45 mA at 5 V. The UPDI pad guarantees only 0.1 mA at 1.8 V. At 0 V on pin 19, D2 blocks and adds no load.
-5. The firmware can read the JP1 position before it sets VPP on. Put pin 19 in the run state and set Q1 on. With JP1 closed, current flows from R39 through D2, Q2 and Q1. `VPP_SENSE2` then reads less than about 0.5 V. With JP1 open, `VPP_SENSE2` reads the run level. If the JP1 position does not agree with the selected target, the firmware must not set VPP on. This value is an estimate, not a measurement.
+4. With JP1 closed, keep pin 19 at 0 V (`VPP_PD` high) during UPDI, except during the HV pulse. In the run state, pin 19 is at `VTREF`. Then R39 on the probe and D1 pull `UPDI_HV` up. When the target sends a 0, it must also sink this current: about 0.13 mA at 1.8 V and 0.45 mA at 5 V. The UPDI pad guarantees only 0.1 mA at 1.8 V. At 0 V on pin 19, D1 blocks and adds no load.
+5. The firmware can read the JP1 position before it sets VPP on. Put pin 19 in the run state and set Q1 on. With JP1 closed, current flows from R39 through D1, Q2 and Q1. `VPP_SENSE2` then reads less than about 0.5 V. With JP1 open, `VPP_SENSE2` reads the run level. If the JP1 position does not agree with the selected target, the firmware must not set VPP on. This value is an estimate, not a measurement.
 
 Limits:
 
@@ -79,7 +79,7 @@ Limits:
 - The gate-source voltage of the FDV301N must stay above −0.3 V. The source (`UPDI`) has a 10 kΩ pull-up to the gate potential (`VTREF`), so it does not go above the gate. Q2 leakage (I<sub>DSS</sub> 1 µA maximum at 20 V) moves `UPDI` by about 10 mV.
 - A low-to-high edge on `UPDI_HV` above `VTREF` − V<sub>GS(th)</sub> comes from the target pull-up only. This is slower than on `UPDI`. Check the rise time at the UPDI baud rate and at the TPI clock rate.
 - VPP goes to `RESET_VPP`. With JP1 closed, it also goes to `UPDI_HV` at the same time. Connect only one target to J2, J3 or J4.
-- After the pulse, the line must return to the normal level quickly: the debugger drives it low 1 µs to 10 µs after the HV ends (data sheet figure 33-6). D2 cannot pull `UPDI_HV` down. The probe pulls J4 pin 12 low through its Q1. The adapter Q2 then conducts, because its gate is at `VTREF`, and pulls `UPDI_HV` low. At the same time, Q6 on the probe pulls pin 19 to 0 V in less than 1 µs, so D2 blocks at once.
+- After the pulse, the line must return to the normal level quickly: the debugger drives it low 1 µs to 10 µs after the HV ends (data sheet figure 33-6). D1 cannot pull `UPDI_HV` down. The probe pulls J4 pin 12 low through its Q1. The adapter Q2 then conducts, because its gate is at `VTREF`, and pulls `UPDI_HV` low. At the same time, Q6 on the probe pulls pin 19 to 0 V in less than 1 µs, so D1 blocks at once.
 - The TPS2553 on the probe has a soft start of some milliseconds. Check the pulse timing in the target data sheet.
 
 ## HVSP pull-downs
@@ -93,7 +93,7 @@ HVSP entry needs the three Prog_enable pins at 0 while `VCC` comes up. R4 to R7 
 
 J4 pin 8 (SDO input) is an input only, so the probe cannot hold SDO low. The target drives SDO against R4 after entry.
 
-## Items to check before layout
+## Items to check before production
 
 - **WCH-LinkE layout.** The positions of GND, 3V3 and 5V on the WCH-LinkE header come from the schematic text only. Check them on a real WCH-LinkE. Pin 8 (3V3) connects to `VTREF`. Pin 10 (5V) stays open.
 - **ST SWIM order.** Check the order (VDD, SWIM, GND, NRST) against ST UM1075.
