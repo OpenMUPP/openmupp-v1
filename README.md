@@ -8,20 +8,20 @@ The KiCad 10 project is in this repository.
 ## What the board does
 
 - It runs **USB CDC, CMSIS-DAP v2 and EDBG (AVR) at the same time** in one firmware image.
-- It transfers data **faster than the original Versaloon Mini**. The core runs at 250 MHz.
+- It transfers data **faster than the original Versaloon Mini**. The core runs at 144 MHz, and USB runs at high speed (480 Mbit/s).
 - It connects to targets from **1.2 V to 5 V** through level shifters. A 1.2 V target is limited to about 5 MHz.
-- It supplies the target with **3.3 V (up to about 520 mA) or 5 V (up to about 300 mA)**.
-- It makes a selectable **VPP of 8.4 V or 12 V** for high-voltage programming of AVR and PIC parts.
-- It has **one target connector (J4)**. A passive adapter board maps J4 to each target pinout.
+- It supplies the target with **3.3 V or 5 V (up to about 300 mA)**.
+- It makes an adjustable **VPP of 5 V to 14 V** for high-voltage programming of AVR and PIC parts.
+- It has **one target connector (J4)**. An adapter board plugs onto J4 and maps it to each target pinout.
 
 ## Hardware overview
 
 ```mermaid
 flowchart LR
-    usb["USB-C (J1)"] --> fuse["Polyfuse F1<br/>750 mA<br/>+5V"]
+    usb["USB-C (J1)"] --> fuse["Polyfuse F1<br/>1.1 A<br/>+5V"]
     fuse --> ldo["3.3 V LDO"]
-    fuse --> boost["Boost (U13)<br/>8.4 V or 12 V"]
-    ldo --> mcu["STM32H523 (U2)<br/>3.3 V"]
+    fuse --> boost["Boost (U13)<br/>5 V to 14 V"]
+    ldo --> mcu["CH32V307RCT6 (U2)<br/>3.3 V"]
     mcu <--> ls["Level shifters<br/>U3 to U6"]
     ls --> esd["33 Ω series resistors<br/>and ESD diodes"]
     esd --> j4["Target connector J4<br/>2 × 10, 2.54 mm"]
@@ -34,27 +34,29 @@ flowchart LR
 
     boost --> vpp["VPP switch<br/>P-FET (Q2)"]
     vpp --> j4
+    pd["Pin 19 pull-down<br/>N-FET (Q6), pull-up to VTREF"] --> j4
 
     mcu -- "TARGET_PWR_EN" --> tps33
     mcu -- "TARGET_5V_EN" --> tps5
-    mcu -- "VPP_12V_SEL<br/>(Q5: 8.4 V / 12 V)" --> boost
+    mcu -- "VPP_12V_ADJ<br/>(DAC: 5 V to 14 V)" --> boost
     mcu -- "VPP_EN, VPP_ON" --> vpp
+    mcu -- "VPP_PD" --> pd
     boost -- "VPP_SENSE" --> mcu
 ```
 
 | Block | Part | Notes |
 |-------|------|-------|
-| MCU | STM32H523CC, LQFP48 (U2) | Cortex-M33, 250 MHz, 256 KB flash, 272 KB RAM. 24 MHz crystal (Y1). |
-| USB | USB-C receptacle (J1), USBLC6-2SC6 (U1) | USB 2.0 full speed. 5.1 kΩ CC resistors. |
+| MCU | CH32V307RCT6, LQFP64 (U2) | QingKe V4F RISC-V, 144 MHz, 256 KB flash, 64 KB SRAM. 8 MHz crystal (Y1). |
+| USB | USB-C receptacle (J1), USBLC6-2SC6 (U1) | USB 2.0 high speed (USBHS on PB6, PB7). 5.1 kΩ CC resistors. |
 | 3.3 V rail | XC6220B331MR-G LDO | Supplies the MCU and the target power switch. |
-| VBUS protection | 750 mA polyfuse (F1) | Expect `+5V` near 4.4 V at full load. |
-| Target power (3.3 V or 5 V) | TPS2553 (U12, 3.3 V), TPS2553 (U14, 5 V), BSS138 interlock (Q4) | Current limit about 520 mA (ILIM 51 kΩ) at 3.3 V and about 300 mA (ILIM 91 kΩ) at 5 V. Both outputs join `VTREF`. See [Target power](docs/hardware.md#target-power). |
-| VPP (8.4 V or 12 V) | MT3608 boost (U13), AO3401A P-FET (Q2), BSS138 drivers (Q3, Q5) | The firmware selects the level with `VPP_12V_SEL`. See [High voltage (VPP)](docs/hardware.md#high-voltage-vpp). |
+| VBUS protection | 1.1 A polyfuse (F1), 2.2 A trip, 16 V | At 4.75 V VBUS, expect `+5V` at about 4.6 V or more at full load. See [Target power](docs/hardware.md#target-power). |
+| Target power (3.3 V or 5 V) | TPS2553 (U12, 3.3 V), TPS2553 (U14, 5 V), FDV301N interlock (Q4) | Current limit about 300 mA (ILIM 91 kΩ) on each rail. Both outputs join `VTREF`. See [Target power](docs/hardware.md#target-power). |
+| VPP (5 V to 14 V) | MT3608 boost (U13), AO3401A P-FET (Q2), FDV301N driver (Q3), MMBT3906 current limit (Q5), FDV301N pull-down (Q6) | The firmware sets the level with the DAC on PA5 (`VPP_12V_ADJ`). Current limit about 17 mA. Pin 19 has three states: 0 V, `VTREF` and VPP. See [High voltage (VPP)](docs/hardware.md#high-voltage-vpp). |
 | Level shifters | SN74LXC8T245 (U3, U4), SN74LXC1T45 (U5, U6) | All parts work from 1.1 V to 5.5 V. |
-| Reset path | BSS138 (Q1), U4 channel 4 | Q1 pulls nRESET low. U4 reads the line back. |
+| Reset path | FDV301N (Q1), U4 channel 4 | Q1 pulls nRESET low. U4 reads the line back. |
 | ESD | TPD4E05U06 (U8 to U10) | On all J4 signals except the supplies. |
-| Probe debug | J3 (5-pin SWD) | Debugs the probe MCU only. **It is not a target connector.** |
-| User I/O | SW1 (key and BOOT0), LEDs D1 and D4 (state) and D2 (USB) | |
+| Probe debug | J3 (5-pin SWD), J2 (4-pin UART) | J3 debugs the probe MCU only. J2 is the log port of the probe firmware. **They are not target connectors.** |
+| User I/O | SW1 (key and BOOT0), LEDs D1 (blue) and D4 (red) for state, D2 (green) for USB | |
 
 ### Target connector J4
 
@@ -71,15 +73,15 @@ J4 is a 2 × 10 IDC header, 2.54 mm. The footprint in the schematic is `Connecto
 | 13 | UART TX (probe output) | 14 | UART RX (probe input) |
 | 15 | TRST | 16 | Adapter ID (ADC, 3.3 V domain) |
 | 17 | `AUX1` | 18 | `AUX2` |
-| 19 | VPP (8.4 V or 12 V, gated) | 20 | GND |
+| 19 | VPP (0 V, `VTREF`, or 5 V to 14 V) | 20 | GND |
 
-- **Target power is on pin 1.** One pin carries the sense and the supply. The limit is about 520 mA at 3.3 V and about 300 mA at 5 V.
+- **Target power is on pin 1.** One pin carries the sense and the supply. The limit is about 300 mA at 3.3 V and at 5 V.
 - **Pin 2 is reserved.** A later adapter that needs a second supply pin can use it, with its own switch.
 - **Pin 16 goes to the adapter only.** It never goes to the target.
 
 ### Adapter boards and adapter ID
 
-An adapter board has connectors, wires and one ID resistor. The resistor goes from J4 pin 16 to GND. R30 (10 kΩ) pulls pin 16 up to 3.3 V. The firmware reads the ratio x = R<sub>ID</sub> / (R<sub>ID</sub> + 10 kΩ) on PB1. The ADC reference and R30 share the 3.3 V rail, so supply drift cancels. R44 (10 kΩ) in series and one diode of D5 (BAT54C) to 3.3 V protect PB1 (net `ADAPTER_ID_MCU`). They work when a 5 V target supply is on pin 16 by mistake. Only one anode of D5 is on `ADAPTER_ID_MCU`. The other anode is on GND, so its leakage does not go into PB1. The firmware must use a long ADC sample time and keep the internal pull resistors off.
+An adapter board has connectors, wires and one ID resistor. The resistor goes from J4 pin 16 to GND. R30 (10 kΩ) pulls pin 16 up to 3.3 V. The firmware reads the ratio x = R<sub>ID</sub> / (R<sub>ID</sub> + 10 kΩ) on PB1. The ADC reference and R30 share the 3.3 V rail, so supply drift cancels. R44 (10 kΩ) in series and D5 (BAT54 Schottky diode) to 3.3 V protect PB1 (net `ADAPTER_ID_MCU`). They work when a 5 V target supply is on pin 16 by mistake. C13 (100 nF) from `ADAPTER_ID_MCU` to GND filters the ADC input. The firmware must use a long ADC sample time and keep the internal pull resistors off.
 
 The AVR 10-pin connector uses the Atmel-ICE pinout. Three passive variants route the data pin to SWDIO:
 
@@ -87,7 +89,9 @@ The AVR 10-pin connector uses the Atmel-ICE pinout. Three passive variants route
 |---------|-----------|------|
 | A | JTAG, ISP, debugWIRE | 1 |
 | B | PDI | 2 |
-| C | TPI, UPDI, aWire | 3 |
+| C | TPI, aWire | 3 |
+
+UPDI does not use SWDIO. It uses J4 pin 12 (nRESET), because the 2.2 kΩ pull-up on SWDIO is too strong for the UPDI pin of the target. See [adapters/README.md](adapters/README.md#updi-on-j4-pin-12). A UPDI adapter variant for the Atmel-ICE 10-pin connector has no slot yet.
 
 | Slot | R<sub>ID</sub> (E24, 1 %) | x | Accept window | Use |
 |------|------------------|-------|---------------|-----|
@@ -95,33 +99,35 @@ The AVR 10-pin connector uses the Atmel-ICE pinout. Three passive variants route
 | 1 | 1.1 kΩ | 0.099 | 0.05 to 0.15 | Variant A |
 | 2 | 2.4 kΩ | 0.194 | 0.15 to 0.25 | Variant B |
 | 3 | 4.3 kΩ | 0.301 | 0.25 to 0.35 | Variant C |
-| 4 | 6.8 kΩ | 0.405 | 0.35 to 0.45 | Free |
-| 5 | 10 kΩ | 0.500 | 0.45 to 0.55 | Free |
+| 4 | 6.8 kΩ | 0.405 | 0.35 to 0.45 | Arm adapter |
+| 5 | 10 kΩ | 0.500 | 0.45 to 0.55 | Pin-header adapter |
 | 6 | 15 kΩ | 0.600 | 0.55 to 0.65 | Free |
 | 7 | 24 kΩ | 0.706 | 0.65 to 0.75 | Free |
-| 8 | 39 kΩ | 0.796 | 0.75 to 0.85 | Free |
-| 9 | 91 kΩ | 0.901 | 0.85 to 0.95 | Free (suggested: high-voltage adapter) |
+| 8 | 39 kΩ | 0.796 | 0.75 to 0.85 | AVR high-voltage adapter |
+| 9 | 91 kΩ | 0.901 | 0.85 to 0.95 | PIC high-voltage adapter |
 | — | open | 1.000 | above 0.95 | No adapter |
 
-The worst-case error is about 0.007 in x, and the windows are ±0.05 wide. The firmware treats a free slot as "unknown adapter" and does not enable VPP.
+The worst-case error is about 0.007 in x, and the windows are ±0.05 wide. The firmware treats a free slot as "unknown adapter". The firmware enables VPP only for slots 8 and 9.
+
+The adapter schematics are in [adapters/](adapters/README.md). Each adapter has a female 2 × 10 header that plugs directly onto J4. No ribbon cable is necessary.
 
 See [docs/hardware.md](docs/hardware.md) for the sheets, level shifting, target power, VPP and the MCU pin map.
 
 ## Firmware
 
-The firmware is the `openmupp` project. Firmware updates use the ROM USB DFU bootloader of the STM32H5. Press the key (or use `VERSALOON_FW_UPDATE`) to jump to it. Then use `dfu-util` or STM32CubeProgrammer.
+The firmware is the `openmupp` project. The CH32V307 has a ROM bootloader. It can program the flash through USB (WCH ISP protocol). The bootloader can also use USART1 (PA9, PA10), but on this board these pins drive LEDs and have no connector. Hold SW1 (BOOT0) during reset to start it. The firmware port to the CH32V307 is in progress. A firmware jump to the bootloader is not available yet.
 
 Related repositories:
 
 - Firmware: <https://github.com/OpenMUPP/openmupp>
-- Drivers: <https://github.com/armint/system-stm32> and <https://github.com/armint/libart-stm32>
+- Drivers: <https://github.com/armint/ch32v00x-system> and <https://github.com/armint/ch32v00x-art>
 
 ## Getting started
 
 ### Requirements
 
 - KiCad 10.0.6 or newer.
-- The shared footprint libraries. They are not public. The PCB file has a copy of each footprint, so you can open and edit the board without them. The project uses the nicknames `resistors`, `capacitors`, `headers`, `connectors`, `inductors` and `sot`. The stock KiCad libraries (`Package_*`, `Connector_IDC`, `Diode_SMD`, `LED_SMD`, `Fuse`, `Button_Switch_SMD`) must also be present.
+- The shared footprint libraries. They are not public. The PCB file has a copy of each footprint, so you can open and edit the board without them. The project uses the nicknames `resistors`, `capacitors`, `headers`, `connectors`, `inductors` and `sot`. The stock KiCad libraries (`Package_*`, `Connector_IDC`, `Diode_SMD`, `LED_SMD`, `Crystal`, `Fuse`, `Button_Switch_SMD`) must also be present.
 
 ### Open the project
 
@@ -136,7 +142,7 @@ The project symbol library `openmupp-v1` is in the repository. `sym-lib-table` l
 
 - **Reference designators are unique across all sheets.** Check before you add a part.
 - **Every part has an `LCSC` field** for JLCPCB assembly. Prefer parts from the JLCPCB basic library. Each extended part costs a setup fee.
-- **Small N-FETs:** use the BSS138 (LCSC C112239).
+- **Small N-FETs:** use the FDV301N (LCSC C15310). V<sub>GS(th)</sub> is 1.06 V maximum, so a gate drive of 1.8 V turns it on. The limits are 25 V V<sub>DS</sub> and 8 V V<sub>GS</sub>.
 - **Footprints:** check the pads against the datasheet land pattern.
 - **Checks:** run ERC after each change. Look for shorted nets and for unconnected pins.
 
