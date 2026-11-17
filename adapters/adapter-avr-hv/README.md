@@ -57,7 +57,7 @@ JP1 selects the J4 pin that gets 12 V. Set JP1 before you connect the target.
 | JP1 | 12 V on | Use for |
 |-----|---------|---------|
 | Open | Pin 5 only | TPI (ATtiny4/5/9/10). UPDI parts with a separate RESET pin, for example AVR DD. |
-| Closed | Pin 1 (through D2) and pin 5 | tinyAVR 0, 1 and 2 series. UPDI and RESET are on the same pin. |
+| Closed | Pin 1 (through D1) and pin 5 | tinyAVR 0, 1 and 2 series. UPDI and RESET are on the same pin. |
 
 **CAUTION:** Do not close JP1 for a TPI part or an AVR DD part. Pin 1 then gets 12 V, and this can damage the part.
 
@@ -82,7 +82,7 @@ All adapters have this header (see [Rules for all adapters](../README.md#rules-f
 | Ref | Value | Function |
 |-----|-------|----------|
 | R1 | 39 kΩ | Adapter ID, slot 8 |
-| D2 | BAT54W | With JP1 closed, connects `RESET_VPP` to `UPDI_HV` (J4 pin 1). It blocks while pin 19 is at 0 V. |
+| D1 | BAT54A | With JP1 closed, connects `RESET_VPP` to `UPDI_HV` (J4 pin 1). It blocks while pin 19 is at 0 V. |
 | Q2 | FDV301N | Pass switch between `UPDI_HV` and `UPDI`. It blocks 12 V from J1 pin 12. |
 | R4 | 10 kΩ | Holds SDO (J2 pin 7) low at HVSP entry |
 | R5, R6, R7 | 10 kΩ | Hold PA0, PA1 and PA2 on J3 low at HVSP entry |

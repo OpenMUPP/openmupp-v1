@@ -55,7 +55,7 @@ flowchart LR
 | Level shifters | SN74LXC8T245 (U3, U4), SN74LXC1T45 (U5, U6) | All parts work from 1.1 V to 5.5 V. |
 | Reset path | FDV301N (Q1), U4 channel 4 | Q1 pulls nRESET low. U4 reads the line back. |
 | ESD | TPD4E05U06 (U8 to U10) | On all J4 signals except the supplies. |
-| Probe debug | J3 (5-pin SWD), J2 (3-pin UART) | J3 debugs the probe MCU only. J2 is the log port of the probe firmware. **They are not target connectors.** |
+| Probe debug | J3 (5-pin SWD), J2 (4-pin UART) | J3 debugs the probe MCU only. J2 is the log port of the probe firmware. **They are not target connectors.** |
 | User I/O | SW1 (key and BOOT0), LEDs D1 (blue) and D4 (red) for state, D2 (green) for USB | |
 
 ### Target connector J4
@@ -115,7 +115,7 @@ See [docs/hardware.md](docs/hardware.md) for the sheets, level shifting, target 
 
 ## Firmware
 
-The firmware is the `openmupp` project. The CH32V307 has a ROM bootloader. It can program the flash through USART1 or USB (WCH ISP protocol). Hold SW1 (BOOT0) during reset to start it. The firmware port to the CH32V307 is in progress. A firmware jump to the bootloader is not available yet.
+The firmware is the `openmupp` project. The CH32V307 has a ROM bootloader. It can program the flash through USB (WCH ISP protocol). The bootloader can also use USART1 (PA9, PA10), but on this board these pins drive LEDs and have no connector. Hold SW1 (BOOT0) during reset to start it. The firmware port to the CH32V307 is in progress. A firmware jump to the bootloader is not available yet.
 
 Related repositories:
 
